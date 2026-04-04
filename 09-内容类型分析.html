@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinTax 内容类型效果分析 | 2026-03-20</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2e3e;--text:#e4e6ef;--text-dim:#8b8fa3;--accent:#00cec9;--green:#00b894;--red:#e74c3c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);padding:20px}
+.back-link{display:inline-block;margin-bottom:20px;color:var(--accent);text-decoration:none;font-size:14px}
+.back-link:hover{text-decoration:underline}
+.container{max-width:1400px;margin:0 auto}
+.header{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px}
+.header h1{font-size:24px;margin-bottom:8px}
+.header h1 span{color:var(--accent)}
+.header .meta{font-size:13px;color:var(--text-dim)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.stat-card .label{font-size:11px;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase}
+.stat-card .value{font-size:24px;font-weight:700;color:var(--accent)}
+.stat-card .sub{font-size:11px;color:var(--text-dim);margin-top:4px}
+.charts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.chart-card.full{grid-column:1/-1}
+.chart-card h3{font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text-dim)}
+.chart-container{height:350px}
+.chart-container.tall{height:420px}
+.table-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px}
+.table-card h3{font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text-dim)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:13px}
+th{color:var(--text-dim);font-weight:500;text-transform:uppercase;font-size:11px}
+.badge{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;color:#fff}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.insight-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.insight-card h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--accent)}
+.insight-card p{font-size:13px;color:var(--text-dim);line-height:1.6}
+@media(max-width:1024px){.stats{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.insight-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-link">← 返回导航</a>
+<div class="header">
+<h1><span>📝</span> 内容类型效果分析</h1>
+<div class="meta">基于微信公众号文章标题的内容分类与表现分析 | 数据更新于 2026-03-20</div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="charts">
+<div class="chart-card">
+<h3>📊 各类型内容数量占比</h3>
+<div class="chart-container"><canvas id="typePie"></canvas></div>
+</div>
+<div class="chart-card">
+<h3>📈 各类型篇均阅读量对比</h3>
+<div class="chart-container"><canvas id="avgReads"></canvas></div>
+</div>
+<div class="chart-card full">
+<h3>🫧 内容气泡图：阅读量 × 分享量 × 类型（气泡大小 = 点赞数+1）</h3>
+<div class="chart-container tall"><canvas id="bubbleChart"></canvas></div>
+</div>
+<div class="chart-card">
+<h3>🔥 各类型总阅读量</h3>
+<div class="chart-container"><canvas id="totalReads"></canvas></div>
+</div>
+<div class="chart-card">
+<h3>📤 各类型篇均分享量</h3>
+<div class="chart-container"><canvas id="avgShares"></canvas></div>
+</div>
+</div>
+
+<div class="table-card">
+<h3>📋 内容类型详细数据</h3>
+<table id="typeTable">
+<thead><tr><th>类型</th><th>篇数</th><th>总阅读</th><th>篇均阅读</th><th>总分享</th><th>篇均分享</th><th>总点赞</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+
+<div class="insight-grid" id="insights"></div>
+</div>
+
+<script>
+const articles = [
+{"title":"当叙事泡沫退去，真正有价值的加密资产是什么？","reads":100,"likes":3,"shares":9},
+{"title":"FinTax 加密合规动态精选 ——2026年3月第1期","reads":45,"likes":0,"shares":1},
+{"title":"MetaMask Card落地美国，加密支付卡赛道迎来新变量","reads":218,"likes":1,"shares":15},
+{"title":""全球加密枢纽"的二元治理范式：阿联酋加密监管与税收基础研究","reads":77,"likes":2,"shares":10},
+{"title":"SEC明确券商资本计提新口径，支付型稳定币再迎利好信号","reads":158,"likes":0,"shares":19},
+{"title":"重塑价值交换：加密货币支付的技术逻辑、未来趋势与税务挑战","reads":117,"likes":0,"shares":9},
+{"title":"为何限制稳定币发行？一文解码巴西虚拟资产法修订背后的监管逻辑","reads":82,"likes":0,"shares":12},
+{"title":"FinTax 加密合规动态精选——2026年2月第2期","reads":29,"likes":0,"shares":2},
+{"title":"质押与挖矿税务研究万字长文：港新美加四地政策比较与洞见","reads":108,"likes":1,"shares":11},
+{"title":"日本拟推出加密现货ETF：市场现状、监管转向与落地影响全景解读","reads":104,"likes":1,"shares":7},
+{"title":"美国证监会揭露1400万美元加密骗局","reads":234,"likes":1,"shares":17},
+{"title":""稳定币"到底是什么？制度定位、监管框架与税务落点","reads":152,"likes":0,"shares":12},
+{"title":"FinTax 加密合规动态精选——2026年2月第1期","reads":49,"likes":0,"shares":6},
+{"title":"数字资产税务监管的颗粒度革命：美国1099-DA表格解析与合规指南","reads":88,"likes":1,"shares":10},
+{"title":"华尔街的链上转向：纽交所、纳斯达克竞相布局证券通证化","reads":159,"likes":0,"shares":22},
+{"title":"香港税务局最新FAQ："双城生活"如何判定税务身份？","reads":161,"likes":2,"shares":16},
+{"title":"FinTax 加密合规动态精选——2026年1月第2期","reads":68,"likes":0,"shares":6},
+{"title":"CARF落地实施，中国居民持有加密资产会被追缴税款吗？","reads":122,"likes":0,"shares":10},
+{"title":"香港虚拟资产牌照新规解读","reads":250,"likes":0,"shares":14},
+{"title":"CARF全球实施时间表一览","reads":260,"likes":0,"shares":29},
+{"title":"FinTax 加密合规动态精选——2026年1月第1期","reads":51,"likes":0,"shares":6},
+{"title":"境外收入补税追溯至2017年？纳税人如何化解税务危机","reads":404,"likes":1,"shares":37},
+{"title":"合规与创新的平衡：法国加密资产税制与监管体系研究","reads":110,"likes":1,"shares":14},
+{"title":"自由与清晰的博弈：波兰加密税制与监管体系基础研究","reads":68,"likes":0,"shares":8},
+{"title":"CRS2.0落地在即：2026年，你的"链上隐身衣"还在吗？","reads":391,"likes":1,"shares":40},
+{"title":"迈向更清晰的未来：德国加密税制与监管基础研究","reads":65,"likes":0,"shares":10},
+{"title":"FinTax加密合规动态精选——2025年12月第2期","reads":59,"likes":0,"shares":6},
+{"title":"英国"第三类财产"落地：加密资产税收将发生哪些变化？","reads":115,"likes":1,"shares":17},
+{"title":"巴基斯坦政府与Binance签署谅解备忘录","reads":116,"likes":0,"shares":10},
+{"title":"TUSD4.56亿美元储备金挪用案始末","reads":198,"likes":1,"shares":21},
+{"title":"从白宫扩权提案看美国加密资产税务监管的"终极拼图"","reads":94,"likes":0,"shares":12},
+{"title":"划清监管红线，中国Web3的合规路径与全球机遇","reads":121,"likes":2,"shares":20},
+{"title":"CARF率先落地欧盟，DAC8将加密资产纳入税务信息交换范围","reads":147,"likes":0,"shares":22},
+{"title":"澳大利亚拟出台加密资产监管新规","reads":173,"likes":1,"shares":24},
+{"title":"FinTax 加密合规动态精选：2025年12月第1期","reads":53,"likes":0,"shares":4},
+{"title":"加密投资者收到境外收入主动申报通知，如何应对？","reads":99,"likes":0,"shares":12},
+{"title":"香港证监会新通函释放积极信号","reads":176,"likes":1,"shares":16},
+{"title":"AMA：政策/税务，国内Web3从业者如何确保安全","reads":114,"likes":0,"shares":4},
+{"title":"CARF，香港加密资产监管的下一步","reads":300,"likes":1,"shares":47},
+{"title":"香港与全球CARF加密货币涉税信息交换即将到来","reads":465,"likes":2,"shares":38},
+{"title":"加密矿企利润承压，税务筹划是破局之道吗？","reads":181,"likes":1,"shares":20},
+{"title":"Web3收入，要在国内纳税吗？","reads":206,"likes":0,"shares":16},
+{"title":"FinTax加密合规动态精选：2025年11月第2期","reads":85,"likes":0,"shares":5},
+{"title":"海外加密资产或将受审查？一文带你了解CARF","reads":376,"likes":2,"shares":41},
+{"title":"别再拿U卡当"匿名护身符"","reads":1208,"likes":1,"shares":49},
+{"title":"Web3 收入，要在国内缴税吗？","reads":263,"likes":0,"shares":15},
+{"title":"加密AI代理时代来临：x402如何改写财税逻辑","reads":149,"likes":2,"shares":20},
+{"title":"补税700万上热搜！境外收入税务监管再升级","reads":3454,"likes":5,"shares":145},
+{"title":"FinTax 加密合规动态精选：2025年11月第1期","reads":105,"likes":0,"shares":10},
+{"title":"东南亚RWA新引擎：马来西亚的稳健创新与Web3新机遇","reads":284,"likes":0,"shares":40},
+{"title":"一文读懂智利加密资产税收与监管制度","reads":153,"likes":0,"shares":16},
+{"title":"加拿大取消燃料碳税，加密矿企迎来能源成本新博弈","reads":428,"likes":0,"shares":26},
+{"title":"税务海关总署寄出万封警告信","reads":195,"likes":0,"shares":28},
+{"title":"周杰伦"江湖追杀令"的背后：加密资产代持行为的税务与法律隐忧","reads":313,"likes":2,"shares":28},
+{"title":"FinTax加密合规动态精选：2025年10月第2期","reads":70,"likes":0,"shares":4},
+{"title":"数百名币安用户遭遇税务调查的背后：印度加密资产税收与监管制度一览","reads":1147,"likes":0,"shares":54},
+{"title":"比特币高税负成难题？基于矿机折旧政策的税筹新思路","reads":245,"likes":0,"shares":20},
+{"title":"从碎片化监管到体系化治理：一文解读欧盟MiCAR监管框架","reads":196,"likes":1,"shares":27},
+{"title":"土耳其加密资产制度转向的背后：税收与监管制度概览","reads":314,"likes":0,"shares":35},
+{"title":"FinTax加密合规动态精选：2025年10月第1期","reads":119,"likes":0,"shares":13},
+{"title":"美国放宽加密税收规则","reads":212,"likes":1,"shares":31},
+{"title":"加密世界遇上离岸金融：泽西岛的加密资产税收与监管制度","reads":254,"likes":1,"shares":30},
+{"title":"美国或有更多加密税收利好？一文速览参议院加密税收听证会","reads":150,"likes":0,"shares":25},
+{"title":"万字长文详解日本加密税收和监管制度","reads":376,"likes":4,"shares":72},
+{"title":"FinTax加密合规动态精选：2025年9月第2期","reads":79,"likes":0,"shares":6},
+{"title":"揭秘香港免税的"潜规则"","reads":227,"likes":1,"shares":29}
+];
+
+// ===== 内容分类逻辑 =====
+function classifyArticle(title) {
+  if (/动态精选|精选/.test(title)) return '周刊速递';
+  if (/CARF|CRS|DAC8|信息交换/.test(title)) return 'CARF/CRS专题';
+  if (/税制.*研究|监管.*研究|制度.*研究|一文读懂|一文解读|基础研究|制度概览|制度一览|详解/.test(title)) return '国别深度研究';
+  if (/补税|追缴|税务调查|税务危机|缴税|纳税|税务监管|税收规则|税筹|税负|税务海关|税收听证/.test(title)) return '税务热点解读';
+  if (/监管|SEC|牌照|新规|法案|法修订|框架|合规/.test(title)) return '监管政策解读';
+  if (/Web3|U卡|支付|ETF|代币化|矿企|挖矿|质押|AI代理|RWA|稳定币/.test(title)) return '行业趋势分析';
+  return '其他';
+}
+
+const typeColors = {
+  '周刊速递': '#636e72',
+  'CARF/CRS专题': '#e74c3c',
+  '国别深度研究': '#0984e3',
+  '税务热点解读': '#e17055',
+  '监管政策解读': '#6c5ce7',
+  '行业趋势分析': '#00cec9',
+  '其他': '#b2bec3'
+};
+
+// 分类
+const typeData = {};
+articles.forEach(a => {
+  if (a.reads === 0) return; // 过滤无效
+  const type = classifyArticle(a.title);
+  if (!typeData[type]) typeData[type] = {count: 0, totalReads: 0, totalShares: 0, totalLikes: 0, articles: []};
+  typeData[type].count++;
+  typeData[type].totalReads += a.reads;
+  typeData[type].totalShares += a.shares;
+  typeData[type].totalLikes += a.likes;
+  typeData[type].articles.push(a);
+});
+
+const types = Object.keys(typeData).sort((a,b) => typeData[b].totalReads - typeData[a].totalReads);
+
+// ===== KPI =====
+const bestType = types[0];
+const bestAvgType = types.reduce((best, t) => (typeData[t].totalReads/typeData[t].count) > (typeData[best].totalReads/typeData[best].count) ? t : best, types[0]);
+const bestShareType = types.reduce((best, t) => (typeData[t].totalShares/typeData[t].count) > (typeData[best].totalShares/typeData[best].count) ? t : best, types[0]);
+
+document.getElementById('stats').innerHTML = `
+<div class="stat-card"><div class="label">内容类型数</div><div class="value">${types.length}</div></div>
+<div class="stat-card"><div class="label">总阅读量最高</div><div class="value" style="font-size:18px">${bestType}</div><div class="sub">${typeData[bestType].totalReads.toLocaleString()} 阅读</div></div>
+<div class="stat-card"><div class="label">篇均阅读最高</div><div class="value" style="font-size:18px">${bestAvgType}</div><div class="sub">${Math.round(typeData[bestAvgType].totalReads/typeData[bestAvgType].count)} 篇均</div></div>
+<div class="stat-card"><div class="label">篇均分享最高</div><div class="value" style="font-size:18px">${bestShareType}</div><div class="sub">${(typeData[bestShareType].totalShares/typeData[bestShareType].count).toFixed(1)} 篇均</div></div>
+`;
+
+// ===== 类型占比饼图 =====
+new Chart(document.getElementById('typePie'), {
+  type: 'doughnut',
+  data: {
+    labels: types,
+    datasets: [{
+      data: types.map(t => typeData[t].count),
+      backgroundColor: types.map(t => typeColors[t] || '#b2bec3'),
+      borderColor: '#1a1d27', borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {labels: {color: '#8b8fa3', usePointStyle: true, padding: 12}, position: 'right'}}
+  }
+});
+
+// ===== 篇均阅读柱状图 =====
+new Chart(document.getElementById('avgReads'), {
+  type: 'bar',
+  data: {
+    labels: types,
+    datasets: [{
+      label: '篇均阅读量',
+      data: types.map(t => Math.round(typeData[t].totalReads / typeData[t].count)),
+      backgroundColor: types.map(t => (typeColors[t] || '#b2bec3') + 'cc'),
+      borderColor: types.map(t => typeColors[t] || '#b2bec3'),
+      borderWidth: 1, borderRadius: 6
+    }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {display: false}},
+    scales: {x: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}}, y: {ticks: {color: '#8b8fa3', font: {size: 11}}, grid: {display: false}}}
+  }
+});
+
+// ===== 气泡图 =====
+const bubbleDatasets = types.map(t => ({
+  label: t,
+  data: typeData[t].articles.map(a => ({x: a.reads, y: a.shares, r: Math.max(3, Math.sqrt(a.likes + 1) * 4)})),
+  backgroundColor: (typeColors[t] || '#b2bec3') + '80',
+  borderColor: typeColors[t] || '#b2bec3'
+}));
+
+new Chart(document.getElementById('bubbleChart'), {
+  type: 'bubble',
+  data: {datasets: bubbleDatasets},
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {labels: {color: '#8b8fa3', usePointStyle: true, padding: 12}}},
+    scales: {
+      x: {title: {display: true, text: '阅读量', color: '#8b8fa3'}, ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}},
+      y: {title: {display: true, text: '分享量', color: '#8b8fa3'}, ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}}
+    }
+  }
+});
+
+// ===== 总阅读量 =====
+new Chart(document.getElementById('totalReads'), {
+  type: 'bar',
+  data: {
+    labels: types,
+    datasets: [{
+      label: '总阅读量', data: types.map(t => typeData[t].totalReads),
+      backgroundColor: types.map(t => (typeColors[t] || '#b2bec3') + 'cc'),
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {display: false}},
+    scales: {x: {ticks: {color: '#8b8fa3', font: {size: 10}}, grid: {display: false}}, y: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}}}
+  }
+});
+
+// ===== 篇均分享 =====
+new Chart(document.getElementById('avgShares'), {
+  type: 'bar',
+  data: {
+    labels: types,
+    datasets: [{
+      label: '篇均分享', data: types.map(t => +(typeData[t].totalShares / typeData[t].count).toFixed(1)),
+      backgroundColor: types.map(t => (typeColors[t] || '#b2bec3') + 'cc'),
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {display: false}},
+    scales: {x: {ticks: {color: '#8b8fa3', font: {size: 10}}, grid: {display: false}}, y: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}}}
+  }
+});
+
+// ===== 详细表格 =====
+const tbody = document.querySelector('#typeTable tbody');
+types.forEach(t => {
+  const d = typeData[t];
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td><span class="badge" style="background:${typeColors[t]||'#b2bec3'}">${t}</span></td>
+    <td>${d.count}</td>
+    <td>${d.totalReads.toLocaleString()}</td>
+    <td>${Math.round(d.totalReads/d.count)}</td>
+    <td>${d.totalShares}</td>
+    <td>${(d.totalShares/d.count).toFixed(1)}</td>
+    <td>${d.totalLikes}</td>
+  `;
+  tbody.appendChild(row);
+});
+
+// ===== 洞察 =====
+document.getElementById('insights').innerHTML = `
+<div class="insight-card">
+  <h3>🏆 爆款密码</h3>
+  <p>"税务热点解读"类文章篇均阅读最高，如"补税700万上热搜"（3454阅读）和"别再拿U卡当匿名护身符"（1208阅读）。结合时事热点+实用指导的内容最容易引发传播。</p>
+</div>
+<div class="insight-card">
+  <h3>📊 稳定输出</h3>
+  <p>CARF/CRS 专题和国别深度研究虽然篇均阅读不如热点文章，但分享率高且读者质量好，适合持续建立专业品牌形象。周刊速递类篇均阅读最低，建议精简或调整形式。</p>
+</div>
+<div class="insight-card">
+  <h3>🎯 内容策略建议</h3>
+  <p>建议保持"4:3:2:1"的内容配比：4 成热点解读 + 3 成监管政策 + 2 成深度研究 + 1 成周刊速递，兼顾流量与专业深度。</p>
+</div>
+`;
+</script>
+</body>
+</html>

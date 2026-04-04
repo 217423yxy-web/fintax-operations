@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinTax 互动效率汇报看板 | 2026-03-20</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2e3e;--text:#e4e6ef;--text-dim:#8b8fa3;--accent:#a29bfe;--green:#00b894;--red:#e74c3c;--yellow:#fdcb6e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);padding:20px}
+.back-link{display:inline-block;margin-bottom:20px;color:var(--accent);text-decoration:none;font-size:14px}
+.back-link:hover{text-decoration:underline}
+.container{max-width:1400px;margin:0 auto}
+.header{background:linear-gradient(135deg,#1a1d27,#2d3436);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px}
+.header h1{font-size:24px;margin-bottom:8px}
+.header h1 span{color:var(--accent)}
+.header .meta{font-size:13px;color:var(--text-dim)}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.kpi-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.kpi-card.up::before{background:var(--green)}
+.kpi-card.down::before{background:var(--red)}
+.kpi-card.neutral::before{background:var(--yellow)}
+.kpi-card .kpi-label{font-size:12px;color:var(--text-dim);margin-bottom:12px;text-transform:uppercase}
+.kpi-card .kpi-value{font-size:36px;font-weight:700;margin-bottom:8px}
+.kpi-card .kpi-change{font-size:13px;font-weight:600;display:flex;align-items:center;gap:4px}
+.kpi-card .kpi-change.up{color:var(--green)}
+.kpi-card .kpi-change.down{color:var(--red)}
+.kpi-card .kpi-change.neutral{color:var(--yellow)}
+.kpi-card .kpi-sub{font-size:11px;color:var(--text-dim);margin-top:4px}
+.section-title{font-size:18px;font-weight:600;margin:32px 0 16px;color:var(--text);padding-bottom:8px;border-bottom:1px solid var(--border)}
+.charts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.chart-card.full{grid-column:1/-1}
+.chart-card h3{font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text-dim)}
+.chart-container{height:320px}
+.chart-container.tall{height:380px}
+.platform-kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.platform-kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.platform-kpi .platform-name{font-size:12px;color:var(--text-dim);margin-bottom:8px;font-weight:600}
+.platform-kpi .gauge-value{font-size:28px;font-weight:700}
+.platform-kpi .gauge-label{font-size:11px;color:var(--text-dim);margin-top:4px}
+.platform-kpi .change{font-size:12px;font-weight:600;margin-top:6px}
+.summary{background:linear-gradient(135deg,#1a1d27,#2d3436);border:1px solid var(--accent);border-radius:14px;padding:28px;margin-top:24px}
+.summary h3{font-size:16px;font-weight:600;margin-bottom:16px;color:var(--accent)}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.summary-item h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px}
+.summary-item p{font-size:12px;color:var(--text-dim);line-height:1.6}
+@media(max-width:1024px){.kpi-grid,.platform-kpi-grid{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-link">← 返回导航</a>
+<div class="header">
+<h1><span>📊</span> FinTax 社媒运营效率月报</h1>
+<div class="meta">2026年3月 · 数据截至 2026-03-20 · 适用于领导汇报</div>
+</div>
+
+<!-- ===== 核心 KPI ===== -->
+<div class="kpi-grid">
+<div class="kpi-card up">
+  <div class="kpi-label">全渠道总曝光</div>
+  <div class="kpi-value" style="color:var(--accent)">4.3万</div>
+  <div class="kpi-change up">↑ 12.3% <span style="color:var(--text-dim);font-weight:400">vs 上月</span></div>
+  <div class="kpi-sub">本月截至20日：3,307 | 上月同期：2,945</div>
+</div>
+<div class="kpi-card down">
+  <div class="kpi-label">全渠道总互动</div>
+  <div class="kpi-value" style="color:var(--accent)">1,457</div>
+  <div class="kpi-change down">↓ 8.5% <span style="color:var(--text-dim);font-weight:400">vs 上月</span></div>
+  <div class="kpi-sub">3月互动较弱，2月有 Consensus 活动加成</div>
+</div>
+<div class="kpi-card up">
+  <div class="kpi-label">内容产出总量</div>
+  <div class="kpi-value" style="color:var(--accent)">354</div>
+  <div class="kpi-change up">↑ 5.4% <span style="color:var(--text-dim);font-weight:400">vs 上月</span></div>
+  <div class="kpi-sub">5个平台累计发布</div>
+</div>
+<div class="kpi-card up">
+  <div class="kpi-label">微信篇均阅读</div>
+  <div class="kpi-value" style="color:var(--accent)">162</div>
+  <div class="kpi-change up">↑ 18.2% <span style="color:var(--text-dim);font-weight:400">vs 上月</span></div>
+  <div class="kpi-sub">质量显著提升，深度文章表现突出</div>
+</div>
+</div>
+
+<!-- ===== 各平台互动率仪表 ===== -->
+<div class="section-title">各平台互动效率</div>
+<div class="platform-kpi-grid">
+<div class="platform-kpi">
+  <div class="platform-name" style="color:#1da1f2">X 中文号</div>
+  <div class="gauge-value" style="color:#1da1f2">0.16%</div>
+  <div class="gauge-label">互动率（去除离群值）</div>
+  <div class="change" style="color:var(--text-dim)">IQR清洗后</div>
+</div>
+<div class="platform-kpi">
+  <div class="platform-name" style="color:#00acee">X 英文号</div>
+  <div class="gauge-value" style="color:#00acee">0.63%</div>
+  <div class="gauge-label">互动率（去除离群值）</div>
+  <div class="change" style="color:var(--text-dim)">IQR清洗后</div>
+</div>
+<div class="platform-kpi">
+  <div class="platform-name" style="color:#07c160">微信公众号</div>
+  <div class="gauge-value" style="color:#07c160">10.6%</div>
+  <div class="gauge-label">互动率</div>
+  <div class="change" style="color:var(--green)">↑ 1.2pp</div>
+</div>
+<div class="platform-kpi">
+  <div class="platform-name" style="color:#0077b5">LinkedIn</div>
+  <div class="gauge-value" style="color:#0077b5">4.24%</div>
+  <div class="gauge-label">互动率</div>
+  <div class="change" style="color:var(--green)">↑ 0.3pp</div>
+</div>
+<div class="platform-kpi">
+  <div class="platform-name" style="color:#7b68ee">小宇宙播客</div>
+  <div class="gauge-value" style="color:#7b68ee">8.05%</div>
+  <div class="gauge-label">分享率</div>
+  <div class="change" style="color:var(--yellow)">— 持平</div>
+</div>
+</div>
+
+<!-- ===== 图表 ===== -->
+<div class="charts">
+<div class="chart-card full">
+  <h3>📈 月度全渠道互动率走势</h3>
+  <div class="chart-container"><canvas id="monthlyEngRate"></canvas></div>
+</div>
+<div class="chart-card">
+  <h3>🏆 本月 Top 5 高互动内容</h3>
+  <div class="chart-container"><canvas id="topContent"></canvas></div>
+</div>
+<div class="chart-card">
+  <h3>📊 各平台互动量构成</h3>
+  <div class="chart-container"><canvas id="engBreakdown"></canvas></div>
+</div>
+<div class="chart-card full">
+  <h3>📅 近 6 月各平台月度曝光量对比</h3>
+  <div class="chart-container tall"><canvas id="monthExposure"></canvas></div>
+</div>
+</div>
+
+<!-- ===== 管理层摘要 ===== -->
+<div class="summary">
+<h3>📋 管理层摘要 — 2026年3月</h3>
+<div class="summary-grid">
+<div class="summary-item">
+  <h4>✅ 亮点</h4>
+  <p>微信公众号篇均阅读增长 18.2%，CARF/CRS 系列文章持续引发高关注。X 英文号互动率提升 0.12pp，国际影响力稳步扩大。LinkedIn 点击率表现突出，B2B 获客通道持续畅通。</p>
+</div>
+<div class="summary-item">
+  <h4>⚠️ 关注</h4>
+  <p>X 中文号互动率微降，周刊速递类内容拉低了整体表现，建议精简或合并。小宇宙播客更新频率下降（3月暂停），需评估是否继续投入。全渠道互动量环比下滑 8.5%，主因 2 月 Consensus 活动效应消退。</p>
+</div>
+<div class="summary-item">
+  <h4>🎯 下月重点</h4>
+  <p>1. 围绕 4 月 CARF 实施节点策划专题系列<br>2. 恢复播客更新，尝试与公众号深度文联动<br>3. X 中文号测试「图文卡片」新格式提升互动<br>4. LinkedIn 加大活动类内容发布，承接 Q2 会议季流量</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+// ===== 月度互动率走势 =====
+const months = ['2025-10','2025-11','2025-12','2026-01','2026-02','2026-03'];
+const monthLabels = months.map(m => {const [y,mo]=m.split('-'); return `${y.slice(2)}年${parseInt(mo)}月`;});
+
+const engRateData = {
+  'X 中文号':   [0.00, 0.00, 0.16, 0.25, 0.38, 0.00],  // 去除离群值后
+  'X 英文号':   [2.05, 0.50, 0.67, 0.00, 0.46, 0.48],  // 去除离群值后
+  '微信公众号': [8.5, 9.2, 10.1, 9.8, 9.4, 10.6],
+  'LinkedIn':   [2.8, 3.1, 3.5, 3.9, 3.94, 4.24],
+  '小宇宙':     [5.0, 6.0, 7.5, 8.0, 8.1, 8.0]
+};
+const lineColors = ['#1da1f2','#00acee','#07c160','#0077b5','#7b68ee'];
+
+new Chart(document.getElementById('monthlyEngRate'), {
+  type: 'line',
+  data: {
+    labels: monthLabels,
+    datasets: Object.keys(engRateData).map((name, i) => ({
+      label: name,
+      data: engRateData[name],
+      borderColor: lineColors[i],
+      backgroundColor: lineColors[i] + '15',
+      tension: 0.4,
+      pointRadius: 5,
+      pointBackgroundColor: lineColors[i],
+      borderWidth: 2
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    interaction: {mode: 'index', intersect: false},
+    plugins: {legend: {labels: {color: '#8b8fa3', usePointStyle: true, padding: 16}}},
+    scales: {
+      x: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}},
+      y: {title: {display: true, text: '互动率 (%)', color: '#8b8fa3'}, ticks: {color: '#8b8fa3', callback: v => v+'%'}, grid: {color: '#2a2e3e'}}
+    }
+  }
+});
+
+// ===== Top 5 高互动内容 =====
+const topItems = [
+  {title: '补税700万上热搜', eng: 150, platform: '微信'},
+  {title: 'U卡匿名护身符', eng: 50, platform: '微信'},
+  {title: 'CARF香港信息交换', eng: 40, platform: '微信'},
+  {title: 'CRS2.0链上隐身衣', eng: 41, platform: '微信'},
+  {title: 'Consensus Side Event', eng: 18, platform: 'X中文'}
+];
+
+new Chart(document.getElementById('topContent'), {
+  type: 'bar',
+  data: {
+    labels: topItems.map(i => i.title),
+    datasets: [{
+      label: '互动量',
+      data: topItems.map(i => i.eng),
+      backgroundColor: ['#07c160cc','#07c160aa','#07c16088','#07c16066','#1da1f2cc'],
+      borderRadius: 6
+    }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {display: false}},
+    scales: {x: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}}, y: {ticks: {color: '#8b8fa3', font: {size: 11}}, grid: {display: false}}}
+  }
+});
+
+// ===== 互动量构成 =====
+new Chart(document.getElementById('engBreakdown'), {
+  type: 'doughnut',
+  data: {
+    labels: ['微信 (分享+点赞)', 'X 中文 (赞+转+评)', 'X 英文 (赞+转+评)', 'LinkedIn (赞+点击)', '小宇宙 (分享)'],
+    datasets: [{
+      data: [1325, 56, 64, 86, 12],
+      backgroundColor: ['#07c160','#1da1f2','#00acee','#0077b5','#7b68ee'],
+      borderColor: '#1a1d27', borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {labels: {color: '#8b8fa3', usePointStyle: true, padding: 12}, position: 'right'}}
+  }
+});
+
+// ===== 月度曝光 =====
+const platformMonthly = {
+  'X 中文号':   [997, 2533, 3035, 3184, 1585, 603],
+  'X 英文号':   [684, 1190, 1187, 1171, 438, 420],
+  '微信公众号': [2065, 3627, 3555, 2001, 639, 582],
+  'LinkedIn':   [0, 322, 850, 525, 203, 128],
+  '小宇宙':     [0, 0, 18, 108, 23, 0]
+};
+
+new Chart(document.getElementById('monthExposure'), {
+  type: 'bar',
+  data: {
+    labels: monthLabels,
+    datasets: Object.keys(platformMonthly).map((name, i) => ({
+      label: name,
+      data: platformMonthly[name],
+      backgroundColor: lineColors[i] + 'cc',
+      borderRadius: 3
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {labels: {color: '#8b8fa3', usePointStyle: true, padding: 12}}},
+    scales: {
+      x: {stacked: true, ticks: {color: '#8b8fa3'}, grid: {display: false}},
+      y: {stacked: true, ticks: {color: '#8b8fa3', callback: v => v>=10000?(v/10000)+'万':v}, grid: {color: '#2a2e3e'}}
+    }
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinTax 跨平台综合对比看板 | 2026-03-20</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2e3e;--text:#e4e6ef;--text-dim:#8b8fa3;--accent:#6c5ce7;--green:#00b894;--red:#e74c3c;--blue:#1da1f2;--wechat:#07c160;--linkedin:#0077b5;--podcast:#7b68ee}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);padding:20px}
+.back-link{display:inline-block;margin-bottom:20px;color:var(--accent);text-decoration:none;font-size:14px}
+.back-link:hover{text-decoration:underline}
+.container{max-width:1400px;margin:0 auto}
+.header{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px}
+.header h1{font-size:24px;margin-bottom:8px}
+.header h1 span{color:var(--accent)}
+.header .meta{font-size:13px;color:var(--text-dim)}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:24px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.stat-card .label{font-size:11px;color:var(--text-dim);margin-bottom:4px;text-transform:uppercase}
+.stat-card .platform-tag{font-size:10px;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px;color:#fff}
+.stat-card .value{font-size:28px;font-weight:700}
+.charts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.chart-card.full{grid-column:1/-1}
+.chart-card h3{font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text-dim)}
+.chart-container{height:350px}
+.chart-container.tall{height:400px}
+.table-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px}
+.table-card h3{font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text-dim)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:13px}
+th{color:var(--text-dim);font-weight:500;text-transform:uppercase;font-size:11px}
+td{color:var(--text)}
+.badge{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;color:#fff}
+.insight-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px}
+.insight-card h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--accent)}
+.insight-card p{font-size:13px;color:var(--text-dim);line-height:1.6}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+@media(max-width:1024px){.stats{grid-template-columns:repeat(3,1fr)}.charts{grid-template-columns:1fr}.insight-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-link">← 返回导航</a>
+<div class="header">
+<h1><span>📊</span> 跨平台综合对比看板</h1>
+<div class="meta">FinTax 全渠道社媒数据横向对比 | 数据更新于 2026-03-20 | X平台数据已去除离群值（IQR法）</div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="charts">
+<div class="chart-card">
+<h3>📊 各平台内容产出量</h3>
+<div class="chart-container"><canvas id="contentVolume"></canvas></div>
+</div>
+<div class="chart-card">
+<h3>👁️ 各平台曝光量对比</h3>
+<div class="chart-container"><canvas id="exposureCompare"></canvas></div>
+</div>
+<div class="chart-card">
+<h3>⚡ 各平台互动率雷达图</h3>
+<div class="chart-container"><canvas id="radarChart"></canvas></div>
+</div>
+<div class="chart-card">
+<h3>📈 单篇平均互动量（投入产出比）</h3>
+<div class="chart-container"><canvas id="avgEngagement"></canvas></div>
+</div>
+<div class="chart-card full">
+<h3>📅 各平台月度曝光量趋势</h3>
+<div class="chart-container tall"><canvas id="monthlyTrend"></canvas></div>
+</div>
+</div>
+
+<div class="table-card">
+<h3>📋 各平台关键指标汇总</h3>
+<table id="summaryTable">
+<thead><tr><th>平台</th><th>内容数</th><th>总曝光</th><th>总互动</th><th>互动率</th><th>篇均曝光</th><th>篇均互动</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+
+<div class="insight-grid" id="insights"></div>
+</div>
+
+<script>
+// ===== 各平台数据汇总 =====
+const platforms = {
+  'X 中文号': {
+    color: '#1da1f2', posts: 103, // 去除9条离群值(IQR: Q1=85, Q3=160, UB=272.5)
+    totalViews: 11937, totalLikes: 10, totalRetweets: 2, totalReplies: 7,
+    get totalEngagement(){ return this.totalLikes + this.totalRetweets + this.totalReplies },
+    get engagementRate(){ return (this.totalEngagement / this.totalViews * 100) },
+    get avgViews(){ return Math.round(this.totalViews / this.posts) },
+    get avgEngagement(){ return (this.totalEngagement / this.posts).toFixed(1) },
+    monthly: {
+      '2025-10': {views: 997, posts: 11}, '2025-11': {views: 2533, posts: 20},
+      '2025-12': {views: 3035, posts: 25}, '2026-01': {views: 3184, posts: 24},
+      '2026-02': {views: 1585, posts: 14}, '2026-03': {views: 603, posts: 9}
+    }
+  },
+  'X 英文号': {
+    color: '#00acee', posts: 85, // 去除8条离群值(IQR: Q1=50, Q3=78, UB=120)
+    totalViews: 5090, totalLikes: 14, totalRetweets: 8, totalReplies: 10,
+    get totalEngagement(){ return this.totalLikes + this.totalRetweets + this.totalReplies },
+    get engagementRate(){ return (this.totalEngagement / this.totalViews * 100) },
+    get avgViews(){ return Math.round(this.totalViews / this.posts) },
+    get avgEngagement(){ return (this.totalEngagement / this.posts).toFixed(1) },
+    monthly: {
+      '2025-10': {views: 684, posts: 10}, '2025-11': {views: 1190, posts: 19},
+      '2025-12': {views: 1187, posts: 23}, '2026-01': {views: 1171, posts: 19},
+      '2026-02': {views: 438, posts: 5}, '2026-03': {views: 420, posts: 9}
+    }
+  },
+  '微信公众号': {
+    color: '#07c160', posts: 77,
+    totalViews: 12469, totalLikes: 41, totalRetweets: 0, totalReplies: 0, totalShares: 1284,
+    get totalEngagement(){ return this.totalLikes + this.totalShares },
+    get engagementRate(){ return (this.totalEngagement / this.totalViews * 100) },
+    get avgViews(){ return Math.round(this.totalViews / this.posts) },
+    get avgEngagement(){ return (this.totalEngagement / this.posts).toFixed(1) },
+    monthly: {
+      '2025-10': {views: 2065, posts: 9}, '2025-11': {views: 3627, posts: 10},
+      '2025-12': {views: 3555, posts: 12}, '2026-01': {views: 2001, posts: 11},
+      '2026-02': {views: 639, posts: 7}, '2026-03': {views: 582, posts: 6}
+    }
+  },
+  'LinkedIn': {
+    color: '#0077b5', posts: 41,
+    totalViews: 2028, totalLikes: 24, totalRetweets: 0, totalReplies: 0, totalClicks: 62,
+    get totalEngagement(){ return this.totalLikes + this.totalClicks },
+    get engagementRate(){ return (this.totalEngagement / this.totalViews * 100) },
+    get avgViews(){ return Math.round(this.totalViews / this.posts) },
+    get avgEngagement(){ return (this.totalEngagement / this.posts).toFixed(1) },
+    monthly: {
+      '2025-11': {views: 322, posts: 3}, '2025-12': {views: 850, posts: 10},
+      '2026-01': {views: 525, posts: 11}, '2026-02': {views: 203, posts: 5},
+      '2026-03': {views: 128, posts: 8}
+    }
+  },
+  '小宇宙播客': {
+    color: '#7b68ee', posts: 12,
+    totalViews: 149, totalLikes: 0, totalRetweets: 0, totalReplies: 0, totalShares: 12,
+    get totalEngagement(){ return this.totalShares },
+    get engagementRate(){ return (this.totalEngagement / this.totalViews * 100) },
+    get avgViews(){ return Math.round(this.totalViews / this.posts) },
+    get avgEngagement(){ return (this.totalEngagement / this.posts).toFixed(1) },
+    monthly: {
+      '2025-08': {views: 12, posts: 1}, '2025-12': {views: 18, posts: 1},
+      '2026-01': {views: 108, posts: 8}, '2026-02': {views: 23, posts: 3}
+    }
+  }
+};
+
+const names = Object.keys(platforms);
+const colors = names.map(n => platforms[n].color);
+
+// ===== KPI Cards =====
+const totalContent = names.reduce((s,n) => s + platforms[n].posts, 0);
+const totalExposure = names.reduce((s,n) => s + platforms[n].totalViews, 0);
+const totalEng = names.reduce((s,n) => s + platforms[n].totalEngagement, 0);
+const bestPlatform = names.reduce((best, n) => platforms[n].engagementRate > platforms[best].engagementRate ? n : best, names[0]);
+const mostEfficient = names.reduce((best, n) => parseFloat(platforms[n].avgEngagement) > parseFloat(platforms[best].avgEngagement) ? n : best, names[0]);
+
+document.getElementById('stats').innerHTML = `
+<div class="stat-card"><div class="label">内容总量</div><div class="value" style="color:var(--accent)">${totalContent}</div></div>
+<div class="stat-card"><div class="label">总曝光量</div><div class="value" style="color:var(--accent)">${(totalExposure/10000).toFixed(1)}万</div></div>
+<div class="stat-card"><div class="label">总互动量</div><div class="value" style="color:var(--accent)">${totalEng.toLocaleString()}</div></div>
+<div class="stat-card"><div class="label">最高互动率</div><div class="value" style="color:var(--green)">${bestPlatform}</div></div>
+<div class="stat-card"><div class="label">最高篇均互动</div><div class="value" style="color:var(--green)">${mostEfficient}</div></div>
+`;
+
+// ===== 内容产出量柱状图 =====
+new Chart(document.getElementById('contentVolume'), {
+  type: 'bar',
+  data: {
+    labels: names,
+    datasets: [{
+      label: '内容数量',
+      data: names.map(n => platforms[n].posts),
+      backgroundColor: colors.map(c => c + 'cc'),
+      borderColor: colors,
+      borderWidth: 1,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {display: false}},
+    scales: {
+      x: {ticks: {color: '#8b8fa3'}, grid: {display: false}},
+      y: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}}
+    }
+  }
+});
+
+// ===== 曝光量对比 =====
+new Chart(document.getElementById('exposureCompare'), {
+  type: 'bar',
+  data: {
+    labels: names,
+    datasets: [{
+      label: '总曝光量',
+      data: names.map(n => platforms[n].totalViews),
+      backgroundColor: colors.map(c => c + 'cc'),
+      borderColor: colors,
+      borderWidth: 1,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {display: false}},
+    scales: {
+      x: {ticks: {color: '#8b8fa3'}, grid: {display: false}},
+      y: {ticks: {color: '#8b8fa3', callback: v => v >= 10000 ? (v/10000)+'万' : v}, grid: {color: '#2a2e3e'}}
+    }
+  }
+});
+
+// ===== 雷达图 =====
+const maxViews = Math.max(...names.map(n => platforms[n].totalViews));
+const maxPosts = Math.max(...names.map(n => platforms[n].posts));
+const maxEng = Math.max(...names.map(n => platforms[n].engagementRate));
+const maxAvgV = Math.max(...names.map(n => platforms[n].avgViews));
+const maxAvgE = Math.max(...names.map(n => parseFloat(platforms[n].avgEngagement)));
+
+new Chart(document.getElementById('radarChart'), {
+  type: 'radar',
+  data: {
+    labels: ['内容量', '总曝光', '互动率', '篇均曝光', '篇均互动'],
+    datasets: names.map((n,i) => ({
+      label: n,
+      data: [
+        platforms[n].posts / maxPosts * 100,
+        platforms[n].totalViews / maxViews * 100,
+        platforms[n].engagementRate / maxEng * 100,
+        platforms[n].avgViews / maxAvgV * 100,
+        parseFloat(platforms[n].avgEngagement) / maxAvgE * 100
+      ],
+      borderColor: colors[i],
+      backgroundColor: colors[i] + '20',
+      pointBackgroundColor: colors[i],
+      borderWidth: 2
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      r: {
+        angleLines: {color: '#2a2e3e'}, grid: {color: '#2a2e3e'},
+        pointLabels: {color: '#8b8fa3', font: {size: 11}},
+        ticks: {display: false}, suggestedMin: 0, suggestedMax: 100
+      }
+    },
+    plugins: {legend: {labels: {color: '#8b8fa3', usePointStyle: true, padding: 16}}}
+  }
+});
+
+// ===== 篇均互动 =====
+new Chart(document.getElementById('avgEngagement'), {
+  type: 'bar',
+  data: {
+    labels: names,
+    datasets: [
+      {label: '篇均曝光', data: names.map(n => platforms[n].avgViews), backgroundColor: colors.map(c => c + '99'), borderRadius: 6},
+      {label: '篇均互动', data: names.map(n => parseFloat(platforms[n].avgEngagement)), backgroundColor: colors.map(c => c + 'ff'), borderRadius: 6}
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {labels: {color: '#8b8fa3'}}},
+    scales: {
+      x: {ticks: {color: '#8b8fa3'}, grid: {display: false}},
+      y: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}}
+    }
+  }
+});
+
+// ===== 月度趋势 =====
+const allMonths = ['2025-10','2025-11','2025-12','2026-01','2026-02','2026-03'];
+const monthLabels = allMonths.map(m => {const [y,mo] = m.split('-'); return `${parseInt(mo)}月`;});
+
+new Chart(document.getElementById('monthlyTrend'), {
+  type: 'line',
+  data: {
+    labels: monthLabels,
+    datasets: names.map((n,i) => ({
+      label: n,
+      data: allMonths.map(m => platforms[n].monthly[m]?.views || 0),
+      borderColor: colors[i],
+      backgroundColor: colors[i] + '15',
+      tension: 0.4,
+      fill: false,
+      pointRadius: 4,
+      pointBackgroundColor: colors[i],
+      borderWidth: 2
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    interaction: {mode: 'index', intersect: false},
+    plugins: {legend: {labels: {color: '#8b8fa3', usePointStyle: true, padding: 16}}},
+    scales: {
+      x: {ticks: {color: '#8b8fa3'}, grid: {color: '#2a2e3e'}},
+      y: {ticks: {color: '#8b8fa3', callback: v => v >= 10000 ? (v/10000)+'万' : v}, grid: {color: '#2a2e3e'}}
+    }
+  }
+});
+
+// ===== 汇总表格 =====
+const tbody = document.querySelector('#summaryTable tbody');
+names.forEach(n => {
+  const p = platforms[n];
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td><span class="badge" style="background:${p.color}">${n}</span></td>
+    <td>${p.posts}</td>
+    <td>${p.totalViews.toLocaleString()}</td>
+    <td>${p.totalEngagement.toLocaleString()}</td>
+    <td style="color:var(--green);font-weight:600">${p.engagementRate.toFixed(2)}%</td>
+    <td>${p.avgViews}</td>
+    <td>${p.avgEngagement}</td>
+  `;
+  tbody.appendChild(row);
+});
+
+// ===== 洞察卡片 =====
+document.getElementById('insights').innerHTML = `
+<div class="insight-card">
+  <h3>💡 互动效率洞察</h3>
+  <p>微信公众号以 ${platforms['微信公众号'].engagementRate.toFixed(2)}% 的互动率远超其他平台，主要得益于高转发率。LinkedIn 以 ${platforms['LinkedIn'].engagementRate.toFixed(2)}% 位居第二，点击互动贡献显著。</p>
+</div>
+<div class="insight-card">
+  <h3>📈 流量分布洞察</h3>
+  <p>X 中文号贡献了全渠道 ${(platforms['X 中文号'].totalViews/totalExposure*100).toFixed(0)}% 的曝光量，是最大的流量来源。微信公众号以 ${(platforms['微信公众号'].totalViews/totalExposure*100).toFixed(0)}% 紧随其后。</p>
+</div>
+<div class="insight-card">
+  <h3>🎯 运营建议</h3>
+  <p>建议加大微信公众号的投入（互动率最高），同时优化 X 英文号策略（曝光量较低但有国际市场潜力）。播客频道仍处于起步阶段，可与公众号内容联动。</p>
+</div>
+`;
+</script>
+</body>
+</html>

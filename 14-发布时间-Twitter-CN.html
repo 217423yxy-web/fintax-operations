@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@FinTax_CN 发布时间分析 | 贝叶斯加权</title>
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2e3e;--text:#e4e6ef;--text-dim:#8b8fa3;--accent:#1da1f2;--green:#00b894;--red:#e74c3c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);padding:20px}
+.back-link{display:inline-block;margin-bottom:20px;color:var(--accent);text-decoration:none;font-size:14px}
+.container{max-width:1400px;margin:0 auto}
+.header{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px}
+.header h1{font-size:22px;margin-bottom:8px}.header h1 span{color:var(--accent)}
+.header .meta{font-size:13px;color:var(--text-dim)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.stat-card .label{font-size:11px;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase}
+.stat-card .value{font-size:24px;font-weight:700;color:var(--accent)}
+.stat-card .sub{font-size:11px;color:var(--text-dim);margin-top:4px}
+.stat-card.best{border-color:var(--green)}.stat-card.best .value{color:var(--green);font-size:16px;padding-top:4px}
+.section-title{font-size:16px;font-weight:600;margin:28px 0 16px;padding-left:12px;border-left:3px solid var(--accent)}
+.table-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin-bottom:24px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:10px 12px;color:var(--text-dim);font-weight:500;border-bottom:1px solid var(--border);font-size:11px;text-transform:uppercase}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:last-child td{border-bottom:none}
+tr:hover{background:rgba(29,161,242,0.05)}
+.rank{display:inline-flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;font-size:12px;font-weight:700;background:var(--border);color:var(--text)}
+.rank.gold{background:#f1c40f;color:#000}.rank.silver{background:#95a5a6}.rank.bronze{background:#e17055}
+.bar{height:8px;border-radius:4px;background:var(--accent);display:inline-block;vertical-align:middle}
+.algo-box{background:var(--card);border:1px solid var(--accent);border-radius:12px;padding:20px;margin-bottom:24px}
+.algo-box h4{color:var(--accent);font-size:14px;margin-bottom:8px}
+.algo-box p{font-size:13px;color:var(--text-dim);line-height:1.6}
+.algo-box code{background:#2a2e3e;padding:2px 6px;border-radius:4px;font-size:12px;color:var(--green)}
+.insight-box{background:var(--card);border:1px solid var(--green);border-radius:12px;padding:20px;margin-bottom:16px}
+.insight-box h4{color:var(--green);font-size:14px;margin-bottom:8px}
+.insight-box p{font-size:13px;color:var(--text-dim);line-height:1.8}
+.footer{text-align:center;margin-top:40px;padding:20px;color:var(--text-dim);font-size:12px}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-link">← 返回导航</a>
+<div class="header">
+  <h1>𝕏 <span>@FinTax_CN</span> 中文推特 · 发布时间优化分析（贝叶斯加权）</h1>
+  <div class="meta">过滤浏览量 &gt;500 异常值 | 贝叶斯加权 m=3 消除小样本偏差 | 含精确时段 + 3小时窗口 + 星期分析</div>
+</div>
+
+<div class="algo-box">
+  <h4>📐 贝叶斯加权算法说明</h4>
+  <p>公式：<code>得分 = (n × 时段均值 + 3 × 全局均值) / (n + 3)</code><br>
+  样本 n 越少 → 得分越靠近全局均值（不轻易信任）；样本越多 → 得分越接近真实表现。3小时窗口合并增大样本量，结果更稳定。</p>
+</div>
+
+<div class="stats">
+  <div class="stat-card"><div class="label">推文总数</div><div class="value" id="s-total">—</div></div>
+  <div class="stat-card"><div class="label">有效推文（过滤后）</div><div class="value" id="s-valid">—</div></div>
+  <div class="stat-card"><div class="label">全局平均浏览</div><div class="value" id="s-avg">—</div></div>
+  <div class="stat-card best"><div class="label">🏆 最佳3小时窗口</div><div class="value" id="s-best">—</div><div class="sub" id="s-best-sub">—</div></div>
+</div>
+
+<div class="section-title">🕐 精确时段 Top 15（贝叶斯得分）</div>
+<div class="table-card">
+  <table><thead><tr><th>排名</th><th>时间段</th><th>推文数</th><th>原始均值</th><th>贝叶斯得分</th><th></th></tr></thead>
+  <tbody id="hour-tbody"></tbody></table>
+</div>
+
+<div class="section-title">📊 3小时窗口 Top 10（样本更充分，结果更可靠）</div>
+<div class="table-card">
+  <table><thead><tr><th>排名</th><th>时间窗口</th><th>推文数</th><th>原始均值</th><th>贝叶斯得分</th><th></th></tr></thead>
+  <tbody id="win-tbody"></tbody></table>
+</div>
+
+<div class="section-title">📅 星期维度分布</div>
+<div class="table-card">
+  <table><thead><tr><th>排名</th><th>星期</th><th>推文数</th><th>原始均值</th><th>贝叶斯得分</th><th></th></tr></thead>
+  <tbody id="dow-tbody"></tbody></table>
+</div>
+
+<div class="section-title">💡 发布策略建议</div>
+<div class="insight-box"><h4>📱 @FinTax_CN 建议</h4><p id="advice">计算中...</p></div>
+
+<div class="footer">FinTax 社媒数据看板 | @FinTax_CN 发布时间分析 | 贝叶斯加权</div>
+</div>
+
+<script>
+const raw=[
+{dt:"2026-03-27 07:04",v:98},{dt:"2026-03-27 06:28",v:88},{dt:"2026-03-27 06:24",v:120},
+{dt:"2026-03-24 11:37",v:91},{dt:"2026-03-19 09:59",v:72},{dt:"2026-03-18 10:31",v:73},
+{dt:"2026-03-18 09:57",v:59},{dt:"2026-03-18 09:55",v:28},{dt:"2026-03-09 09:36",v:71},
+{dt:"2026-03-09 09:27",v:101},{dt:"2026-03-09 09:17",v:79},{dt:"2026-03-09 09:17",v:63},
+{dt:"2026-03-06 13:54",v:57},{dt:"2026-02-27 12:30",v:62},{dt:"2026-02-26 11:34",v:101},
+{dt:"2026-02-16 07:36",v:113},{dt:"2026-02-16 07:18",v:81},{dt:"2026-02-12 11:39",v:114},
+{dt:"2026-02-12 07:56",v:82},{dt:"2026-02-11 12:00",v:167},{dt:"2026-02-11 08:46",v:86},
+{dt:"2026-02-10 09:34",v:132},{dt:"2026-02-08 07:17",v:126},{dt:"2026-02-07 07:05",v:9402},
+{dt:"2026-02-06 01:32",v:92},{dt:"2026-02-03 09:26",v:120},{dt:"2026-02-03 09:03",v:196},
+{dt:"2026-02-02 12:11",v:113},{dt:"2026-01-31 06:06",v:171},{dt:"2026-01-28 13:20",v:125},
+{dt:"2026-01-27 10:50",v:75},{dt:"2026-01-27 02:35",v:102},{dt:"2026-01-26 10:37",v:197},
+{dt:"2026-01-23 23:49",v:197},{dt:"2026-01-22 14:58",v:91},{dt:"2026-01-21 10:43",v:122},
+{dt:"2026-01-21 10:17",v:181},{dt:"2026-01-20 15:27",v:117},{dt:"2026-01-20 12:52",v:98},
+{dt:"2026-01-17 08:51",v:387},{dt:"2026-01-16 16:08",v:75},{dt:"2026-01-14 15:55",v:318},
+{dt:"2026-01-14 03:42",v:254},{dt:"2026-01-14 02:41",v:132},{dt:"2026-01-12 13:26",v:195},
+{dt:"2026-01-12 13:00",v:80},{dt:"2026-01-09 15:33",v:63},{dt:"2026-01-08 10:10",v:170},
+{dt:"2026-01-05 16:08",v:91},{dt:"2026-01-04 15:02",v:152},{dt:"2026-01-03 15:49",v:97},
+{dt:"2026-01-03 05:34",v:210},{dt:"2026-01-01 14:00",v:79},{dt:"2026-01-01 06:23",v:110},
+{dt:"2025-12-30 15:41",v:106},{dt:"2025-12-29 10:47",v:188},{dt:"2025-12-26 15:27",v:81},
+{dt:"2025-12-26 11:05",v:115},{dt:"2025-12-25 15:25",v:88},{dt:"2025-12-25 15:25",v:104},
+{dt:"2025-12-25 15:25",v:132},{dt:"2025-12-25 15:25",v:30},{dt:"2025-12-24 09:02",v:85},
+{dt:"2025-12-22 12:39",v:94},{dt:"2025-12-19 13:11",v:873},{dt:"2025-12-19 13:07",v:111},
+{dt:"2025-12-18 16:32",v:160},{dt:"2025-12-17 17:08",v:150},{dt:"2025-12-17 14:41",v:116},
+{dt:"2025-12-16 08:03",v:137},{dt:"2025-12-15 07:51",v:137},{dt:"2025-12-14 14:11",v:340},
+{dt:"2025-12-13 08:20",v:4272},{dt:"2025-12-11 10:08",v:151},{dt:"2025-12-10 12:05",v:111},
+{dt:"2025-12-09 15:59",v:94},{dt:"2025-12-09 11:50",v:223},{dt:"2025-12-08 08:31",v:313},
+{dt:"2025-12-04 11:41",v:121},{dt:"2025-12-03 15:31",v:104},{dt:"2025-12-03 11:07",v:94},
+{dt:"2025-12-02 12:24",v:149},{dt:"2025-12-01 15:27",v:154},{dt:"2025-11-30 11:43",v:124},
+{dt:"2025-11-30 11:12",v:120},{dt:"2025-11-30 10:21",v:165},{dt:"2025-11-27 15:16",v:183},
+{dt:"2025-11-27 07:41",v:136},{dt:"2025-11-26 01:11",v:222},{dt:"2025-11-25 17:02",v:109},
+{dt:"2025-11-25 15:40",v:105},{dt:"2025-11-25 15:38",v:359},{dt:"2025-11-24 16:14",v:112},
+{dt:"2025-11-24 16:14",v:96},{dt:"2025-11-24 16:14",v:79},{dt:"2025-11-24 16:14",v:201},
+{dt:"2025-11-24 12:28",v:235},{dt:"2025-11-19 15:48",v:82},{dt:"2025-11-18 15:25",v:146},
+{dt:"2025-11-13 15:50",v:85},{dt:"2025-11-10 16:28",v:90},{dt:"2025-11-08 16:11",v:74},
+{dt:"2025-11-06 14:55",v:60},{dt:"2025-11-03 15:42",v:109},{dt:"2025-10-30 17:17",v:98},
+{dt:"2025-10-28 15:15",v:73},{dt:"2025-10-26 15:54",v:71},{dt:"2025-10-23 15:50",v:57},
+{dt:"2025-10-23 02:39",v:102},{dt:"2025-10-20 15:09",v:69},{dt:"2025-10-16 17:49",v:173},
+{dt:"2025-10-09 14:23",v:104},{dt:"2025-10-06 15:00",v:83},{dt:"2025-10-06 13:58",v:107},
+{dt:"2025-10-03 14:17",v:60},{dt:"2025-10-01 14:12",v:369}
+];
+
+const OUTLIER=500,M=3;
+const DAYS=['周日','周一','周二','周三','周四','周五','周六'];
+const WL=['凌晨 0-3','凌晨 3-6','早晨 6-9','上午 9-12','下午 12-15','下午 15-18','傍晚 18-21','深夜 21-24'];
+
+const f=raw.filter(d=>d.v<=OUTLIER);
+const ga=f.reduce((s,d)=>s+d.v,0)/f.length;
+
+function pdt(s){const d=new Date(s.replace(' ','T'));return{dow:d.getDay(),h:d.getHours()};}
+function bayes(n,avg){return(n*avg+M*ga)/(n+M);}
+function rankEl(i){const c=i===0?'gold':i===1?'silver':i===2?'bronze':'';return`<span class="rank ${c}">${i+1}</span>`;}
+function barHtml(v,mx){return`<span class="bar" style="width:${Math.round(v/mx*180)}px"></span>`;}
+
+// Hour slots
+const hs={};
+f.forEach(d=>{const {dow,h}=pdt(d.dt);const k=`${dow}_${h}`;
+  if(!hs[k])hs[k]={label:`${DAYS[dow]} ${String(h).padStart(2,'0')}:00`,n:0,sum:0};
+  hs[k].sum+=d.v;hs[k].n++;});
+const hr=Object.values(hs).map(s=>{const avg=s.sum/s.n;return{...s,avg,score:bayes(s.n,avg)};})
+  .sort((a,b)=>b.score-a.score).slice(0,15);
+
+// Window slots
+const ws={};
+f.forEach(d=>{const {dow,h}=pdt(d.dt);const w=Math.floor(h/3);const k=`${dow}_${w}`;
+  if(!ws[k])ws[k]={label:`${DAYS[dow]} ${WL[w]}`,n:0,sum:0};
+  ws[k].sum+=d.v;ws[k].n++;});
+const wr=Object.values(ws).map(s=>{const avg=s.sum/s.n;return{...s,avg,score:bayes(s.n,avg)};})
+  .sort((a,b)=>b.score-a.score).slice(0,10);
+
+// DOW slots
+const ds={};
+f.forEach(d=>{const {dow}=pdt(d.dt);
+  if(!ds[dow])ds[dow]={label:DAYS[dow],n:0,sum:0};
+  ds[dow].sum+=d.v;ds[dow].n++;});
+const dr=Object.values(ds).map(s=>{const avg=s.sum/s.n;return{...s,avg,score:bayes(s.n,avg)};})
+  .sort((a,b)=>b.score-a.score);
+
+// Fill stats
+document.getElementById('s-total').textContent=raw.length;
+document.getElementById('s-valid').textContent=f.length;
+document.getElementById('s-avg').textContent=Math.round(ga);
+document.getElementById('s-best').textContent=wr[0].label;
+document.getElementById('s-best-sub').textContent=`得分${Math.round(wr[0].score)}（${wr[0].n}条验证）`;
+
+// Render tables
+const maxH=hr[0].score,maxW=wr[0].score,maxD=dr[0].score;
+document.getElementById('hour-tbody').innerHTML=hr.map((s,i)=>
+  `<tr><td>${rankEl(i)}</td><td>${s.label}</td><td>${s.n}条</td><td>${Math.round(s.avg)}</td><td><strong>${Math.round(s.score)}</strong></td><td>${barHtml(s.score,maxH)}</td></tr>`).join('');
+document.getElementById('win-tbody').innerHTML=wr.map((s,i)=>
+  `<tr><td>${rankEl(i)}</td><td>${s.label}</td><td>${s.n}条</td><td>${Math.round(s.avg)}</td><td><strong>${Math.round(s.score)}</strong></td><td>${barHtml(s.score,maxW)}</td></tr>`).join('');
+document.getElementById('dow-tbody').innerHTML=dr.map((s,i)=>
+  `<tr><td>${rankEl(i)}</td><td>${s.label}</td><td>${s.n}条</td><td>${Math.round(s.avg)}</td><td><strong>${Math.round(s.score)}</strong></td><td>${barHtml(s.score,maxD)}</td></tr>`).join('');
+
+// Advice
+const reliable=wr.filter(s=>s.n>=3);
+const rText=reliable.length>0?reliable.slice(0,2).map(s=>`<strong>${s.label}</strong>（${s.n}条，得分${Math.round(s.score)}）`).join('；'):'暂无3条以上验证的时段';
+const highPot=wr.filter(s=>s.n<3&&s.score>Math.round(ga));
+const hText=highPot.length>0?highPot.slice(0,1).map(s=>`<strong>${s.label}</strong>（得分${Math.round(s.score)}，仅${s.n}条验证）`)[0]:'暂无';
+document.getElementById('advice').innerHTML=
+  `• <strong>最可靠时段</strong>（样本≥3条）：${rText}<br>`+
+  `• <strong>高潜力时段</strong>（待验证）：${hText}<br>`+
+  `• <strong>最佳发帖日</strong>：${dr[0].label}（得分${Math.round(dr[0].score)}）<br>`+
+  `• <strong>建议</strong>：日常内容选择最可靠时段，重要内容尝试高潜力时段；每周累积样本后回顾排名变化`;
+</script>
+</body>
+</html>

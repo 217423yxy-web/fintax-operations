@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinTax Twitter 内容分析报告 | 社媒看板</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2e3e;--text:#e4e6ef;--text-dim:#8b8fa3;--accent:#6c5ce7;--green:#00b894;--red:#e74c3c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:40px 20px}
+.container{max-width:1280px;margin:0 auto}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Back link */
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--text-dim);margin-bottom:32px;transition:color .2s}
+.back-link:hover{color:var(--accent);text-decoration:none}
+.back-link svg{width:16px;height:16px;fill:currentColor}
+
+/* Header */
+.header{text-align:center;margin-bottom:48px}
+.header h1{font-size:32px;font-weight:700;margin-bottom:8px}
+.header h1 span{color:var(--accent)}
+.header .subtitle{font-size:15px;color:var(--text-dim)}
+
+/* Section titles */
+.section-title{font-size:22px;font-weight:700;margin:48px 0 24px;padding-left:14px;border-left:4px solid var(--accent)}
+
+/* Overview cards */
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px}
+.ov-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+.ov-card .label{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.ov-card .value{font-size:30px;font-weight:700;color:var(--accent)}
+.ov-card .value.green{color:var(--green)}
+.ov-card .note{font-size:12px;color:var(--text-dim);margin-top:6px}
+
+/* Chart row */
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+.chart-card h3{font-size:16px;font-weight:600;margin-bottom:16px;color:var(--text)}
+.chart-card canvas{max-height:320px}
+
+/* Tables */
+.table-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:24px;overflow-x:auto}
+.table-card h3{font-size:16px;font-weight:600;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{text-align:left;padding:12px 14px;border-bottom:2px solid var(--border);color:var(--text-dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--border)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(108,92,231,0.06)}
+.sig-yes{color:var(--green);font-weight:700}
+.sig-no{color:var(--text-dim)}
+.sig-near{color:#f39c12;font-weight:600}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.dot.green{background:var(--green)}
+.dot.red{background:var(--red)}
+.dot.yellow{background:#f39c12}
+.highlight-row{background:rgba(0,184,148,0.08) !important}
+.highlight-row td{font-weight:700}
+
+/* Deep dive */
+details{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+details[open]{border-color:var(--accent)}
+summary{padding:18px 24px;cursor:pointer;font-weight:600;font-size:15px;display:flex;align-items:center;gap:10px;list-style:none;user-select:none;transition:background .2s}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'';display:inline-block;width:0;height:0;border-left:6px solid var(--text-dim);border-top:5px solid transparent;border-bottom:5px solid transparent;transition:transform .2s;flex-shrink:0}
+details[open] summary::before{transform:rotate(90deg)}
+summary:hover{background:rgba(108,92,231,0.06)}
+.detail-body{padding:4px 24px 24px}
+.detail-body .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:12px}
+.detail-body .mini-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px}
+.detail-body .mini-card h4{font-size:13px;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px}
+.detail-body .mini-card p{font-size:14px;line-height:1.6}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin:2px;background:rgba(108,92,231,0.15);color:var(--accent)}
+.tag.red{background:rgba(231,76,60,0.15);color:var(--red)}
+.detail-body .stat-line{font-size:14px;line-height:1.8;padding:4px 0;color:var(--text)}
+.detail-body .stat-line strong{color:var(--accent)}
+
+/* Methodology */
+.method-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px}
+.method-card ol{padding-left:20px;line-height:2;font-size:14px;color:var(--text)}
+.method-card ol li{margin-bottom:4px}
+.method-card code{background:var(--bg);padding:2px 8px;border-radius:4px;font-size:13px;color:var(--accent);font-family:'SF Mono',Consolas,monospace}
+
+/* Conclusions */
+.conclusion-list{list-style:none;padding:0}
+.conclusion-list li{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 24px;margin-bottom:12px;font-size:14px;line-height:1.7;display:flex;align-items:flex-start;gap:12px}
+.conclusion-list li .icon{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff}
+.conclusion-list li .icon.check{background:var(--green)}
+.conclusion-list li .icon.warn{background:#f39c12}
+.conclusion-list li .icon.info{background:var(--accent)}
+
+/* Responsive */
+@media(max-width:900px){
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .chart-row{grid-template-columns:1fr}
+  .detail-body .row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .overview-grid{grid-template-columns:1fr}
+  body{padding:20px 12px}
+}
+
+/* Footer */
+.footer{text-align:center;margin-top:60px;padding-top:32px;border-top:1px solid var(--border);color:var(--text-dim);font-size:13px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Back link -->
+<a href="index.html" class="back-link">
+<svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+返回看板首页
+</a>
+
+<!-- Header -->
+<div class="header">
+<h1><span>FinTax</span> Twitter 内容分析报告</h1>
+<div class="subtitle">基于 Mann-Whitney U 检验的统计分析 | 数据截止 2026年3月</div>
+</div>
+
+<!-- Section 1: Overview -->
+<div class="section-title">分析概览</div>
+<div class="overview-grid">
+  <div class="ov-card">
+    <div class="label">CN 账号推文</div>
+    <div class="value">113</div>
+    <div class="note">@FinTax_CN</div>
+  </div>
+  <div class="ov-card">
+    <div class="label">Official 账号推文</div>
+    <div class="value">116</div>
+    <div class="note">@FinTax_Official</div>
+  </div>
+  <div class="ov-card">
+    <div class="label">统计方法</div>
+    <div class="value" style="font-size:18px">Mann-Whitney U</div>
+    <div class="note">非参数检验</div>
+  </div>
+  <div class="ov-card">
+    <div class="label">显著性水平</div>
+    <div class="value green">p &lt; 0.05</div>
+    <div class="note">过滤浏览 &gt; 500 的异常值</div>
+  </div>
+</div>
+
+<!-- Section 2: Category Performance -->
+<div class="section-title">分类表现对比</div>
+<div class="chart-row">
+  <div class="chart-card">
+    <h3>CN @FinTax_CN 各分类中位数浏览</h3>
+    <canvas id="chartCN"></canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Official @FinTax_Official 各分类中位数浏览</h3>
+    <canvas id="chartOfficial"></canvas>
+  </div>
+</div>
+
+<!-- Section 3: Statistical Test Results -->
+<div class="section-title">统计检验结果</div>
+
+<div class="table-card">
+<h3>CN @FinTax_CN</h3>
+<table>
+<thead>
+<tr><th>检验项</th><th>Group A</th><th>Group B</th><th>p-value</th><th>显著?</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>提问/悬念式 vs 直述式</td>
+  <td>中位102 (20条)</td>
+  <td>中位113 (73条)</td>
+  <td>0.387</td>
+  <td><span class="dot red"></span><span class="sig-no">No</span></td>
+</tr>
+<tr>
+  <td>短推&lt;50字 vs 长推&gt;150字</td>
+  <td>中位107 (84条)</td>
+  <td>中位124 (9条)</td>
+  <td>0.203</td>
+  <td><span class="dot red"></span><span class="sig-no">No</span></td>
+</tr>
+<tr>
+  <td>上午6-12 vs 下午12-18</td>
+  <td>中位120 (44条)</td>
+  <td>中位104 (61条)</td>
+  <td>0.257</td>
+  <td><span class="dot red"></span><span class="sig-no">No</span></td>
+</tr>
+<tr>
+  <td>行业类：短文 vs 长文</td>
+  <td>中位115 (45条)</td>
+  <td>中位109 (20条)</td>
+  <td>0.837</td>
+  <td><span class="dot red"></span><span class="sig-no">No</span></td>
+</tr>
+<tr>
+  <td>行业类：上午 vs 下午</td>
+  <td>中位122 (20条)</td>
+  <td>中位104 (41条)</td>
+  <td>0.092</td>
+  <td><span class="dot yellow"></span><span class="sig-near">No (near)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="table-card">
+<h3>Official @FinTax_Official</h3>
+<table>
+<thead>
+<tr><th>检验项</th><th>Group A</th><th>Group B</th><th>p-value</th><th>显著?</th></tr>
+</thead>
+<tbody>
+<tr class="highlight-row">
+  <td>短推&lt;50字 vs 长推&gt;150字</td>
+  <td>中位104 (8条)</td>
+  <td>中位59 (91条)</td>
+  <td>0.031</td>
+  <td><span class="dot green"></span><span class="sig-yes">Yes</span></td>
+</tr>
+<tr>
+  <td>提问/悬念式 vs 直述式</td>
+  <td>中位83 (3条)</td>
+  <td>中位61 (106条)</td>
+  <td>0.138</td>
+  <td><span class="dot red"></span><span class="sig-no">No</span></td>
+</tr>
+<tr>
+  <td>上午6-12 vs 下午12-18</td>
+  <td>中位58 (32条)</td>
+  <td>中位58 (73条)</td>
+  <td>0.802</td>
+  <td><span class="dot red"></span><span class="sig-no">No</span></td>
+</tr>
+<tr>
+  <td>行业类：短文 vs 长文</td>
+  <td>中位86 (6条)</td>
+  <td>中位58 (82条)</td>
+  <td>0.087</td>
+  <td><span class="dot yellow"></span><span class="sig-near">No (near)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 4: Deep Dive -->
+<div class="section-title">分类深度分析</div>
+
+<!-- CN 行业/监管分析 -->
+<details>
+<summary>CN 行业/监管分析 (65条)</summary>
+<div class="detail-body">
+  <div class="row">
+    <div class="mini-card">
+      <h4>Top 3 推文</h4>
+      <p>浏览 <strong>359</strong> (提问式)、<strong>340</strong> (直述)、<strong>318</strong> (直述)</p>
+      <p style="margin-top:8px">Top独有词：<span class="tag">web3</span><span class="tag">中国</span><span class="tag">香港</span><span class="tag">crs</span></p>
+    </div>
+    <div class="mini-card">
+      <h4>Bottom 3 推文</h4>
+      <p>浏览 <strong>60</strong> (直述)、<strong>57</strong> (悬念)、<strong>30</strong> (直述)</p>
+      <p style="margin-top:8px">Bot独有词：<span class="tag red">合规</span><span class="tag red">美国</span><span class="tag red">监管</span></p>
+    </div>
+  </div>
+  <div class="stat-line">开头风格：直述式 <strong>47条</strong> 中位115 / 提问式 <strong>11条</strong> 中位109 / 悬念式 <strong>4条</strong> 中位98</div>
+  <div class="stat-line">长度差异：p=0.837 <span class="sig-no">不显著</span></div>
+  <div class="stat-line">发布时间：上午中位 <strong>122</strong> vs 下午中位 <strong>104</strong>，p=0.092 <span class="sig-near">接近显著</span></div>
+</div>
+</details>
+
+<!-- CN 其他内容 -->
+<details>
+<summary>CN 其他内容 (23条)</summary>
+<div class="detail-body">
+  <div class="row">
+    <div class="mini-card">
+      <h4>Top 3 推文</h4>
+      <p>浏览 <strong>369</strong> (提问/揭秘)、<strong>313</strong> (直述)、<strong>210</strong> (直述)</p>
+      <p style="margin-top:8px">Top独有词：<span class="tag">揭秘</span><span class="tag">香港</span></p>
+    </div>
+    <div class="mini-card">
+      <h4>Bottom 3 推文</h4>
+      <p>浏览 <strong>80</strong>、<strong>79</strong>、<strong>73</strong></p>
+    </div>
+  </div>
+  <div class="stat-line">开头风格：提问式 <strong>2条</strong> 中位369 / 直述式 <strong>20条</strong> 中位106</div>
+</div>
+</details>
+
+<!-- CN 文章分享 -->
+<details>
+<summary>CN 文章分享 (14条)</summary>
+<div class="detail-body">
+  <div class="row">
+    <div class="mini-card">
+      <h4>Top 3 推文</h4>
+      <p>浏览 <strong>196</strong> (标签)、<strong>107</strong> (直述)、<strong>102</strong> (提问)</p>
+      <p style="margin-top:8px">Top独有词：<span class="tag">中国</span><span class="tag">香港</span><span class="tag">carf</span></p>
+    </div>
+    <div class="mini-card">
+      <h4>Bottom 3 推文</h4>
+      <p>浏览 <strong>59</strong>、<strong>57</strong>、<strong>28</strong></p>
+      <p style="margin-top:8px">Bot独有词：<span class="tag red">ama</span><span class="tag red">合规</span><span class="tag red">支付</span><span class="tag red">tax</span><span class="tag red">美国</span><span class="tag red">metamask</span></p>
+    </div>
+  </div>
+</div>
+</details>
+
+<!-- Official 行业/监管 -->
+<details>
+<summary>Official 行业/监管分析 (88条)</summary>
+<div class="detail-body">
+  <div class="row">
+    <div class="mini-card">
+      <h4>Top 3 推文</h4>
+      <p>浏览 <strong>323</strong> (EU CARF FAQ)、<strong>240</strong> (CARF Timeline)、<strong>208</strong> (CARF FAQs Graphic)</p>
+      <p style="margin-top:8px">Top独有词：<span class="tag">faq</span><span class="tag">carf</span></p>
+    </div>
+    <div class="mini-card">
+      <h4>Bottom 3 推文</h4>
+      <p>浏览 <strong>34</strong>、<strong>26</strong>、<strong>21</strong></p>
+      <p style="margin-top:8px">Bot独有词：<span class="tag red">sec</span><span class="tag red">global</span><span class="tag red">compliance</span><span class="tag red">staking</span><span class="tag red">hong kong</span><span class="tag red">mining</span><span class="tag red">tax</span></p>
+    </div>
+  </div>
+  <div class="stat-line">短文 vs 长文：p=0.087 <span class="sig-near">接近显著</span></div>
+</div>
+</details>
+
+<!-- Official 其他内容 -->
+<details>
+<summary>Official 其他内容 (19条)</summary>
+<div class="detail-body">
+  <div class="row">
+    <div class="mini-card">
+      <h4>Top 3 推文</h4>
+      <p>浏览 <strong>108</strong> (转发)、<strong>108</strong> (Crypto Funds)、<strong>104</strong> (图片)</p>
+    </div>
+    <div class="mini-card">
+      <h4>Bottom 3 推文</h4>
+      <p>浏览 <strong>45</strong>、<strong>29</strong>、<strong>18</strong></p>
+    </div>
+  </div>
+</div>
+</details>
+
+<!-- Section 5: Methodology -->
+<div class="section-title">分析方法说明</div>
+<div class="method-card">
+<ol>
+  <li><strong>数据过滤：</strong>移除浏览量 &gt; 500 的推文作为异常值，避免单条爆款干扰统计分析</li>
+  <li><strong>内容分类：</strong>使用加权关键词评分（非简单匹配）—— 每个关键词有独立权重，推文归入得分最高的类别</li>
+  <li><strong>统计方法：</strong>Mann-Whitney U 检验（非参数检验，不假设数据服从正态分布，适合小样本偏态数据）</li>
+  <li><strong>显著性阈值：</strong><code>p &lt; 0.05</code>（即低于5%的概率认为组间差异由随机因素造成）</li>
+  <li><strong>集中趋势：</strong>使用中位数（median）而非均值（mean），避免极端值扭曲结果</li>
+  <li><strong>异常值检测（IQR 法）：</strong>
+    <br>CN 账号 — <code>Q1=85, Q3=154, IQR=69, 上界=258</code>
+    <br>Official 账号 — <code>Q1=51, Q3=86, IQR=35, 上界=138</code>
+  </li>
+</ol>
+</div>
+
+<!-- Section 6: Conclusions -->
+<div class="section-title">核心结论与建议</div>
+<ul class="conclusion-list">
+  <li>
+    <span class="icon check">1</span>
+    <span><strong>唯一统计显著发现：</strong>英文账号短推（&lt;50字）表现显著优于长推（p=0.031），中位数 104 vs 59。建议英文账号优先使用简短推文。</span>
+  </li>
+  <li>
+    <span class="icon check">2</span>
+    <span><strong>CARF 内容主导英文账号高表现推文：</strong>Top 3 推文均与 CARF/EU 税务合规相关，建议持续输出 CARF 系列内容。</span>
+  </li>
+  <li>
+    <span class="icon warn">3</span>
+    <span><strong>其他因素均无统计显著差异：</strong>开头风格（提问/悬念 vs 直述）、发布时间（上午 vs 下午）、链接有无等因素在当前样本量下未显示显著效果。</span>
+  </li>
+  <li>
+    <span class="icon warn">4</span>
+    <span><strong>样本量可能不足：</strong>113/116 条推文可能不足以检测到中等效应量的差异，部分检验的 p 值接近显著线（0.087、0.092）。</span>
+  </li>
+  <li>
+    <span class="icon info">5</span>
+    <span><strong>建议：</strong>积累更多数据（300+ 条推文）后再对其他因素做出确定性结论。当前仅对英文账号推文长度可执行明确策略调整。</span>
+  </li>
+</ul>
+
+<!-- Footer -->
+<div class="footer">FinTax 社媒数据分析看板 &middot; 内容分析报告 &middot; 2026年3月</div>
+
+</div><!-- /container -->
+
+<script>
+// Chart.js defaults for dark theme
+Chart.defaults.color = '#8b8fa3';
+Chart.defaults.borderColor = '#2a2e3e';
+
+// CN chart
+new Chart(document.getElementById('chartCN'), {
+  type: 'bar',
+  data: {
+    labels: ['社交互动\n(5条)', '活动推广\n(6条)', '行业/监管分析\n(65条)', '其他内容\n(23条)', '文章分享\n(14条)'],
+    datasets: [{
+      label: '中位数浏览',
+      data: [137, 132, 113, 104, 82],
+      backgroundColor: ['#6c5ce7','#6c5ce7','#6c5ce7','#6c5ce7','#6c5ce7'].map((c,i) => {
+        const alphas = [1, 0.85, 0.7, 0.55, 0.4];
+        return `rgba(108,92,231,${alphas[i]})`;
+      }),
+      borderRadius: 6,
+      borderSkipped: false,
+      barPercentage: 0.65
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1d27',
+        borderColor: '#2a2e3e',
+        borderWidth: 1,
+        titleColor: '#e4e6ef',
+        bodyColor: '#e4e6ef',
+        callbacks: {
+          label: ctx => `中位数浏览: ${ctx.raw}`
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(42,46,62,0.5)' },
+        ticks: { color: '#8b8fa3' },
+        title: { display: true, text: '中位数浏览量', color: '#8b8fa3' }
+      },
+      y: {
+        grid: { display: false },
+        ticks: { color: '#e4e6ef', font: { size: 12 } }
+      }
+    }
+  }
+});
+
+// Official chart
+new Chart(document.getElementById('chartOfficial'), {
+  type: 'bar',
+  data: {
+    labels: ['活动推广\n(3条)', '合作公告\n(2条)', '其他内容\n(19条)', '行业/监管分析\n(88条)', '社交互动\n(4条)'],
+    datasets: [{
+      label: '中位数浏览',
+      data: [116, 87, 66, 59, 58],
+      backgroundColor: [1, 0.85, 0.7, 0.55, 0.4].map(a => `rgba(0,184,148,${a})`),
+      borderRadius: 6,
+      borderSkipped: false,
+      barPercentage: 0.65
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1d27',
+        borderColor: '#2a2e3e',
+        borderWidth: 1,
+        titleColor: '#e4e6ef',
+        bodyColor: '#e4e6ef',
+        callbacks: {
+          label: ctx => `中位数浏览: ${ctx.raw}`
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(42,46,62,0.5)' },
+        ticks: { color: '#8b8fa3' },
+        title: { display: true, text: '中位数浏览量', color: '#8b8fa3' }
+      },
+      y: {
+        grid: { display: false },
+        ticks: { color: '#e4e6ef', font: { size: 12 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

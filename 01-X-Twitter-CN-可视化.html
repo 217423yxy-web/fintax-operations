@@ -3,136 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FinTax X (Twitter) 中文账号可视化看板 | 2026-03-20</title>
+<title>FinTax FinTax_CN 中文账号 可视化看板 | 2026-04-03</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2e3e;--text:#e4e6ef;--text-dim:#8b8fa3;--accent:#1da1f2;--green:#00b894}
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2e3e;--text:#e4e6ef;--text-dim:#8b8fa3;--accent:#1da1f2;--green:#00b894;--red:#e74c3c;--yellow:#fdcb6e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);padding:20px}
 .back-link{display:inline-block;margin-bottom:20px;color:var(--accent);text-decoration:none;font-size:14px}
 .back-link:hover{text-decoration:underline}
 .container{max-width:1400px;margin:0 auto}
-.header{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px}
-.header h1{font-size:24px;margin-bottom:8px}
+.header{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.header h1{font-size:22px;margin:0}
 .header h1 span{color:var(--accent)}
-.header .meta{font-size:13px;color:var(--text-dim)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
-.stat-card .label{font-size:12px;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase}
-.stat-card .value{font-size:32px;font-weight:700;color:var(--accent)}
-.charts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
-.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.header .meta{font-size:12px;color:var(--text-dim)}
+/* Tab bar */
+.tab-bar{display:flex;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:4px;margin-bottom:20px;width:fit-content}
+.tab{padding:8px 28px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;color:var(--text-dim);transition:all .2s;border:none;background:transparent;letter-spacing:.5px}
+.tab.active{background:var(--accent);color:#fff}
+.tab:hover:not(.active){color:var(--text);background:var(--border)}
+/* Panels */
+.panel{display:none}
+.panel.active{display:block}
+/* KPI row */
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
+.kpi .label{font-size:11px;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px}
+.kpi .value{font-size:26px;font-weight:700;color:var(--accent)}
+.kpi .sub{font-size:11px;color:var(--text-dim);margin-top:4px}
+/* Charts */
+.charts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:20px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px}
 .chart-card.full{grid-column:1/-1}
-.chart-card h3{font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text-dim)}
+.chart-card h3{font-size:13px;font-weight:600;margin-bottom:14px;color:var(--text-dim)}
 .chart-container{height:300px}
+.chart-container.tall{height:360px}
+/* Heatmap */
+.heatmap-wrap{overflow-x:auto}
+.heatmap-grid{display:grid;grid-template-columns:auto repeat(24,1fr);gap:2px;min-width:700px}
+.hm-label{font-size:10px;color:var(--text-dim);display:flex;align-items:center;padding-right:6px;white-space:nowrap}
+.hm-cell{height:28px;border-radius:3px;position:relative;cursor:default;transition:transform .1s}
+.hm-cell:hover{transform:scale(1.15);z-index:2}
+.hm-cell::after{content:attr(title);display:none;position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;white-space:nowrap;pointer-events:none}
+.hm-cell:hover::after{display:block}
+.hm-hour-labels{display:grid;grid-template-columns:auto repeat(24,1fr);gap:2px;min-width:700px;margin-top:2px}
+.hm-hour{font-size:9px;color:var(--text-dim);text-align:center}
+/* Top posts table */
+.top-table{width:100%;border-collapse:collapse}
+.top-table th,.top-table td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--border);font-size:12px}
+.top-table th{color:var(--text-dim);font-weight:500;text-transform:uppercase;font-size:10px}
+.top-table td:first-child,.top-table th:first-child{text-align:left;max-width:400px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top-table tr:hover td{background:rgba(255,255,255,0.02)}
+@media(max-width:900px){.charts{grid-template-columns:1fr}.chart-card.full{grid-column:1}}
 </style>
 </head>
 <body>
 <div class="container">
 <a href="index.html" class="back-link">← 返回导航</a>
 <div class="header">
-<h1><span>𝕏</span> FinTax_CN 中文账号可视化看板</h1>
-<div class="meta">数据更新于 2026-03-20 | 共 112 条推文</div>
+  <div>
+    <h1><span>𝕏</span> FinTax_CN 中文账号</h1>
+    <div class="meta">数据更新于 2026年4月3日 · 共 125 条推文 · 总浏览 31,010</div>
+  </div>
+  <div style="font-size:13px;color:var(--text-dim)">@FinTax_CN</div>
 </div>
-<div class="stats" id="stats"></div>
-<div class="charts">
-<div class="chart-card full">
-<h3>📈 浏览量趋势（最近30条）</h3>
-<div class="chart-container"><canvas id="viewsTrend"></canvas></div>
+
+<!-- Tab Bar -->
+<div class="tab-bar">
+  <button class="tab active" onclick="switchTab('daily',this)">日线</button>
+  <button class="tab" onclick="switchTab('weekly',this)">周线</button>
+  <button class="tab" onclick="switchTab('monthly',this)">月线</button>
 </div>
-<div class="chart-card">
-<h3>💬 互动类型分布</h3>
-<div class="chart-container"><canvas id="engagementPie"></canvas></div>
+
+<!-- ═══ 日线 Panel ═══ -->
+<div id="panel-daily" class="panel active">
+  <div class="kpi-row">
+    <div class="kpi"><div class="label">近30天发布</div><div class="value">15</div><div class="sub">条推文</div></div>
+    <div class="kpi"><div class="label">近30天浏览</div><div class="value">1,163</div><div class="sub">总曝光量</div></div>
+    <div class="kpi"><div class="label">篇均浏览</div><div class="value">78</div><div class="sub">近30天</div></div>
+    <div class="kpi"><div class="label">近30天点赞</div><div class="value">2</div><div class="sub">互动率 0.34%</div></div>
+  </div>
+  <div class="charts">
+    <div class="chart-card full">
+      <h3>📈 近30天每日浏览量趋势</h3>
+      <div class="chart-container tall"><canvas id="d-views"></canvas></div>
+    </div>
+  </div>
+  <!-- 发布时间分析 -->
+  <div class="chart-card" style="margin-bottom:20px">
+    <h3>🕐 发布时间热图（近30天 · 按星期×小时统计发帖次数）</h3>
+    <div class="heatmap-wrap">
+      <div class="heatmap-grid" id="heatmap-grid"></div>
+      <div class="hm-hour-labels" id="hm-hours"></div>
+    </div>
+  </div>
+  <!-- Top posts -->
+  <div class="chart-card">
+    <h3>🏆 近30天 TOP 推文（按浏览量）</h3>
+    <table class="top-table" id="top-daily"></table>
+  </div>
 </div>
-<div class="chart-card">
-<h3>🔥 TOP 10 高浏览量推文</h3>
-<div class="chart-container"><canvas id="topTweets"></canvas></div>
+
+<!-- ═══ 周线 Panel ═══ -->
+<div id="panel-weekly" class="panel">
+  <div class="kpi-row">
+    <div class="kpi"><div class="label">统计周数</div><div class="value">12</div><div class="sub">近12周</div></div>
+    <div class="kpi"><div class="label">总浏览量</div><div class="value">15,228</div><div class="sub">近12周</div></div>
+    <div class="kpi"><div class="label">周均浏览</div><div class="value">1,269</div><div class="sub">每周平均</div></div>
+    <div class="kpi"><div class="label">周均发帖</div><div class="value">4.1</div><div class="sub">条/周</div></div>
+  </div>
+  <div class="charts">
+    <div class="chart-card full">
+      <h3>📈 近12周浏览量走势</h3>
+      <div class="chart-container tall"><canvas id="w-views"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>📝 每周发布数量</h3>
+      <div class="chart-container"><canvas id="w-posts"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>❤️ 每周点赞量</h3>
+      <div class="chart-container"><canvas id="w-likes"></canvas></div>
+    </div>
+  </div>
 </div>
+
+<!-- ═══ 月线 Panel ═══ -->
+<div id="panel-monthly" class="panel">
+  <div class="kpi-row">
+    <div class="kpi"><div class="label">数据跨度</div><div class="value">8</div><div class="sub">个月</div></div>
+    <div class="kpi"><div class="label">总浏览量</div><div class="value">31,010</div><div class="sub">全周期</div></div>
+    <div class="kpi"><div class="label">篇均浏览</div><div class="value">113</div><div class="sub">去离群后</div></div>
+    <div class="kpi"><div class="label">最佳月份</div><div class="value">02月</div><div class="sub">2026-02</div></div>
+  </div>
+  <div class="charts">
+    <div class="chart-card full">
+      <h3>📈 月度浏览量趋势（全周期）</h3>
+      <div class="chart-container tall"><canvas id="m-views"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>📝 月度发布数量</h3>
+      <div class="chart-container"><canvas id="m-posts"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>❤️ 月度点赞量</h3>
+      <div class="chart-container"><canvas id="m-likes"></canvas></div>
+    </div>
+  </div>
 </div>
-</div>
+
+</div><!-- /container -->
+
 <script>
-const data = [{"id": "2034570441692712985", "time": "2026-03-19 09:59:28", "content": "感谢 \n@OSL_HK\n 的邀请与信任。\n\nCRS/CARF 的推进正在重塑全球税务格局，数字资产持有者面临的合规挑战日益复杂。\n\n期待本周六与各位 VIP 客户深入探讨，共同厘清迷雾", "replies": 0, "retweets": 0, "likes": 0, "views": 72}, {"id": "2034216037248610632", "time": "2026-03-18 10:31:11", "content": "第四期 HODLER 论坛（香港站）即将开启。\n\n在加密行业迈入监管深化阶段的关键窗口，FinTax将受邀出席并发表主题分享，聚焦“加密监管时代的税务风险、会计挑战与企业架构设计”。\n\n从合规框架到实", "replies": 0, "retweets": 0, "likes": 0, "views": 73}, {"id": "2034207523990061077", "time": "2026-03-18 09:57:22", "content": "[文章] MetaMask Card落地美国，加密支付卡赛道迎来新变量", "replies": 0, "retweets": 0, "likes": 0, "views": 59}, {"id": "2034206949160665160", "time": "2026-03-18 09:55:05", "content": "[文章] “全球加密枢纽”的二元治理范式：阿联酋加密监管与税收基础研究", "replies": 0, "retweets": 0, "likes": 0, "views": 28}, {"id": "2030940798045261985", "time": "2026-03-09 09:36:33", "content": "[文章] SEC明确券商资本计提新口径，支付型稳定币再迎利好信号", "replies": 0, "retweets": 0, "likes": 0, "views": 71}, {"id": "2030938584585523331", "time": "2026-03-09 09:27:46", "content": "随着数字资产行业逐步走向规范化，全球税务监管体系也在快速成形。\n\n企业与个人如何在不同司法辖区之间实现合规申报与税务管理，正成为行业的重要议题。\n\n3月12日，我们将受 Sinohope Techno", "replies": 0, "retweets": 0, "likes": 0, "views": 101}, {"id": "2030935986121920823", "time": "2026-03-09 09:17:26", "content": "[文章] 重塑价值交换：加密货币支付的技术逻辑、未来趋势与税务挑战", "replies": 0, "retweets": 0, "likes": 0, "views": 79}, {"id": "2030935956367577167", "time": "2026-03-09 09:17:19", "content": "[文章] 为何限制稳定币发行？一文解码巴西虚拟资产法修订背后的监管逻辑", "replies": 0, "retweets": 0, "likes": 0, "views": 63}, {"id": "2029918601743151615", "time": "2026-03-06 13:54:43", "content": "[文章] FinTax 加密合规动态精选——2026年2月第2期", "replies": 0, "retweets": 0, "likes": 0, "views": 57}, {"id": "2027360603371905463", "time": "2026-02-27 12:30:09", "content": "[文章] 质押与挖矿税务研究万字长文：港新美加四地政策比较与洞见", "replies": 0, "retweets": 0, "likes": 0, "views": 62}, {"id": "2026984270502531298", "time": "2026-02-26 11:34:44", "content": "[文章] “稳定币”到底是什么？制度定位、监管框架与税务落点", "replies": 0, "retweets": 0, "likes": 0, "views": 101}, {"id": "2023300505880109363", "time": "2026-02-16 07:36:46", "content": "[文章] 数字资产税务监管的颗粒度革命：美国1099-DA表格解析与合规指南", "replies": 0, "retweets": 0, "likes": 0, "views": 113}, {"id": "2023295866912784842", "time": "2026-02-16 07:18:20", "content": "[图片/媒体推文]", "replies": 0, "retweets": 0, "likes": 0, "views": 81}, {"id": "2021912134423355466", "time": "2026-02-12 11:39:52", "content": "感谢主办方\n@CDDJAP\n  \n@DraperDragon\n  \n@draper_u\n \n\n一次精彩的思想碰撞", "replies": 0, "retweets": 0, "likes": 0, "views": 114}, {"id": "2021855798922555401", "time": "2026-02-12 07:56:01", "content": "[文章] 华尔街的链上转向：纽交所、纳斯达克竞相布局证券通证化", "replies": 0, "retweets": 0, "likes": 0, "views": 82}, {"id": "2021555048346693695", "time": "2026-02-11 12:00:56", "content": "FinTax 将于# The Web3 & Al Consensus Summit& CDDJAP 2026 Spring Cohort Launch 会议上\n\n发表我们关于Web3规模化难点的见解，", "replies": 0, "retweets": 0, "likes": 0, "views": 167}, {"id": "2021506072209461431", "time": "2026-02-11 08:46:20", "content": "[文章] 香港税务局最新FAQ：“双城生活”如何判定税务身份？", "replies": 0, "retweets": 0, "likes": 0, "views": 86}, {"id": "2021155853898764785", "time": "2026-02-10 09:34:41", "content": "#ConsensusHK2026 第一站，以VCs & LPs之夜结束\n\n感谢\n@cryptoflowhk\n \n@WuBlockchain\n \n@SinohopeGroup\n \n@PundiAI\n ", "replies": 0, "retweets": 0, "likes": 0, "views": 132}, {"id": "2020396545137602826", "time": "2026-02-08 07:17:28", "content": "FinTax 在 ConsensusHongKong2026 前夜", "replies": 0, "retweets": 0, "likes": 1, "views": 126}, {"id": "2020031184135467147", "time": "2026-02-07 07:05:39", "content": "在 ConsensusHK2026 一起办了个side event", "replies": 4, "retweets": 2, "likes": 12, "views": 9402}, {"id": "2019585056449392751", "time": "2026-02-06 01:32:54", "content": "[文章] FinTax 加密合规动态精选——2026年1月第2期", "replies": 0, "retweets": 0, "likes": 0, "views": 92}, {"id": "2018617142623748465", "time": "2026-02-03 09:26:45", "content": "这应该是中文里为数不多系统梳理香港最新虚拟资产监管变化的文章之一", "replies": 1, "retweets": 0, "likes": 0, "views": 120}, {"id": "2018611255385399584", "time": "2026-02-03 09:03:21", "content": "[文章] 香港虚拟资产牌照新规解读", "replies": 1, "retweets": 1, "likes": 1, "views": 196}, {"id": "2018296111287709834", "time": "2026-02-02 12:11:05", "content": "欧洲 CARF 直播问答专场", "replies": 0, "retweets": 0, "likes": 1, "views": 113}, {"id": "2017479507394105644", "time": "2026-01-31 06:06:12", "content": "CRS高频问题一览", "replies": 0, "retweets": 0, "likes": 1, "views": 171}, {"id": "2016501631245062269", "time": "2026-01-28 13:20:28", "content": "很高兴与agintender老师共同完成了又一篇CRS/CARF解读长文", "replies": 0, "retweets": 0, "likes": 0, "views": 125}, {"id": "2016101596770533864", "time": "2026-01-27 10:50:52", "content": "欧盟DAC8高频问题一览", "replies": 0, "retweets": 0, "likes": 0, "views": 75}, {"id": "2015977010372485340", "time": "2026-01-27 02:35:48", "content": "[文章] CARF全球实施时间表一览，中国大陆、香港地区承诺情况如何？", "replies": 0, "retweets": 0, "likes": 0, "views": 102}, {"id": "2015735903592100069", "time": "2026-01-26 10:37:44", "content": "关于CRS的7个高频问题一览", "replies": 0, "retweets": 0, "likes": 1, "views": 197}, {"id": "2014847973000413197", "time": "2026-01-23 23:49:25", "content": "最近大家关心的CARF问题，一张图讲清楚", "replies": 0, "retweets": 0, "likes": 0, "views": 197}, {"id": "2014351907712799044", "time": "2026-01-22 14:58:14", "content": "FinTax 加密合规动态精选——2026年1月第1期", "replies": 0, "retweets": 0, "likes": 0, "views": 91}, {"id": "2013925311499346357", "time": "2026-01-21 10:43:05", "content": "CARF 高频问题，一张图讲清楚", "replies": 0, "retweets": 0, "likes": 0, "views": 122}, {"id": "2013918873935114730", "time": "2026-01-21 10:17:31", "content": "CARF/CRS——究竟怎么回事，币圈要开始查税了？", "replies": 0, "retweets": 0, "likes": 0, "views": 181}, {"id": "2013634445782482971", "time": "2026-01-20 15:27:18", "content": "境外收入补税追溯至2017年？纳税人如何化解税务危机", "replies": 0, "retweets": 0, "likes": 0, "views": 117}, {"id": "2013595460326564086", "time": "2026-01-20 12:52:23", "content": "实际情况是有朋友第一次接到通知就是从17年开始查", "replies": 0, "retweets": 0, "likes": 0, "views": 98}, {"id": "2012447757361881347", "time": "2026-01-17 08:51:49", "content": "感谢PANews的认可，FinTax 荣获年度最佳团队专栏与笔耕不辍榜两项荣誉", "replies": 2, "retweets": 0, "likes": 2, "views": 387}, {"id": "2012195295443157280", "time": "2026-01-16 16:08:37", "content": "自由与清晰的博弈：波兰加密税制与监管体系基础研究", "replies": 0, "retweets": 0, "likes": 0, "views": 75}, {"id": "2011467180211364007", "time": "2026-01-14 15:55:21", "content": "CRS2.0落地在即", "replies": 0, "retweets": 0, "likes": 0, "views": 318}, {"id": "2011282846179078291", "time": "2026-01-14 03:42:53", "content": "CARF承诺实施国家及时间一览表", "replies": 0, "retweets": 0, "likes": 0, "views": 254}, {"id": "2011267468128580024", "time": "2026-01-14 02:41:46", "content": "大师兄说的第四点是老误区了", "replies": 0, "retweets": 0, "likes": 0, "views": 132}, {"id": "2010705031519985735", "time": "2026-01-12 13:26:51", "content": "中国大陆暂时没有签署CARF", "replies": 0, "retweets": 0, "likes": 0, "views": 195}, {"id": "2010698513345110104", "time": "2026-01-12 13:00:57", "content": "不是的，虽然不会直接对加密货币征税，但出金之后", "replies": 0, "retweets": 0, "likes": 0, "views": 80}, {"id": "2009649706457284968", "time": "2026-01-09 15:33:22", "content": "迈向更清晰的未来：德国加密税制与监管基础研究", "replies": 0, "retweets": 0, "likes": 0, "views": 63}, {"id": "2009206187363799436", "time": "2026-01-08 10:10:58", "content": "巴基斯坦：探索最高20亿美元主权资产代币化试点", "replies": 0, "retweets": 1, "likes": 1, "views": 170}, {"id": "2008209039499448503", "time": "2026-01-05 16:08:40", "content": "FinTax 加密合规动态精选——2025年12月第2期", "replies": 0, "retweets": 0, "likes": 2, "views": 91}, {"id": "2007830117154984270", "time": "2026-01-04 15:02:58", "content": "感谢Cryptopolitan的采访与报道", "replies": 1, "retweets": 0, "likes": 1, "views": 152}, {"id": "2007479373482299806", "time": "2026-01-03 15:49:14", "content": "英国第三类财产落地：加密资产税收将发生哪些变化", "replies": 0, "retweets": 0, "likes": 0, "views": 97}, {"id": "2007324624279765274", "time": "2026-01-03 05:34:19", "content": "孙哥介入救火并非单纯的个人英雄叙事", "replies": 0, "retweets": 0, "likes": 0, "views": 210}, {"id": "2006727261245026791", "time": "2026-01-01 14:00:36", "content": "TUSD4.56亿美元储备金挪用案始末", "replies": 0, "retweets": 0, "likes": 0, "views": 79}, {"id": "2006612128388829648", "time": "2026-01-01 06:23:07", "content": "FinTax向每一位开拓者与同行者致以新年祝福", "replies": 0, "retweets": 0, "likes": 0, "views": 110}, {"id": "2006027991764328878", "time": "2025-12-30 15:41:58", "content": "美国国税局已于11月向白宫提交一项提案", "replies": 0, "retweets": 0, "likes": 0, "views": 106}, {"id": "2005591514374975953", "time": "2025-12-29 10:47:33", "content": "美国不是CARF的避风港", "replies": 0, "retweets": 0, "likes": 0, "views": 188}, {"id": "2004574807485018614", "time": "2025-12-26 15:27:31", "content": "澳大利亚拟出台加密资产监管新规", "replies": 0, "retweets": 0, "likes": 0, "views": 81}, {"id": "2004508742826827987", "time": "2025-12-26 11:05:00", "content": "U卡本质上属于中心化的预付费支付卡", "replies": 0, "retweets": 0, "likes": 0, "views": 115}, {"id": "2004211800687235368", "time": "2025-12-25 15:25:04", "content": "对欧盟市场的潜在影响", "replies": 0, "retweets": 0, "likes": 0, "views": 88}, {"id": "2004211796966773060", "time": "2025-12-25 15:25:03", "content": "欧盟各国实施时间线", "replies": 1, "retweets": 0, "likes": 0, "views": 104}, {"id": "2004211792478863389", "time": "2025-12-25 15:25:02", "content": "加密税务信息交换倒计时：欧盟 DAC8 一文速览", "replies": 1, "retweets": 0, "likes": 0, "views": 132}, {"id": "2004211794794238156", "time": "2025-12-25 15:25:02", "content": "DAC8 规定了什么", "replies": 1, "retweets": 0, "likes": 0, "views": 30}, {"id": "2003753199585632267", "time": "2025-12-24 09:02:45", "content": "Merry Christmas", "replies": 0, "retweets": 0, "likes": 0, "views": 85}, {"id": "2003082895242797324", "time": "2025-12-22 12:39:12", "content": "美国立法者推动在2026年前解决质押激励的重复征税问题", "replies": 0, "retweets": 0, "likes": 0, "views": 94}, {"id": "2002003975130787860", "time": "2025-12-19 13:11:57", "content": "自2021年以来，中国已将虚拟货币挖矿活动列入淘汰类产业", "replies": 1, "retweets": 1, "likes": 2, "views": 873}, {"id": "2002002898301894713", "time": "2025-12-19 13:07:41", "content": "The importance of the De Minimis tax exemption", "replies": 0, "retweets": 0, "likes": 0, "views": 111}, {"id": "2001692106864111966", "time": "2025-12-18 16:32:42", "content": "FinTax 加密合规动态精选：2025年12月第1期", "replies": 0, "retweets": 0, "likes": 1, "views": 160}, {"id": "2001338758034264378", "time": "2025-12-17 17:08:37", "content": "CARF 对香港 Web3 竞争力的影响是正向的", "replies": 0, "retweets": 0, "likes": 0, "views": 150}, {"id": "2001301846133211323", "time": "2025-12-17 14:41:57", "content": "2025年11月3日，香港证监会发布两份里程碑监管通函", "replies": 0, "retweets": 0, "likes": 0, "views": 116}, {"id": "2000839196802679090", "time": "2025-12-16 08:03:32", "content": "感谢在BitcoinMENA 2025的相遇", "replies": 0, "retweets": 0, "likes": 0, "views": 137}, {"id": "2000473700752302217", "time": "2025-12-15 07:51:11", "content": "政策/税务，国内Web3从业者如何确保安全？", "replies": 0, "retweets": 0, "likes": 0, "views": 137}, {"id": "2000206979575234719", "time": "2025-12-14 14:11:20", "content": "中国香港就实施CARF以及CRS有关修订展开公众咨询", "replies": 0, "retweets": 0, "likes": 0, "views": 340}, {"id": "1999756390055989613", "time": "2025-12-13 08:20:51", "content": "AMA：政策/税务，国内Web3从业者如何确保安全", "replies": 1, "retweets": 1, "likes": 5, "views": 4272}, {"id": "1999058791547990247", "time": "2025-12-11 10:08:51", "content": "FinTax在BitcoinMENA 2025上与BitcoinCom交流", "replies": 0, "retweets": 0, "likes": 0, "views": 151}, {"id": "1998725673242792206", "time": "2025-12-10 12:05:09", "content": "美国正在加速探索代币化资产", "replies": 1, "retweets": 0, "likes": 0, "views": 111}, {"id": "1998422230401745168", "time": "2025-12-09 15:59:23", "content": "加密矿企利润承压，税务筹划是破局之道吗", "replies": 0, "retweets": 0, "likes": 0, "views": 94}, {"id": "1998359587490312240", "time": "2025-12-09 11:50:28", "content": "这里说的是CARF加密资产信息交换框架", "replies": 0, "retweets": 0, "likes": 0, "views": 223}, {"id": "1997947241756295470", "time": "2025-12-08 08:31:57", "content": "口袋罪听起来好像不被盯上就没事", "replies": 0, "retweets": 0, "likes": 0, "views": 313}, {"id": "1996545338069651921", "time": "2025-12-04 11:41:17", "content": "英国为数字资产引入全新的数据客体财产类别", "replies": 0, "retweets": 0, "likes": 0, "views": 121}, {"id": "1996240759423729903", "time": "2025-12-03 15:31:00", "content": "FinTax加密合规动态精选：2025年11月第2期", "replies": 0, "retweets": 0, "likes": 0, "views": 104}, {"id": "1996174332654207042", "time": "2025-12-03 11:07:02", "content": "SEC的Crypto创新豁免框架", "replies": 0, "retweets": 0, "likes": 0, "views": 94}, {"id": "1995831515171971322", "time": "2025-12-02 12:24:48", "content": "各国监管手段和反监管技术几乎同步升级", "replies": 0, "retweets": 0, "likes": 0, "views": 149}, {"id": "1995515147276922978", "time": "2025-12-01 15:27:40", "content": "海外加密资产或将受审查？一文带你了解CARF\n\n美国国税局（IRS）已于11月14日向白宫正式提交名为《经纪人数字交易报告》的提案，核心内容是落实由经合组织推出的“加密资产报告框架”。\n\nCARF是什", "replies": 0, "retweets": 0, "likes": 0, "views": 154}, {"id": "1995096332227494399", "time": "2025-11-30 11:43:27", "content": "与日本相反，西班牙拟将不被视为金融工具的加密资产收益上调至47%。\n\n\nhttps://\ncriptonoticias.com/regulacion/pre\nsentan-cambios-leyes-", "replies": 0, "retweets": 0, "likes": 0, "views": 124}, {"id": "1995088417533964459", "time": "2025-11-30 11:12:00", "content": "英国政府提出对加密资产借贷与流动性池安排采用“无收益、无损失”（no gain, no loss）税务处理方式\n\n这意味着资本利得税的征收延后至发生真正的经济性处置时再进行。", "replies": 0, "retweets": 0, "likes": 0, "views": 120}, {"id": "1995075715323363351", "time": "2025-11-30 10:21:31", "content": "这次十三部委会议，第一次将稳定币定性为：\n\n“稳定币是虚拟货币的一种形式”\n\n这意味稳定币也在虚拟货币的监管体系内，国内任何与虚拟货币相关的业务都面临着高压与不确定性，建议尽早转移至海外合规环境中；\n", "replies": 0, "retweets": 0, "likes": 0, "views": 165}, {"id": "1994062684711735584", "time": "2025-11-27 15:16:06", "content": "加密AI代理时代来临：x402如何改写财税逻辑\n\n5月，Coinbase推出x402，允许API和人工智能代理无缝进行交易，促进工具使用更加高效、无摩擦和可扩展的数字经济\n\n10月x402采用率呈爆炸", "replies": 0, "retweets": 0, "likes": 0, "views": 183}, {"id": "1993948251675087300", "time": "2025-11-27 07:41:23", "content": "向大家致歉，因为系统问题，AMA改期至明天（周五下午四点），还是原链接进入，抱歉！", "replies": 0, "retweets": 0, "likes": 0, "views": 136}, {"id": "1993487855583477799", "time": "2025-11-26 01:11:56", "content": "中国仅凭地下活动算力就已来到第三，算力回流背后，是电力结构、地方经济与行业需求的交叉结果，虽然政策仍未有松动迹象，但光伏产能的过剩和地方经济发展的需要，有望在中央与地方间拉扯出妥协的空间，而这必然伴随", "replies": 0, "retweets": 0, "likes": 0, "views": 222}, {"id": "1993364755310944556", "time": "2025-11-25 17:02:47", "content": "美国法案提议允许使用比特币支付联邦税\n\n并作为战略比特币储备冷储存20年\n\n你会使用比特币缴税吗？\n\n\nhttps://\ndavidson.house.gov/2025/11/rep-wa\nrren-", "replies": 0, "retweets": 0, "likes": 0, "views": 109}, {"id": "1993344076511674769", "time": "2025-11-25 15:40:37", "content": "感谢@WuTalksBlockchain 对本次AMA的大力支持", "replies": 0, "retweets": 0, "likes": 0, "views": 105}, {"id": "1993343420627067376", "time": "2025-11-25 15:38:00", "content": "Web3 收入，要在国内缴税吗？\n\n国内掀起第二波境外收入补税潮，追缴或成常态\n\n想知道你的Web3收入会不会被追缴\n\n来 FinTax 答疑专场，解答一切税务疑问\n\n扫码留下问题，专家现场解答\n\n ", "replies": 0, "retweets": 0, "likes": 0, "views": 359}, {"id": "1992990266392023299", "time": "2025-11-24 16:14:42", "content": "对个人而言，这个时代的核心关键词只有一个：先于监管合规。\n\n这意味着：\n梳理所有境外账户与加密资产，建立完整的交易记录档案\n分类不同类型的收入，准确判断收入性质与完税情况\n已在境外完税需准备抵免凭证\n", "replies": 0, "retweets": 0, "likes": 0, "views": 112}, {"id": "1992990269093171692", "time": "2025-11-24 16:14:42", "content": "过去的“境外隐私”已经结束。\n全球税务透明化正快速推进，加密资产也不例外。\n\n尽早做准备：\n\n 读懂监管逻辑\n 提前建立个人/机构的税务合规体系\n 在新周期中获得安全与优势\n\n具体信息请阅读：\nhtt", "replies": 0, "retweets": 0, "likes": 0, "views": 96}, {"id": "1992990250470367293", "time": "2025-11-24 16:14:38", "content": "“境外隐私”为何不复存在？\n\n根本驱动是 CRS + 全球信息自动交换 的全面落地。\n\n中国可从 100+ 国家获取关键数据，包括：\n境外金融账户余额\n收到的利息、股息\n股票与基金转让所得\n身份与税收", "replies": 0, "retweets": 0, "likes": 0, "views": 79}, {"id": "1992990247727349854", "time": "2025-11-24 16:14:37", "content": "补税潮又起，跨境收入稽查或成常态 \n\n11/11，中国多地税务部门同步披露境外收入未申报案例，追缴税款、滞纳金从51万元到698.7万元不等；\n\n这是今年第二波，以后会愈加频繁。", "replies": 0, "retweets": 0, "likes": 0, "views": 201}, {"id": "1992933334242976150", "time": "2025-11-24 12:28:28", "content": "日本金融厅已决定将加密资产视为“金融商品”\n\n这意味日本加密资产税率将从最高55%调整至20%\n\n这或许会带来亚洲加密格局的重新调整\n\n来自日本《朝日新闻》：\n\nhttps://\nasahi.com/", "replies": 0, "retweets": 0, "likes": 0, "views": 235}, {"id": "1991171635261653297", "time": "2025-11-19 15:48:06", "content": "FinTax 加密合规动态精选：2025年11月第1期\n\n本报告总结了2025年11月上半月全球加密行业在税务、监管方面的关键进展。", "replies": 0, "retweets": 0, "likes": 0, "views": 82}, {"id": "1990803542207353148", "time": "2025-11-18 15:25:26", "content": "东南亚RWA新引擎：马来西亚的稳健创新与Web3新机遇\n\n2025年10月31日，马来西亚国家银行（Bank Negara Malaysia,", "replies": 0, "retweets": 0, "likes": 0, "views": 146}, {"id": "1988998034022391869", "time": "2025-11-13 15:50:59", "content": "一文读懂智利加密资产税收与监管制度", "replies": 0, "retweets": 0, "likes": 0, "views": 85}, {"id": "1987920363687473295", "time": "2025-11-10 16:28:43", "content": "加拿大取消燃料碳税，加密矿企迎来能源成本新博弈", "replies": 0, "retweets": 0, "likes": 0, "views": 90}, {"id": "1987191365248401870", "time": "2025-11-08 16:11:56", "content": "税务海关总署寄出万封警告信：英国加密资产税收监管动向全景解读", "replies": 0, "retweets": 0, "likes": 0, "views": 74}, {"id": "1986447435867300091", "time": "2025-11-06 14:55:49", "content": "周杰伦“江湖追杀令”的背后：加密资产代持行为的税务与法律隐忧", "replies": 0, "retweets": 0, "likes": 0, "views": 60}, {"id": "1985371925632483437", "time": "2025-11-03 15:42:08", "content": "FinTax 加密合规动态精选：2025年10月第2期\n\n本报告总结了2025年10月下半月全球加密资产行业在税务和监管方面的重要进展。\n\n在税务方面，英国税务海关总署加强执法力度，向涉嫌少报或逃避加", "replies": 0, "retweets": 0, "likes": 0, "views": 109}, {"id": "1983946439643553991", "time": "2025-10-30 17:17:45", "content": "数百名币安用户遭遇税务调查的背后：印度加密资产税收与监管制度一览", "replies": 0, "retweets": 0, "likes": 0, "views": 98}, {"id": "1983190890043871351", "time": "2025-10-28 15:15:28", "content": "比特币高税负成难题？基于矿机折旧政策的税筹新思路", "replies": 0, "retweets": 0, "likes": 0, "views": 73}, {"id": "1982475914828300472", "time": "2025-10-26 15:54:25", "content": "从碎片化监管到体系化治理：一文解读欧盟MiCAR监管框架\n\nMiCAR的提出背景可以追溯至欧盟2020年提出的“数字金融战略”（Digital Finance", "replies": 0, "retweets": 0, "likes": 0, "views": 71}, {"id": "1981387688222900379", "time": "2025-10-23 15:50:11", "content": "土耳其加密资产制度转向的背后：税收与监管制度概览", "replies": 0, "retweets": 0, "likes": 0, "views": 57}, {"id": "1981188698596421679", "time": "2025-10-23 02:39:29", "content": "【精英荟-数字资产该如何纳税？】北京时间今晚8点半，FinTax Founder & CEO Calix将携手香港注册数字资产分析师学会执行秘书长Romeo，为您带来最干货的线上直播，与您共探数字资产", "replies": 0, "retweets": 0, "likes": 0, "views": 102}, {"id": "1980290249231388968", "time": "2025-10-20 15:09:22", "content": "FinTax 加密合规动态精选：2025年10月第1期\n\n本报告总结了2025年10月上半月全球加密资产行业的关键税收和监管进展。\n\n税收方面，全球税务部门动作频频。在美国，Roger", "replies": 0, "retweets": 0, "likes": 0, "views": 69}, {"id": "1978881001729462607", "time": "2025-10-16 17:49:31", "content": "加密世界遇上离岸金融：泽西岛的加密资产税收与监管制度", "replies": 0, "retweets": 0, "likes": 0, "views": 173}, {"id": "1976292333638516956", "time": "2025-10-09 14:23:04", "content": "美国或有更多加密税收利好？一文速览参议院加密税收听证会\n\n2025年10月1日，美国参议院财政委员会召开了题为“审查数字资产税收”（Examining the Taxation of Digital ", "replies": 0, "retweets": 0, "likes": 0, "views": 104}, {"id": "1975214467047702580", "time": "2025-10-06 15:00:01", "content": "亲爱的关注FinTax的朋友们：\n\n月到中秋分外明。值此中秋佳节，FinTax恭祝您福星高照，平安常伴，阖家幸福！\n\nFinTax团队", "replies": 0, "retweets": 0, "likes": 0, "views": 83}, {"id": "1975199047167434866", "time": "2025-10-06 13:58:44", "content": "万字长文详解日本加密税收和监管制度\n\n随着WebX", "replies": 0, "retweets": 0, "likes": 0, "views": 107}, {"id": "1974116529123045485", "time": "2025-10-03 14:17:12", "content": "FinTax加密合规动态精选：2025年9月第2期\n\n本报告总结了2025年9月下半月全球加密资产行业在税务、会计与监管方面的重要进展。 \n\n在税务方面，阿联酋签署《加密资产报告框架（CARF）多边协", "replies": 0, "retweets": 0, "likes": 0, "views": 60}, {"id": "1973390563761332394", "time": "2025-10-01 14:12:28", "content": "揭秘香港免税的“潜规则”：为何你的离岸利润豁免总被拒？", "replies": 0, "retweets": 0, "likes": 0, "views": 369}];
-const totalViews = data.reduce((s,t)=>s+t.views,0);
-const totalLikes = data.reduce((s,t)=>s+t.likes,0);
-const totalRetweets = data.reduce((s,t)=>s+t.retweets,0);
-const totalReplies = data.reduce((s,t)=>s+t.replies,0);
-const avgEngagement = ((totalLikes+totalRetweets+totalReplies)/totalViews*100).toFixed(2);
+// ── Tab switching ──
+let charts = {};
+function switchTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'weekly' && !charts.wv) initWeekly();
+  if (name === 'monthly' && !charts.mv) initMonthly();
+}
 
-document.getElementById('stats').innerHTML = `
-<div class="stat-card"><div class="label">推文总数</div><div class="value">112</div></div>
-<div class="stat-card"><div class="label">总浏览量</div><div class="value">${totalViews.toLocaleString()}</div></div>
-<div class="stat-card"><div class="label">总点赞数</div><div class="value">${totalLikes.toLocaleString()}</div></div>
-<div class="stat-card"><div class="label">平均互动率</div><div class="value">${avgEngagement}%</div></div>
-`;
+// ── Chart defaults ──
+const CD = {
+  responsive: true, maintainAspectRatio: false,
+  plugins: { legend: { labels: { color: '#8b8fa3', font: { size: 11 } } } },
+  scales: {
+    x: { ticks: { color: '#8b8fa3', font: { size: 10 } }, grid: { color: '#1e2230' } },
+    y: { ticks: { color: '#8b8fa3', font: { size: 10 } }, grid: { color: '#1e2230' } }
+  }
+};
+function deepMerge(a, b) { return Object.assign({}, a, b); }
 
-// 浏览量趋势
-const recent30 = data.slice(0,30).reverse();
-new Chart(document.getElementById('viewsTrend'), {
-  type: 'line',
-  data: {
-    labels: recent30.map((t,i)=>`推文${i+1}`),
-    datasets: [{
-      label: '浏览量',
-      data: recent30.map(t=>t.views),
-      borderColor: '#1DA1F2',
-      backgroundColor: 'rgba(29,161,242,0.1)',
-      tension: 0.4,
-      fill: true
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { labels: { color: '#8b8fa3' } } },
-    scales: {
-      x: { ticks: { color: '#8b8fa3' }, grid: { color: '#2a2e3e' } },
-      y: { ticks: { color: '#8b8fa3' }, grid: { color: '#2a2e3e' } }
+const accent = '#1da1f2';
+
+// ── Daily data ──
+const dLabels = ["02-26", "02-27", "02-28", "03-01", "03-02", "03-03", "03-04", "03-05", "03-06", "03-07", "03-08", "03-09", "03-10", "03-11", "03-12", "03-13", "03-14", "03-15", "03-16", "03-17", "03-18", "03-19", "03-20", "03-21", "03-22", "03-23", "03-24", "03-25", "03-26", "03-27"];
+const dViews  = [101, 62, 0, 0, 63, 0, 79, 0, 158, 0, 0, 71, 0, 0, 0, 28, 0, 0, 59, 0, 73, 72, 0, 0, 0, 0, 91, 0, 0, 306];
+// ── Weekly data ──
+const wLabels = ["01/09", "01/16", "01/23", "01/30", "02/06", "02/13", "02/20", "02/27", "03/06", "03/13", "03/20", "03/27"];
+const wViews  = [324, 1441, 806, 670, 10049, 581, 194, 163, 300, 99, 204, 397];
+const wPosts  = [3, 7, 6, 5, 6, 5, 2, 2, 4, 2, 3, 4];
+const wLikes  = [3, 2, 0, 2, 15, 0, 0, 0, 0, 0, 0, 2];
+
+// ── Monthly data ──
+const mLabels = ["08\u6708", "10\u6708", "10\u6708", "11\u6708", "12\u6708", "01\u6708", "02\u6708", "03\u6708"];
+const mViews  = [1929, 114, 1366, 2892, 8833, 3889, 10987, 1000];
+const mPosts  = [8, 1, 12, 21, 29, 26, 15, 13];
+
+// ── Heatmap data ──
+const hmData = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+
+// Top posts
+const topD30 = [{"t": "[\u8f6c\u53d1\u63a8\u6587]", "v": 120, "l": 0, "rt": 1}, {"t": "\u968f\u7740\u6570\u5b57\u8d44\u4ea7\u884c\u4e1a\u9010\u6b65\u8d70\u5411\u89c4\u8303\u5316\uff0c\u5168\u7403\u7a0e\u52a1\u76d1\u7ba1\u4f53\u7cfb\u4e5f\u5728\u5feb\u901f\u6210\u5f62\u3002\n\n\u4f01\u4e1a\u4e0e\u4e2a\u4eba\u5982\u4f55\u5728\u4e0d\u540c\u53f8\u6cd5\u8f96\u533a\u4e4b\u95f4\u5b9e", "v": 101, "l": 0, "rt": 0}, {"t": "[\u6587\u7ae0] \u201c\u7a33\u5b9a\u5e01\u201d\u5230\u5e95\u662f\u4ec0\u4e48\uff1f\u5236\u5ea6\u5b9a\u4f4d\u3001\u76d1\u7ba1\u6846\u67b6\u4e0e\u7a0e\u52a1\u843d\u70b9", "v": 101, "l": 0, "rt": 0}, {"t": "\u8fd9\u5468\u65e5\uff0cFintax\u5c06\u51fa\u5e2d\u6e2f\u4e2d\u5927@CuhkWeb3Asso FMBA Web3 \u534f\u4f1a\u6625\u8317\u8bba\u575b\uff0c\u53c2\u4e0e\u538b", "v": 98, "l": 2, "rt": 0}, {"t": "3\u670822\u65e5\uff0cCalix \u5728\u9999\u6e2f\u7b2c\u56db\u671f HODLER \u8bba\u575b\u5c31\u4f01\u4e1a\u6570\u5b57\u8d44\u4ea7\u7a0e\u52a1\u89c4\u5212\u8fdb\u884c\u4e86\u4e3b\u9898\u5206\u4eab\u3002", "v": 91, "l": 0, "rt": 0}];
+
+// ── Init Daily ──
+(function initDaily() {
+  charts.dv = new Chart(document.getElementById('d-views'), {
+    type: 'line',
+    data: { labels: dLabels, datasets: [{ label: '浏览量', data: dViews, borderColor: accent, backgroundColor: accent + '22', fill: true, tension: 0.3, pointRadius: 3 }] },
+    options: deepMerge(CD, {})
+  });
+  // Heatmap
+  const weekNames = ['周一','周二','周三','周四','周五','周六','周日'];
+  const grid = document.getElementById('heatmap-grid');
+  let maxVal = Math.max(...hmData.flat(), 1);
+  let html = '';
+  for (let w = 0; w < 7; w++) {
+    html += `<div class="hm-label">${weekNames[w]}</div>`;
+    for (let h = 0; h < 24; h++) {
+      const v = hmData[w][h];
+      const alpha = v ? (0.15 + (v/maxVal) * 0.85).toFixed(2) : 0.05;
+      const bg = v ? `rgba(29,155,240,${alpha})` : '#1a1d27';
+      html += `<div class="hm-cell" style="background:${bg}" title="${weekNames[w]} ${h}:00 · ${v} 条"></div>`;
     }
   }
-});
+  grid.innerHTML = html;
+  const hoursEl = document.getElementById('hm-hours');
+  let hHtml = '<div></div>';
+  for (let h = 0; h < 24; h++) hHtml += `<div class="hm-hour">${h}</div>`;
+  hoursEl.innerHTML = hHtml;
 
-// 互动分布
-new Chart(document.getElementById('engagementPie'), {
-  type: 'doughnut',
-  data: {
-    labels: ['点赞', '转发', '回复'],
-    datasets: [{
-      data: [totalLikes, totalRetweets, totalReplies],
-      backgroundColor: ['#E0245E', '#17BF63', '#1DA1F2']
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { labels: { color: '#8b8fa3' }, position: 'bottom' } }
-  }
-});
+  // Top table
+  const tbl = document.getElementById('top-daily');
+  tbl.innerHTML = '<thead><tr><th>推文内容</th><th>浏览</th><th>点赞</th><th>转发</th></tr></thead><tbody>' +
+    topD30.map(p => `<tr><td title="${p.t}">${p.t}</td><td>${p.v.toLocaleString()}</td><td>${p.l}</td><td>${p.rt}</td></tr>`).join('') +
+    '</tbody>';
+})();
 
-// TOP 10
-const top10 = [...data].sort((a,b)=>b.views-a.views).slice(0,10);
-new Chart(document.getElementById('topTweets'), {
-  type: 'bar',
-  data: {
-    labels: top10.map((t,i)=>`#${i+1}`),
-    datasets: [{
-      label: '浏览量',
-      data: top10.map(t=>t.views),
-      backgroundColor: 'rgba(29,161,242,0.7)',
-      borderColor: '#1DA1F2',
-      borderWidth: 1
-    }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: {
-      x: { ticks: { color: '#8b8fa3' }, grid: { color: '#2a2e3e' } },
-      y: { ticks: { color: '#8b8fa3' }, grid: { display: false } }
-    }
-  }
-});
+// ── Init Weekly (lazy) ──
+function initWeekly() {
+  charts.wv = new Chart(document.getElementById('w-views'), {
+    type: 'bar',
+    data: { labels: wLabels, datasets: [
+      { label: '浏览量', data: wViews, backgroundColor: accent + 'bb', borderRadius: 4, order: 2 },
+      { label: '浏览趋势', data: wViews, type: 'line', borderColor: accent, fill: false, tension: 0.3, pointRadius: 3, order: 1 }
+    ]},
+    options: deepMerge(CD, {})
+  });
+  charts.wp = new Chart(document.getElementById('w-posts'), {
+    type: 'bar',
+    data: { labels: wLabels, datasets: [{ label: '发布数', data: wPosts, backgroundColor: '#00b89488', borderRadius: 4 }] },
+    options: deepMerge(CD, {})
+  });
+  charts.wl = new Chart(document.getElementById('w-likes'), {
+    type: 'bar',
+    data: { labels: wLabels, datasets: [{ label: '点赞', data: wLikes, backgroundColor: '#e74c3c88', borderRadius: 4 }] },
+    options: deepMerge(CD, {})
+  });
+}
+
+// ── Init Monthly (lazy) ──
+function initMonthly() {
+  charts.mv = new Chart(document.getElementById('m-views'), {
+    type: 'bar',
+    data: { labels: mLabels, datasets: [
+      { label: '浏览量', data: mViews, backgroundColor: accent + 'bb', borderRadius: 4, order: 2 },
+      { label: '趋势线', data: mViews, type: 'line', borderColor: accent, fill: false, tension: 0.4, pointRadius: 4, order: 1 }
+    ]},
+    options: deepMerge(CD, {})
+  });
+  charts.mp = new Chart(document.getElementById('m-posts'), {
+    type: 'bar',
+    data: { labels: mLabels, datasets: [{ label: '发布数', data: mPosts, backgroundColor: '#00b89488', borderRadius: 4 }] },
+    options: deepMerge(CD, {})
+  });
+  // Monthly likes
+  const mLikesData = [21, 2, 0, 0, 8, 8, 15, 2];
+  charts.ml = new Chart(document.getElementById('m-likes'), {
+    type: 'bar',
+    data: { labels: mLabels, datasets: [{ label: '点赞', data: mLikesData, backgroundColor: '#e74c3c88', borderRadius: 4 }] },
+    options: deepMerge(CD, {})
+  });
+}
 </script>
 </body>
 </html>
