@@ -157,7 +157,70 @@
 
 ---
 
-### 六、工具配置与文档
+### 六、X 情报监控与互动
+
+**目的：** 系统性发现加密税务赛道的高价值 X 帖子，以 FinTax 品牌身份进行专业互动，扩大品牌曝光。
+
+**流程：**
+1. **企业数据库建设**：整理 CARF 定义的 10 个加密赛道中 312 家头部企业的 X 账号
+2. **推文采集**：用 twikit（免费）或 TwitterAPI.io（付费）抓取目标企业最新推文
+3. **翻译 + 分析**：Bing 翻译推文 → Claude 评估 FinTax 互动价值 → 标注互动角度
+4. **知识库匹配**：将高价值推文与 TaxDAO 文章库匹配，生成有据可查的专业回复
+5. **发布互动**：通过 `xactions/quote_tweet.js` 发布引用转推，每条间隔 3-5 分钟
+
+**工具：**
+- `sector-radar/fetch_tweets_free.py` — twikit 免费抓取（需 X 账号 cookies）
+- `sector-radar/translate_and_analyze.py` — 翻译 + 互动机会分析
+- `xactions/quote_tweet.js` — Puppeteer 无头浏览器发布引用转推
+- TwitterAPI.io — 付费精准搜索（Key: `new1_ad975caf0bde4ecb860267533dcfb662`，需充值）
+
+**产出文件（`07-X情报与互动/`）：**
+- `sector-radar/` — 完整工具源码（含 CLAUDE.md、PLAYBOOK.md 操作手册）
+- `sector-radar/output/CARF_10赛道企业X账号_完整版.xlsx` — 312 家企业数据库
+- `sector-radar/output/cex_tweets_cn_analyzed.xlsx` — CEX 推文翻译 + 互动分析
+- `tweets_kb_replies.xlsx` — 结合 TaxDAO 知识库生成的专业回复建议
+- `FinTax-X热点分析与自动互动方案.md` — 完整系统架构设计方案
+- `topic-research-demo.html` — 选题调研模块演示页面
+
+**注意事项：**
+- twikit cookies 有效期约 1-2 周，过期需重新从浏览器导出 `~/twitter_cookies.json`
+- `sectors.py` 中部分 handle 有 "abordc" 错误，详见 `sector-radar/CLAUDE.md` 第四节
+
+---
+
+### 七、知识库配置与使用
+
+**目的：** 将 TaxDAO 文章库作为 FinTax 的专业知识库，支撑 AI 生成有据可查的高质量内容和回复。
+
+**知识库来源：**
+- **TaxDAO 文章库**：收录 TaxDAO 发布的加密税务合规专业文章，共约 566 篇（英文）/ 11,894 篇（含中文翻译版）
+- 覆盖话题：CARF 合规、DeFi 税务、NFT 税务、各国监管政策、加密会计等
+
+**两种使用方式：**
+
+**方式 A：脚本本地检索（轻量）**
+```bash
+# 关键词匹配搜索文章库，生成 Claude 提示词
+python analyze_tweets_with_kb.py
+```
+- 文章库文件：`08-知识库/taxdao_articles_cn.csv`
+- 不需要部署额外服务，直接在脚本中做关键词匹配
+- 适合批量处理推文回复场景
+
+**方式 B：Dify RAG 平台（完整）**
+- 本地部署 Dify（`~/dify/`），将 CSV 文章库导入为 Knowledge Base
+- 通过 Dify API 做向量检索，召回最相关文章
+- 上传脚本：`05-工具脚本/自动化/upload_taxdao_to_dify.py`
+- 适合构建完整的 RAG 应用或 Agent
+
+**产出文件（`08-知识库/`）：**
+- `taxdao_articles.csv` — TaxDAO 文章库（566 篇英文，含标题/关键词/摘要）
+- `taxdao_articles_cn.csv` — TaxDAO 文章库中文版（11,894 篇，含中文翻译）
+- `搜索API配置指南.md` — 搜索 API 配置说明
+
+---
+
+### 八、工具配置与文档
 
 **工具使用说明（`06-工具配置/使用说明/`）：**
 - `Chrome_MCP_Server_使用示例.md` — Chrome MCP 控制浏览器的使用方式
@@ -200,8 +263,17 @@ fintax-operations/
 │   ├── 数据采集/        # 公众号、X平台采集脚本 (3个)
 │   ├── 数据处理/        # 分析、清洗、翻译脚本 (3个)
 │   └── 自动化/          # 上传、部署、启动脚本 (4个)
-└── 06-工具配置/
-    ├── 使用说明/        # Chrome/微信/X/Apollo工具说明 (4个md)
-    ├── 部署指南/        # AiToEarn、Kiro迁移 (2个md)
-    └── 内部文档/        # AI架构、系统规划 (3个md)
+├── 06-工具配置/
+│   ├── 使用说明/        # Chrome/微信/X/Apollo工具说明 (4个md)
+│   ├── 部署指南/        # AiToEarn、Kiro迁移 (2个md)
+│   └── 内部文档/        # AI架构、系统规划 (3个md)
+├── 07-X情报与互动/
+│   ├── sector-radar/    # 完整工具源码（含PLAYBOOK操作手册）
+│   ├── tweets_kb_replies.xlsx       # 知识库匹配回复建议
+│   ├── FinTax-X热点分析与自动互动方案.md
+│   └── topic-research-demo.html
+└── 08-知识库/
+    ├── taxdao_articles.csv          # 566篇英文文章
+    ├── taxdao_articles_cn.csv       # 11,894篇含中文翻译
+    └── 搜索API配置指南.md
 ```

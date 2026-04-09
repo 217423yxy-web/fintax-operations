@@ -1,0 +1,452 @@
+[
+  {
+    "index": 50,
+    "账号": "@nextblockexpo",
+    "match_score": 3,
+    "match_issue": "Tweet announces a speaker bio; reply pivots to legal frameworks vs tech layer—tangential to speaker intro",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 51,
+    "账号": "@cryptobro_4alls",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims CARF covers crypto service providers but not sovereigns—nuanced claim not directly confirmed in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 52,
+    "账号": "@venga_app",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims host states may impose additional tax reporting on passported CASPs—not confirmed in KB MiCA content",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 53,
+    "账号": "@node_40",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 54,
+    "账号": "@joshdoesdefi",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims IRC §1221 applies identically to commodity disposals as securities—subtle framing; KB only covers XRP/SEC angle",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 55,
+    "账号": "@unktax",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 56,
+    "账号": "@alisultannk",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 57,
+    "账号": "@cryptotaxg",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 58,
+    "账号": "@sandmark_news",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 59,
+    "账号": "@kanti2025",
+    "match_score": 3,
+    "match_issue": "Tweet is about UX friction in DeFi onboarding; reply pivots entirely to tax documentation—misses core UX thesis",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 60,
+    "账号": "@theprincetoto",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 61,
+    "账号": "@countonsheep",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 62,
+    "账号": "@hashtag_web3",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 63,
+    "账号": "@chatetfapp",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims option premiums from covered call ETFs are 'typically ordinary income regardless of holding period'—specific tax treatment not in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 64,
+    "账号": "@tom_laresca_0",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "States GENIUS mandates stablecoin issuer disclosure specifically; KB confirms GENIUS exists but not this specific detail",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 65,
+    "账号": "@debt_ledger",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 66,
+    "账号": "@arbazcryptotax",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 67,
+    "账号": "@regflowhub",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims 'security tokens need registered broker-dealers for distribution'—specific requirement not confirmed in KB SEC taxonomy content",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 68,
+    "账号": "@coincoursepro",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims reclassification from security to commodity 'may itself trigger a tax event'—specific claim not in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 69,
+    "账号": "@investing_gurus",
+    "match_score": 3,
+    "match_issue": "Tweet is a generic link to 3 SEC drafts with minimal substance; reply invents specific hedge fund crypto rules detail",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims SEC hedge fund crypto rules require cost-basis allocation disclosure to clients—specific rule not in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 70,
+    "账号": "@allenwh33024880",
+    "match_score": 3,
+    "match_issue": "Tweet details stablecoin yield compromise (passive vs active); reply pivots to T-bill income tax treatment at issuer level—misses yield debate focus",
+    "halluc_risk": "high",
+    "halluc_issue": "Claims undistributed stablecoin yield is not taxable for holders 'until redemption at premium'—invents specific tax rule with no KB basis",
+    "verdict": "🔴 重写"
+  },
+  {
+    "index": 71,
+    "账号": "@unktax",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 72,
+    "账号": "@crypto_darshan",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims collectible NFTs face 28% max cap gains rate (same as art)—plausible but specific rate not confirmed in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 73,
+    "账号": "@johyeonho268373",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 74,
+    "账号": "@smtgpt",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 75,
+    "账号": "@cryptotaxg",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 76,
+    "账号": "@the_newscrypto",
+    "match_score": 3,
+    "match_issue": "Tweet is about CLARITY Act legislative deadline and stablecoin deal progress; reply pivots to bank/crypto commercial motivations without engaging the deadline angle",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 77,
+    "账号": "@gbbc_io",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims on-ramp/off-ramp crypto-to-fiat can be 'ordinary income'—specific framing not confirmed in KB CARF content",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 78,
+    "账号": "@billionairersa",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 79,
+    "账号": "@cryptotaxg",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 80,
+    "账号": "@xmastersenseix",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 81,
+    "账号": "@iii777iii_jm41",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 82,
+    "账号": "@theprincetoto",
+    "match_score": 3,
+    "match_issue": "Tweet lists 5 crypto tax tips including NFT flips; reply focuses only on cross-chain bridges, ignoring NFT tax which is the labeled topic",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims 'most bridges fail the same-asset test'—specific IRS conclusion not in KB; IRS has no published bridge guidance",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 83,
+    "账号": "@cryptotaxg",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 84,
+    "账号": "@0xzxcom",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 85,
+    "账号": "@axivra_",
+    "match_score": 3,
+    "match_issue": "Tweet is about CLARITY Act passage odds as market catalyst; reply pivots to compliance build-now urgency—misses the market catalyst angle",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 86,
+    "账号": "@johyeonho268373",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 87,
+    "账号": "@swcpas",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 88,
+    "账号": "@liam_owm",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 89,
+    "账号": "@transworldcomp",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 90,
+    "账号": "@news_cryptocafe",
+    "match_score": 3,
+    "match_issue": "Tweet is a vague mention of IRS Free File; reply invents specific 'crypto expansion' of Free File that is not confirmed in tweet or KB",
+    "halluc_risk": "medium",
+    "halluc_issue": "States 'IRS Free File expanding to crypto'—not stated in tweet; KB only mentions a 2024 13-state pilot, not crypto-specific",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 91,
+    "账号": "@richbycoin_news",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims 'method consistency is required within the year' and 'can't switch mid-year'—specific rule not confirmed in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 92,
+    "账号": "@icoinmarket1",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 93,
+    "账号": "@cryptoamb",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 94,
+    "账号": "@anfinius",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 95,
+    "账号": "@johnydegreat",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "Claims dormant accounts trigger CARF 'if they exceed thresholds'—specific threshold trigger for passive holders not confirmed in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 96,
+    "账号": "@darkforgenews",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 97,
+    "账号": "@wenslausmutonyi",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 98,
+    "账号": "@emma46012315816",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 99,
+    "账号": "@joshdoesdefi",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "high",
+    "halluc_issue": "Claims Canadian users on US exchanges have CARF reports filed with IRS not CRA, and 'two systems don't automatically share data'—contradicts CARF's cross-border exchange mechanism in KB",
+    "verdict": "🔴 重写"
+  }
+]

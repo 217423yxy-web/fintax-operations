@@ -1,0 +1,452 @@
+[
+  {
+    "index": 0,
+    "账号": "@thecryptocpa",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "\"Safe harbor\" mechanics for HIFO override and burden-of-proof allocation not directly confirmed in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 1,
+    "账号": "@cointelegraph",
+    "match_score": 3,
+    "match_issue": "Tweet is about S-1 filing news; reply pivots to lot-level tax tracking without connecting to the S-1 specifically",
+    "halluc_risk": "medium",
+    "halluc_issue": "\"SEC requires lot-level tracking for BTC ETF shareholders\" — specific regulatory claim not in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 2,
+    "账号": "@serc1n",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 3,
+    "账号": "@rykenny",
+    "match_score": 3,
+    "match_issue": "Tweet is a promotional SIX Network post; reply addresses legal structure compliance not the tweet's narrative",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 4,
+    "账号": "@cryptogerla",
+    "match_score": 3,
+    "match_issue": "Tweet is about market clarity/bullishness; reply makes specific stablecoin tax claim tangential to the tweet's point",
+    "halluc_risk": "medium",
+    "halluc_issue": "\"Holders face no taxable income if reserves stay in T-bills\" — specific tax rule not substantiated in KB",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 5,
+    "账号": "@btc_chopsticks",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 6,
+    "账号": "@chartnerdta",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 7,
+    "账号": "@defi_rocketeer",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 8,
+    "账号": "@cryptosr_us",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 9,
+    "账号": "@xaif_crypto",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 10,
+    "账号": "@kidkevrock",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 11,
+    "账号": "@remtech_002",
+    "match_score": 2,
+    "match_issue": "Tweet is about decentralized AI/media/DeFi infrastructure; IRS record-keeping angle is a thin forced connection",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🔴 重写"
+  },
+  {
+    "index": 12,
+    "账号": "@ccncitizens",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 13,
+    "账号": "@grovexchange",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 14,
+    "账号": "@cryptaxpt",
+    "match_score": 3,
+    "match_issue": "Tweet explains SEMPs are excluded from CARF; reply frames stablecoin conversion as triggering a taxable event, misaligning with tweet's SEMP exclusion logic",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 15,
+    "账号": "@niftynoon",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 16,
+    "账号": "@thegreat0x",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 17,
+    "账号": "@agustotrade",
+    "match_score": 3,
+    "match_issue": "Tweet is daily ETF flow data; reply makes a complex tax characterization claim about distributions that doesn't follow from flow data",
+    "halluc_risk": "medium",
+    "halluc_issue": "\"ETF distributions may trigger dividend-equivalent income\" — specific tax claim for spot BTC ETFs not in KB and not clearly applicable",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 18,
+    "账号": "@thecryptocpa",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 19,
+    "账号": "@cryptaxpt",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 20,
+    "账号": "@cryptoeconomyen",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 21,
+    "账号": "@ethcc",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 22,
+    "账号": "@maroos834",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 23,
+    "账号": "@mossai_official",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 24,
+    "账号": "@crecoinsol",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 25,
+    "账号": "@dobprotocol",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 26,
+    "账号": "@penggking",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 27,
+    "账号": "@tex_ambassador",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 28,
+    "账号": "@cointelegraphin",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 29,
+    "账号": "@mfon_crypto",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 30,
+    "账号": "@ass_of_rivera",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 31,
+    "账号": "@agustotrade",
+    "match_score": 3,
+    "match_issue": "Tweet is daily ETF outflow data; reply pivots to structural UCITS explanation without connecting to the specific flow numbers",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 32,
+    "账号": "@cointabnews",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 33,
+    "账号": "@xfinancebull",
+    "match_score": 1,
+    "match_issue": "Tweet is only source URLs with no topic; reply is a generic CARF comment with no connection to any content in the tweet",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🔴 重写"
+  },
+  {
+    "index": 34,
+    "账号": "@kingmaxfreedom",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 35,
+    "账号": "@andrew_lautz",
+    "match_score": 3,
+    "match_issue": "Tweet is about bipartisan reform broadly; reply assumes staking is the specific reform target without evidence from tweet",
+    "halluc_risk": "medium",
+    "halluc_issue": "\"Bipartisan staking reform targets Rev. Rul. 2023-14\" — specific legislative target assumed without KB support",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 36,
+    "账号": "@cryptonewshntrs",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 37,
+    "账号": "@rhteo86",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 38,
+    "账号": "@coin_gabbar_",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "medium",
+    "halluc_issue": "\"K-1 or 1099-B\" for spot BTC ETF holders — spot ETFs typically issue 1099-B, not K-1; K-1 is for partnership structures",
+    "verdict": "🟡 改进"
+  },
+  {
+    "index": 39,
+    "账号": "@hannah71633894",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 40,
+    "账号": "@cryptojournaal",
+    "match_score": 2,
+    "match_issue": "Tweet is a WelfFinance promotional roadmap; reply is a generic UK HMRC DeFi tax comment with no link to the tweet's content",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "🔴 重写"
+  },
+  {
+    "index": 41,
+    "账号": "@businessatoecd",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 42,
+    "账号": "@bfreires82",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 43,
+    "账号": "@pione_chain",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 44,
+    "账号": "@mk2toshiaki",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 45,
+    "账号": "@sylvianguibal",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 46,
+    "账号": "@cryptotaxesguy",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 47,
+    "账号": "@bitcointax",
+    "match_score": 5,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 48,
+    "账号": "@chainupofficial",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  },
+  {
+    "index": 49,
+    "账号": "@thomasthom94",
+    "match_score": 4,
+    "match_issue": "",
+    "halluc_risk": "low",
+    "halluc_issue": "",
+    "verdict": "✅ 通过"
+  }
+]

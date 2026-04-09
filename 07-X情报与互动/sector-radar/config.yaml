@@ -1,0 +1,40 @@
+# ==============================
+# Sector Radar - 赛道企业发现工具
+# ==============================
+
+# TwitterAPI.io 配置
+twitter_api:
+  base_url: "https://api.twitterapi.io/twitter"
+  api_key: "${TWITTER_API_KEY}"  # 环境变量，或直接填入你的 API key
+
+  # 速率控制
+  rate_limit:
+    requests_per_minute: 30
+    retry_max: 3
+    retry_delay_seconds: 5
+
+# 每个赛道的目标企业数
+target_companies_per_sector: 100
+
+# 数据源权重
+sources:
+  seed_list: true          # Source A: 内置种子企业
+  bio_search: true         # Source B: TwitterAPI.io search_user (Bio关键词)
+  following_network: true  # Source C: 种子企业的 following 列表
+
+# Bio 搜索配置
+bio_search:
+  max_results_per_keyword: 50   # 每个关键词最多返回用户数
+  min_followers: 500            # 最低粉丝数过滤
+  verified_boost: true          # 认证账号加分
+
+# Following 网络配置
+following_network:
+  max_followings_per_seed: 200  # 每个种子账号最多拉取 following 数
+  top_seeds_to_expand: 5        # 每个赛道选前N个种子账号做 following 扩展
+
+# 输出配置
+output:
+  format: "xlsx"
+  filename: "sector_companies_{sector}_{date}.xlsx"
+  output_dir: "./output"

@@ -1,0 +1,1287 @@
+[
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/CryptoTaxSucks/status/2035148112055136709",
+    "tweet_account": "@CryptoTaxSucks",
+    "tweet_text": "@heishimmy They do expect every trade on form 8949\n\nThe 1099 da from Coinbase will not have accurate cost basis data but your own records can be used to substantiate the cost basis and gains you reported.\n\nPretty much the process is:\n\n1)Set up a crypto tax software.\n\nfrom other comments sounds like you have a ton of wallets so Awaken I’ve seen handle this where others have limits on wallets and txs you can add\n\n2)review the txs to make sure they’re accurately categorized\n\n3)make sure your calculated balances are correct in the software vs. onchain.\n\nThis can get messed up on large accounts with lots of wallets.\n\nIf you don’t feel like doing all that services like ours can help.",
+    "tweet_likes": 24,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉Form 8949纠错",
+    "new_reply": "Cross-platform transfers break 1099-DA cost basis. Exchange B can't know what you paid on Exchange A. Supply basis yourself on Form 8949 — the 1099-DA is a floor for proceeds, not a substitute for your records.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "Form 8949 requires reporting each disposal with date, proceeds, and cost basis. 1099-DA shows broker-reported proceeds only — cost basis from prior exchanges stays with you to supply.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "@heishimmy 他们确实期望在表格8949上报告每一笔交易。\n\nCoinbase 的1099表格不会有准确的成本基数数据，但你自己的记录可以用来证明你报告的成本基数和收益。\n\n整个流程基本上是：\n\n1) 设置一个加密货币税务软件。\n\n从其他评论来看，似乎你有很多钱包，所以 Awaken 我见过可以处理这种情况，而其他软件对钱包和交易数量有限制。",
+    "reply_cn": "表格8949要求报告每笔处置，包括日期、收益和成本基数。1099-DA仅显示经纪人报告的收益——之前的交易成本基数由您保留并提供。",
+    "kb_chunks": [
+      {
+        "text": "8949表格：该表格用于报告每笔加密货币交易的详细信息，包括日期、描述、收益和成本基础。如果纳税人因加密货币交易而产生任何资本收益或损失，则应在1040表格中附上8949表格。如果您的1099-B或未来1099-DA中的资产销售成本基础已向IRS报告，并且不需要更正或调整，则您可能不需要提交8949表格。\n3. 常见问题\n3.1 1099-DA 是否简化了加密货币纳税申报？\n是的，这就是目标。1099-DA表格旨在通过提供数字资产交易的集中记录来简化加密货币纳税申报流程。这可以帮助投资者在报告加密货币收入时避免错误和遗漏。\n3.2 我必须出售多少价值的NFT或加密货币才需要申报1099-DA表",
+        "score": 0.8367
+      },
+      {
+        "text": "表格\n\n填写者\n\n内容\n\nForm 8949\n\n任何因加密货币而获得资本收益或损失的人\n\n报告每次加密货币的处置情况\n\nSchedule D\n\n任何因加密货币而获得资本收益或损失的人\n\n报告您从加密货币中获得的净收益或损失\n\nSchedule C\n\n从加密货币中赚取收入的个体投资者\n\n报告加密货币的总收入和利润\n\nSchedule 1 (Form 1040)\n\n任何通过加密货币获得额外收入的人\n\n报告加密货币收入",
+        "score": 0.8262
+      },
+      {
+        "text": "2.5 谁将签发1099-DA表格以及谁将收到表格？\n数字资产经纪人以及那些被视为数字资产交易所经纪人的人将被要求向参与某些涉及数字资产交易的投资者签发1099-DA表格。这包括导致收益或损失的交易，以及涉及将一种数字资产交换为另一种数字资产的交易。\n收到1099-DA表格的投资者通常需要在申报表上报告信息。这包括报告数字资产交易的任何收益或损失，以及表格上报告的任何其他收入。\n2.6 新规生效之前，如何申报加密货币税？\n尽管1099-DA表格要到2025年才可用，您仍然需要对当前纳税年度的加密货币投资的任何应税收入进行纳税。为此，您需要收集显示加密货币交易详细信息的文件。然后，您应该提交以下",
+        "score": 0.8238
+      }
+    ],
+    "relevance": 3.4,
+    "created_at": "2026-03-21"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/bintelsuhi/status/2033591152461611129",
+    "tweet_account": "@bintelsuhi",
+    "tweet_text": "IRS 1099-DA reports crypto sale proceeds, not capital gains. You still need to reconcile with your cost basis using Form 8949. Wallet transfers between your own accounts aren't taxable events. Keep good records proactively—it beats scrambling at tax time. https://t.co/e8xWw3Xr4y",
+    "tweet_likes": 0,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "1099-DA shows gross proceeds — it doesn't calculate your gain. You do. Form 8949 is where actual basis, holding period, and gain/loss live. Conflating the two leads to overpayment or a CP2000.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "1099-DA shows proceeds, not capital gain. Gain only emerges after subtracting cost basis — which you supply on Form 8949. Wallet transfers between your own accounts generate no proceeds, no 8949 entry.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "IRS 1099-DA 报告加密货币销售收益，而不是资本收益。您仍然需要使用表格 8949 与您的成本基础进行对账。您自己账户之间的钱包转账不是应税事件。积极保持良好的记录——这比在报税时匆忙处理要好。https://t.co/e8xWw3Xr4y",
+    "reply_cn": "1099-DA显示的是收入，而不是资本利得。只有在减去成本基础后才会产生收益——你需要在表格8949上提供成本基础。自己账户之间的钱包转账不会产生收入，也不需填写8949。",
+    "kb_chunks": [
+      {
+        "text": "8949表格：该表格用于报告每笔加密货币交易的详细信息，包括日期、描述、收益和成本基础。如果纳税人因加密货币交易而产生任何资本收益或损失，则应在1040表格中附上8949表格。如果您的1099-B或未来1099-DA中的资产销售成本基础已向IRS报告，并且不需要更正或调整，则您可能不需要提交8949表格。\n3. 常见问题\n3.1 1099-DA 是否简化了加密货币纳税申报？\n是的，这就是目标。1099-DA表格旨在通过提供数字资产交易的集中记录来简化加密货币纳税申报流程。这可以帮助投资者在报告加密货币收入时避免错误和遗漏。\n3.2 我必须出售多少价值的NFT或加密货币才需要申报1099-DA表",
+        "score": 0.8709
+      },
+      {
+        "text": "5. 交易时间。\n6. 交易总收益。\n7. 出售、交换或以其他方式处置的数字资产的成本基础。\n8. 数字资产的应计市场折扣金额。\n9. 涉及数字资产（若这些资产出于税收目的被视为股票或证券）的洗售交易中不可抵扣的损失金额。\n10. 备份预扣税。如果纳税人没有提供正确的TIN，或者没有申报利息、股息收入，则可能需要缴纳备份的预扣税款。\n11. 短期资本损益和长期资本损益。\n12. 非现金收益，即在交易中获取的商品、服务等非现金收益。\n14. 销售/转入交易ID(TxID)、销售/转入数字资产钱包地址，以及销售/转入数字资产单位数量等。\n15. 州/地方所得税信息。\n4. 未申报风险和对纳税人的影",
+        "score": 0.8608
+      },
+      {
+        "text": "2.5 谁将签发1099-DA表格以及谁将收到表格？\n数字资产经纪人以及那些被视为数字资产交易所经纪人的人将被要求向参与某些涉及数字资产交易的投资者签发1099-DA表格。这包括导致收益或损失的交易，以及涉及将一种数字资产交换为另一种数字资产的交易。\n收到1099-DA表格的投资者通常需要在申报表上报告信息。这包括报告数字资产交易的任何收益或损失，以及表格上报告的任何其他收入。\n2.6 新规生效之前，如何申报加密货币税？\n尽管1099-DA表格要到2025年才可用，您仍然需要对当前纳税年度的加密货币投资的任何应税收入进行纳税。为此，您需要收集显示加密货币交易详细信息的文件。然后，您应该提交以下",
+        "score": 0.859
+      }
+    ],
+    "relevance": 3.7,
+    "created_at": "2026-03-16"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/summ_app/status/2029316494996250903",
+    "tweet_account": "@summ_app",
+    "tweet_text": "the corrected numbers would typically go on Form 8949.\n\nproceeds should generally match the 1099-DA, but the cost basis is something you can provide yourself. for significant amounts, it might be worth talking to a crypto-aware CPA about the best approach.",
+    "tweet_likes": 1,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "Proceeds should match or beat your 1099-DA — that's the IRS check for 2025. Basis is yours to document. If the 1099-DA says 'unknown,' supply it yourself. The IRS won't lower your gains for you.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "The IRS step-by-step: verify 1099-DA info → compare against your records → report any differences on Form 8949. Proceeds match is step 1; basis is step 2 — and step 2 is entirely on you.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "更正后的数字通常应填写在8949表格上。\n\n收益通常应与1099-DA匹配，但成本基础可以由您自行提供。对于较大的金额，可能值得咨询了解加密货币的注册会计师，以确定最佳处理方法。",
+    "reply_cn": "国税局逐步指南：核实1099-DA信息 → 与你的记录进行比较 → 在8949表上报告任何差异。收益匹配是第一步；成本基础是第二步——而第二步完全由你负责。",
+    "kb_chunks": [
+      {
+        "text": "总收益或总损失：通过处置收益减去成本基础来计算得出。\n\n个人投资者收到1099-DA表格后，应遵循以下步骤进行处理：\n1.验证表格信息：仔细审阅1099-DA表格，确保所有信息（包括个人纳税识别号码即TIN、付款总额等）均准确无误。\n2.比对交易记录：将您的交易记录与1099-DA表格上的信息进行比对，核实付款总额的一致性。若发现任何差异，请进一步核查并做出相应调整。\n3.申报税务收入：利用1099-DA表格中的信息，在纳税申报表上准确申报您的收入。依据交易类型（例如买入、卖出、交换等），正确反映您的收入及可能产生的损失。\n4.妥善保存记录：保存所有相关交易记录和收据至关重要，这些文件将作为您",
+        "score": 0.8342
+      },
+      {
+        "text": "8949表格：该表格用于报告每笔加密货币交易的详细信息，包括日期、描述、收益和成本基础。如果纳税人因加密货币交易而产生任何资本收益或损失，则应在1040表格中附上8949表格。如果您的1099-B或未来1099-DA中的资产销售成本基础已向IRS报告，并且不需要更正或调整，则您可能不需要提交8949表格。\n3. 常见问题\n3.1 1099-DA 是否简化了加密货币纳税申报？\n是的，这就是目标。1099-DA表格旨在通过提供数字资产交易的集中记录来简化加密货币纳税申报流程。这可以帮助投资者在报告加密货币收入时避免错误和遗漏。\n3.2 我必须出售多少价值的NFT或加密货币才需要申报1099-DA表",
+        "score": 0.8198
+      },
+      {
+        "text": "2.5 谁将签发1099-DA表格以及谁将收到表格？\n数字资产经纪人以及那些被视为数字资产交易所经纪人的人将被要求向参与某些涉及数字资产交易的投资者签发1099-DA表格。这包括导致收益或损失的交易，以及涉及将一种数字资产交换为另一种数字资产的交易。\n收到1099-DA表格的投资者通常需要在申报表上报告信息。这包括报告数字资产交易的任何收益或损失，以及表格上报告的任何其他收入。\n2.6 新规生效之前，如何申报加密货币税？\n尽管1099-DA表格要到2025年才可用，您仍然需要对当前纳税年度的加密货币投资的任何应税收入进行纳税。为此，您需要收集显示加密货币交易详细信息的文件。然后，您应该提交以下",
+        "score": 0.8123
+      }
+    ],
+    "relevance": 3.3,
+    "created_at": "2026-03-04"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/TheCryptoCPA/status/2028198918966632770",
+    "tweet_account": "@TheCryptoCPA",
+    "tweet_text": "The IRS matching algorithm in 2025 checks ONE thing: Do your Form 8949 proceeds match or higher than the 1099-DA proceeds they received from exchanges? That's it. \n\nYour entire reconciliation effort this year should focus on getting proceeds. Cost basis mismatches won't trigger automated notices in 2025.\n\n(However, getting cost basis right is super important when it comes to reducing your taxes.)",
+    "tweet_likes": 682,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "Key nuance: 2025 IRS matching focuses on proceeds, not basis. Cost basis mismatches won't auto-trigger notices this year. But future audits reconstruct basis from scratch — don't defer fixing them.",
+    "new_reply_angle": "反直觉观点型",
+    "source_note": "from grok reply",
+    "final_reply": "IRS gave brokers a grace period on basis reporting for 2025 — errors not penalized. That explains why only proceeds get matched now. But basis enforcement begins in 2026.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "2025 年，国税局的匹配算法只检查一件事：你的 8949 表格收益是否与他们从交易所收到的 1099-DA 收益匹配或更高？仅此而已。\n\n你今年整个对账工作的重点应该是获取收益。成本基础不匹配在 2025 年不会触发自动通知。\n\n（然而，在减少税收方面，正确获取成本基础非常重要。）",
+    "reply_cn": "美国国税局给予经纪人在2025年的成本基础报告上宽限期——错误不会受到处罚。这也解释了为什么现在只有收益会被匹配。但成本基础的执行将从2026年开始。",
+    "kb_chunks": [
+      {
+        "text": "2.5 谁将签发1099-DA表格以及谁将收到表格？\n数字资产经纪人以及那些被视为数字资产交易所经纪人的人将被要求向参与某些涉及数字资产交易的投资者签发1099-DA表格。这包括导致收益或损失的交易，以及涉及将一种数字资产交换为另一种数字资产的交易。\n收到1099-DA表格的投资者通常需要在申报表上报告信息。这包括报告数字资产交易的任何收益或损失，以及表格上报告的任何其他收入。\n2.6 新规生效之前，如何申报加密货币税？\n尽管1099-DA表格要到2025年才可用，您仍然需要对当前纳税年度的加密货币投资的任何应税收入进行纳税。为此，您需要收集显示加密货币交易详细信息的文件。然后，您应该提交以下",
+        "score": 0.8172
+      },
+      {
+        "text": "1099-DA并非对旧有体系的修补成果，而是针对数字资产（Digital Asset）原生属性设计的专项报送表。\n据1099-DA最新指南（Instructions for Form 1099-DA (2025)），自2025年1月1日起，经纪商（Broker）必须记录并报告每笔交易的销售总收益（Gross Proceeds）。值得关注的是，IRS在2025年暂不强制要求报告成本基础（Basis）和损益性质，而是赋予经纪商自愿报送的宽限期，并明确在此期间对报送错误不予处罚。成本基础和损益性质的强制报送义务则被推迟至2026年（针对2026年1月1日后取得的&ldquo;受覆盖数字资产&rdqu",
+        "score": 0.8165
+      },
+      {
+        "text": "middot; 何时获得数字资产（收购日期）\n&middot; 为此支付了多少费用（成本基础）\n&middot; 出售或交换时间（出售或处置日期）\n&middot; 出售或交换中获取的处置收益\n&middot; 总收益或总损失（处置收益减去成本基础）\n该表格将适用于2025年1月1日之后的销售，因此纳税人可能在2026年1月收到第一份1099-DA表格。\n3.3具体申报细节\n在IRS公布的1099-DA表格草稿中，主要包括以下申报信息：\n1. 数字资产经纪商身份识别(TIN)。为了保护纳税人的隐私，1099-DA中只显示TIN、(社会安全号码(SSN)、个人纳税人识别号码(ITIN)、个人报税",
+        "score": 0.8095
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-03-01"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/TheCryptoCPA/status/2026756889187594249",
+    "tweet_account": "@TheCryptoCPA",
+    "tweet_text": "Your 1099-DA shows \"unknown\" cost basis? That's normal. It happens when you transfer crypto from another platform and then sell. \n\nThe exchange doesn't know your original purchase price. \n\nAction: You can provide the correct cost basis on Form 8949. The exchange can't fix this for you because they genuinely don't have the data, you do.",
+    "tweet_likes": 21,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "'Unknown' basis on 1099-DA: you can override it. Report real basis on 8949, attach explanation. Silence != taxable at 100% proceeds. Burden of proof is yours — but so is the right to document correctly.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "Brokers can't know what you paid on another platform — 1099-DA captures only what they see. 'Unknown' basis means you self-report on Form 8949 using purchase records you hold.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "你的1099-DA显示“未知”的成本基础？这是正常的。当你从另一个平台转移加密货币然后出售时，就会发生这种情况。\n\n交易所不知道你的原始购买价格。\n\n操作：你可以在8949表格上提供正确的成本基础。交易所无法为你修正这个信息，因为他们确实没有数据，而你有。",
+    "reply_cn": "经纪人无法知道你在其他平台上支付的费用——1099-DA 只记录他们看到的情况。“未知”基础意味着你需要使用自己持有的购买记录在 8949 表格上自行申报。",
+    "kb_chunks": [
+      {
+        "text": "2.5 谁将签发1099-DA表格以及谁将收到表格？\n数字资产经纪人以及那些被视为数字资产交易所经纪人的人将被要求向参与某些涉及数字资产交易的投资者签发1099-DA表格。这包括导致收益或损失的交易，以及涉及将一种数字资产交换为另一种数字资产的交易。\n收到1099-DA表格的投资者通常需要在申报表上报告信息。这包括报告数字资产交易的任何收益或损失，以及表格上报告的任何其他收入。\n2.6 新规生效之前，如何申报加密货币税？\n尽管1099-DA表格要到2025年才可用，您仍然需要对当前纳税年度的加密货币投资的任何应税收入进行纳税。为此，您需要收集显示加密货币交易详细信息的文件。然后，您应该提交以下",
+        "score": 0.8287
+      },
+      {
+        "text": "8949表格：该表格用于报告每笔加密货币交易的详细信息，包括日期、描述、收益和成本基础。如果纳税人因加密货币交易而产生任何资本收益或损失，则应在1040表格中附上8949表格。如果您的1099-B或未来1099-DA中的资产销售成本基础已向IRS报告，并且不需要更正或调整，则您可能不需要提交8949表格。\n3. 常见问题\n3.1 1099-DA 是否简化了加密货币纳税申报？\n是的，这就是目标。1099-DA表格旨在通过提供数字资产交易的集中记录来简化加密货币纳税申报流程。这可以帮助投资者在报告加密货币收入时避免错误和遗漏。\n3.2 我必须出售多少价值的NFT或加密货币才需要申报1099-DA表",
+        "score": 0.8233
+      },
+      {
+        "text": "2.2 1099-DA 表格有何帮助？\n1099-DA表格的推出旨在通过提供标准化和简化的加密货币交易报告流程来应对这些挑战。通过要求数字资产经纪人以及被视为数字资产交易经纪人的人签发1099-DA表格，美国国税局可以获得有关加密货币交易的更准确和更完整的信息，这有助于提高税务合规性并降低逃税风险。\n2.3 1099-DA 表格包含哪些内容？\n1099-DA表格的最终版本尚未确定。但是，它可能包含以下有关您的加密货币交易的信息：\n\n数字资产经纪商身份识别\n\n帐号\n\n交易日期\n\n交易类型（例如，买入、卖出、交换）\n\n交易金额\n\n每笔交易的数字资产的公允市场价值\n\n2.4 谁会受到新表格的影响？\n",
+        "score": 0.8211
+      }
+    ],
+    "relevance": 3.3,
+    "created_at": "2026-02-25"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/theweb3wizard00/status/2026393306247147686",
+    "tweet_account": "@theweb3wizard00",
+    "tweet_text": "Crypto holders: Your 1099-DA arrived with blank/zero cost basis in Box 1g?\n\nIRS assumes $0 → your entire proceeds get taxed as gain. Thousands overpaying right now.\n\nDon't let it happen. Upload your PDF → AI pulls your real basis → clean Form 8949 in &lt;5 min.\n\nCheck out Bio!!",
+    "tweet_likes": 0,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "IRS assuming $0 basis when Box 1g is blank is the default, not the rule. Override it by filing Form 8949 with documented basis. The risk isn't the blank box — it's not correcting it before the deadline.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "1099-DA was designed for broker-side reporting — it can't fill what the broker never had. Blank Box 1g = broker gap, not your gap. File your real basis on Form 8949 before April.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "加密货币持有者：您的 1099-DA 到了，但 1g 框里的成本基础是空白/零？\n\n国税局假设成本为 $0 → 您的全部收益将被作为盈利征税。现在有成千上万的人在多缴税。\n\n不要让这种情况发生。上传您的 PDF → AI 提取您的真实成本基础 → 少于 5 分钟生成干净的 8949 表格。\n\n查看 Bio!!",
+    "reply_cn": "1099-DA 是为经纪方报告设计的——它无法填写经纪人从未拥有的内容。空白的第1g栏 = 经纪人差额，而不是你的差额。在四月之前在表格8949上申报你的实际基础。",
+    "kb_chunks": [
+      {
+        "text": "5. 交易时间。\n6. 交易总收益。\n7. 出售、交换或以其他方式处置的数字资产的成本基础。\n8. 数字资产的应计市场折扣金额。\n9. 涉及数字资产（若这些资产出于税收目的被视为股票或证券）的洗售交易中不可抵扣的损失金额。\n10. 备份预扣税。如果纳税人没有提供正确的TIN，或者没有申报利息、股息收入，则可能需要缴纳备份的预扣税款。\n11. 短期资本损益和长期资本损益。\n12. 非现金收益，即在交易中获取的商品、服务等非现金收益。\n14. 销售/转入交易ID(TxID)、销售/转入数字资产钱包地址，以及销售/转入数字资产单位数量等。\n15. 州/地方所得税信息。\n4. 未申报风险和对纳税人的影",
+        "score": 0.8222
+      },
+      {
+        "text": "你是否听说过1099-DA表格？又是否担心因填错表格受到税务处罚？别担心，本文将为你解开1099-DA表格的神秘面纱，帮你摆脱税务申报的苦恼。\n1.1099-DA表格是什么？\n1099-DA表格是一种税务报告工具，专门用于经纪人（Broker）向美国国税局（IRS）及纳税人报告交易收益、成本基础以及其他相关信息。2024年4月19日，IRS正式推出了1099-DA表格的草案，其主要目的在于从加密资产经纪人（包括中心化交易所、部分去中心化交易所及钱包服务商等，这些角色类似于传统金融领域的股票经纪人）处收集详尽的交易数据。\n1099-DA表格是税务报表领域的一次创新，它是首份专门针对加密资产交易者",
+        "score": 0.8221
+      },
+      {
+        "text": "8949表格：该表格用于报告每笔加密货币交易的详细信息，包括日期、描述、收益和成本基础。如果纳税人因加密货币交易而产生任何资本收益或损失，则应在1040表格中附上8949表格。如果您的1099-B或未来1099-DA中的资产销售成本基础已向IRS报告，并且不需要更正或调整，则您可能不需要提交8949表格。\n3. 常见问题\n3.1 1099-DA 是否简化了加密货币纳税申报？\n是的，这就是目标。1099-DA表格旨在通过提供数字资产交易的集中记录来简化加密货币纳税申报流程。这可以帮助投资者在报告加密货币收入时避免错误和遗漏。\n3.2 我必须出售多少价值的NFT或加密货币才需要申报1099-DA表",
+        "score": 0.8175
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-02-24"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/TheReviken/status/2025087457075888629",
+    "tweet_account": "@TheReviken",
+    "tweet_text": "@coffeedev @ColeThereum You literally don’t need to do any of this \n\nAll you need to do is go manually input the trades and cost basis on the form 8949 and ensure that it lines up with whatever trades Coinbase has on the 1099-DA for 2025. They can’t show cost basis, so it’s up to you on the 8949",
+    "tweet_likes": 100,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "Proceeds on 8949 should match or exceed 1099-DA. What's often missed: 1099-DA from different brokers can double-count wash sale adjustments or miss transfer events entirely. Verify each line.",
+    "new_reply_angle": "规则解读型",
+    "source_note": "from grok reply",
+    "final_reply": "When entering manually: remember to add exchange fees to each purchase's cost basis and deduct sale fees from proceeds. Cost basis ≠ just the purchase price — fees shift every line.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "@coffeedev @ColeThereum 你实际上根本不需要做这些  \n\n你只需要手动在8949表上输入交易和成本基础，并确保它与Coinbase在2025年的1099-DA上显示的交易相符。他们不能显示成本基础，所以8949表上的部分就由你自己填写",
+    "reply_cn": "手动输入时：记得将交易费用加到每笔购买的成本基础中，并从收益中扣除出售费用。成本基础 ≠ 仅仅是购买价格——费用会影响每一行数据。",
+    "kb_chunks": [
+      {
+        "text": "8949表格：该表格用于报告每笔加密货币交易的详细信息，包括日期、描述、收益和成本基础。如果纳税人因加密货币交易而产生任何资本收益或损失，则应在1040表格中附上8949表格。如果您的1099-B或未来1099-DA中的资产销售成本基础已向IRS报告，并且不需要更正或调整，则您可能不需要提交8949表格。\n3. 常见问题\n3.1 1099-DA 是否简化了加密货币纳税申报？\n是的，这就是目标。1099-DA表格旨在通过提供数字资产交易的集中记录来简化加密货币纳税申报流程。这可以帮助投资者在报告加密货币收入时避免错误和遗漏。\n3.2 我必须出售多少价值的NFT或加密货币才需要申报1099-DA表",
+        "score": 0.816
+      },
+      {
+        "text": "根据交易费用和其他费用调整加密货币成本基础 \n\n加密货币资产的成本基础必须根据交易费用和其他相关费用进行调整。实现此目的的一种方法是将交易成本包含在成本基础中。例如，在购买加密货币时，除了资产的购买价格之外，总成本基础还应包括交易期间支付的任何费用。同样，与销售加密货币相关的所有交易费用都应从收入中扣除。 \n除交易费用外，投资者还应考虑交易所费用和其他开支。将这些费用（加密货币交易所为执行交易而收取的费用）纳入总成本基础计算中非常重要。投资者可以通过考虑交易费用和其他相关费用，确保其成本基础计算适当反映购买和处置加密资产的投资总额。 \n\n使用加密税务软件进行准确报税的好处",
+        "score": 0.8158
+      },
+      {
+        "text": "表格\n\n填写者\n\n内容\n\nForm 8949\n\n任何因加密货币而获得资本收益或损失的人\n\n报告每次加密货币的处置情况\n\nSchedule D\n\n任何因加密货币而获得资本收益或损失的人\n\n报告您从加密货币中获得的净收益或损失\n\nSchedule C\n\n从加密货币中赚取收入的个体投资者\n\n报告加密货币的总收入和利润\n\nSchedule 1 (Form 1040)\n\n任何通过加密货币获得额外收入的人\n\n报告加密货币收入",
+        "score": 0.813
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-02-21"
+  },
+  {
+    "search_query": "crypto cost basis gas fees IRS",
+    "tweet_url": "https://x.com/richbycoin_news/status/2030669746161557785",
+    "tweet_account": "@richbycoin_news",
+    "tweet_text": "Coinbase says the IRS 1099-DA form could over-report minor crypto transactions like stablecoin trades and gas fees, with cost-basis reporting to come next year.\n\nhttps://t.co/rvXNsOMQRv",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "Coinbase is right that 1099-DA overstates some events. Stablecoin-to-stablecoin at $1 isn't a gain. But you still must prove zero-gain trades — which means tracking every swap anyway.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "Stablecoin trades and gas fees are disposals under IRS property rules — every $0.50 gas fee triggers a gain/loss calculation. That's the over-reporting problem: technically correct, practically unworkable at scale.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "Coinbase 表示，IRS 1099-DA 表格可能会过度报告小额加密交易，例如稳定币交易和天然气费，成本基础报告将于明年推出。\n\nhttps://t.co/rvXNsOMQRv",
+    "reply_cn": "根据美国国税局的财产规则，稳定币交易和矿工费都属于处置 —— 每一笔 $0.50 的矿工费都会触发一次收益/损失计算。这就是过度报告的问题：技术上正确，但在大规模操作上不可行。",
+    "kb_chunks": [
+      {
+        "text": "1 引言\n随着加密资产从边缘走向主流，全球税务监管的&ldquo;天网&rdquo;正在加速编织。继正式发布2025版数字资产经纪商信息申报表（Form 1099-DA，简称1099-DA）及其配套操作指南后，美国国税局（Internal Revenue Service，简称IRS）近期集中更新了2项细化规则。此举不仅明确了数字资产经纪商的强制报告义务，还通过补充规则细化了针对小额交易（De Minimis）的豁免门槛，并创新性地为稳定币与指定NFTs（Specified Non-fungible Tokens）提供了可选报送方法（Optional Reporting Methods）。这不仅",
+        "score": 0.8543
+      },
+      {
+        "text": "美国国税局(IRS)于4月19日发布第一个专用于数字资产交易的税务报表草案1099-DA，1099-DA表格将适用于2025年的纳税申报制度，旨在报告经纪人(Broker)交易的数字资产收益。本文就表格内容进行梳理和解读。\n1. 1099-DA表格概述\n长期以来美国国税局一直将加密货币作为未报告收入的首要来源。调查显示，美国有相当多加密货币投资者在税务报告中存在不合规现象，新的报告要求将大大提高美国国税局抓捕加密货币逃税者的能力。加密货币是世界上增长最快的行业之一，但目前没有专门用于报告加密货币收入或资本损益的税表。1099-DA表格就是一种专门针对数字资产的新税表。\n大多数加密货币交易者在使",
+        "score": 0.8463
+      },
+      {
+        "text": "2.2 1099-DA 表格有何帮助？\n1099-DA表格的推出旨在通过提供标准化和简化的加密货币交易报告流程来应对这些挑战。通过要求数字资产经纪人以及被视为数字资产交易经纪人的人签发1099-DA表格，美国国税局可以获得有关加密货币交易的更准确和更完整的信息，这有助于提高税务合规性并降低逃税风险。\n2.3 1099-DA 表格包含哪些内容？\n1099-DA表格的最终版本尚未确定。但是，它可能包含以下有关您的加密货币交易的信息：\n\n数字资产经纪商身份识别\n\n帐号\n\n交易日期\n\n交易类型（例如，买入、卖出、交换）\n\n交易金额\n\n每笔交易的数字资产的公允市场价值\n\n2.4 谁会受到新表格的影响？\n",
+        "score": 0.8459
+      }
+    ],
+    "relevance": 3.5,
+    "created_at": "2026-03-08"
+  },
+  {
+    "search_query": "crypto cost basis gas fees IRS",
+    "tweet_url": "https://x.com/SKuzminskiy/status/2030405619027456043",
+    "tweet_account": "@SKuzminskiy",
+    "tweet_text": "IRS 1099-DA rules overkill: reporting stablecoin txns and penny gas fees drowns retail in forms &amp; shifts cost basis to traders. Coinbase’s right. https://t.co/9q3h3nx7FR #CryptoNews #Web3",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "Gas fees in 8949 inflating compliance burden is real. The question — what's a 'material' taxable event — needs legislative clarity. Current law still requires reporting every swap regardless of size.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "Gas fees as micro-disposals: each fee is technically a crypto sale. 100 DeFi transactions = 100 separate gain/loss calculations, each needing cost basis. The compliance math breaks down fast for active retail users.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "IRS 1099-DA 规则过度：报告稳定币交易和零碎手续费让散户淹没在表格中，并将成本基数转移给交易者。Coinbase 是对的。https://t.co/9q3h3nx7FR #加密新闻 #Web3",
+    "reply_cn": "燃气费作为微型处置：每笔费用在技术上都是一次加密货币出售。100笔 DeFi 交易 = 100 次单独的盈亏计算，每次都需要成本基础。对于活跃的零售用户来说，合规计算很快就会崩溃。",
+    "kb_chunks": [
+      {
+        "text": "指定NFTs可选报送门槛：$600\n\n对于采用可选报送方法进行汇总申报的指定NFTs交易，若客户全年在经纪商处的所有指定NFTs销售总收益（扣除交易成本后）不超过$600，经纪商可免于报送。\n \n \n3.2 排除联合申报计划\n \n此外，近期另一个技术性动向是，IRS明确2025纳税年度的1099-DA将不参与&ldquo;联邦/州联合申报计划（CF/SF）&rdquo;，这意味着经纪商不能再通过联邦系统一键完成州税数据报送，或需根据各州法律单独向地方税务机关提交数据。\n \n \n4 结语\n \n面对1099-DA带来的多重挑战，高净值投资者、项目方及Web3机构等相关市场参与者亟须适应新型申报规则",
+        "score": 0.8392
+      },
+      {
+        "text": "1 引言\n随着加密资产从边缘走向主流，全球税务监管的&ldquo;天网&rdquo;正在加速编织。继正式发布2025版数字资产经纪商信息申报表（Form 1099-DA，简称1099-DA）及其配套操作指南后，美国国税局（Internal Revenue Service，简称IRS）近期集中更新了2项细化规则。此举不仅明确了数字资产经纪商的强制报告义务，还通过补充规则细化了针对小额交易（De Minimis）的豁免门槛，并创新性地为稳定币与指定NFTs（Specified Non-fungible Tokens）提供了可选报送方法（Optional Reporting Methods）。这不仅",
+        "score": 0.839
+      },
+      {
+        "text": "3 顺势而为：美国1099-DA近期政策解读\n \n近期，IRS针对加密资产的监管节奏显著加快，根据其新发布的细则可发现其政策输出不再停留于宏观合规要求，而是发展为具备执行力并兼顾效率的具体标准。\n \n \n \n3.1 小额豁免与汇总申报细则\n \n在保持严监管的同时，IRS在新规中展现出一定的灵活性，通过小额豁免规则（De Minimis Rules）和可选报送方法相互嵌套、层层过滤，形成一套减负系统，以避免监管冗余。\n \n具体操作为：经纪商首先根据资产性质，判断该交易是否适用&ldquo;可选报送方法&rdquo;，一旦选择了可选报送方法，IRS便为其配置了相应的&ldquo;小额豁免门槛&rd",
+        "score": 0.8338
+      }
+    ],
+    "relevance": 3.4,
+    "created_at": "2026-03-07"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/heranishi/status/2039096244006441054",
+    "tweet_account": "@heranishi",
+    "tweet_text": "If you stake ETH and earn $2,000 in rewards this year, the IRS treats that $2,000 as ordinary income at the fair market value when you received it. Then when you sell those staking rewards later, you'll owe capital gains tax on any appreciation from that original $2,000 basis.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务",
+    "new_reply": "Correct — but misses a planning angle: the $2,000 income basis becomes your floor. If ETH drops after receipt, selling below $2,000 creates a capital loss that offsets other gains.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "IRS July 2023 guidance confirmed: receipt of staking rewards = control = taxable. Example: if ETH = $2,000, that's $1,000 income at receipt regardless of when you sell.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "如果你质押以太坊并在今年获得 2,000 美元的奖励，国税局会将这 2,000 美元按你收到时的公平市场价值视为普通收入。然后，当你以后出售这些质押奖励时，你需要就自最初的 2,000 美元成本起的任何增值缴纳资本利得税。",
+    "reply_cn": "美国国税局2023年7月指南确认：收到质押奖励＝控制权＝应纳税。例子：如果ETH=2000美元，收到时即为1000美元收入，无论何时出售。",
+    "kb_chunks": [
+      {
+        "text": "这类似于传统的借贷安排，你可以在链上为他人提供资金以获取利息回报。\n美国国税局（IRS）于2023年7月更新了其指南，明确了质押奖励的税务处理方式。该指南指出，质押奖励在收到时而非出售时即构成应税收入，因为收到就意味着奖励已经被解锁，质押者能够自行决定何时出售这些奖励。\n4. 赠与收入\n在涉及加密货币的赠与收入时，美国纳税人可能需要填报709表格《美国赠与（及跨代转移）税申报表》。当前，在美国境内，赠送加密货币若不超过终身赠与免税额度，则无需缴纳赠与税。\n情况一：接受赠与\n若您从朋友处获得加密货币作为礼物，在出售该加密货币或进行其他应税行为（例如质押）之前，您无需为此缴纳税款。\n情况二：赠与他",
+        "score": 0.8571
+      },
+      {
+        "text": "2. 挖矿收入\n加密资产挖矿行为也涉及普通所得税和资本利得税。一方面，在普通所得税方面，挖矿获得的加密资产需纳入应税所得范畴，这部分收入在取得时就产生纳税义务；另一方面，加密资产挖矿收入还需要缴纳资本利得税，这主要是因为挖矿产生的收益被视为资本利得，类似于其他资产投资所产生的利润。其税率依据资产持有期限而定：短期持有（不足一年）的资本利得，适用与普通收入相同的税率，为10%至37%不等&zwnj;；而长期持有（一般超过一年）的资本利得，则享受较为优惠的税率，范围在15%至20%之间。\n3. 质押收入\n质押一词在加密资产领域实际上有两种不同的含义：一种是共识机制（如权益证明PoS）中的质押，另一",
+        "score": 0.8487
+      },
+      {
+        "text": "因此，若G在美国持有以太坊并参与质押，每月获得0.5 ETH奖励，当月每枚ETH价格$2,000，则他须将$1,000计入当月收入纳税；若这些奖励代币后来增值再出售，则增值部分另算资本利得纳税。 \n美国对挖矿与质押收益的全面征税体现了税负公平，但也引发了创新激励方面的讨论。一方面，即时课税确保了加密收入与法币收入一样纳入税网，防止大量新财富游离于税收体系之外，维护了税制中立性；另一方面，这种模式也带来了潜在的双重或提前课税问题：当加密市场波动较大时，矿工和质押者可能面对记账收益纳税却未实际变现的窘境，例如获取代币时价格高、之后下跌导致实际变现不足缴税额的情况。有鉴于此，美国各界也出现了一些呼声",
+        "score": 0.842
+      }
+    ],
+    "relevance": 3.6,
+    "created_at": "2026-03-31"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/CryptofolioApp/status/2037525468262363279",
+    "tweet_account": "@CryptofolioApp",
+    "tweet_text": "Reason 4: Staking income is miscounted.\n\nYour tracker shows staking rewards as a capital gain. The IRS treats them as ordinary income at fair market value when received. \n\nDifferent classification, different tax rate. And each reward creates a new tax lot that affects your future P&L.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务",
+    "new_reply": "Wrong classification compounds at sale. If your tracker logs staking rewards as capital gains, it also sets wrong basis lots — any sale might double-count gains or apply the wrong holding periods.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "Misclassification compounds: if a tracker logs staking rewards as capital gains, the cost basis is also wrong — $0 instead of FMV at receipt. Every future sale of those reward tokens then overstates the gain.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "原因4：质押收入被错误计数。\n\n你的追踪器将质押奖励显示为资本利得。IRS在收到时将其按公允市场价值视为普通收入。\n\n分类不同，税率不同。每一笔奖励都会创建一个新的税务批次，影响你未来的损益。",
+    "reply_cn": "错误分类的复合问题：如果一个追踪器将质押奖励记录为资本收益，那么成本基础也会出错——为0而不是收到时的公平市场价值。之后每次出售这些奖励代币都会夸大收益。",
+    "kb_chunks": [
+      {
+        "text": "4. Treating DeFi returns as miscellaneous income may prevent individual taxpayers from offsetting their tax liabilities on DeFi returns using allowances available for dividends and interest income.",
+        "score": 0.8283
+      },
+      {
+        "text": "参考文献\n[1]Internal Revenue Service. (2014). IRS virtual currency guidance: Virtual currency is treated as property for US. federal tax purposes; general rules for property transactions apply.\n[2]Internal Revenue Service. (2022). IRS revenue ruling 2022-25.\n[3]Internal Revenue Service. (2023). IRS: Upd",
+        "score": 0.827
+      },
+      {
+        "text": "这些工具可以自动化跟踪和报告加密货币交易的过程，使其更容易遵守法规。\n7.2专门从事加密货币的税务专业人员\n对于复杂的税务情况或持有大量加密货币的个人和企业，与专门从事加密货币税务的专业人员合作可能是非常宝贵的。这些专业人士可以根据您的具体税务情况提供个性化的建议和指导，帮助您自信地应对加密货币税收的复杂性。\n8.要避免的常见错误\n8.1 未报告交易\n加密货币投资者最常见的错误之一是没有准确或根本没有报告他们的交易。这可能会导致审计、罚款和其他法律后果，因此，必须对所有加密货币交易进行详细记录，并在纳税申报单上准确报告。\n8.2 收入分类错误\n另一个常见的错误是将加密货币收入（如采矿奖励或质押",
+        "score": 0.8255
+      }
+    ],
+    "relevance": 3.3,
+    "created_at": "2026-03-27"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/CryptoTaxG/status/2036431137216647470",
+    "tweet_account": "@CryptoTaxG",
+    "tweet_text": "1/ 🇺🇸 The US taxes staking rewards as ordinary income the moment tokens hit your wallet — up to 37%.\n\nYou haven’t sold anything. You just validated a block. And you owe the IRS.\n\nSell later at a profit? Capital gains tax on top. It’s a double hit.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务",
+    "new_reply": "The 'double hit' can actually reverse. Ordinary income at receipt = your basis. If price drops before you sell, you realize a capital loss — the second event can offset, not add to, the first.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "US staker gets 0.5 ETH at $2k = $1k income. Later price rise = capital gains on top. But price drop = capital loss that partially reverses the 'double hit.' Not always additive.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "1/ 🇺🇸 美国对质押奖励的征税方式是，一旦代币进入你的钱包，就按普通收入征税——最高可达37%。\n\n你什么都没卖。你只是验证了一个区块。而你欠国税局的钱。\n\n以后卖出获利？还要再缴资本利得税。这是双重打击。",
+    "reply_cn": "美国质押者获得 0.5 个 ETH，价格为 2000 美元 = 1000 美元收入。之后价格上涨 = 资本收益额外增加。但价格下跌 = 资本损失部分抵消“双重打击”。并非总是累加的。",
+    "kb_chunks": [
+      {
+        "text": "因此，若G在美国持有以太坊并参与质押，每月获得0.5 ETH奖励，当月每枚ETH价格$2,000，则他须将$1,000计入当月收入纳税；若这些奖励代币后来增值再出售，则增值部分另算资本利得纳税。 \n美国对挖矿与质押收益的全面征税体现了税负公平，但也引发了创新激励方面的讨论。一方面，即时课税确保了加密收入与法币收入一样纳入税网，防止大量新财富游离于税收体系之外，维护了税制中立性；另一方面，这种模式也带来了潜在的双重或提前课税问题：当加密市场波动较大时，矿工和质押者可能面对记账收益纳税却未实际变现的窘境，例如获取代币时价格高、之后下跌导致实际变现不足缴税额的情况。有鉴于此，美国各界也出现了一些呼声",
+        "score": 0.8604
+      },
+      {
+        "text": "这使其既成为加密创业者偏爱的低税根据地，又在国际合规上保持良好声誉。 \n \n3.3 美国：严格征管与税负争议 \n美国对待加密货币质押与挖矿的税收政策可谓严格而复杂。作为全球主要经济体，美国早在2014年就将虚拟货币定义为应税财产，随后通过系列指南和裁决不断细化其征税方式。当前，美国纳税人从加密货币获得的多数常见情形的收益都可能触发纳税义务，包括交易盈利、空投糖果，当然也包括挖矿产出和质押奖励。 \n在挖矿方面，美国国税局规定，矿工成功开采出新区块所获得的新代币和交易费奖励，在获得时就构成应税收入，其美元价值需计入当年总收入申报。举例来说，某比特币矿工在区块奖励为6.25BTC时挖到一个块，当时每",
+        "score": 0.8533
+      },
+      {
+        "text": "这类似于传统的借贷安排，你可以在链上为他人提供资金以获取利息回报。\n美国国税局（IRS）于2023年7月更新了其指南，明确了质押奖励的税务处理方式。该指南指出，质押奖励在收到时而非出售时即构成应税收入，因为收到就意味着奖励已经被解锁，质押者能够自行决定何时出售这些奖励。\n4. 赠与收入\n在涉及加密货币的赠与收入时，美国纳税人可能需要填报709表格《美国赠与（及跨代转移）税申报表》。当前，在美国境内，赠送加密货币若不超过终身赠与免税额度，则无需缴纳赠与税。\n情况一：接受赠与\n若您从朋友处获得加密货币作为礼物，在出售该加密货币或进行其他应税行为（例如质押）之前，您无需为此缴纳税款。\n情况二：赠与他",
+        "score": 0.8516
+      }
+    ],
+    "relevance": 3.6,
+    "created_at": "2026-03-24"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/ArbazCryptoTax/status/2036422388636917985",
+    "tweet_account": "@ArbazCryptoTax",
+    "tweet_text": "Staking rewards are one of the most litigated crypto tax issues right now. IRS position (Rev. Rul. 2023-14): Staking rewards = ORDINARY INCOME at fair market value when received. The Jarrett case tried to challenge this. The IRS refunded their taxes rather than litigate, which tells you everything. Real client scenario: Client earned $85K in ETH staking rewards over 2 years. Didn't report any of it. When ETH price dropped, they thought there was \"no gain.\" Wrong - they owed tax on the $85K at the time of receipt, regardless of what ETH did afterward. Date received = taxable event. No exceptions.\n#StakingRewards #CryptoTax #IRS #ETH #CryptoTaxInsider",
+    "tweet_likes": 1,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务",
+    "new_reply": "Jarrett refund was a concession, not a ruling. IRS chose refund over litigation — question stays open. File as ordinary income until a court rules. The $85k scenario is the realistic risk for non-reporters.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "Jarrett sued for refund; IRS issued it rather than litigate. Court dismissed on mootness. IRS still classifies staking as income at receipt per Rev. Rul. 2023-14 — no binding precedent otherwise.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "质押奖励是当前加密货币税务问题中诉讼最多的问题之一。美国国税局立场（2023-14号税务裁定）：质押奖励 = 收到时按公允市场价值计算的普通收入。Jarrett 案试图对这一点提出挑战。国税局选择退还他们的税款而不是诉讼，这说明了一切。真实客户案例：客户在两年内通过 ETH 质押奖励获得了 85,000 美元。未报告任何收入。",
+    "reply_cn": "贾雷特起诉要求退款；国税局选择直接发放而不是诉讼。法院以案件已无实际争议为由驳回。根据2023-14号税务裁定，国税局仍将质押所得在取得时归类为收入——否则没有具有约束力的判例。",
+    "kb_chunks": [
+      {
+        "text": "Jarrett认为，质押的实质是使用现有的Tezos代币和计算能力来生产新的代币，因此，他只有在出售或转让代币时才应当确认收入，从而需要缴税。但是IRS对这一过程的看法有所不同。IRS称，类似于付款、工资、补偿和其他收入来源，质押行为涉及商品和服务的交换；当纳税人收到定投产生的&ldquo;奖励&rdquo;时，会增加总收入（2023-14号税收裁决）。同时，IRS在其网站上发布的《数字资产问题更新》将收到&ldquo;挖矿、定投和类似活动产生的新数字资产&rdquo;归类为应税交易)。基于此，Jarrett在收到每个代币时都会实现收入，并计入当年的应纳税所得额。\n收入确认时机对于核算应纳税所",
+        "score": 0.8635
+      },
+      {
+        "text": "2022年，Jarrett夫妇对美国政府提起诉讼，要求政府退还其要求退还的联邦所得税，该案主要涉及Jarrett夫妇在通过质押获得新的加密货币时是否实现了收入的争议。同年，田纳西州中区地方法院以在美国国税局（IRS）向Jarrett夫妇签发了一张全额退税加法定利息的支票为由，认为退款诉讼失去实际意义，驳回了Jarrett夫妇的诉讼。此后，Jarrett夫妇诉至联邦第六巡回法庭，法庭经审理决定维持原判；该案已于今年8月18日宣判。\nJarrett诉美国案反映了IRS和加密资产投资者对质押加密货币的收入实现时点的不同立场，收入实现时点直接影响了个人所得税的应税收入确认，从而影响纳税额。本文通过对该",
+        "score": 0.8627
+      },
+      {
+        "text": "意即，在未来的一段时间内，可以预见IRS仍然会按照&ldquo;取得代币控制权&rdquo;这一标准来判断质押收入的确认时点。\n3.2.2质押收入征税的可能方向\n如前节，IRS的税收裁决虽然没有相应的法律效力，但其作为征税上的指导发生相应的效力，允许其在类似情况下按照相同标准征收税款；加之，IRS认为每个纳税年度都会因为不同的情况产生不同的税因。因此，即使在过去几年获得退税或质押代币因未出金而未确认收入的投资者也必须警惕：未来的纳税年度，质押收入很可能在取得代币控制权时确认。但因为2023-14号税收裁决仅仅基于2个案例做出，目前实务中积累的先例较少，我们建议投资者与专业人士进行进一步沟通以确",
+        "score": 0.8599
+      }
+    ],
+    "relevance": 3.6,
+    "created_at": "2026-03-24"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/Brooke38868346/status/2029696349332234414",
+    "tweet_account": "@Brooke38868346",
+    "tweet_text": "The IRS treats your $ATOM staking rewards as ordinary income the moment they hit your wallet, not when you sell. So that 12% APY becomes taxable at your marginal rate immediately. Most people stack rewards for months then get blindsided by a 5-figure tax bill they never planne...",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务",
+    "new_reply": "The timing trap is real: 12% APY looks good until you pay 32-37% ordinary income on rewards at the top, then the asset dumps. Liquidity planning for the tax bill matters as much as yield.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "12% APY on $50k ATOM = $6,000/year taxable income — at your marginal rate, not capital gains rate. The bill hits before you sell anything. High-yield staking has a built-in tax drag most yield calculators never show.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "国税局将您的 $ATOM 质押奖励视为普通收入，从它们进入您的钱包的那一刻起，而不是在您出售时。因此，那 12% 的年化收益率会立即按您的边际税率征税。大多数人会积累奖励几个月，然后被一张他们从未计划过的五位数税单所震惊……",
+    "reply_cn": "在 50,000 美元的 ATOM 上年利率 12% = 每年 6,000 美元应税收入——按你的边际税率，而不是资本利得税率。税款在你出售任何资产之前就会产生。高收益质押有内置的税务阻力，大多数收益计算器从未显示过。",
+    "kb_chunks": [
+      {
+        "text": "这类似于传统的借贷安排，你可以在链上为他人提供资金以获取利息回报。\n美国国税局（IRS）于2023年7月更新了其指南，明确了质押奖励的税务处理方式。该指南指出，质押奖励在收到时而非出售时即构成应税收入，因为收到就意味着奖励已经被解锁，质押者能够自行决定何时出售这些奖励。\n4. 赠与收入\n在涉及加密货币的赠与收入时，美国纳税人可能需要填报709表格《美国赠与（及跨代转移）税申报表》。当前，在美国境内，赠送加密货币若不超过终身赠与免税额度，则无需缴纳赠与税。\n情况一：接受赠与\n若您从朋友处获得加密货币作为礼物，在出售该加密货币或进行其他应税行为（例如质押）之前，您无需为此缴纳税款。\n情况二：赠与他",
+        "score": 0.8198
+      },
+      {
+        "text": "2023). Crypto taxes USA 2023: Ultimate guide.",
+        "score": 0.8139
+      },
+      {
+        "text": "每年报税季，总有不少投资加密资产的美国朋友焦头烂额：究竟要不要缴税？如何缴税？稍有不慎，不仅可能面临罚款，还可能引起美国国税局（IRS）的审查。别急，本文将告诉您关于美国加密资产税务的6个关键点，助您轻松应对报税季。\n1. 在美国加密资产需要纳税\n根据IRS在2014年发布的《虚拟资产交易通知》（Notice 2014-21），所有加密资产被视为财产，而不是货币。加密资产交易需要纳税，且适用于财产交易的一般税收规则。这意味着，不管是通过交易所买卖BTC，还是用ETH购买现实商品，都可能需要纳税。根据具体交易类型的不同，您可能需要为加密资产交易缴纳个人所得税或资本利得税。\n2. 需要缴纳个人所得",
+        "score": 0.8064
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-03-05"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/SoCalCryptoTax/status/2012512777118888446",
+    "tweet_account": "@SoCalCryptoTax",
+    "tweet_text": "Quick 2026 crypto tax reminder for California traders:\nStaking rewards are taxed as ordinary income the moment you receive them — NOT when you sell.\nMiss this and the IRS/FTB will hit you with surprise bills (plus penalties).\nDM “TAX” for my free California Crypto Tax Checklist — no pitch, just the must-knows.\n#CryptoTax #StakingTax #CaliforniaTax",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务",
+    "new_reply": "California double-taxes staking: no preferential long-term rate at state level — CA taxes rewards as ordinary income at receipt AND on capital gains at sale. Combined federal and state rate for top earners can approach 54% (37% federal + 13.3% CA + 3.8% NIIT).",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "Both IRS and CA FTB follow the control-based test: rewards taxed when transferable. California taxes ordinary income at state rates on top of federal — up to 13.3% state, no preferential rate.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "加州交易者的2026加密税快速提醒：\n\n质押奖励在您收到的那一刻就作为普通收入征税——而不是在您出售时。\n如果错过这一点，国税局/加州税务局会给您带来意外的账单（加上罚款）。\n私信“税务”获取我的免费加州加密税清单——没有推销，只有必须知道的信息。\n#加密税 #质押税 #加州税",
+    "reply_cn": "美国国税局（IRS）和加州税务局（CA FTB）都遵循基于控制的测试：可转让时的奖励需纳税。加州在联邦税基础上按州税率对普通收入征税——州税最高可达13.3%，无优惠税率。",
+    "kb_chunks": [
+      {
+        "text": "这类似于传统的借贷安排，你可以在链上为他人提供资金以获取利息回报。\n美国国税局（IRS）于2023年7月更新了其指南，明确了质押奖励的税务处理方式。该指南指出，质押奖励在收到时而非出售时即构成应税收入，因为收到就意味着奖励已经被解锁，质押者能够自行决定何时出售这些奖励。\n4. 赠与收入\n在涉及加密货币的赠与收入时，美国纳税人可能需要填报709表格《美国赠与（及跨代转移）税申报表》。当前，在美国境内，赠送加密货币若不超过终身赠与免税额度，则无需缴纳赠与税。\n情况一：接受赠与\n若您从朋友处获得加密货币作为礼物，在出售该加密货币或进行其他应税行为（例如质押）之前，您无需为此缴纳税款。\n情况二：赠与他",
+        "score": 0.8256
+      },
+      {
+        "text": "2023). Crypto taxes USA 2023: Ultimate guide.",
+        "score": 0.825
+      },
+      {
+        "text": "每年报税季，总有不少投资加密资产的美国朋友焦头烂额：究竟要不要缴税？如何缴税？稍有不慎，不仅可能面临罚款，还可能引起美国国税局（IRS）的审查。别急，本文将告诉您关于美国加密资产税务的6个关键点，助您轻松应对报税季。\n1. 在美国加密资产需要纳税\n根据IRS在2014年发布的《虚拟资产交易通知》（Notice 2014-21），所有加密资产被视为财产，而不是货币。加密资产交易需要纳税，且适用于财产交易的一般税收规则。这意味着，不管是通过交易所买卖BTC，还是用ETH购买现实商品，都可能需要纳税。根据具体交易类型的不同，您可能需要为加密资产交易缴纳个人所得税或资本利得税。\n2. 需要缴纳个人所得",
+        "score": 0.8227
+      }
+    ],
+    "relevance": 3.3,
+    "created_at": "2026-01-17"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/TazCoLab/status/2036796616330338401",
+    "tweet_account": "@TazCoLab",
+    "tweet_text": "(2/8)\nNew reality in 2026:\nDAC8 and CARF reporting rules are now in full effect across the #EU and #UK.\nCrypto exchanges must collect and prepare to share detailed user data — transactions, holdings, and balances — with tax authorities.  First major information exchanges are scheduled for 2027, but data collection is already happening.",
+    "tweet_likes": 1,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求",
+    "new_reply": "DAC8 collection is live but first exchange-to-authority reporting happens in 2027. Use 2026 to register TINs and audit exchange records. Penalty risk starts when first reporting deadlines hit.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "EU member states had until Dec 31, 2025 to transpose DAC8 into national law. From Jan 1, 2026 it applies — CASPs must collect and exchange user transaction data annually.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "(2/8)  \n2026年的新现实：  \nDAC8 和 CARF 报告规则现已在整个欧盟和英国全面生效。  \n加密货币交易所必须收集并准备与税务部门共享详细的用户数据——包括交易、持仓和余额。首次主要的信息交换计划在2027年进行，但数据收集已经在进行中。",
+    "reply_cn": "欧盟成员国必须在2025年12月31日之前将DAC8转化为国家法律。从2026年1月1日起，该规定开始适用——CASPs必须每年收集并交换用户交易数据。",
+    "kb_chunks": [
+      {
+        "text": "为了适应不断变化的金融环境，2022年12月，欧盟委员会提议建立一个报告框架，要求加密资产服务提供商报告欧盟客户的交易。2023年5月，欧盟财长达成政治协议，同年10月欧盟成员国正式通过了关于税收领域行政合作的第2011/16/EU号指令，即DAC8，为加密资产引入了全面的税收透明度规则，并扩大了成员国税务机关之间的合作。\n根据规定，欧盟成员国必须在2025年12月31日之前将DAC8主要规则转化为国家法律，新规定将于2026年1月1日起适用。但是，有两个例外情况：与身份识别服务相关的规定应在2024年1月1日之前转化为国家法律，并于2025年1月1日起实施。与TIN 验证相关的规定应在202",
+        "score": 0.8696
+      },
+      {
+        "text": "加密资产服务提供商需要识别加密资产交易的发起人和受益人。需要收集的信息将包括姓名、地址、税号、欧盟境内居住国和交易总价值等详细信息。可以看出，其目标是创建一个透明的记录和报告线，税务机关可以使用它来查询和核实个人和实体是否完全履行纳税义务。 \n其目的与传统银行交易类似，这意味着加密资产交易可以被追踪并追溯到加密资产持有者。对于加密资产服务提供商来说，它引入了一个新的监管合规层，需要强大的系统来安全地收集、存储和传输数据。 \n4.DAC 8的加密资产尽职调查要求 \nDAC 8 引入了适用于个人客户和法人实体的尽职调查程序，目的是根据自我认证表格识别可报告的加密资产用户。它引入了与新客户建立新业务",
+        "score": 0.8624
+      },
+      {
+        "text": "然而，目前几无国家将相关法案落地。在法案落地前，加密机构尚有时间进行内部改革以适应DAC8的要求，投资者也必须做好准备迎接DAC8的影响。\nDAC8如何与加密资产相关？\nDAC8将信息自动交换的范围扩大到加密资产和电子货币，适用于电子货币和央行数字货币（CBDC）方面的金融机构。加密资产服务提供商应每年收集信息，向居住、授权或注册成员国的税务机关报告包括有关加密资产提供商本身、可报告用户和可报告加密资产的交易信息。此外税务机关将通过欧盟共同通信网络与用户居住地的税务机关共享当地报告的信息。\nDAC8通过修订&ldquo;存款机构&rdquo;和&ldquo;存款账户&rdquo;的定义，将电子",
+        "score": 0.8619
+      }
+    ],
+    "relevance": 3.7,
+    "created_at": "2026-03-25"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/ThePaypers/status/2018157471718682728",
+    "tweet_account": "@ThePaypers",
+    "tweet_text": "@stripe @cryptocom @MorganStanley 3/ From January 2026, crypto platforms in the EU and UK must comply with CARF, automatically sharing user and transaction data with tax authorities. DAC8 makes this the default across all 27 EU states. \n\n🗨️ Read more: https://t.co/jUptE6UXcU https://t.co/cUirE9nmsr",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求",
+    "new_reply": "CARF compliance for platforms: customer TINs often missing, 'reportable jurisdiction' for multi-national users is complex. Building clean pipelines by late 2026 is tighter than it looks.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "CARF full global rollout will take time — DAC8 moves faster inside the EU. CARF reporting flows to each user's home country tax authority. For cross-border holders, data lands where they're resident.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "@stripe @cryptocom @MorganStanley 3/ 从2026年1月起，欧盟和英国的加密平台必须遵守CARF，自动与税务机关共享用户和交易数据。DAC8使这一规定在所有27个欧盟成员国成为默认要求。\n\n🗨️ 阅读更多内容：https://t.co/jUptE6UXcU https://t.co/cUirE9nmsr",
+    "reply_cn": "CARF 的全球全面推广将需要时间——DAC8 在欧盟内部推进更快。CARF 报告会流向每个用户所在国家的税务机关。对于跨境持有者，数据会传送到他们居住的地方。",
+    "kb_chunks": [
+      {
+        "text": "参考以往经验，欧盟内部的DAC8将很快落地，但CARF的全面落地仍需假以时日。CARF和DAC8的收敛反映了在全球范围内对加密税收监管所作出的努力。&#xa0;",
+        "score": 0.8405
+      },
+      {
+        "text": "为了适应不断变化的金融环境，2022年12月，欧盟委员会提议建立一个报告框架，要求加密资产服务提供商报告欧盟客户的交易。2023年5月，欧盟财长达成政治协议，同年10月欧盟成员国正式通过了关于税收领域行政合作的第2011/16/EU号指令，即DAC8，为加密资产引入了全面的税收透明度规则，并扩大了成员国税务机关之间的合作。\n根据规定，欧盟成员国必须在2025年12月31日之前将DAC8主要规则转化为国家法律，新规定将于2026年1月1日起适用。但是，有两个例外情况：与身份识别服务相关的规定应在2024年1月1日之前转化为国家法律，并于2025年1月1日起实施。与TIN 验证相关的规定应在202",
+        "score": 0.8385
+      },
+      {
+        "text": "要求交易所和平台跟踪加密货币交易也进一步说明了CARF的可能对中心化加密货币交易所和平台的发展造成影响，这可能会对Dex等去中心化替代品有利。CARF也会对交易者产生影响，其对交易所的影响传导到末端交易者，即交易所报告的加密货币交易会成为各国征税的信息，从而对末端加密货币交易者产生税务影响。未来的加密税收透明框架尽管CARF代表了标准化加密税的重要国际努力，但它并不是唯一的协议，其他涉及加密货币的税务信息交换国际协议也正在推进。今年10月，欧盟理事会正式通过了DAC8。DAC8是一项加密货币纳税申报规则，赋予税务员以管辖权来监控和评估任何欧盟成员国内的每笔加密货币交易。CoinBase的分析指",
+        "score": 0.8368
+      }
+    ],
+    "relevance": 3.4,
+    "created_at": "2026-02-02"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/bradarska1/status/2012865157962105267",
+    "tweet_account": "@bradarska1",
+    "tweet_text": "The entry into force of the OECD's Crypto-Asset Reporting Framework (CARF) and the European DAC8 directive on January 1, 2026, establishes an automatic obligation for the exchange of tax information on digital asset transactions, ... https://t.co/RPCPkAIzeZ",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求",
+    "new_reply": "CARF and DAC8 align on most assets but diverge on DeFi and NFTs. CARF's definition is narrower; DAC8 is broader. Multi-jurisdictional operators may face asymmetric obligations on the same transactions.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "OECD published CARF in October 2022; DAC8 is the EU's implementation. DAC8 applies from Jan 1 2026 — but first exchange of data between EU states is 2027. CASPs collect 2026 data, report in 2027.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "经合组织加密资产报告框架（CARF）和欧洲DAC8指令于2026年1月1日生效，建立了关于数字资产交易税务信息自动交换的义务，... https://t.co/RPCPkAIzeZ",
+    "reply_cn": "经合组织于2022年10月发布了CARF；DAC8是欧盟的实施。DAC8自2026年1月1日起适用——但欧盟成员国之间的首次数据交换是在2027年。CASPs收集2026年的数据，并在2027年报告。",
+    "kb_chunks": [
+      {
+        "text": "1 引言2022年10月10日，经济合作与发展组织（OECD）发布了题为Crypto-Asset Reporting Framework and Amendments to the Common Reporting Standard（《加密资产报告框架和通用报告标准修正案》）的文件，其中：加密资产报告框架（CARF）是OECD制定的旨在收集和自动交换加密资产交易信息的全球税收框架，其规定纳税人应当以标准化的方式报告部分加密资产交易的税收信息，以应对全球加密资产市场税收“透明度低”的挑战。虽然目前CARF并未在任何国家得到实施，但OECD在2022年10月发布的新闻稿中称，“在未来几个月，OEC",
+        "score": 0.8742
+      },
+      {
+        "text": "为了适应不断变化的金融环境，2022年12月，欧盟委员会提议建立一个报告框架，要求加密资产服务提供商报告欧盟客户的交易。2023年5月，欧盟财长达成政治协议，同年10月欧盟成员国正式通过了关于税收领域行政合作的第2011/16/EU号指令，即DAC8，为加密资产引入了全面的税收透明度规则，并扩大了成员国税务机关之间的合作。\n根据规定，欧盟成员国必须在2025年12月31日之前将DAC8主要规则转化为国家法律，新规定将于2026年1月1日起适用。但是，有两个例外情况：与身份识别服务相关的规定应在2024年1月1日之前转化为国家法律，并于2025年1月1日起实施。与TIN 验证相关的规定应在202",
+        "score": 0.8727
+      },
+      {
+        "text": "经合组织(OECD)的加密资产报告框架（CARF）与欧盟的行政合作指令是否一致且有何异同？两者又将如何合作监管加密货币的税务问题？过去十年间，加密资产和电子货币等替代支付和投资方式的使用迅速增长。这一增长引起了全球监管机构的广泛关注，并促使其发布了各种建议和框架，以确保近期在税收透明度方面取得的进展能够跟上不断变化的金融形势，并保证对加密资产和电子货币的纳税义务，其中起主导作用的最新框架便是经合组织（OECD）于2022年10月发布的《加密资产报告框架》（CARF）和《通用报告标准》（CRS）修正案。和现有的税收和监管框架如2014年的CRS和金融行动税收工作（FATF）一样，CARF是一个为",
+        "score": 0.8701
+      }
+    ],
+    "relevance": 3.7,
+    "created_at": "2026-01-18"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/CryptoTaxFixer/status/2011082557165899800",
+    "tweet_account": "@CryptoTaxFixer",
+    "tweet_text": "2026 marks the implementation in Europe of the DAC8 regulations. \n\nThis is Europe’s implementation of the OECD’s CARF regulations. CARF stands for Crypto Asset Reporting Framework.\n\nThe United States was involved with the OECD in developing this framework, and CARF became the defining foundation for the U.S. 1099-DA rules. It’s essentially the same type of information being exchanged.\n\nThe key difference is this. The U.S. has not officially signed onto CARF yet. Europe already has.\n\nFor people trading on European exchanges, CARF already applies. In the U.S., the White House is currently considering whether America will formally participate. We’ll likely hear more about that within the next month or two.\n\nSo what does CARF actually do?\n\nCARF involves the sharing of crypto transaction information between countries. Let’s walk through a simple example.\n\nOnce the U.S. becomes a CARF participant, if you’re an American trading on a European exchange, that exchange is required to collect your KYC information. That includes where your tax home is and your tax identification number.\n\nAt the end of the year, the exchange reports your trading activity to its local tax authority. So, if the exchange operates out of Malta, it reports that information to the Maltese tax authorities.\n\nMalta then sends that data to the IRS.\n\nThink of it as a foreign version of a 1099-DA being transmitted directly to the IRS.\n\nRight now, the U.S. hasn’t signed onto CARF, but the Treasury Department has recommended it, and the decision is currently with the White House. We expect to see this approved soon.\n\nWhat does this mean in practical terms? If you trade on a foreign exchange, that activity can be reported to the IRS, even if you never receive a copy of that report yourself. Unless the exchange voluntarily provides it, the IRS may see information you don’t.\n\nThis is why people say the noose is tightening around crypto traders. It’s becoming harder to hide activity.\n\nThere’s another important wrinkle here.\n\nUnder DAC8, any exchange that is not based in Europe but does business with European residents is also expected to comply with DAC 8 reporting requirements. Failure to comply can result in significant fines and regulatory consequences.\n\nTake Binance International as an example. It’s often unclear where Binance is formally domiciled. But, if a European person trades on Binance, Binance is required to report that activity to the relevant European tax authority.\n\nOnce the U.S. joins CARF, the same logic applies. Exchanges like Binance would be expected to report activity for U.S.-identified users directly to the IRS.\n\nSo again, the noose gets tighter.\n\nThe IRS may not receive perfectly complete information, but they are receiving significant data about your transactions and sales. And, they expect all of that to be reported on your tax return.\n\nThis is not how things worked in the past. It’s becoming harder and harder to stay invisible.\n\nSome people say they’ll just do everything in DeFi. But eventually, you have to cash out. At some point, you need to produce funds, and you need to explain where the money came from and what your cost basis was.\n\nThat’s very difficult to hide long term.\n\nThis is why CARF is such a significant development. \n\nIt’s part of a global tightening around crypto reporting.\n\nThis year should be the year you focus on reporting your crypto completely and accurately, so you don’t end up dealing with an IRS audit later. Trust me!",
+    "tweet_likes": 11,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "DAC8 isn't CARF — it's the EU's adaptation with added fields. Non-EU exchanges with EU customers: both may apply with overlapping scope. CARF compliance doesn't guarantee DAC8 compliance.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "DAC8 and CARF aren't parallel — DAC8 is the EU's legal implementation of CARF. CARF provides the OECD standard; DAC8 gives it binding force in EU law. Non-EU jurisdictions need their own CARF adoption.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "2026 年标志着 DAC8 法规在欧洲的实施。\n\n这是欧洲对经合组织（OECD）CARF 法规的实施。CARF 代表加密资产报告框架。\n\n美国参与了与经合组织共同制定该框架的工作，而 CARF 成为了美国 1099-DA 规则的定义性基础。本质上，这是相同类型的信息交换。\n\n关键差异",
+    "reply_cn": "DAC8 和 CARF 并不平行——DAC8 是 CARF 在欧盟的法律实施。CARF 提供经合组织标准；DAC8 使其在欧盟法律中具有约束力。非欧盟司法管辖区需要自行采用 CARF。",
+    "kb_chunks": [
+      {
+        "text": "为了适应不断变化的金融环境，2022年12月，欧盟委员会提议建立一个报告框架，要求加密资产服务提供商报告欧盟客户的交易。2023年5月，欧盟财长达成政治协议，同年10月欧盟成员国正式通过了关于税收领域行政合作的第2011/16/EU号指令，即DAC8，为加密资产引入了全面的税收透明度规则，并扩大了成员国税务机关之间的合作。\n根据规定，欧盟成员国必须在2025年12月31日之前将DAC8主要规则转化为国家法律，新规定将于2026年1月1日起适用。但是，有两个例外情况：与身份识别服务相关的规定应在2024年1月1日之前转化为国家法律，并于2025年1月1日起实施。与TIN 验证相关的规定应在202",
+        "score": 0.8688
+      },
+      {
+        "text": "参考以往经验，欧盟内部的DAC8将很快落地，但CARF的全面落地仍需假以时日。CARF和DAC8的收敛反映了在全球范围内对加密税收监管所作出的努力。&#xa0;",
+        "score": 0.8659
+      },
+      {
+        "text": "基于CRS拟议的修正案，中央银行数字货币和特定电子货币产品也被纳入机构存款的定义中，但中央银行数字货币和特定电子货币产品不在CARF规定的报告范围内。CARF是一个独立的框架，由可以转化为国内法的规则和评注组成。2022年12月，欧盟委员会成为第一个尝试将CARF和CRS修正案转化为法律的组织。为此，欧盟委员会发布了《行政合作指令》（第2011/16/EU号指令，简称DAC）第七修正案，即DAC8。虽然DAC8使用了《加密资产市场条例》（MiCA）而非CARF中的定义，但总体上与CARF保持一致，并包含了经合组织对CRS的拟议修正案。不过，CARF与DAC8之间也有一些显著的区别，本文将在下文",
+        "score": 0.8605
+      }
+    ],
+    "relevance": 3.7,
+    "created_at": "2026-01-13"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/cryptocoinatlas/status/2010685532989276203",
+    "tweet_account": "@cryptocoinatlas",
+    "tweet_text": "💰 EU’s DAC8 Crypto Reporting Takes Effect (2026)\n\nDAC8 now applies across the EU, requiring standardized crypto reporting by CASPs. Learn who must report, what’s in scope, and how it aligns with CARF....\n\nRead more: https://t.co/i3EVY3DCNt\n\n#CryptoCoinAtlas #Crypto #Blockchain #DeFi",
+    "tweet_likes": 2,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求",
+    "new_reply": "'Standardized reporting' means: exchanges identify crypto type, transaction date, FMV, and disposal/income type — matched to verified user identity. Non-trivial data quality problem at scale.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "Under DAC8, CASPs report: user identity, TIN, annual proceeds, and FMV of crypto held. Scope covers exchange, transfer, and retail payment transactions. Decentralized platforms with no identifiable operator are excluded.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "💰 欧盟 DAC8 加密货币报告生效（2026）\n\nDAC8 现已在欧盟范围内适用，要求加密资产服务提供商（CASPs）进行标准化加密货币报告。了解谁必须报告、报告的范围以及它如何与 CARF 对齐....\n\n阅读更多：https://t.co/i3EVY3DCNt\n\n#CryptoCoinAtlas #加密货币 #区块链 #去中心化金融",
+    "reply_cn": "根据 DAC8，CASP 需要报告：用户身份、纳税人识别号（TIN）、年度收益，以及持有的加密货币的公允市场价值（FMV）。范围涵盖交易所、转账和零售支付交易。没有可识别运营者的去中心化平台被排除在外。",
+    "kb_chunks": [
+      {
+        "text": "标题：DAC 8：欧盟加密资产报告新监管框架\n关键词：\n摘要：\n发布时间：2024-07-28 19:08:37",
+        "score": 0.8692
+      },
+      {
+        "text": "6.挑战与实施 \nDAC 8的实施带来了若干挑战。跟踪和报告加密交易的技术要求很高，需要大量投资，因为许多加密资产服务提供商需要升级其系统和流程以遵守新规则。与往常一样，在本已很敏感的社区中平衡用户隐私与监管合规也会带来进一步的挑战。 \n欧盟成员国在制定将 DAC 8转化为立法的详细国家法律方面也发挥着重要作用，这些法律在不同国家实施或解释的方式可能存在差异。虽然离2027 年首次报告的时间表似乎还有些遥远，但显然还有很多工作要做，加密资产服务提供商应该尽快开始准备，以适应、减轻影响并做好准备。 \n7.结论 \nDAC 8的推出可能会对加密资产行业产生重大影响。积极的一面是，它有可能增强加密资产",
+        "score": 0.8626
+      },
+      {
+        "text": "为了适应不断变化的金融环境，2022年12月，欧盟委员会提议建立一个报告框架，要求加密资产服务提供商报告欧盟客户的交易。2023年5月，欧盟财长达成政治协议，同年10月欧盟成员国正式通过了关于税收领域行政合作的第2011/16/EU号指令，即DAC8，为加密资产引入了全面的税收透明度规则，并扩大了成员国税务机关之间的合作。\n根据规定，欧盟成员国必须在2025年12月31日之前将DAC8主要规则转化为国家法律，新规定将于2026年1月1日起适用。但是，有两个例外情况：与身份识别服务相关的规定应在2024年1月1日之前转化为国家法律，并于2025年1月1日起实施。与TIN 验证相关的规定应在202",
+        "score": 0.8614
+      }
+    ],
+    "relevance": 3.7,
+    "created_at": "2026-01-12"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/ibetoncrypto/status/2009553983518466482",
+    "tweet_account": "@ibetoncrypto",
+    "tweet_text": "Crypto tax reporting is set to follow a “bank-style” approach in 2026 with DAC8 (EU) + CARF (OECD)\n\nRead it at https://t.co/qYBMbY47J8  \n\n#DAC8 #CARF #CryptoTax #CryptoTaxReporting #CryptoCompliance #DigitalNomad #RemoteWork #ExpatLife #CryptoForNomads #Bitcoin #Stablecoins https://t.co/jHVQwdLPEO",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求",
+    "new_reply": "'Bank-style' understates it: banks report balances and interest. CARF requires per-transaction reporting with asset classification, FMV, and disposal/income distinction. Significantly more complex.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "'Bank-style' is apt: CARF/DAC8 mirrors FATCA and CRS for traditional finance. The convergence is explicit — Note DAC8 extends the existing EU financial services tax directive framework to crypto.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "加密货币税务报告将在2026年遵循“银行式”方法，结合DAC8（欧盟）和CARF（经合组织）\n\n阅读详情：https://t.co/qYBMbY47J8\n\n#DAC8 #CARF #加密税务 #加密税务报告 #加密合规 #数字游民 #远程工作 #外籍生活 #游民加密货币 #比特币 #稳定币 https://t.co/jHVQwdLPEO",
+    "reply_cn": "“银行风格”是恰当的：CARF/DAC8 镜像了传统金融的 FATCA 和 CRS。这种趋同是明确的——注意 DAC8 将现有的欧盟金融服务税指令框架扩展到加密货币。",
+    "kb_chunks": [
+      {
+        "text": "参考以往经验，欧盟内部的DAC8将很快落地，但CARF的全面落地仍需假以时日。CARF和DAC8的收敛反映了在全球范围内对加密税收监管所作出的努力。&#xa0;",
+        "score": 0.8532
+      },
+      {
+        "text": "为了适应不断变化的金融环境，2022年12月，欧盟委员会提议建立一个报告框架，要求加密资产服务提供商报告欧盟客户的交易。2023年5月，欧盟财长达成政治协议，同年10月欧盟成员国正式通过了关于税收领域行政合作的第2011/16/EU号指令，即DAC8，为加密资产引入了全面的税收透明度规则，并扩大了成员国税务机关之间的合作。\n根据规定，欧盟成员国必须在2025年12月31日之前将DAC8主要规则转化为国家法律，新规定将于2026年1月1日起适用。但是，有两个例外情况：与身份识别服务相关的规定应在2024年1月1日之前转化为国家法律，并于2025年1月1日起实施。与TIN 验证相关的规定应在202",
+        "score": 0.8476
+      },
+      {
+        "text": "为了适应不断发展变化的数字环境，金融法规也在不断发展。欧盟正在采取重要措施将加密货币和其他数字资产纳入其监管框架，并发布了《行政合作指令》（DAC 8）以帮助实现这一目标。DAC 8 旨在提高透明度并帮助打击与加密资产相关的逃税行为。DAC 8 的推出是欧盟成员国在加密资产管理和报告方面的重大进展。 \n1.DAC 8的整体情况 \nDAC 8扩展了现有的欧盟金融服务税收指令框架，将加密资产也纳入其中。为加密资产报告而起草的 DAC 8 旨在确保与加密货币和数字代币交易相关的信息在成员国之间自动交换，其方式类似于当今在通用报告准则 (CRS) 下共享一般金融账户信息的方式。此举被视为对加密资产在金",
+        "score": 0.8453
+      }
+    ],
+    "relevance": 3.5,
+    "created_at": "2026-01-09"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/JeanClawd99/status/2034662725264003563",
+    "tweet_account": "@JeanClawd99",
+    "tweet_text": "the GENIUS Act mandates 1:1 reserves, audits, AML compliance for stablecoin issuers.\n\ngreat for stability. great for institutions.\n\nbut notice what this means: your \"decentralized\" payment layer now runs on top of entities that look and act like banks.\n\nthe trustless part is the settlement layer underneath. choose it carefully. $CSPR",
+    "tweet_likes": 4,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规",
+    "new_reply": "1:1 reserves + monthly audits + AML program + federal oversight = compliance stack only well-capitalized issuers can maintain. GENIUS Act effectively narrows stablecoin issuance to bank-like entities.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "GENIUS Act bans re-hypothecation or reuse of reserve assets. Reserves must fully cover circulation — US cash, T-bills maturing within 93 days, or Treasury repo only. No algorithmic backing allowed.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "GENIUS 法案要求稳定币发行者保持 1:1 储备、审计和反洗钱合规。\n\n这对稳定性非常好，对机构也很好。\n\n但请注意这意味着什么：你的“去中心化”支付层现在运行在看起来和行为像银行的实体之上。\n\n无需信任的部分是下面的结算层。请仔细选择。$CSPR",
+    "reply_cn": "GENIUS法案禁止对准备资产进行再质押或再利用。准备金必须完全覆盖流通——仅限美国现金、到期日不超过93天的国债或国库回购。禁止使用算法支持。",
+    "kb_chunks": [
+      {
+        "text": "另一方面，与GENIUS Act生效前后安排相衔接，释放出清晰的监管信号，即稳定币的核心合规边界将更多依托国会立法与银行监管框架来确立，SEC则在券商监管接口处进行配套嵌入与风险校准。 \n对于市场参与者，下一阶段的关键不只是关注折价率变化，还要考察现有的支付型稳定币能否持续满足合规要件。可以预见的是，随着GENIUS Act及配套实施细则逐渐落地，稳定币市场将进一步向高透明度、高合规门槛的方向集中，机构采用度与市场结构也将随之重塑。",
+        "score": 0.8349
+      },
+      {
+        "text": "储备资产须为高流动性资产：储备需100%覆盖流通量，仅限美元现金、93天内到期的国债、国债抵押回购协议等低风险资产，并且禁止再质押或重复使用。\n\n披露与审计：发行人须每月公开储备资产规模、结构及托管位置，并由注册会计师事务所审查，CEO/CFO需对数据真实性背书。超500亿美元流通量的非上市公司需提交经审计的财务报表，确保财务透明。\n\n \n\n4.1.5 消费者保护与跨境协调\n法案通过以下条款保障消费者权益并防范系统性风险：\n\n赎回与费用透明：发行人须明确及时赎回程序，无延迟按面值赎回。\n\n禁止政治背书：禁止在名称或营销中暗示政府背书，禁止任何国会议员或高级行政部门官员在公共服务期间发行支付稳定",
+        "score": 0.8282
+      },
+      {
+        "text": "在具体监管制度方面，不同法域的冻结机制与黑名单管理是影响稳定币前景的关键因素之一。目前，稳定币主要应用于加密资产购买以及&ldquo;灰色&rdquo;或&ldquo;灰白色&rdquo;领域的大额交易。在各国监管框架中，如何平衡冻结尺度直接决定了稳定币的生存能力。稳定币应充分发挥其作为交换媒介和价值计量单位的职能，特别是在跨境支付等领域充分发挥高自由度、交易简便的长处。如稳定币能够与比特币或特定实物商品形成实际交易对，将促成更多现实需求，从而在竞争中占据优势。反之，过于严苛的监管可能切断其应用场景，导致竞争力削弱。由此观之，监管机构需明确界定可冻结资金的范围，并建立框架以确保合规资金在原有场",
+        "score": 0.8253
+      }
+    ],
+    "relevance": 3.3,
+    "created_at": "2026-03-19"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/ChainLabo/status/2032385124839334149",
+    "tweet_account": "@ChainLabo",
+    "tweet_text": "The OCC's GENIUS Act implementation rules set a hard bar for stablecoin issuers: 1:1 reserves, audits, AML/BSA compliance. Enterprise node infrastructure is now a regulatory requirement. https://t.co/B1RV1wvxem #GENIUSAct #Stablecoin",
+    "tweet_likes": 1,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规",
+    "new_reply": "Which assets qualify as 1:1 backing under OCC rules? T-bills: yes. Overnight repos: likely. Bank deposits: yes but counterparty risk. Asset composition rules will determine issuer strategy.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "GENIUS Act mandates monthly public disclosure of reserve size, structure, and custody location — verified by registered auditors, with CEO/CFO sign-off. Issuers >$50B circulation need full audited financials.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "OCC 的 GENIUS 法案实施规则为稳定币发行商设定了严格标准：1:1 储备、审计、反洗钱/银行保密法合规。企业节点基础设施现在是监管要求。https://t.co/B1RV1wvxem #GENIUSAct #Stablecoin",
+    "reply_cn": "天才法案要求每月公开储备规模、结构和保管地点——由注册审计师核实，并由首席执行官/首席财务官签署。流通量超过500亿美元的发行人需要完整的审计财务报表。",
+    "kb_chunks": [
+      {
+        "text": "另一方面，与GENIUS Act生效前后安排相衔接，释放出清晰的监管信号，即稳定币的核心合规边界将更多依托国会立法与银行监管框架来确立，SEC则在券商监管接口处进行配套嵌入与风险校准。 \n对于市场参与者，下一阶段的关键不只是关注折价率变化，还要考察现有的支付型稳定币能否持续满足合规要件。可以预见的是，随着GENIUS Act及配套实施细则逐渐落地，稳定币市场将进一步向高透明度、高合规门槛的方向集中，机构采用度与市场结构也将随之重塑。",
+        "score": 0.8478
+      },
+      {
+        "text": "储备资产须为高流动性资产：储备需100%覆盖流通量，仅限美元现金、93天内到期的国债、国债抵押回购协议等低风险资产，并且禁止再质押或重复使用。\n\n披露与审计：发行人须每月公开储备资产规模、结构及托管位置，并由注册会计师事务所审查，CEO/CFO需对数据真实性背书。超500亿美元流通量的非上市公司需提交经审计的财务报表，确保财务透明。\n\n \n\n4.1.5 消费者保护与跨境协调\n法案通过以下条款保障消费者权益并防范系统性风险：\n\n赎回与费用透明：发行人须明确及时赎回程序，无延迟按面值赎回。\n\n禁止政治背书：禁止在名称或营销中暗示政府背书，禁止任何国会议员或高级行政部门官员在公共服务期间发行支付稳定",
+        "score": 0.845
+      },
+      {
+        "text": "联邦层面：美联储、货币监理署（OCC）等机构对市值超过100亿美元的全国性发行人审核发放牌照，要求定期披露储备资产详情、接受压力测试，并遵守《银行保密法》及反洗钱（AML）规定。\n\n州级层面：中小型发行人（市值&le;100亿美元）可选择州监管框架，但需确保其与联邦标准&ldquo;实质一致&rdquo;（需经财政部认证）。\n\n4.1.3 发行主体与合规要求\n法案对发行主体设置了严格准入门槛，且明确稳定币不得提供利息收益：\n三类合格发行人：\n\n受保存款机构子公司（需美联储批准）；\n\n联邦批准的非银行实体；\n\n州级批准主体（如上所述，市值超100亿美元后强制纳入联邦监管）。\n\n对于境外发行人，法",
+        "score": 0.8252
+      }
+    ],
+    "relevance": 3.5,
+    "created_at": "2026-03-13"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/nifty0x/status/2025677613541274033",
+    "tweet_account": "@nifty0x",
+    "tweet_text": "BitGo Bank to issue FYUSD for Asian institutions — GENIUS Act‑compliant 1:1 USD backing, strict AML/KYC. Adds Fypher for programmable AI-agent settlement. Stablecoin market cap at $295B. My take: solid compliance focus, but adoption and redemption risk will decide its fate.",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规",
+    "new_reply": "Bank-issued stablecoins under GENIUS Act carry FDIC implications and compete with payment networks. BitGo's FYUSD is an early test case. The moat for bank-issued vs non-bank stablecoins could be significant.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "Global stablecoin market cap ~$260B, with non-USD stablecoins only ~$2B. GENIUS Act compliance creates a de facto standard — institutions issuing to Asian markets still need US-compliant structure if USD-pegged.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "BitGo 银行将为亚洲机构发行 FYUSD——符合 GENIUS 法案的 1:1 美元支撑，严格的 AML/KYC。增加 Fypher 用于可编程 AI 代理结算。稳定币市值为 2950 亿美元。我的看法：合规性重点明确，但采用和赎回风险将决定其命运。",
+    "reply_cn": "全球稳定币市值约为2600亿美元，其中非美元稳定币仅约20亿美元。GENIUS法案的合规性创造了一个事实上的标准——向亚洲市场发行的机构，如果稳定币与美元挂钩，仍然需要符合美国的结构要求。",
+    "kb_chunks": [
+      {
+        "text": "1. 稳定币赛道的竞争与监管\n1.1 稳定币：在监管博弈中共同成长\n近年来，稳定币领域发展迅猛，市场关注度持续提升。业内对稳定币是否已进入&ldquo;军备竞赛&rdquo;阶段，以及未来哪些细分市场将脱颖而出等问题高度关注。从市场规模来看，全球稳定币总市值约为2600亿美元，其中非美元稳定币占比仅约20亿美元。尽管非美元稳定币的规模相对较小，但全球范围内非美元稳定币的竞争已悄然兴起。多个国家和地区已推出或正在制定相关法律法规，例如欧洲央行于2023年年中颁布的MiCA（The Markets in Crypto Assets regulation bill），以及香港近期生效的《稳定币条例》",
+        "score": 0.8154
+      },
+      {
+        "text": "另一方面，与GENIUS Act生效前后安排相衔接，释放出清晰的监管信号，即稳定币的核心合规边界将更多依托国会立法与银行监管框架来确立，SEC则在券商监管接口处进行配套嵌入与风险校准。 \n对于市场参与者，下一阶段的关键不只是关注折价率变化，还要考察现有的支付型稳定币能否持续满足合规要件。可以预见的是，随着GENIUS Act及配套实施细则逐渐落地，稳定币市场将进一步向高透明度、高合规门槛的方向集中，机构采用度与市场结构也将随之重塑。",
+        "score": 0.8147
+      },
+      {
+        "text": "与此同时，美国《GENIUS法案》确立了以联邦为核心的多层监管框架，并通过储备资产要求、审计披露机制和发行人资质设定等方面强化对稳定币运行风险的控制，其技术中立原则也为未来创新留出空间。香港与美国的监管路径虽有所差异，但均体现了对稳定币市场秩序化、合规化发展的共同追求。\n \n总之，逐步明朗的稳定币监管制度有助于修复与放大加密市场的整体信心,而监管与市场的互动关系，正在推动全球加密生态进入合规发展的新阶段。",
+        "score": 0.8034
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-02-22"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/edgeandnode/status/2021733884145328539",
+    "tweet_account": "@edgeandnode",
+    "tweet_text": "The GENIUS Act requires stablecoin issuers to publish monthly reserve disclosures, maintain full AML compliance programs, and provide audit trails that regulators can actually verify. MiCA has similar requirements in Europe. The UK just opened their stablecoin sandbox with the same expectations.\n\nThis is hundreds of billions of dollars in stablecoin activity that now needs to be tracked, queried, and reported on in ways that satisfy compliance teams and regulators. We're talking about institutions like DTCC, Citadel, and major banks entering stablecoin issuance under frameworks that demand the same level of data governance they apply to traditional financial instruments.\n\nMost blockchain data infrastructure was built for crypto-native teams who were fine querying third party APIs. That doesn't work when you need data sovereignty, deployment behind your own firewall, integration with existing BI tools like Snowflake and Power BI, and audit trails that hold up to regulatory scrutiny.\n\nThis is the gap Amp was built to fill. Stablecoin adoption isn't a blockchain problem anymore, it's a data infrastructure problem, and the institutions entering this space need infrastructure that matches how they already operate.",
+    "tweet_likes": 23,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规",
+    "new_reply": "Monthly reserve disclosure + AML compliance + federal oversight = the bar separating serious stablecoin issuers from the rest. Any mismatch between disclosed and actual reserves becomes a federal matter.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "GENIUS Act's disclosure requirements go beyond PR: monthly reserve structure + custody location, CPA-reviewed, with C-suite attestation. Non-listed issuers >$50B need full audited financials — that's institutional grade.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "《天才法案》要求稳定币发行者每月公布储备披露，维持完整的反洗钱合规程序，并提供监管机构能够实际核实的审计记录。欧洲的MiCA有类似要求。英国刚刚开启了他们的稳定币沙盒，并有相同的期望。\n\n这是数千亿美元的稳定币活动，现在需要被追踪、查询，",
+    "reply_cn": "《GENIUS法案》的披露要求超出了公关范畴：每月储备结构+托管地点，注册会计师审核，并由高级管理层认证。非上市发行人>500亿美元需要完整的审计财务报表——这就是机构级别。",
+    "kb_chunks": [
+      {
+        "text": "另一方面，与GENIUS Act生效前后安排相衔接，释放出清晰的监管信号，即稳定币的核心合规边界将更多依托国会立法与银行监管框架来确立，SEC则在券商监管接口处进行配套嵌入与风险校准。 \n对于市场参与者，下一阶段的关键不只是关注折价率变化，还要考察现有的支付型稳定币能否持续满足合规要件。可以预见的是，随着GENIUS Act及配套实施细则逐渐落地，稳定币市场将进一步向高透明度、高合规门槛的方向集中，机构采用度与市场结构也将随之重塑。",
+        "score": 0.8358
+      },
+      {
+        "text": "在具体监管制度方面，不同法域的冻结机制与黑名单管理是影响稳定币前景的关键因素之一。目前，稳定币主要应用于加密资产购买以及&ldquo;灰色&rdquo;或&ldquo;灰白色&rdquo;领域的大额交易。在各国监管框架中，如何平衡冻结尺度直接决定了稳定币的生存能力。稳定币应充分发挥其作为交换媒介和价值计量单位的职能，特别是在跨境支付等领域充分发挥高自由度、交易简便的长处。如稳定币能够与比特币或特定实物商品形成实际交易对，将促成更多现实需求，从而在竞争中占据优势。反之，过于严苛的监管可能切断其应用场景，导致竞争力削弱。由此观之，监管机构需明确界定可冻结资金的范围，并建立框架以确保合规资金在原有场",
+        "score": 0.832
+      },
+      {
+        "text": "5.1 监管范式转型：从&ldquo;执法主导&rdquo;到&ldquo;规则主导&rdquo; \n过去几年，美国SEC对加密资产的监管给行业留下最深的印象往往不是&ldquo;规则&rdquo;，而是&ldquo;执法&rdquo;&mdash;&mdash;案件密集、边界模糊、预期不稳，创新与合规长期处于拉扯状态。但进入2025年后，SEC的叙事出现了明显转向。它开始更公开地讨论&ldquo;如何让资本市场上链&rdquo;，并尝试用豁免、试点、分类监管等工具，为通证化证券、链上交易与清算探索可落地的合规路径。这种转变源于三个认知：区块链结算效率优势已成共识；机构对即时结算和全天候交易需",
+        "score": 0.8248
+      }
+    ],
+    "relevance": 3.4,
+    "created_at": "2026-02-11"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/HyperXAware/status/2021624235387465855",
+    "tweet_account": "@HyperXAware",
+    "tweet_text": "Adoption:\nIn light of 2026's evolving U.S. landscape (e.g., CFTC oversight via the GENIUS Act and stablecoin provisions), EQB would launch with built-in compliance layers: KYC/AML hooks for high-value transactions, automatic tax reporting, and interoperability with CBDCs (central bank digital currencies) like a potential digital dollar. This positions it as a \"regulatory bridge,\" allowing seamless on-ramps from traditional finance without the Wild West feel that fuels instability. Profoundly, it could partner with governments for pilot programs, like using EQB for disaster relief funding or international aid, tying crypto to societal good and reducing its image as a speculative bubble.\nHow It Fixes the Market Overall:\nBy emphasizing utility over speculation, EQB would create a ripple effect:\nReduced Volatility Spillover: As adoption grows (targeting 10% of global cross-border payments within years, per realistic models), it pulls liquidity from volatile memecoins into stable, productive uses, damping market-wide swings.\nInstitutional Inflow Catalyst: With its RWA focus and AI stabilization, it'd appeal to risk-averse players like pension funds, countering the current ETF outflow slowdown and \"age of speculation\" end noted by experts.\nEcosystem-Wide Stability: Interoperability with major chains (Ethereum, Solana) via bridges would let EQB act as a \"reserve asset\" for DeFi, providing collateral that doesn't crash during bear markets. Over time, this could shift the entire crypto narrative from gambling to infrastructure, fostering sustainable growth.\nIn essence, EQB wouldn't \"fix\" crypto overnight—markets are complex—but by profoundly embedding real utility, AI intelligence, and regulatory harmony, it'd anchor the space to fundamentals, turning today's coldest winter into a foundation for long-term resilience. This isn't just another token; it's a systemic upgrade.",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规",
+    "new_reply": "GENIUS Act establishes a federal licensing framework for stablecoin issuers — separate from securities regulation. The KYC/AML obligations under BSA apply to issuers, with implications for custody standards and DeFi protocols relying on compliant stablecoins for settlement.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "GENIUS Act KYC/AML applies to stablecoin issuers, not every project built on top. Using a compliant stablecoin for settlement inherits the issuer's posture — it doesn't independently satisfy BSA for the project itself.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "采纳：\n鉴于2026年不断变化的美国环境（例如，通过《GENIUS法案》和稳定币条款由CFTC进行监管），EQB将以内置合规层启动：针对高价值交易的KYC/AML接口、自动税务报告，以及与CBDC（中央银行数字货币）如潜在数字美元的互操作性。这使其成为一个“监管桥梁”，实现无缝",
+    "reply_cn": "GENIUS Act KYC/AML 适用于稳定币发行者，而不是所有基于其构建的项目。使用合规的稳定币进行结算会继承发行者的合规姿态——它本身并不能独立满足项目自身的BSA要求。",
+    "kb_chunks": [
+      {
+        "text": "Atkins, P. S. (2026, January 29). Opening remarks at joint SEC-CFTC harmonization event -- Project Crypto [Speech]. Securities and Exchange Commission.\nGuiding and Establishing National Innovation for U.S. Stablecoins Act, Pub. L. No. 119-27, 119th Cong. (2025). https://www.congress.gov/bill/119th-c",
+        "score": 0.7945
+      },
+      {
+        "text": "2016). IMF's Christine Lagarde Says Banks Will Adopt Digital Currencies in 5 Years Time\n[7] International Monetary Fund. (2017). Fintech and Financial Services: Initial Considerations\n[8] International Monetary Fund. (2018). Addressing the Dark Side of the Crypto World\n[9] International Monetary Fun",
+        "score": 0.7878
+      },
+      {
+        "text": "2023). IMF exec board endorses crypto policy framework, including no crypto as legal tender\n[26] Turner Wright. (2023). IMF reiterates call for crypto regulation after the ecosystem's &ldquo;rough year&rdquo;\n[27] International Monetary Fund. (2023). Taxing Cryptocurrencies\n[28] International Moneta",
+        "score": 0.7793
+      }
+    ],
+    "relevance": 0,
+    "created_at": "2026-02-11"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/BitAngels/status/2034730999528267820",
+    "tweet_account": "@BitAngels",
+    "tweet_text": "Space Question 3.\n4.First hearing about itere you aware that as of January 1, 2025, the IRS eliminated universal cost basis tracking (per Rev. Proc. 2024-28) and now requires wallet-by-wallet basis tracking?",
+    "tweet_likes": 4,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算",
+    "new_reply": "Universal basis pooling is gone as of Jan 1, 2025 per Rev. Proc. 2024-28. If you used universal basis for 2024, a transition window existed. Missing it means your 2024 filing may conflict with 2025 rules.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "Rev. Proc. 2024-28 ended universal wallet accounting from Jan 1 2025. Under the new rules, each wallet is a separate accounting unit — you can't cherry-pick the highest basis from a pooled view across exchanges.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "太空问题 3. 4. 在第一次听说它时，你是否知道自 2025 年 1 月 1 日起，美国国税局根据《2024-28 号税务程序公告》取消了通用成本基础追踪，现在要求逐钱包追踪成本基础？",
+    "reply_cn": "2024-28号税务程序自2025年1月1日起结束了通用钱包核算。根据新规则，每个钱包都是一个独立的核算单元——你不能从跨交易所的汇总视图中挑选最高基础。",
+    "kb_chunks": [
+      {
+        "text": "标题：美国加密资产税务报告新规：内容、影响与对策\n关键词：\n摘要：\n发布时间：2025-01-15 15:25:15",
+        "score": 0.8128
+      },
+      {
+        "text": "标题：报税季必读|省税秘诀：合理选择加密资产成本基础!\n关键词：\n摘要：\n发布时间：2025-02-06 17:07:23",
+        "score": 0.8104
+      },
+      {
+        "text": "标题：2024 年美国国税局 (IRS) 的加密货币洗售规则\n关键词：\n摘要：\n发布时间：2024-04-04 16:50:56",
+        "score": 0.8061
+      }
+    ],
+    "relevance": 3.1,
+    "created_at": "2026-03-19"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/summ_app/status/2026764686650163399",
+    "tweet_account": "@summ_app",
+    "tweet_text": "new change for 2025 that's flying under the radar\n\nthe IRS now requires per-wallet cost basis tracking.\n\nYou can't pool all your crypto together across exchanges and pick the most favorable cost basis from anywhere anymore\n\nsell on Exchange A? you use the cost basis from Exchange A. Not from Exchange B where you bought cheaper\n\nthis is a big change if you traded across multiple platforms last year.\n\nMake sure whatever tool you're using has caught up to this",
+    "tweet_likes": 8,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算",
+    "new_reply": "Per-wallet mandate changes optimization. Universal basis allowed HIFO across all wallets. Per-wallet forces HIFO/FIFO at wallet level — wallets with only high-basis lots lose optimization options.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "Per-wallet tracking means fees must also be tracked per-wallet. A buy on Coinbase + a transfer fee to MetaMask = different cost lots. Global pooling is gone — the basis you use must tie back to the specific wallet.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "2025 年一个不太引人注意的新变化\n\n美国国税局现在要求每个钱包进行成本基础追踪。\n\n你不能再将所有交易所的加密货币集中在一起，并随意选择任何地方最有利的成本基础。\n\n在交易所 A 卖出？你必须使用交易所 A 的成本基础，而不是你在交易所 B 买入的更低成本。\n\n如果你去年在多个平台上进行交易，这将是一个重大变化。",
+    "reply_cn": "按钱包跟踪意味着费用也必须按钱包跟踪。在 Coinbase 上的购买 + 转账到 MetaMask 的费用 = 不同的成本批次。全局汇总已不存在——你使用的基础必须回溯到具体的钱包。",
+    "kb_chunks": [
+      {
+        "text": "根据交易费用和其他费用调整加密货币成本基础 \n\n加密货币资产的成本基础必须根据交易费用和其他相关费用进行调整。实现此目的的一种方法是将交易成本包含在成本基础中。例如，在购买加密货币时，除了资产的购买价格之外，总成本基础还应包括交易期间支付的任何费用。同样，与销售加密货币相关的所有交易费用都应从收入中扣除。 \n除交易费用外，投资者还应考虑交易所费用和其他开支。将这些费用（加密货币交易所为执行交易而收取的费用）纳入总成本基础计算中非常重要。投资者可以通过考虑交易费用和其他相关费用，确保其成本基础计算适当反映购买和处置加密资产的投资总额。 \n\n使用加密税务软件进行准确报税的好处",
+        "score": 0.8426
+      },
+      {
+        "text": "使用加密税务软件进行准确报税的好处 \n\n使用加密税务软件进行报税有很多优点。首先，它通过自动计算资本损益节省了投资者的时间并降低了纳税申报中出错的可能性。这些平台可以轻松地与钱包和加密货币交易所集成，自动导入交易数据并生成用于税务目的的综合报告。 \n其次，通过使用适当的成本基础技术并考虑交易费用和其他开支，加密税务软件可确保遵循税务要求。投资者可以通过适当披露其加密货币交易来减少税务机关审计或罚款的可能性。 \n这些平台还提供实时税务估算，让投资者能够评估其年度纳税义务，并就其持有的加密货币做出明智的决策。此外，许多加密货币税务软件解决方案都提供税收损失收割功能，让投资者能够通过资产出售来有意抵",
+        "score": 0.8379
+      },
+      {
+        "text": "2023). Crypto taxes USA 2023: Ultimate guide.",
+        "score": 0.8374
+      }
+    ],
+    "relevance": 3.4,
+    "created_at": "2026-02-25"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/tahoetax/status/2005697010670972974",
+    "tweet_account": "@tahoetax",
+    "tweet_text": "Take some loses this year in Bitcoin? As of 2025, the wash sale rule still does NOT apply. This means investors can sell BTC at a loss, claim the tax benefit, and immediately buy it back - something you can’t do with stocks. This “loophole” lets you harvest crypto tax losses",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同提无洗售规则优势",
+    "new_reply": "Wash sale exemption for crypto hasn't changed yet. Sell at a loss, repurchase immediately — still legal in 2025. That window may close if wash sale bills advance. Harvest losses this year if you intend to.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "Wash sale (IRC 1091) explicitly covers securities — IRS treats crypto as property, not securities. So the 30-day prohibition doesn't apply. Bills to change this have been introduced but none enacted.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "今年在比特币上亏损了吗？截至2025年，洗售规则仍然不适用。这意味着投资者可以亏本卖出比特币，享受税收优惠，然后立即买回——这是股票所无法做到的。这个“漏洞”让你可以收割加密货币的税务损失",
+    "reply_cn": "洗售（IRC 1091）明确涵盖证券——美国国税局将加密货币视为财产，而非证券。因此，30天禁止条款不适用。已有提出修改这一规定的法案，但尚未通过。",
+    "kb_chunks": [
+      {
+        "text": "如何利用加密货币洗售规则节省税款\n美国国税局洗售规则目前不适用于加密货币，因为它认为虚拟货币是财产而不是证券。这实际上意味着在撰写本文时没有加密货币洗售规则。从技术上讲，加密货币洗售是允许的。然而，立法者和监管机构表示这种情况可能很快就会改变。\n2021 年 9 月，众议院筹款委员会的一项提案中包括了将洗售规则应用于数字资产的措辞，即创建加密货币洗售规则。尽管&ldquo;更好地重建&rdquo;法案在国会陷入停滞，但这些事态发展凸显了政府对此事的兴趣。\n拜登在 2021 年承认&ldquo;更好地重建&rdquo;法案不会在年底前获得通过，但他仍然坚定地希望尽快通过该法案。2022 年 3 ",
+        "score": 0.857
+      },
+      {
+        "text": "日期：2024年2月3日\n来源：\nhttps://tokentax.co/blog/wash-sale-trading-in-crypto\n当有人表面上出售加密货币或证券以产生损失，并迅速重新购买相同或类似的加密货币或证券以获得税收优惠时，就会发生洗售。洗售规则禁止亏本出售证券并在30天内重新购买证券，以防止纳税人通过&ldquo;人为&rdquo;损失来降低纳税义务。\n对于美国纳税人来说，没有加密货币洗售规则，因此加密货币洗售在技术上是合法的。然而，我们建议避免洗售加密货币，因为立法者似乎正在努力弥补这一漏洞。\n什么是加密货币洗售规则？\n税收损失收获是一种通过出售有未实现亏损的投资来最大限度",
+        "score": 0.8506
+      },
+      {
+        "text": "3、还能用加密货币进行洗售吗？\n从技术上讲，是的，目前没有加密货币洗售规则。不过，拜登政府已经开始更仔细地调查加密货币案件，目前允许加密货币洗售的漏洞很可能很快就会被堵住，从而使加密货币洗售变得非法。\n4、我如何知道我的哪一项资产目前处于亏损交易状态？\n您了解整体投资组合表现的唯一方法是跟踪所有加密货币利润和损失。\n5、加密货币洗售规则的未来\n鉴于加密货币法规的最新发展，包括签署于 2022 年 3 月生效的&ldquo;更好地重建&rdquo;法案，可以合理地预期加密货币洗售规则的变化。该立法授权联邦机构更加关注加密货币洗售，标志着人们对加密货币领域日益增长的兴趣和潜在的监管转变。\n随着拜登",
+        "score": 0.8448
+      }
+    ],
+    "relevance": 3.6,
+    "created_at": "2025-12-29"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/ChadSlimeBased/status/2002157695286087695",
+    "tweet_account": "@ChadSlimeBased",
+    "tweet_text": "If you buy one Bitcoin at $126,000\n\nAnd it goes to $89,000\n\nYou can sell it\n\nAnd buy it back 6 seconds later\n\nYou still have the same one Bitcoin\n\nBut you can realize a capital loss of $37,000 for tax purposes",
+    "tweet_likes": 51388,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同提无洗售规则优势",
+    "new_reply": "Crypto isn't a 'security' under current wash sale rules. Stocks: 30-day wait. Bitcoin: zero. The $37k loss is immediately deductible. That asymmetry is a planning advantage institutional investors actively use.",
+    "new_reply_angle": "反直觉观点型",
+    "source_note": "from grok reply",
+    "final_reply": "Exactly how it works: crypto isn't a security, so IRC 1091 doesn't apply. Sell BTC at a loss, buy back instantly, realize the loss for tax purposes. This window may close when Congress acts — use it or lose it.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "如果你以126,000美元买入一个比特币\n\n然后价格下跌到89,000美元\n\n你可以卖出它\n\n然后6秒钟后再买回\n\n你仍然拥有同一个比特币\n\n但你可以为了税务目的实现37,000美元的资本损失",
+    "reply_cn": "具体操作方法：加密货币不是证券，因此IRC 1091不适用。以亏损卖出BTC，立即买回，为税务目的实现亏损。当国会采取行动时，这个窗口可能会关闭——要么利用，要么失去。",
+    "kb_chunks": [
+      {
+        "text": "如何利用加密货币洗售规则节省税款\n美国国税局洗售规则目前不适用于加密货币，因为它认为虚拟货币是财产而不是证券。这实际上意味着在撰写本文时没有加密货币洗售规则。从技术上讲，加密货币洗售是允许的。然而，立法者和监管机构表示这种情况可能很快就会改变。\n2021 年 9 月，众议院筹款委员会的一项提案中包括了将洗售规则应用于数字资产的措辞，即创建加密货币洗售规则。尽管&ldquo;更好地重建&rdquo;法案在国会陷入停滞，但这些事态发展凸显了政府对此事的兴趣。\n拜登在 2021 年承认&ldquo;更好地重建&rdquo;法案不会在年底前获得通过，但他仍然坚定地希望尽快通过该法案。2022 年 3 ",
+        "score": 0.8168
+      },
+      {
+        "text": "日期：2024年2月3日\n来源：\nhttps://tokentax.co/blog/wash-sale-trading-in-crypto\n当有人表面上出售加密货币或证券以产生损失，并迅速重新购买相同或类似的加密货币或证券以获得税收优惠时，就会发生洗售。洗售规则禁止亏本出售证券并在30天内重新购买证券，以防止纳税人通过&ldquo;人为&rdquo;损失来降低纳税义务。\n对于美国纳税人来说，没有加密货币洗售规则，因此加密货币洗售在技术上是合法的。然而，我们建议避免洗售加密货币，因为立法者似乎正在努力弥补这一漏洞。\n什么是加密货币洗售规则？\n税收损失收获是一种通过出售有未实现亏损的投资来最大限度",
+        "score": 0.8
+      },
+      {
+        "text": "出于税收目的，最安全的方法是从出售之日起等待30天，然后再购买。\n7、如何绕过洗售规则？\n绕过洗售规则的最简单方法是在出售资产后等待 30 天，然后再回购。美国国税局洗售规则规定，如果交易者亏本出售证券，然后在 30 天内回购，则不能出于税收目的申报初始损失。\n8、加密货币是否不允许洗售损失？\n截至撰写本文时，美国纳税人还没有有效的加密货币洗售规则，并且加密货币洗售在技术上是合法的。然而，随着立法的提出，这种情况预计会改变。",
+        "score": 0.7964
+      }
+    ],
+    "relevance": 2.2,
+    "created_at": "2025-12-19"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/Empower_Capital/status/2034621374212260193",
+    "tweet_account": "@Empower_Capital",
+    "tweet_text": "5/ If you sold during this dip, you may have locked in a capital loss.\n\nGood news: that loss can OFFSET gains from earlier this year.\n\nTax-loss harvesting works for crypto. Most people don't know this.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "Capital loss from a dip is an asset only if you use it. Up to $3k/year offsets ordinary income; unlimited amount offsets capital gains. Must realize by Dec 31 — holding a loser creates no deduction.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "Under US rules: crypto losses are capital losses. They first offset capital gains dollar-for-dollar. If net losses remain, up to $3,000 offsets ordinary income. Excess carries forward — no expiry.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "5/ 如果你在这次下跌期间卖出，你可能锁定了资本损失。\n\n好消息：这个损失可以抵消今年早些时候的收益。\n\n税收损失收割适用于加密货币。大多数人不知道这一点。",
+    "reply_cn": "根据美国规定：加密货币亏损属于资本亏损。它们首先用来一美元抵一美元抵消资本收益。如果仍有净亏损，最多可以用来抵消3,000美元的普通收入。剩余部分可以结转——没有截止期限。",
+    "kb_chunks": [
+      {
+        "text": "1.4 税损收获\n在探索如何减少加密货币税时，另一个流行的选择是税收损失收获。虽然有些复杂，但该过程要求投资者亏本出售部分加密货币。这样，损失就可以被冲销并从年度资本利得税中扣除。出售后，投资者可以购买另一项资产。但如何在 2024 年申报加密货币税收损失呢？\n不同国家对此的规定有所不同。以美国为例，同一资产在出售后 30 天内无法购买。尽管如此，我们假设投资者有两项长期加密货币投资。首先，购买了价值 5000 美元的 XRP，现在价值 15000 美元。这意味着收益为 10000 美元。\n其次，购买了价值 10000 美元的 BNB，现在价值仅为 4000 美元。这意味着损失 6000 美元",
+        "score": 0.8261
+      },
+      {
+        "text": "加密货币持有者可以利用损失来抵消收益，而不受洗售规则的约束，使他们能够在亏损时卖出，以实现税收优惠，并进行再投资以保持仓位。尽管如此，监管变化可能会在未来将规则扩展到加密货币，从而，本文建议采取更安全的策略来最大限度地减少资本收益。2. 英国对加密货币损失的征税2.1 英国的加密货币税收方法在英国，在纳税申报表上申报加密货币损失是减少总体税负的重要一步。要启动该程序，保留每笔加密交易的完整记录至关重要。英国税务海关总署 (HMRC) 将加密货币视为应税资产，这意味着交易或出售加密货币可能会产生纳税义务。由于英国税务海关总署目前对加密货币的处理方式与大多数其他金融资产类似，因此它需要遵守记录保存",
+        "score": 0.8186
+      },
+      {
+        "text": "如何利用加密货币洗售规则节省税款\n美国国税局洗售规则目前不适用于加密货币，因为它认为虚拟货币是财产而不是证券。这实际上意味着在撰写本文时没有加密货币洗售规则。从技术上讲，加密货币洗售是允许的。然而，立法者和监管机构表示这种情况可能很快就会改变。\n2021 年 9 月，众议院筹款委员会的一项提案中包括了将洗售规则应用于数字资产的措辞，即创建加密货币洗售规则。尽管&ldquo;更好地重建&rdquo;法案在国会陷入停滞，但这些事态发展凸显了政府对此事的兴趣。\n拜登在 2021 年承认&ldquo;更好地重建&rdquo;法案不会在年底前获得通过，但他仍然坚定地希望尽快通过该法案。2022 年 3 ",
+        "score": 0.8163
+      }
+    ],
+    "relevance": 3.3,
+    "created_at": "2026-03-19"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/MarketInsigh360/status/2033796204400988235",
+    "tweet_account": "@MarketInsigh360",
+    "tweet_text": "That realised loss can be used to:\n\n• Offset other capital gains\n• Reduce your overall tax liability\n\nMost investors don’t use this strategy.\n\nSmart investors use loss harvesting to optimise taxes.\n\n#Crypto #Bitcoin #TaxPlanning #Investing #WealthBuilding",
+    "tweet_likes": 4,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "The $3k ordinary income offset per year is often underplanned. $20k in crypto losses with no gains = 7 years to use. Pairing with intentional gain realization each year speeds up the benefit significantly.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "Crypto has an advantage stocks don't: no wash sale rule. You can harvest the loss, stay in the position immediately, and still claim the deduction. That's why the strategy is far more powerful for crypto than equities.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "已实现的损失可以用来：\n\n• 抵消其他资本收益\n• 降低整体税负\n\n大多数投资者不使用这一策略。\n\n聪明的投资者利用损失收割来优化税务。\n\n#加密货币 #比特币 #税务规划 #投资 #财富积累",
+    "reply_cn": "加密货币有一个股票没有的优势：没有洗售规则。你可以收割亏损，立即保持仓位，并仍然申报扣除。这就是为什么这种策略对加密货币比对股票更强大的原因。",
+    "kb_chunks": [
+      {
+        "text": "1.4 税损收获\n在探索如何减少加密货币税时，另一个流行的选择是税收损失收获。虽然有些复杂，但该过程要求投资者亏本出售部分加密货币。这样，损失就可以被冲销并从年度资本利得税中扣除。出售后，投资者可以购买另一项资产。但如何在 2024 年申报加密货币税收损失呢？\n不同国家对此的规定有所不同。以美国为例，同一资产在出售后 30 天内无法购买。尽管如此，我们假设投资者有两项长期加密货币投资。首先，购买了价值 5000 美元的 XRP，现在价值 15000 美元。这意味着收益为 10000 美元。\n其次，购买了价值 10000 美元的 BNB，现在价值仅为 4000 美元。这意味着损失 6000 美元",
+        "score": 0.8375
+      },
+      {
+        "text": "这是因为税务机关只对&ldquo;可实现&rdquo;收益感兴趣。这意味着资本收益是基于成本与销售价格之间的差额。\n因此，在探索如何避免加密货币资本利得税时，最好的选择之一就是持有。正如前面所讨论的，投资者还应该寻求最大限度地提高资本利得税免税额。在赚取加密货币收入时，还可以享受免税额。例如，英国居民最多可以赚取12570英镑而无需缴纳任何所得税。\n \n4. 加密税收合规\n人们常常有一种误解，认为对加密货币投资避税违反法律。但这与事实相差甚远。避税仅仅意味着利用法律进行节税投资。\n有很多方法可以实现这一点，例如前面讨论的方法。这包括从赠与和捐款到使用年度税收免税额等一切方式。然而，在部署加密货",
+        "score": 0.8299
+      },
+      {
+        "text": "但请注意，很少有人允许在 IRA 计划中进行加密投资。相反，投资者需要使用专业经纪商。比特币 IRA 是一种流行的选择。它支持 60 多种加密货币，并且提供包括 IRA 和 401(k)在内的各种加密退休账户。\n \n1.3利用资本利得税免税额\n那些想知道如何避税的人还应该了解一下自己的居住国是否提供资本利得税免税额。这使得投资者每年可以将一定数量的加密货币套现，而无需纳税。例如，英国 2023 年的资本利得税免税额为 6000 英镑。\n在这种情况下，假设投资者购买了价值 10000 英镑的加密货币，现在价值 25000 英镑。如果投资者将全额套现，则需要缴纳 9000 英镑的资本利得税。这是因",
+        "score": 0.828
+      }
+    ],
+    "relevance": 3.4,
+    "created_at": "2026-03-17"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/CryptactGlobal/status/2028930131155136767",
+    "tweet_account": "@CryptactGlobal",
+    "tweet_text": "💡 Tax tip Tuesday:\nDid you realize your crypto losses can offset your gains?\n\nCapital loss harvesting is 100% legal under CRA rules.\n\nCryptact shows you exactly where you stand — gains AND losses.\n\n#TaxTip #CryptoCanada",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "Tax loss harvesting is legal under current US law — execution matters. Sell before year-end, document cost basis. If crypto wash sale rules ever pass, losses realized now are already safe from retroactive denial.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "Canada has no $3k annual cap — losses offset gains from past 3 years or any future year. But Canada's superficial loss rule DOES apply to crypto: sell and repurchase within 30 days, loss is disallowed.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "💡 税务小贴士星期二：\n你是否意识到你的加密货币亏损可以抵消你的收益？\n\n根据加拿大税务局的规定，资本损失收割是100%合法的。\n\nCryptact 精确显示你的状况——收益和亏损。\n\n#税务小贴士 #加密货币加拿大",
+    "reply_cn": "加拿大没有3,000美元的年度上限——亏损可以抵消过去三年或任何未来年份的收益。但加拿大的表面亏损规则确实适用于加密货币：如果在30天内卖出并重新购买，亏损将被拒绝。",
+    "kb_chunks": [
+      {
+        "text": "通常情况下，当一个纳税年度内发生允许的资本损失时，应首先用同一年内的任何应税资本收益来抵消。如果仍有未利用的亏损，则将其计入当年的净资本损失计算，然后可用于减少前三年或未来任何一年的应税资本收益。需要强调的是，为了获得税收优惠，投资者必须通过出售加密货币、将其兑换成另一种加密货币或使用它进行购买来“实现”其损失；未实现的损失不能在纳税申报表上申报。3.3 加拿大的表面损失规则和加密货币损失的处理加拿大的表面损失规则与美国的洗售规则类似，可防止投资者通过在特定时间范围内出售并立即回购同一资产，以导致人为损失，从而确保公平的税收制度。根据CRA的说法，如果满足两个条件（纳税人或其代表在出售之前或之",
+        "score": 0.8184
+      },
+      {
+        "text": "即使是低于阈值的交易也可能需要根据 CRA 的要求披露客户数据。税务机关可互操作的多链 Web3平台HMRCCRA&#xa0;美国加密资产税收处理英国加密资产税收处理加拿大加密资产税收处理加密分类财产应税资产商品销售税报告的抵消收益纳税义务，抵消收益资本利得税税率短期、长期资本利得税率资本利得税率减免最高3000美元，结转抵消资本收益结转，抵消收益所需记录精确、强制性的报告需要详尽的记录需要报告&#xa0;3.2 加拿大如何对加密货币损失征税和抵消？在加拿大，投资者需要向 CRA 报告资本损失，以减少其纳税义务，因为该机构要求无论收益或损失结果如何，出售资本财产都必须提交所得税和福利申报表，。",
+        "score": 0.808
+      },
+      {
+        "text": "每次购买或出售代币时，应重新计算总成本。当购买代币时，购买金额会添加到相关池中，而当出售代币时，会从成本中扣除一定比例的金额。3. 加拿大对加密货币损失的征税3.1 加拿大的加密货币税收方法加拿大税务局（CRA）将加密货币视为一种财产，并作为商品征税，属于商业收入或资本利得类别。处置加密货币，例如出售它、将其兑换为另一种加密货币或使用它进行购买，会引发资本利得税。在加拿大，购买或持有加密货币不征税，因为它不被视为法定货币。因此，使用它进行支付被视为具有相应税收后果的易货交易，根据加密货币交换商品或服务时的价值变化，可能产生潜在的资本收益或损失。虽然加密货币提供了一定程度的匿名性，但加拿大政府有",
+        "score": 0.8045
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-03-03"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/saylordocs/status/2018748821954592816",
+    "tweet_account": "@saylordocs",
+    "tweet_text": "If you buy Bitcoin at $126,000\n\nand it goes to $88,000\n\nyou can sell it \n\nand buy it back 6 seconds later\n\nyou still have the same one Bitcoin\n\nBut you can realize a capital loss of $38,000 for tax purposes",
+    "tweet_likes": 8177,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "Stocks have a 30-day wash sale rule. Crypto doesn't — that's the asymmetry. Crypto investors can execute loss-harvesting without waiting, managing both position exposure and tax liability simultaneously.",
+    "new_reply_angle": "反直觉观点型",
+    "source_note": "from grok reply",
+    "final_reply": "The loophole is real and legal: IRS classifies crypto as property (Notice 2014-21), not a security. IRC 1091 wash sale only covers securities. Sell, rebuy, recognize loss — fully valid under current law.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "如果你以 126,000 美元购买比特币\n\n然后它跌到 88,000 美元\n\n你可以卖出\n\n然后在 6 秒后再买回\n\n你仍然拥有同一个比特币\n\n但你可以为了税务目的实现 38,000 美元的资本损失",
+    "reply_cn": "这个漏洞是真实且合法的：国税局将加密货币归类为财产（公告2014-21），而不是证券。国内税收法1091条的回售规则只适用于证券。出售、回购、确认损失——在现行法律下完全有效。",
+    "kb_chunks": [
+      {
+        "text": "如何利用加密货币洗售规则节省税款\n美国国税局洗售规则目前不适用于加密货币，因为它认为虚拟货币是财产而不是证券。这实际上意味着在撰写本文时没有加密货币洗售规则。从技术上讲，加密货币洗售是允许的。然而，立法者和监管机构表示这种情况可能很快就会改变。\n2021 年 9 月，众议院筹款委员会的一项提案中包括了将洗售规则应用于数字资产的措辞，即创建加密货币洗售规则。尽管&ldquo;更好地重建&rdquo;法案在国会陷入停滞，但这些事态发展凸显了政府对此事的兴趣。\n拜登在 2021 年承认&ldquo;更好地重建&rdquo;法案不会在年底前获得通过，但他仍然坚定地希望尽快通过该法案。2022 年 3 ",
+        "score": 0.8227
+      },
+      {
+        "text": "日期：2024年2月3日\n来源：\nhttps://tokentax.co/blog/wash-sale-trading-in-crypto\n当有人表面上出售加密货币或证券以产生损失，并迅速重新购买相同或类似的加密货币或证券以获得税收优惠时，就会发生洗售。洗售规则禁止亏本出售证券并在30天内重新购买证券，以防止纳税人通过&ldquo;人为&rdquo;损失来降低纳税义务。\n对于美国纳税人来说，没有加密货币洗售规则，因此加密货币洗售在技术上是合法的。然而，我们建议避免洗售加密货币，因为立法者似乎正在努力弥补这一漏洞。\n什么是加密货币洗售规则？\n税收损失收获是一种通过出售有未实现亏损的投资来最大限度",
+        "score": 0.8072
+      },
+      {
+        "text": "然而，如果接收者在原所有者去世后出售加密货币，则成本基础将为每个 BTC 60000 美元。因此，新所有者可以立即出售价值 18 万美元的加密货币投资组合，而无需缴纳一分钱的资本利得税。这是因为成本和售价均达到 180000 美元&mdash;&mdash;至少在美国国税局看来是这样。\n \n1.7 避免质押和其他收益方法\n在探索如何不对比特币纳税时要考虑的最后一个选择是避免质押和其他收益方法。这还包括加密货币储蓄账户、挖矿、双重投资和流动性挖矿。这种收益被定义为收入而不是资本收益。\n由于多种原因，这可能会产生灾难性的影响。首先，这可能将投资者的收入推向更高的水平，并导致投资者需要支付更高的税率",
+        "score": 0.8024
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-02-03"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/the_tax_intern/status/2015712540508971256",
+    "tweet_account": "@the_tax_intern",
+    "tweet_text": "@coinbureau his massive $4.5B in realized Bitcoin losses looks like classic tax loss harvesting wrapping up the 2025 tax year—investors locking in losses to offset gains and minimize their bill. In Germany, remember short-term crypto losses can offset other capital gains, but long-term holds (>1 year) are tax-free anyway. Always double-check with a pro!",
+    "tweet_likes": 1,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "$4.5B realized losses offsets $4.5B in capital gains — no $3k cap when offsetting gains. For institutional operations, year-end TLH is standard portfolio management. Retail version is the same math.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "Germany's angle matters here: short-term losses offset gains, but long-term holds (>1 year) are already tax-free — no harvesting benefit there. Only BTC held <1 year makes loss harvesting relevant under German rules.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "@coinbureau 他实现的 45 亿美元比特币损失看起来像是典型的税务损失收割，正在结束 2025 税年——投资者通过锁定损失来抵消盈利，减少税单。在德国，记住短期加密货币损失可以抵消其他资本收益，但长期持有（超过 1 年）无论如何都是免税的。务必向专业人士再次确认！",
+    "reply_cn": "这里德国的角度很重要：短期损失可以抵消收益，但长期持有（>1年）已经免税——在那里没有收割收益的好处。根据德国法规，只有持有不足1年的BTC才涉及损失收割相关问题。",
+    "kb_chunks": [
+      {
+        "text": "在税务计算层面，购置成本的确定尤为关键，尤其是在不同时间、不同价格分批买入的情况下。实务上常见的成本匹配方法包括先进先出法（FIFO）等，德国官方口径也倾向将FIFO作为便于核验的简化方法；但在满足一致性与可追溯性要求的前提下，其他方法并非不可。合理选择并稳定应用成本方法，有助于更准确地衡量收益与损失，并在符合法律规则的前提下优化整体税负。涉及损失抵扣、损失结转及更复杂的税损收割安排时，通常需要结合个人交易结构与当地税务实践进行专业评估，以避免因方法选择或资料链不足引发争议。\n4 结语\n \n总体来看，德国正在以更系统的方式将加密资产活动纳入既有监管与税收治理框架。金融监管与反洗钱仍是底层约束，",
+        "score": 0.793
+      },
+      {
+        "text": "3.3.4 可扣除费用\n可扣除费用在企业与私人情形下口径不同：若加密资产属于企业资产，通常可以扣除与取得收入直接相关的各项必要支出，包括电力成本、硬件折旧（可采用线性或递减折旧方法）、软件费用及其他运营支出；若属于私人资产，一般仅允许扣除与具体处置直接相关的费用，例如链上gas费与平台手续费，而与个人生活混同、难以直接归属的间接费用通常不作为可扣除项目。\n3.3.5 库存追踪与损失处理\n库存追踪方面，比特币等UTXO模型资产通常通过未花费输出的投入产出链条进行追踪；以太坊等账户式资产则多采用余额累积的会计模型来还原持仓变化。损失处理上，亏损通常可用于抵减同类应税收入，并可在一定规则下进行结转安",
+        "score": 0.7918
+      },
+      {
+        "text": "1.4 税损收获\n在探索如何减少加密货币税时，另一个流行的选择是税收损失收获。虽然有些复杂，但该过程要求投资者亏本出售部分加密货币。这样，损失就可以被冲销并从年度资本利得税中扣除。出售后，投资者可以购买另一项资产。但如何在 2024 年申报加密货币税收损失呢？\n不同国家对此的规定有所不同。以美国为例，同一资产在出售后 30 天内无法购买。尽管如此，我们假设投资者有两项长期加密货币投资。首先，购买了价值 5000 美元的 XRP，现在价值 15000 美元。这意味着收益为 10000 美元。\n其次，购买了价值 10000 美元的 BNB，现在价值仅为 4000 美元。这意味着损失 6000 美元",
+        "score": 0.7883
+      }
+    ],
+    "relevance": 0,
+    "created_at": "2026-01-26"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/DEFIRUSH_/status/2008595528939172024",
+    "tweet_account": "@DEFIRUSH_",
+    "tweet_text": "CLAPP GLOSSARY: TAX-LOSS HARVESTING \n\n​ Turn market dips into tax wins. Tax-loss harvesting involves selling crypto at a loss to offset capital gains from other investments, lowering your total tax bill.\n​ With Bitcoin down significantly from its peak while stocks remain high, now is the time to realize losses before the December 31st deadline.\n\n​ A unique advantage? Unlike stocks, crypto currently has no wash sale rule. You can sell to lock in the tax benefit and repurchase immediately to keep your market position. \n\nThis year-end strategy often leads to thin liquidity and range bound trading as investors prioritize tax optimization over new moves. \n\nFor more info... Follow @ClappFinance",
+    "tweet_likes": 21,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "The 'buy back' doesn't reset your return economically. You still own BTC at lower basis. The realized loss is a current deduction; when BTC recovers you'll owe tax on that gain. Deferral, not elimination.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "The no-wash-sale advantage is real and legal now. Sell BTC at a loss, repurchase immediately, tax loss realized — no 30-day wait. December 31 deadline means act before December liquidity thins out.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "CLAPP 词汇表：税务亏损收割\n\n把市场下跌变成税务收益。税务亏损收割涉及以亏损的价格出售加密货币，以抵消其他投资的资本收益，从而降低您的总税款。\n随着比特币从其峰值大幅下跌，而股票仍然高位，现在是在12月31日截止日期之前实现亏损的好时机。\n一个独特的优势？与股票不同，加密货币目前",
+    "reply_cn": "免洗出售的优势现在是真实且合法的。以亏损价格出售比特币，立即回购，实现税务亏损——无需等待30天。12月31日截止日期意味着在12月流动性变薄之前要采取行动。",
+    "kb_chunks": [
+      {
+        "text": "1.4 税损收获\n在探索如何减少加密货币税时，另一个流行的选择是税收损失收获。虽然有些复杂，但该过程要求投资者亏本出售部分加密货币。这样，损失就可以被冲销并从年度资本利得税中扣除。出售后，投资者可以购买另一项资产。但如何在 2024 年申报加密货币税收损失呢？\n不同国家对此的规定有所不同。以美国为例，同一资产在出售后 30 天内无法购买。尽管如此，我们假设投资者有两项长期加密货币投资。首先，购买了价值 5000 美元的 XRP，现在价值 15000 美元。这意味着收益为 10000 美元。\n其次，购买了价值 10000 美元的 BNB，现在价值仅为 4000 美元。这意味着损失 6000 美元",
+        "score": 0.8165
+      },
+      {
+        "text": "如何利用加密货币洗售规则节省税款\n美国国税局洗售规则目前不适用于加密货币，因为它认为虚拟货币是财产而不是证券。这实际上意味着在撰写本文时没有加密货币洗售规则。从技术上讲，加密货币洗售是允许的。然而，立法者和监管机构表示这种情况可能很快就会改变。\n2021 年 9 月，众议院筹款委员会的一项提案中包括了将洗售规则应用于数字资产的措辞，即创建加密货币洗售规则。尽管&ldquo;更好地重建&rdquo;法案在国会陷入停滞，但这些事态发展凸显了政府对此事的兴趣。\n拜登在 2021 年承认&ldquo;更好地重建&rdquo;法案不会在年底前获得通过，但他仍然坚定地希望尽快通过该法案。2022 年 3 ",
+        "score": 0.8117
+      },
+      {
+        "text": "洗售规则的变化及其对投资者的影响\n如果加密货币洗售规则发生变化，可能会对加密货币投资者产生重大影响。对该规则的修改将影响一些投资者用来管理其投资组合和尽量减少纳税义务的策略。如果洗售规则扩大到包括加密货币，投资者将需要重新评估其交易行为，并考虑在出售后回购资产之前等待更长的时间，以避免潜在的处罚。无论如何，我们建议避免加密货币清洗销售。\n洗售规则的改变也可能会加强税务机关和监管机构的审查。投资者应及时了解规则的任何变更，并主动调整其税务策略。\n我如何知道我的哪些资产目前处于亏损状态？\n确定您的哪些资产当前处于亏损状态是有效管理您的加密货币投资组合的一个重要方面。要识别表现不佳的资产，您可以根据",
+        "score": 0.8047
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2026-01-06"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/skumWgmi/status/2005681330303164793",
+    "tweet_account": "@skumWgmi",
+    "tweet_text": "If you buy Bitcoin at $126,000\n\nand it goes to $88,000\n\nyou can sell it \n\nand buy it back 6 seconds later\n\nyou still have the same one Bitcoin\n\nBut you can realize a capital loss of $38,000 for tax purposes",
+    "tweet_likes": 11902,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "What most miss: repurchased BTC basis is $88,000, not $126,000. The loss is realized now — but when BTC recovers to $126k, you'll owe tax on that $38k. Tax loss harvesting is deferral, not elimination.",
+    "new_reply_angle": "反直觉观点型",
+    "source_note": "from grok reply",
+    "final_reply": "Confirmed by : no US crypto wash sale rule. Sell BTC at a loss, repurchase 6 seconds later, claim the $38k loss. Legally valid. But Note also legislators are watching — this window has been proposed for closure.",
+    "final_angle": "场景落地型",
+    "tweet_cn": "如果你以 126,000 美元购买比特币\n\n然后它跌到 88,000 美元\n\n你可以卖出\n\n然后在 6 秒后再买回\n\n你仍然拥有同一个比特币\n\n但你可以为了税务目的实现 38,000 美元的资本损失",
+    "reply_cn": "确认者：美国没有加密货币洗售规则。以亏损卖出比特币，6秒后重新买入，申报3.8万美元的损失。合法有效。但请注意，立法者也在关注——这一窗口期已被提议关闭。",
+    "kb_chunks": [
+      {
+        "text": "如何利用加密货币洗售规则节省税款\n美国国税局洗售规则目前不适用于加密货币，因为它认为虚拟货币是财产而不是证券。这实际上意味着在撰写本文时没有加密货币洗售规则。从技术上讲，加密货币洗售是允许的。然而，立法者和监管机构表示这种情况可能很快就会改变。\n2021 年 9 月，众议院筹款委员会的一项提案中包括了将洗售规则应用于数字资产的措辞，即创建加密货币洗售规则。尽管&ldquo;更好地重建&rdquo;法案在国会陷入停滞，但这些事态发展凸显了政府对此事的兴趣。\n拜登在 2021 年承认&ldquo;更好地重建&rdquo;法案不会在年底前获得通过，但他仍然坚定地希望尽快通过该法案。2022 年 3 ",
+        "score": 0.8227
+      },
+      {
+        "text": "日期：2024年2月3日\n来源：\nhttps://tokentax.co/blog/wash-sale-trading-in-crypto\n当有人表面上出售加密货币或证券以产生损失，并迅速重新购买相同或类似的加密货币或证券以获得税收优惠时，就会发生洗售。洗售规则禁止亏本出售证券并在30天内重新购买证券，以防止纳税人通过&ldquo;人为&rdquo;损失来降低纳税义务。\n对于美国纳税人来说，没有加密货币洗售规则，因此加密货币洗售在技术上是合法的。然而，我们建议避免洗售加密货币，因为立法者似乎正在努力弥补这一漏洞。\n什么是加密货币洗售规则？\n税收损失收获是一种通过出售有未实现亏损的投资来最大限度",
+        "score": 0.8072
+      },
+      {
+        "text": "然而，如果接收者在原所有者去世后出售加密货币，则成本基础将为每个 BTC 60000 美元。因此，新所有者可以立即出售价值 18 万美元的加密货币投资组合，而无需缴纳一分钱的资本利得税。这是因为成本和售价均达到 180000 美元&mdash;&mdash;至少在美国国税局看来是这样。\n \n1.7 避免质押和其他收益方法\n在探索如何不对比特币纳税时要考虑的最后一个选择是避免质押和其他收益方法。这还包括加密货币储蓄账户、挖矿、双重投资和流动性挖矿。这种收益被定义为收入而不是资本收益。\n由于多种原因，这可能会产生灾难性的影响。首先，这可能将投资者的收入推向更高的水平，并导致投资者需要支付更高的税率",
+        "score": 0.8024
+      }
+    ],
+    "relevance": 3.2,
+    "created_at": "2025-12-29"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/3orovik/status/2004683515183628489",
+    "tweet_account": "@3orovik",
+    "tweet_text": "Sponsored by @iTrustCapital\n\nWith year-end volatility, crypto tax loss harvesting is worth understanding\n\n- Crypto is treated as property by the IRS\n- Losses can offset capital gains\n- Up to $3,000 per year can offset ordinary income\n- Unused losses carry forward\n- As of 2025, wash sale rules do not apply to crypto\n\nThis allows investors in taxable crypto accounts to sell at a loss, realize the tax benefit, and repurchase without a mandatory waiting period\n\nNote: This strategy applies to iTrustCapital Premium Custody Accounts only. IRA accounts are already tax-advantaged\n\n$100 bonus: https://t.co/i8riJHKbZG",
+    "tweet_likes": 22,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略",
+    "new_reply": "Tax-loss offset isn't automatic — you must sell before Dec 31 and document it. Simply holding a losing position creates no deduction. Disciplined investors plan this in October, not December.",
+    "new_reply_angle": "场景落地型",
+    "final_reply": "$3k/year ordinary income offset + unlimited capital gain offset + indefinite carryforward. No wash sale rule means you stay in position while booking the loss. Every dip is a potential tax asset.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "由 @iTrustCapital 赞助\n\n在年终波动时期，了解加密货币税务损失收割非常值得\n\n- IRS 将加密货币视为财产\n- 损失可以抵消资本利得\n- 每年最多可抵消3,000美元的普通收入\n- 未使用的损失可以结转\n- 到2025年，洗售规则不适用于加密货币\n\n这让纳税加密账户的投资者可以在亏损时出售，实现亏损",
+    "reply_cn": "每年3000美元的普通收入抵消 + 无限的资本利得抵消 + 无限期结转。没有洗售规则意味着你在记录亏损的同时保持仓位。每一次下跌都是潜在的税务资产。",
+    "kb_chunks": [
+      {
+        "text": "如何利用加密货币洗售规则节省税款\n美国国税局洗售规则目前不适用于加密货币，因为它认为虚拟货币是财产而不是证券。这实际上意味着在撰写本文时没有加密货币洗售规则。从技术上讲，加密货币洗售是允许的。然而，立法者和监管机构表示这种情况可能很快就会改变。\n2021 年 9 月，众议院筹款委员会的一项提案中包括了将洗售规则应用于数字资产的措辞，即创建加密货币洗售规则。尽管&ldquo;更好地重建&rdquo;法案在国会陷入停滞，但这些事态发展凸显了政府对此事的兴趣。\n拜登在 2021 年承认&ldquo;更好地重建&rdquo;法案不会在年底前获得通过，但他仍然坚定地希望尽快通过该法案。2022 年 3 ",
+        "score": 0.834
+      },
+      {
+        "text": "加密货币税收是一个日益重要的问题，世界各国政府都在努力制定对数字资产征税的明确规则。在美国、英国和加拿大，加密货币持有者要应对复杂的监管环境，因此了解加密货币损失如何征税及其对纳税义务的潜在影响至关重要。无论是加密货币交易新手还是拥有多年经验的老手，按照当地法规报告收入并缴纳适用税款都是至关重要的。为了遵守当地的加密货币税法，加密货币持有者必须保证信息畅通与操作合规，以避免法律问题。本文探讨了投资者需要了解的规则、扣除和影响，以在瞬息万变的加密货币税收环境中保持合规并最大限度地减少纳税义务。1. 美国对加密货币损失的征税1.1 美国加密货币的征税方法在美国，国税局要求报告所有加密货币销售，因为",
+        "score": 0.8316
+      },
+      {
+        "text": "此外，报告损失和收益是强制性的，美国国税局正在积极执行对不准确申报的处罚。1.2 在美国加密货币损失如何征税和抵消？在美国，加密货币损失通常被归类为资本损失，当加密货币价值量从购买到销售、交换或使用时价值下降，就会产生资本损失。报告加密货币损失可以通过两种方式减税：所得税减免和抵消资本收益。当损失超过收益时，由此产生的净损失可用于所得税扣除，最多可以从收入中扣除 3000 美元，任何剩余的超额损失可结转，以抵消未来的资本收益和以后年度的 3000 美元其他收入。加密货币损失可以节省大量税款，抵消资本利得，且没有金额限制，从而有可能减轻大量税负。美国国税局按照传统的投资框架将损失分为短期损失和长",
+        "score": 0.8313
+      }
+    ],
+    "relevance": 3.3,
+    "created_at": "2025-12-26"
+  },
+  {
+    "search_query": "DeFi swap taxable event IRS 2025",
+    "tweet_url": "https://x.com/SamLedger67/status/2034498184110641315",
+    "tweet_account": "@SamLedger67",
+    "tweet_text": "IRS Form 1099-DA is here and most crypto holders aren't ready.\n\nEvery DEX swap, DeFi yield event, and NFT sale in 2025 is a taxable event — even if you never touched fiat.\n\nCost basis gaps = audit risk.\n\nGet your on-chain records organized before April 15.\n\n#CryptoTax #1099DA #TaxSeason #DeFi",
+    "tweet_likes": 1,
+    "matched_reply": "PEPE → BONK without touching USD still triggers capital gains — IRS treats every crypto swap as a disposal at FMV. DeFi traders with 500 swaps/week have 500 taxable events. The dollar never needs to appear.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "1099-DA covers broker-reported transactions — most DEX activity won't be on it in 2025. But IRS still expects all disposals on Form 8949. Non-broker DEX swaps aren't exempt from tax.",
+    "new_reply_angle": "规则解读型",
+    "final_reply": "IRS defined DeFi frontends as brokers — even without holding keys, if they facilitate trade execution and order processing they face 1099-DA obligations. Most DEXs aren't reporting yet, but the rule exists.",
+    "final_angle": "规则解读型",
+    "tweet_cn": "国税局（IRS）1099-DA 表格已发布，而大多数加密货币持有者还没有准备好。\n\n每一次去中心化交易所（DEX）兑换、去中心化金融（DeFi）收益事件和 2025 年的 NFT 销售都是应税事件——即使你从未触碰过法币。\n\n成本基数差距 = 审计风险。\n\n在 4 月 15 日之前整理好你的链上记录。\n\n#加密税 #1099DA #报税季 #DeFi",
+    "reply_cn": "美国国税局将DeFi前端定义为经纪人——即使不持有私钥，如果他们促进交易执行和订单处理，也需承担1099-DA的义务。大多数去中心化交易所尚未报告，但这一规则存在。",
+    "kb_chunks": [
+      {
+        "text": "你是否听说过1099-DA表格？又是否担心因填错表格受到税务处罚？别担心，本文将为你解开1099-DA表格的神秘面纱，帮你摆脱税务申报的苦恼。\n1.1099-DA表格是什么？\n1099-DA表格是一种税务报告工具，专门用于经纪人（Broker）向美国国税局（IRS）及纳税人报告交易收益、成本基础以及其他相关信息。2024年4月19日，IRS正式推出了1099-DA表格的草案，其主要目的在于从加密资产经纪人（包括中心化交易所、部分去中心化交易所及钱包服务商等，这些角色类似于传统金融领域的股票经纪人）处收集详尽的交易数据。\n1099-DA表格是税务报表领域的一次创新，它是首份专门针对加密资产交易者",
+        "score": 0.8529
+      },
+      {
+        "text": "指定NFTs可选报送门槛：$600\n\n对于采用可选报送方法进行汇总申报的指定NFTs交易，若客户全年在经纪商处的所有指定NFTs销售总收益（扣除交易成本后）不超过$600，经纪商可免于报送。\n \n \n3.2 排除联合申报计划\n \n此外，近期另一个技术性动向是，IRS明确2025纳税年度的1099-DA将不参与&ldquo;联邦/州联合申报计划（CF/SF）&rdquo;，这意味着经纪商不能再通过联邦系统一键完成州税数据报送，或需根据各州法律单独向地方税务机关提交数据。\n \n \n4 结语\n \n面对1099-DA带来的多重挑战，高净值投资者、项目方及Web3机构等相关市场参与者亟须适应新型申报规则",
+        "score": 0.8528
+      },
+      {
+        "text": "1. 什么是1099-DA表格？它对加密货币投资者意味着什么？\n如果您是加密货币投资者，您需要注意1099-DA数字资产表格。从2025纳税年度开始，美国国税局将要求数字资产经纪人向参与某些涉及数字资产（例如加密货币和NFT）交易的投资者发送此表格。\n美国国税局(IRS)推出1099-DA表格，以满足准确报告加密货币交易日益增长的需求。随着加密货币和NFT交易的受欢迎程度持续上升，美国国税局(IRS)旨在确保投资者正确报告其与加密货币相关的交易。\n新要求的主要亮点包括：\n\n1099-DA表格：经纪商（包括数字资产交易平台、数字资产支付处理商和某些数字资产托管钱包提供商）将需要向投资者出具109",
+        "score": 0.8518
+      }
+    ],
+    "relevance": 3.5,
+    "created_at": "2026-03-19"
+  },
+  {
+    "search_query": "DeFi swap taxable event IRS 2025",
+    "tweet_url": "https://x.com/SamLedger67/status/2034135686824005788",
+    "tweet_account": "@SamLedger67",
+    "tweet_text": "DeFi traders: Form 1099-DA is coming, but most DEX swaps still won't be broker-reported in 2025.\n\nThat doesn't mean the IRS isn't watching.\n\nEvery swap, LP exit, and yield harvest is a taxable event — and cost basis gaps = audit risk.\n\nDon't wait until April 14 to reconcile thousands of onchain transactions.\n\nIf you traded DeFi this year, start now.\n\n#CryptoTax #1099DA #DeFi #TaxSeason",
+    "tweet_likes": 0,
+    "matched_reply": "PEPE → BONK without touching USD still triggers capital gains — IRS treats every crypto swap as a disposal at FMV. DeFi traders with 500 swaps/week have 500 taxable events. The dollar never needs to appear.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题",
+    "new_reply": "DEX won't generate a 1099-DA, but IRS has blockchain analytics. On-chain activity can be traced and cross-referenced with CEX KYC data. Self-reporting DEX gains now beats a reconstruction audit later.",
+    "new_reply_angle": "反直觉观点型",
+    "final_reply": "IRS reasoning: even if a DeFi aggregator adds intermediate steps, it doesn't escape broker classification. Frontend provides trade initiation and execution — that's enough. Basis gaps in DEX history = your audit risk.",
+    "final_angle": "反直觉观点型",
+    "tweet_cn": "DeFi 交易者：1099-DA 表格即将到来，但大多数去中心化交易所（DEX）兑换在2025年仍不会由经纪人报告。\n\n这并不意味着美国国税局（IRS）没有在监控。\n\n每一次兑换、流动性提供退出和收益收获都是应税事件——成本基础的缺口意味着审计风险。\n\n不要等到 4 月 14 日才去核对数千笔链上交易。\n\n如果你今年交易了 DeFi，现在就开始准备。\n\n#加密税 #1099DA #DeFi #报税季",
+    "reply_cn": "美国国税局的推理：即使一个 DeFi 聚合器增加了中间步骤，它也无法逃避经纪人分类。前端提供交易发起和执行——这就足够了。DEX 历史中的基础差距 = 你的审计风险。",
+    "kb_chunks": [
+      {
+        "text": "这意味着，即使DeFi平台不直接持有客户私钥或数字资产，只要其提供了交易界面、订单处理和执行等核心服务，就必须遵守相应的税务报告规定。此外，《报告要求》还详细规定了报告内容与格式、报告时间与频率等具体事项，为经纪人提供了明确的操作指引，同时也为IRS监控数字资产交易活动、监管税务合规提供了依据。 \n1099-DA表格是IRS应对加密资产交易愈发频繁、税务监管困难问题的工具，其全面性和详尽性令人瞩目。该表格不仅要求经纪人详细披露交易的日期、类型（如买入、卖出、交换等），还精确报告交易金额，涵盖总收益及可能的收益、损失和成本基础信息。尤为关键的是，经纪人需提供投资者的全面信息，包括姓名、地址、社会",
+        "score": 0.8457
+      },
+      {
+        "text": "即使DeFi前端本身并不直接持有用户的资金或私钥，它仍然参与了交易的发起和执行过程。因此，IRS认为DeFi前端在交易中起到了类似传统经纪人的作用，应当承担相应的报告义务。此外，IRS明确指出，即使在交易流程中增加了中间步骤（例如通过DeFi聚合器），也不会改变DeFi前端被视为经纪人的事实。 \n2.3 加密资产经纪人要承担什么义务？ \n根据《定期提供数字资产销售服务的经纪人总收入报告要求》，加密资产经纪人需要承担以下报告义务和其他相关义务： \n（1）提交信息报告 \n1099-DA表格：自2025年1月1日起，所有持有用户出售加密资产的经纪人必须使用全新的1099-DA表格，向IRS详尽报告每",
+        "score": 0.8407
+      },
+      {
+        "text": "指定NFTs可选报送门槛：$600\n\n对于采用可选报送方法进行汇总申报的指定NFTs交易，若客户全年在经纪商处的所有指定NFTs销售总收益（扣除交易成本后）不超过$600，经纪商可免于报送。\n \n \n3.2 排除联合申报计划\n \n此外，近期另一个技术性动向是，IRS明确2025纳税年度的1099-DA将不参与&ldquo;联邦/州联合申报计划（CF/SF）&rdquo;，这意味着经纪商不能再通过联邦系统一键完成州税数据报送，或需根据各州法律单独向地方税务机关提交数据。\n \n \n4 结语\n \n面对1099-DA带来的多重挑战，高净值投资者、项目方及Web3机构等相关市场参与者亟须适应新型申报规则",
+        "score": 0.8368
+      }
+    ],
+    "relevance": 3.5,
+    "created_at": "2026-03-18"
+  }
+]

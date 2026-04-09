@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选题调研模块 - 演示页面</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f7fa; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 16px; }
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; background: white; padding: 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .tab { padding: 12px 24px; border: none; background: transparent; cursor: pointer; border-radius: 8px; font-size: 15px; font-weight: 500; color: #666; transition: all 0.3s; }
+        .tab.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .tab:hover:not(.active) { background: #f0f0f0; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .card-title { font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #333; }
+        .search-box { display: flex; gap: 10px; margin-bottom: 20px; }
+        .search-box input { flex: 1; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; }
+        .search-box input:focus { outline: none; border-color: #667eea; }
+        .btn { padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.3s; }
+        .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); }
+        .btn-secondary { background: #f0f0f0; color: #666; }
+        .btn-secondary:hover { background: #e0e0e0; }
+        .hotspot-list { display: grid; gap: 15px; }
+        .hotspot-item { padding: 16px; border: 2px solid #f0f0f0; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+        .hotspot-item:hover { border-color: #667eea; background: #f8f9ff; }
+        .hotspot-item.selected { border-color: #667eea; background: #f0f3ff; }
+        .hotspot-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .hotspot-title { font-size: 16px; font-weight: 600; color: #333; }
+        .hotspot-heat { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .hotspot-meta { display: flex; gap: 15px; font-size: 13px; color: #999; }
+        .hotspot-desc { font-size: 14px; color: #666; margin-top: 8px; line-height: 1.6; }
+        .chat-container { display: flex; flex-direction: column; height: 600px; }
+        .chat-messages { flex: 1; overflow-y: auto; padding: 20px; background: #f8f9fa; border-radius: 8px; margin-bottom: 20px; }
+        .message { margin-bottom: 20px; display: flex; gap: 12px; }
+        .message.user { flex-direction: row-reverse; }
+        .message-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: white; flex-shrink: 0; }
+        .message.user .message-avatar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .message.ai .message-avatar { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .message-content { max-width: 70%; padding: 14px 18px; border-radius: 12px; line-height: 1.6; }
+        .message.user .message-content { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .message.ai .message-content { background: white; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .chat-input { display: flex; gap: 10px; }
+        .chat-input textarea { flex: 1; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; resize: none; font-family: inherit; }
+        .chat-input textarea:focus { outline: none; border-color: #667eea; }
+        .analysis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .analysis-card { padding: 20px; border: 2px solid #f0f0f0; border-radius: 12px; transition: all 0.3s; }
+        .analysis-card:hover { border-color: #667eea; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1); }
+        .analysis-score { font-size: 36px; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+        .analysis-label { font-size: 14px; color: #999; margin-bottom: 12px; }
+        .analysis-desc { font-size: 14px; color: #666; line-height: 1.6; }
+        .tag { display: inline-block; padding: 4px 12px; background: #f0f3ff; color: #667eea; border-radius: 20px; font-size: 12px; margin-right: 8px; margin-bottom: 8px; }
+        .loading { text-align: center; padding: 40px; color: #999; }
+        .loading::after { content: '...'; animation: dots 1.5s steps(4, end) infinite; }
+        @keyframes dots { 0%, 20% { content: '.'; } 40% { content: '..'; } 60%, 100% { content: '...'; } }
+        .region-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .filter-btn { padding: 8px 16px; border: 2px solid #e0e0e0; background: white; border-radius: 20px; cursor: pointer; font-size: 13px; transition: all 0.3s; }
+        .filter-btn.active { border-color: #667eea; background: #f0f3ff; color: #667eea; font-weight: 600; }
+        .filter-btn:hover:not(.active) { border-color: #ccc; }
+        .policy-item { padding: 20px; border: 2px solid #f0f0f0; border-radius: 12px; margin-bottom: 15px; transition: all 0.3s; position: relative; }
+        .policy-item:hover { border-color: #667eea; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1); }
+        .policy-badge { position: absolute; top: 20px; right: 20px; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .badge-red { background: #fee; color: #c00; }
+        .badge-yellow { background: #ffc; color: #c90; }
+        .badge-blue { background: #e6f7ff; color: #1890ff; }
+        .policy-title { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 12px; padding-right: 100px; }
+        .policy-meta { display: flex; gap: 20px; margin-bottom: 12px; font-size: 13px; color: #999; }
+        .policy-content { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 12px; }
+        .policy-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .impact-badge { padding: 4px 10px; background: #f0f0f0; border-radius: 12px; font-size: 12px; color: #666; }
+        .world-map { background: #f8f9fa; border-radius: 12px; padding: 40px; text-align: center; margin-bottom: 20px; min-height: 300px; display: flex; align-items: center; justify-content: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .stat-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; }
+        .stat-number { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        .stat-label { font-size: 14px; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <h1>🎯 选题调研模块</h1>
+                <p>AI驱动的运营全流程管理平台 - 演示版本</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('hotspot')">📊 热点采集</button>
+                <button class="tab" onclick="switchTab('strategy')">💡 AI策略对话</button>
+                <button class="tab" onclick="switchTab('analysis')">🔍 AI选题分析</button>
+                <button class="tab" onclick="switchTab('policy')">🌍 政策监控</button>
+            </div>
+
+            <!-- 热点采集 -->
+            <div id="hotspot" class="content-section active">
+                <div class="card">
+                    <div class="card-title">热点搜索</div>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="输入关键词搜索热点，如：人工智能、新能源汽车..." />
+                        <button class="btn btn-primary" onclick="searchHotspots()">🔍 搜索</button>
+                        <button class="btn btn-secondary" onclick="loadTrendingHotspots()">🔥 获取热搜</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">🤖 热点采集算法说明</div>
+                    <div style="background: #f8f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <div style="font-weight: 600; margin-bottom: 12px; color: #333;">多源热度融合算法 (Multi-Source Heat Fusion Algorithm)</div>
+                        <div style="font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 16px;">
+                            本系统采用先进的多源数据融合技术，实时抓取和分析来自微博、X（Twitter）、知乎、抖音等主流平台的热点数据，通过加权计算生成综合热度指数。
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <div style="font-weight: 600; color: #667eea; margin-bottom: 8px;">📊 数据源权重</div>
+                                <div style="font-size: 13px; color: #666; line-height: 1.6;">
+                                    • 微博热搜：35%<br>
+                                    • X平台：30%<br>
+                                    • 知乎热榜：20%<br>
+                                    • 抖音热点：15%
+                                </div>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <div style="font-weight: 600; color: #667eea; margin-bottom: 8px;">⚡ 实时更新</div>
+                                <div style="font-size: 13px; color: #666; line-height: 1.6;">
+                                    • 更新频��：每5分钟<br>
+                                    • 数据延迟：< 10秒<br>
+                                    • 覆盖范围：全网热点<br>
+                                    • 去重算法：智能合并
+                                </div>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <div style="font-weight: 600; color: #667eea; margin-bottom: 8px;">🎯 热度计算</div>
+                                <div style="font-size: 13px; color: #666; line-height: 1.6;">
+                                    热度 = 讨论量×0.4 + 增长率×0.3 + 互动率×0.2 + 时效性×0.1
+                                </div>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <div style="font-weight: 600; color: #667eea; margin-bottom: 8px;">🔍 智能分类</div>
+                                <div style="font-size: 13px; color: #666; line-height: 1.6;">
+                                    • NLP语义分析<br>
+                                    • 自动标签提取<br>
+                                    • 领域智能识别<br>
+                                    • 关联话题推荐
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">热点列表</div>
+                    <div id="hotspotList" class="hotspot-list"></div>
+                </div>
+            </div>
+
+            <!-- AI策略对话 -->
+            <div id="strategy" class="content-section">
+                <div class="card">
+                    <div class="card-title">AI策略助手</div>
+                    <div class="chat-container">
+                        <div id="chatMessages" class="chat-messages"></div>
+                        <div class="chat-input">
+                            <textarea id="chatInput" rows="3" placeholder="描述你的运营策略意图，例如：我想针对科技圈年轻用户做内容营销..."></textarea>
+                            <button class="btn btn-primary" onclick="sendMessage()">发送</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI选题分析 -->
+            <div id="analysis" class="content-section">
+                <div class="card">
+                    <div class="card-title">选择热点进行分析</div>
+                    <div id="analysisHotspotList" class="hotspot-list"></div>
+                </div>
+
+                <div id="analysisResult" style="display: none;">
+                    <div class="card">
+                        <div class="card-title">📈 选题分析报告</div>
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <div class="analysis-score" id="potentialScore">85</div>
+                                <div class="analysis-label">传播潜力</div>
+                                <div class="analysis-desc" id="potentialDesc"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <div class="analysis-score" id="engagementScore">78</div>
+                                <div class="analysis-label">预估互动率</div>
+                                <div class="analysis-desc" id="engagementDesc"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <div class="analysis-score" id="competitionScore">62</div>
+                                <div class="analysis-label">竞争指数</div>
+                                <div class="analysis-desc" id="competitionDesc"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">💡 选题建议</div>
+                        <div id="topicSuggestions"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🎯 内容方向建议</div>
+                        <div id="contentDirections"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 政策监控 -->
+            <div id="policy" class="content-section">
+                <div class="card">
+                    <div class="card-title">全球政策监控概览</div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">本周新政策</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">高影响预警</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">监控司法区</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">累计政策</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">司法区筛选</div>
+                    <div class="region-filters">
+                        <button class="filter-btn active" onclick="filterPolicies('all')">全部</button>
+                        <button class="filter-btn" onclick="filterPolicies('中国')">🇨🇳 中国</button>
+                        <button class="filter-btn" onclick="filterPolicies('美国')">🇺🇸 美国</button>
+                        <button class="filter-btn" onclick="filterPolicies('欧盟')">🇪🇺 欧盟</button>
+                        <button class="filter-btn" onclick="filterPolicies('英国')">🇬🇧 英国</button>
+                        <button class="filter-btn" onclick="filterPolicies('新加坡')">���🇬 新加坡</button>
+                        <button class="filter-btn" onclick="filterPolicies('日本')">🇯🇵 日本</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">最新政策动态</div>
+                    <div id="policyList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 模拟数据
+        const mockHotspots = [
+            { id: 1, title: 'AI大模型技术突破引发行业变革', heat: 982456, source: '微博热搜', time: '2小时前', category: '科技', desc: '多家科技公司发布新一代AI大模型，性能提升显著，引发业界广泛关注和讨论。' },
+            { id: 2, title: '新能源汽车销量创历史新高', heat: 876234, source: 'X��台', time: '3小时前', category: '汽车', desc: '2024年新能源汽车市场持续火爆，多个品牌销量突破预期，市场渗透率持续提升。' },
+            { id: 3, title: '元宇宙概念股集体上涨', heat: 765432, source: '微博热搜', time: '5小时前', category: '财经', desc: '受政策利好影响，元宇宙相关概念股今日集体上涨，多只个股涨停。' },
+            { id: 4, title: '短视频平台推出AI创作工具', heat: 654321, source: 'X平台', time: '6小时前', category: '互联网', desc: '主流短视频平台纷纷推出AI辅助创作工具，降低内容创作门槛，提升创作效率。' },
+            { id: 5, title: '5G技术在工业领域应用加速', heat: 543210, source: '微博热搜', time: '8小时前', category: '科技', desc: '5G+工业互联网应用案例不断涌现，助力传统制造业数字化转型升级。' },
+            { id: 6, title: '远程办公软件市场竞争加剧', heat: 432109, source: 'X平台', time: '10小时前', category: '互联网', desc: '多家公司推出新功能，远程办公市场竞争白热化，用户体验成为关键。' }
+        ];
+
+        let currentHotspots = [...mockHotspots];
+        let selectedHotspot = null;
+
+        // 切换标签页
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+            
+            if (tabName === 'analysis') {
+                loadAnalysisHotspots();
+            }
+        }
+
+        // 渲染热点列表
+        function renderHotspots(hotspots, containerId) {
+            const container = document.getElementById(containerId);
+            if (hotspots.length === 0) {
+                container.innerHTML = '<div class="loading">暂无数据</div>';
+                return;
+            }
+            
+            container.innerHTML = hotspots.map(hotspot => `
+                <div class="hotspot-item" onclick="selectHotspot(${hotspot.id}, '${containerId}')">
+                    <div class="hotspot-header">
+                        <div class="hotspot-title">${hotspot.title}</div>
+                        <div class="hotspot-heat">🔥 ${formatNumber(hotspot.heat)}</div>
+                    </div>
+                    <div class="hotspot-meta">
+                        <span>📍 ${hotspot.source}</span>
+                        <span>🕐 ${hotspot.time}</span>
+                        <span>🏷️ ${hotspot.category}</span>
+                    </div>
+                    <div class="hotspot-desc">${hotspot.desc}</div>
+                </div>
+            `).join('');
+        }
+
+        // 格式化数字
+        function formatNumber(num) {
+            if (num >= 10000) {
+                return (num / 10000).toFixed(1) + '万';
+            }
+            return num.toString();
+        }
+
+        // 搜索热点
+        function searchHotspots() {
+            const keyword = document.getElementById('searchInput').value.trim();
+            if (!keyword) {
+                alert('请输入搜索关键词');
+                return;
+            }
+            
+            document.getElementById('hotspotList').innerHTML = '<div class="loading">搜索中</div>';
+            
+            setTimeout(() => {
+                const filtered = mockHotspots.filter(h => 
+                    h.title.includes(keyword) || h.desc.includes(keyword) || h.category.includes(keyword)
+                );
+                currentHotspots = filtered;
+                renderHotspots(filtered, 'hotspotList');
+            }, 800);
+        }
+
+        // 加载热搜
+        function loadTrendingHotspots() {
+            document.getElementById('hotspotList').innerHTML = '<div class="loading">加载中</div>';
+            
+            setTimeout(() => {
+                currentHotspots = [...mockHotspots];
+                renderHotspots(mockHotspots, 'hotspotList');
+            }, 800);
+        }
+
+        // 选择热点
+        function selectHotspot(id, containerId) {
+            selectedHotspot = mockHotspots.find(h => h.id === id);
+            
+            document.querySelectorAll(`#${containerId} .hotspot-item`).forEach(item => {
+                item.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            if (containerId === 'analysisHotspotList') {
+                analyzeHotspot(selectedHotspot);
+            }
+        }
+
+        // AI对话功能
+        let chatHistory = [];
+
+        function initChat() {
+            addAIMessage('你好！我是AI策略助手。请告诉我你的运营策略意图，我会帮你分析需要收集的数据和制定内容策略。');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addUserMessage(message);
+            input.value = '';
+            
+            setTimeout(() => {
+                generateAIResponse(message);
+            }, 1000);
+        }
+
+        function addUserMessage(text) {
+            chatHistory.push({ type: 'user', text });
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.innerHTML += `
+                <div class="message user">
+                    <div class="message-avatar">U</div>
+                    <div class="message-content">${text}</div>
+                </div>
+            `;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function addAIMessage(text) {
+            chatHistory.push({ type: 'ai', text });
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.innerHTML += `
+                <div class="message ai">
+                    <div class="message-avatar">AI</div>
+                    <div class="message-content">${text}</div>
+                </div>
+            `;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const responses = {
+                '科技': `很好！针对科技圈年轻用户的内容营销策略，我建议：
+
+📊 **数据收集方案：**
+1. 关键词监控：AI、大模型、新能源、元宇宙、Web3
+2. 目标平台：微博、X、知乎、B站
+3. 竞品账号：关注头部科技媒体和KOL
+4. 用户画像：18-35岁，关注科技创新
+
+💡 **内容策略建议：**
+1. 发布频率：每天2-3条，早9点、午12点、晚8点
+2. 内容类型：深度解读（40%）+ 热点快讯（30%）+ 观点评论（30%）
+3. 互动方式：发起话题讨论、投票、问答
+4. 差异化：专注前沿技术解读，用通俗语言讲专业内容
+
+🎯 **下一步行动：**
+建议先在"热点采集"模块搜索相关热点，然后在"AI选题分析"中评估传播潜力。`,
+                
+                '年轻': `针对年轻用户群体，我为你制定以下策略：
+
+📊 **数据收集重点：**
+1. 热门话题：娱乐、游戏、二次元、潮流文化
+2. 平台选择：抖音、小红书、B站、微博
+3. 时间分析：晚上8-11点活跃度最高
+4. 内容偏好：短视频、图文、互动性强的内容
+
+💡 **内容策略：**
+1. 语言风格：轻松活泼，使用网络流行语
+2. 视觉呈现：高颜值配图，动态元素
+3. 互动设计：挑战赛、打卡、UGC征集
+4. 发布节奏：工作日晚上+周末全天
+
+🔥 **爆款公式：**
+热点话题 + 独特角度 + 情感共鸣 + 互动引导`,
+                
+                'default': `收到！基于你的需求，我为你制定以下运营策略：
+
+📊 **数据收集建议：**
+1. 监控行业热点和趋势话题
+2. 分析目标用户的内容偏好
+3. 跟踪竞品账号的内容表现
+4. 收集用户反馈和互动数据
+
+💡 **内容策略框架：**
+1. 定位：明确品牌调性和差异化优势
+2. 选题：结合热点+专业+用户需求
+3. 创作：保持风格一致，注重质量
+4. 分发：多平台协同，优化发布时间
+5. 互动：及时回复，建立用户关系
+
+🎯 **执行建议：**
+1. 先在热点采集模块找到合适的话题
+2. 使用AI选题分析评估传播潜力
+3. 制定内容日历，保持稳定输出
+4. 持续优化，根据数据调整策略
+
+有什么具体问题，随时问我！`
+            };
+            
+            let response = responses.default;
+            if (userMessage.includes('科技') || userMessage.includes('AI') || userMessage.includes('技术')) {
+                response = responses['科技'];
+            } else if (userMessage.includes('年轻') || userMessage.includes('青年') || userMessage.includes('学生')) {
+                response = responses['年轻'];
+            }
+            
+            addAIMessage(response);
+        }
+
+        // 选题分析功能
+        function loadAnalysisHotspots() {
+            renderHotspots(mockHotspots, 'analysisHotspotList');
+        }
+
+        function analyzeHotspot(hotspot) {
+            document.getElementById('analysisResult').style.display = 'block';
+            
+            const scores = {
+                potential: Math.floor(Math.random() * 20) + 75,
+                engagement: Math.floor(Math.random() * 20) + 70,
+                competition: Math.floor(Math.random() * 30) + 50
+            };
+            
+            document.getElementById('potentialScore').textContent = scores.potential;
+            document.getElementById('engagementScore').textContent = scores.engagement;
+            document.getElementById('competitionScore').textContent = scores.competition;
+            
+            document.getElementById('potentialDesc').textContent = 
+                scores.potential > 85 ? '该话题热度持续上升，具有极高的传播潜力' : 
+                scores.potential > 75 ? '话题热度稳定，有较好的传播机会' : 
+                '话题热度一般，需要独特角度切入';
+            
+            document.getElementById('engagementDesc').textContent = 
+                scores.engagement > 80 ? '用户参与意愿强，预计互动率很高' : 
+                scores.engagement > 70 ? '用户有一定参与意愿，互动率中等' : 
+                '需要设计互动机制提升参与度';
+            
+            document.getElementById('competitionDesc').textContent = 
+                scores.competition > 70 ? '竞争激烈，需要差异化内容' : 
+                scores.competition > 60 ? '竞争适中，有发挥空间' : 
+                '竞争较小，是进入的好时机';
+            
+            const suggestions = [
+                { title: '深度解读角度', desc: `从技术原理、行业影响、未来趋势三个维度深入分析"${hotspot.title}"，提供专业见解。`, tags: ['深度', '专业', '长文'] },
+                { title: '案例分析角度', desc: '收集相关成功/失败案例，总结经验教训，为读者提供实用参考。', tags: ['案例', '实用', '教程'] },
+                { title: '观点评论角度', desc: '针对热点事件发表独特观点，引发讨论和思考，提升互动率。', tags: ['观点', '互动', '短文'] }
+            ];
+            
+            document.getElementById('topicSuggestions').innerHTML = suggestions.map(s => `
+                <div style="padding: 16px; border: 2px solid #f0f0f0; border-radius: 8px; margin-bottom: 12px;">
+                    <div style="font-weight: 600; margin-bottom: 8px; color: #333;">${s.title}</div>
+                    <div style="font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.6;">${s.desc}</div>
+                    <div>${s.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                </div>
+            `).join('');
+            
+            const directions = [
+                '📝 撰写1500-2000字深度文章，配合数据图表和案例分析',
+                '🎬 制作3-5分钟短视频，用动画展示核心观点',
+                '📊 设计信息图，用可视化方式呈现关键信息',
+                '💬 发起话题讨论，邀请用户分享观点和经验',
+                '🔍 系列内容规划，分多期深入探讨不同方面'
+            ];
+            
+            document.getElementById('contentDirections').innerHTML = directions.map(d => `
+                <div style="padding: 12px 16px; background: #f8f9ff; border-left: 4px solid #667eea; margin-bottom: 10px; border-radius: 4px;">
+                    ${d}
+                </div>
+            `).join('');
+            
+            document.getElementById('analysisResult').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 政策监控功能
+        const mockPolicies = [
+            { id: 1, title: '美国SEC发布加密货币交易所新监管框架', region: '美国', time: '2小时前', level: 'red', content: 'SEC宣布对加密货币交易所实施新的监管要求，要求所有交易所在6个月内完成合规注册，否则将面临处罚。', impacts: ['交易所', '合规', '高影响'], category: '监管' },
+            { id: 2, title: '欧盟MiCA法案正式生效实施细则公布', region: '欧盟', time: '5小时前', level: 'red', content: '欧盟加密资产市场监管法案（MiCA）实施细则正式公布，对稳定币发行、交易平台运营提出明确要求。', impacts: ['稳定币', '交易平台', '高影响'], category: '法规' },
+            { id: 3, title: '中国央行数字货币试点范围扩大', region: '中国', time: '1天前', level: 'yellow', content: '中国人民银行宣布将数字人民币试点范围扩大至20个城市，推动数字货币在零售支付领域的应用。', impacts: ['数字货币', '支付', '中影响'], category: '政策' },
+            { id: 4, title: '英国FCA更新加密资产营销规则', region: '英国', time: '1天前', level: 'yellow', content: 'FCA发布新的加密资产营销规则，要求所有加密资产广告必须包含风险警示，并限制向散户投资者推广高风险产品。', impacts: ['营销', '投资者保护', '中影响'], category: '监管' },
+            { id: 5, title: '新加坡金管局推出DeFi监管沙盒', region: '新加坡', time: '2天前', level: 'blue', content: 'MAS宣布启动DeFi监管沙盒计划，允许符合条件的DeFi项目在受控环境中测试创新业务模式。', impacts: ['DeFi', '创新', '低影响'], category: '创新' },
+            { id: 6, title: '日本修订资金结算法加强稳定币监管', region: '日本', time: '3天前', level: 'yellow', content: '日本金融厅修订资金结算法，对稳定币发行和流通提出更严格的监管要求，要求发行方持有等值储备资产。', impacts: ['稳定币', '储备', '中影响'], category: '法规' },
+            { id: 7, title: 'G20财长会议讨论全球加密税收框架', region: '全球', time: '3天前', level: 'blue', content: 'G20财长和央行行长会议讨论建立全球统一的加密资产税收框架，推动跨境税收信息交换。', impacts: ['税收', '国际合作', '低影响'], category: '税务' },
+            { id: 8, title: '美国IRS发布NFT税收指南', region: '美国', time: '4天前', level: 'yellow', content: 'IRS发布NFT税收处理指南，明确NFT交易的资本利得税计算方法和申报要求。', impacts: ['NFT', '税收', '中影响'], category: '税务' }
+        ];
+
+        let currentPolicies = [...mockPolicies];
+        let selectedRegion = 'all';
+
+        function filterPolicies(region) {
+            selectedRegion = region;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (region === 'all') {
+                currentPolicies = [...mockPolicies];
+            } else {
+                currentPolicies = mockPolicies.filter(p => p.region === region);
+            }
+            
+            renderPolicies();
+        }
+
+        function renderPolicies() {
+            const container = document.getElementById('policyList');
+            
+            if (currentPolicies.length === 0) {
+                container.innerHTML = '<div class="loading">暂无数据</div>';
+                return;
+            }
+            
+            container.innerHTML = currentPolicies.map(policy => {
+                const badgeClass = policy.level === 'red' ? 'badge-red' : policy.level === 'yellow' ? 'badge-yellow' : 'badge-blue';
+                const badgeText = policy.level === 'red' ? '🔴 高影响' : policy.level === 'yellow' ? '🟡 中影响' : '🔵 低影响';
+                
+                return `
+                    <div class="policy-item">
+                        <div class="policy-badge ${badgeClass}">${badgeText}</div>
+                        <div class="policy-title">${policy.title}</div>
+                        <div class="policy-meta">
+                            <span>🌍 ${policy.region}</span>
+                            <span>🕐 ${policy.time}</span>
+                            <span>📋 ${policy.category}</span>
+                        </div>
+                        <div class="policy-content">${policy.content}</div>
+                        <div class="policy-tags">
+                            ${policy.impacts.map(impact => `<span class="impact-badge">${impact}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 支持回车发送消息
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTrendingHotspots();
+            initChat();
+            renderPolicies();
+            
+            document.getElementById('chatInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+            
+            document.getElementById('searchInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    searchHotspots();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

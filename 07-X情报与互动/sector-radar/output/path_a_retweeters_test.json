@@ -1,0 +1,1844 @@
+{
+  "summary": {
+    "tested_handles": [
+      "binance",
+      "coinbase",
+      "Bybit_Official",
+      "kucoincom",
+      "gate_io",
+      "cryptocom",
+      "MEXC_Official",
+      "Gemini",
+      "Bitstamp",
+      "HashKeyExchange"
+    ],
+    "total_discovered": 95,
+    "relevant_accounts": 26,
+    "multi_source": 2
+  },
+  "relevant": [
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "PrimePad_IDO",
+      "name": "PrimePad | IDO Fundraising",
+      "followers": 38336,
+      "bio": "Discover, invest, and track the next generation of @BNBCHAIN gems.\nTransparent decentralized fundraising at your fingertips.",
+      "relevant": true,
+      "url": "https://x.com/PrimePad_IDO",
+      "discovered_via": [
+        "binance",
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "DroidAIX_",
+      "name": "DroidAIX_",
+      "followers": 24440,
+      "bio": "Investor in the best DeFi projects.",
+      "relevant": true,
+      "url": "https://x.com/DroidAIX_",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Wakem10",
+      "name": "THE CLASSIC MAN +",
+      "followers": 12979,
+      "bio": "Digital marketing consultant , marriage counselor,  public speaker, for business,.John 14:12-14. @emeraldei8ht co-founder\n#CryptoPres, believer @smcdao",
+      "relevant": true,
+      "url": "https://x.com/Wakem10",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "ccryptoFinaNCee",
+      "name": "Mr. C de’ medici",
+      "followers": 10247,
+      "bio": "i am Art collector , investor , from Switzerland ! investor in nft , in crypto ! ART maker 私はアートコレクターです！NFT、暗号通貨の投資家！#nftartist. https://t.co/1gSGvNoBhl",
+      "relevant": true,
+      "url": "https://x.com/ccryptoFinaNCee",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "Bybit_Official",
+      "source_tweet_id": "2037077093293396375",
+      "source_tweet": "Dual Asset Competition is live!\n\nTrade to earn high yields and compete for up to 2,500 $USDT in Crit",
+      "discovery_type": "retweet",
+      "handle": "Rahatirtaza",
+      "name": "𝙍𝘼𝙃𝘼𝙏 🔥",
+      "followers": 2887,
+      "bio": "Web3 builder || On-chain researcher || Exploring DeFi || restaking & coordination || Community-driven innovation ||",
+      "relevant": true,
+      "url": "https://x.com/Rahatirtaza",
+      "discovered_via": [
+        "Bybit_Official"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "jonbonnerjons69",
+      "name": "jon bons g.o.a.t🧲",
+      "followers": 1713,
+      "bio": "believe in tech and advencment of life $aixbt  $acolyt a.i a$coin $virtual     $spx6900 $bitcoin  🌕",
+      "relevant": true,
+      "url": "https://x.com/jonbonnerjons69",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Darmin_che_",
+      "name": "Darmin",
+      "followers": 1266,
+      "bio": "crypto analyst| father | Gratitude | Freedom 🧠",
+      "relevant": true,
+      "url": "https://x.com/Darmin_che_",
+      "discovered_via": [
+        "binance",
+        "coinbase",
+        "Bybit_Official"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Mazaden_",
+      "name": "Mazaden.base.eth",
+      "followers": 1203,
+      "bio": "Content Creator | Web3 Gaming 🛸Yapper 🚀 | Sharing vibes, alpha & creativity Nitrograph",
+      "relevant": true,
+      "url": "https://x.com/Mazaden_",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "JuliusGonzale15",
+      "name": "RandomNFT",
+      "followers": 988,
+      "bio": "",
+      "relevant": true,
+      "url": "https://x.com/JuliusGonzale15",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "0x_sulaiman",
+      "name": "0xSULAIMAN",
+      "followers": 968,
+      "bio": "Community Builder || Designer ||  Exploring Crypto & Web3 |  Airdrop Hunter || Sharing creativity + opportunities || promoting small project|| Dm for promotion",
+      "relevant": true,
+      "url": "https://x.com/0x_sulaiman",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "gate_io",
+      "source_tweet_id": "1953406225778983132",
+      "source_tweet": "📢 Gate's X handle has officially moved! Follow us at @Gate — our new official account on X.\n\n🔷 New n",
+      "discovery_type": "retweet",
+      "handle": "MidnightChainy",
+      "name": "Midnight Vein",
+      "followers": 810,
+      "bio": "🌑 Built for late nights \nNFT holder into rare art, dark aesthetics & lowkey on-chain gems. DM for collabs.",
+      "relevant": true,
+      "url": "https://x.com/MidnightChainy",
+      "discovered_via": [
+        "gate_io"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "SerdarDrmz",
+      "name": "Serdar Durmaz",
+      "followers": 508,
+      "bio": "Blockchain\n\n#ALGO 💎\n#NEAR 💎\n\nserdardrmz.near",
+      "relevant": true,
+      "url": "https://x.com/SerdarDrmz",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "BolaniLorena",
+      "name": "Analy palmer📉",
+      "followers": 480,
+      "bio": "Future trader, crypto expert, youtube, information, account manager and inventor. T.A telegram:check pinned i make medicine, married, certified trader.",
+      "relevant": true,
+      "url": "https://x.com/BolaniLorena",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "JDivineRay",
+      "name": "Ray",
+      "followers": 438,
+      "bio": "Crypto Gems Hunter and Promoter, Ray of Hope Sharer, Seeking to be a Blessing to everyone.",
+      "relevant": true,
+      "url": "https://x.com/JDivineRay",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Abdulsalam65252",
+      "name": "Baller_G 🌚",
+      "followers": 298,
+      "bio": "Web3 Enthusiast #AI  Modeling and ML #Techcrushscholar\n.\n#Gamer",
+      "relevant": true,
+      "url": "https://x.com/Abdulsalam65252",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "0Yami",
+      "name": "Ofye Cooks",
+      "followers": 226,
+      "bio": "Blockchain Enthusiast | No fiat | maxi ₿ degen | stacking till the moon's pixelated ✨",
+      "relevant": true,
+      "url": "https://x.com/0Yami",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "razsha_01",
+      "name": "Razsha🔸",
+      "followers": 220,
+      "bio": "Innovation × Creativity 🤝 | Crypto by Night 🥷🏼| #BNB Builder 👷 | Building Narratives, not Hype | Impact over Net Worth | NFA • DYOR | Gen I",
+      "relevant": true,
+      "url": "https://x.com/razsha_01",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "BenoCrypto",
+      "name": "₿eno Crypto ✪",
+      "followers": 210,
+      "bio": "IA • ₿lockchain 🔶 \n\nJe teste les nouveaux outils et je partage le meilleur ◾\n\nBuilder en public 💜",
+      "relevant": true,
+      "url": "https://x.com/BenoCrypto",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "ArthurC_Doyle",
+      "name": "Arthur Conan Doyle",
+      "followers": 210,
+      "bio": "Crypto + AI = CAI | Researcher • Builder • Analyst | Exploring the frontier of decentralized intelligence....#WEB3",
+      "relevant": true,
+      "url": "https://x.com/ArthurC_Doyle",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Shafinislam850",
+      "name": "Shafin Islam",
+      "followers": 201,
+      "bio": "airdrop worker all time crypto follow me follow back",
+      "relevant": true,
+      "url": "https://x.com/Shafinislam850",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "elle_black1",
+      "name": "Elle Black",
+      "followers": 174,
+      "bio": "$$$ & Crypto - Art + Memes + Info + News + More.\nNFA & DYOR.",
+      "relevant": true,
+      "url": "https://x.com/elle_black1",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "HashKeyExchange",
+      "source_tweet_id": "2037084766076625066",
+      "source_tweet": "🎉 ETH Staking Now Live on HashKey Exchange Earn Channel \n\nJoin our limited-time promotion and have t",
+      "discovery_type": "retweet",
+      "handle": "Zhangbeihai121",
+      "name": "Zhangbei Hai",
+      "followers": 170,
+      "bio": "Long-term believer in compliant Web3 | HashKey ecosystem enthusiast | $HSK | On-chain finance & RWAs",
+      "relevant": true,
+      "url": "https://x.com/Zhangbeihai121",
+      "discovered_via": [
+        "HashKeyExchange"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Malireddy_MK691",
+      "name": "🇮🇳🦁мαℓιяє∂∂у мαℓℓιкнαяנυи (ℓєσ)🦁🇮🇳2026",
+      "followers": 161,
+      "bio": "I'm☝️Hindu,B.techGraduate,Indian|LovesTech👇,Gadgets;Cricket;Crypto;  #Stufflistingsarmy #Prasadtechintelugu  @tarak9999 @ImRo45 @NCBN @virendersehwag @RamMNK",
+      "relevant": true,
+      "url": "https://x.com/Malireddy_MK691",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "BlOckGoJoX",
+      "name": "BlOck GoJo X🔶BNB",
+      "followers": 151,
+      "bio": "Focused on crypto education, structured market analysis, and disciplined signals. Content creator committed to clarity.",
+      "relevant": true,
+      "url": "https://x.com/BlOckGoJoX",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "H3rhous3",
+      "name": "🇵🇷",
+      "followers": 134,
+      "bio": "I post random shit…… also #Bitcoin",
+      "relevant": true,
+      "url": "https://x.com/H3rhous3",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "widodo_jhon",
+      "name": "John W",
+      "followers": 100,
+      "bio": "Web3 explorer\n\nEarly user of new projects\n\nTestnet • Community • Alpha",
+      "relevant": true,
+      "url": "https://x.com/widodo_jhon",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    }
+  ],
+  "all": [
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "binancefile",
+      "name": "ᙢęмę 𝓗ᵤß",
+      "followers": 54404,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/binancefile",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "PrimePad_IDO",
+      "name": "PrimePad | IDO Fundraising",
+      "followers": 38336,
+      "bio": "Discover, invest, and track the next generation of @BNBCHAIN gems.\nTransparent decentralized fundraising at your fingertips.",
+      "relevant": true,
+      "url": "https://x.com/PrimePad_IDO",
+      "discovered_via": [
+        "binance",
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "DroidAIX_",
+      "name": "DroidAIX_",
+      "followers": 24440,
+      "bio": "Investor in the best DeFi projects.",
+      "relevant": true,
+      "url": "https://x.com/DroidAIX_",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Wakem10",
+      "name": "THE CLASSIC MAN +",
+      "followers": 12979,
+      "bio": "Digital marketing consultant , marriage counselor,  public speaker, for business,.John 14:12-14. @emeraldei8ht co-founder\n#CryptoPres, believer @smcdao",
+      "relevant": true,
+      "url": "https://x.com/Wakem10",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "ccryptoFinaNCee",
+      "name": "Mr. C de’ medici",
+      "followers": 10247,
+      "bio": "i am Art collector , investor , from Switzerland ! investor in nft , in crypto ! ART maker 私はアートコレクターです！NFT、暗号通貨の投資家！#nftartist. https://t.co/1gSGvNoBhl",
+      "relevant": true,
+      "url": "https://x.com/ccryptoFinaNCee",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Favezy_",
+      "name": "Dr. Favezy",
+      "followers": 7305,
+      "bio": "Prince of BNB. CTO lead @_Totakekebsc / Cooking @beenbeecto",
+      "relevant": false,
+      "url": "https://x.com/Favezy_",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Peguin_sol",
+      "name": "Penguin",
+      "followers": 5662,
+      "bio": "Penguin",
+      "relevant": false,
+      "url": "https://x.com/Peguin_sol",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "Johnfrom1776",
+      "name": "John",
+      "followers": 5605,
+      "bio": "father, patriot, entrepreneur, fisherman. mindshare maxi/ #spaceshost / memecoins / DM for inquiries/ free call group https://t.co/Tg4CogJV85",
+      "relevant": false,
+      "url": "https://x.com/Johnfrom1776",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "paynej247",
+      "name": "Time=Best Stock",
+      "followers": 4624,
+      "bio": "CHRISTIAN, STOCK TRADER. MY TWEETS ARE OPINIONS ONLY, NOT A RECOMMENDATION TO BUY OR SELL. see section 27A SEC act of 1933 / forward statements & risks.",
+      "relevant": false,
+      "url": "https://x.com/paynej247",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "gwennyth_",
+      "name": "shea",
+      "followers": 4556,
+      "bio": "for enhypen only",
+      "relevant": false,
+      "url": "https://x.com/gwennyth_",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "ekpodar",
+      "name": "Ekue Kpodar",
+      "followers": 4354,
+      "bio": "Tracking how AI/tech redraws geopolitics, society, logistics, healthcare & work. Asking the uncomfortable questions. Building & experimenting.",
+      "relevant": false,
+      "url": "https://x.com/ekpodar",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "tri26",
+      "name": "ไตร",
+      "followers": 4093,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/tri26",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "EricBlackmon",
+      "name": "🩷",
+      "followers": 3994,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/EricBlackmon",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "peter_carruth",
+      "name": "Peter",
+      "followers": 3952,
+      "bio": "Dad, Husband, Farmer, pilot",
+      "relevant": false,
+      "url": "https://x.com/peter_carruth",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "Tbrreadd",
+      "name": "Tobi",
+      "followers": 3199,
+      "bio": "community builder prev. @Talus_Labs|  topson. \nbuilder.  ologo nla. Jesu lon se.",
+      "relevant": false,
+      "url": "https://x.com/Tbrreadd",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "Bybit_Official",
+      "source_tweet_id": "2037077093293396375",
+      "source_tweet": "Dual Asset Competition is live!\n\nTrade to earn high yields and compete for up to 2,500 $USDT in Crit",
+      "discovery_type": "retweet",
+      "handle": "Rahatirtaza",
+      "name": "𝙍𝘼𝙃𝘼𝙏 🔥",
+      "followers": 2887,
+      "bio": "Web3 builder || On-chain researcher || Exploring DeFi || restaking & coordination || Community-driven innovation ||",
+      "relevant": true,
+      "url": "https://x.com/Rahatirtaza",
+      "discovered_via": [
+        "Bybit_Official"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "axcilla",
+      "name": "axcilla",
+      "followers": 2791,
+      "bio": "Look Into The Future",
+      "relevant": false,
+      "url": "https://x.com/axcilla",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "jaewhybe",
+      "name": "𝔍 ⤬ 𝔜 ⤬ 𝔅",
+      "followers": 2553,
+      "bio": "𝕏 paperboy. 🗞️ ⤬ Political cynic. 🏛️ ⤬ Techie. 💻 ⤬ Communal doomscroller. 📱 ⤬ Freelance NFL scriptwriter. ✍🏾 ⤬ #UConn ⤬ #NYGiants",
+      "relevant": false,
+      "url": "https://x.com/jaewhybe",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "givepad",
+      "name": "Givepad",
+      "followers": 2017,
+      "bio": "Be relentlessly adaptive.",
+      "relevant": false,
+      "url": "https://x.com/givepad",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Yulsufaktan",
+      "name": "Yusuf Aktan",
+      "followers": 1995,
+      "bio": "🪙 Kripto | 📈 Borsa | 💱 Döviz\n⏱️ 1–1.5 saatte bir güncel veri\n⚠️ Yatırım tavsiyesi değildir\nKriptoya dair tüm haberler bir arada https://t.co/GXj9OkjOEM",
+      "relevant": false,
+      "url": "https://x.com/Yulsufaktan",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Iy_a_nu",
+      "name": "Markey",
+      "followers": 1729,
+      "bio": "Philippians 4:13",
+      "relevant": false,
+      "url": "https://x.com/Iy_a_nu",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "jonbonnerjons69",
+      "name": "jon bons g.o.a.t🧲",
+      "followers": 1713,
+      "bio": "believe in tech and advencment of life $aixbt  $acolyt a.i a$coin $virtual     $spx6900 $bitcoin  🌕",
+      "relevant": true,
+      "url": "https://x.com/jonbonnerjons69",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "MegaCryptoWhale",
+      "name": "🚀🌙distorted BILLIONAIRE🐋🤑💰",
+      "followers": 1527,
+      "bio": "😳 $Distorted Maxi👉 @distortedface_ ❤️ i missed $DOGE. i missed $SHIB. i WILL NOT MISS $Distorted. $Distorted WILL GO TO BILLIONS in market caps! Lambo soon me",
+      "relevant": false,
+      "url": "https://x.com/MegaCryptoWhale",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "Giggle_Pufff",
+      "name": "GigglePufff",
+      "followers": 1397,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/Giggle_Pufff",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Darmin_che_",
+      "name": "Darmin",
+      "followers": 1266,
+      "bio": "crypto analyst| father | Gratitude | Freedom 🧠",
+      "relevant": true,
+      "url": "https://x.com/Darmin_che_",
+      "discovered_via": [
+        "binance",
+        "coinbase",
+        "Bybit_Official"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Mazaden_",
+      "name": "Mazaden.base.eth",
+      "followers": 1203,
+      "bio": "Content Creator | Web3 Gaming 🛸Yapper 🚀 | Sharing vibes, alpha & creativity Nitrograph",
+      "relevant": true,
+      "url": "https://x.com/Mazaden_",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "0xcasualdeer",
+      "name": "Aza",
+      "followers": 1035,
+      "bio": "Heavy Metal\nhttps://t.co/vFzsPi78no",
+      "relevant": false,
+      "url": "https://x.com/0xcasualdeer",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "JuliusGonzale15",
+      "name": "RandomNFT",
+      "followers": 988,
+      "bio": "",
+      "relevant": true,
+      "url": "https://x.com/JuliusGonzale15",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "0x_sulaiman",
+      "name": "0xSULAIMAN",
+      "followers": 968,
+      "bio": "Community Builder || Designer ||  Exploring Crypto & Web3 |  Airdrop Hunter || Sharing creativity + opportunities || promoting small project|| Dm for promotion",
+      "relevant": true,
+      "url": "https://x.com/0x_sulaiman",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "AyyaaKaammall",
+      "name": "Ayyaa kaammall",
+      "followers": 892,
+      "bio": "#Binance Angel 🔶",
+      "relevant": false,
+      "url": "https://x.com/AyyaaKaammall",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Semangkaaa787",
+      "name": "Alphasy",
+      "followers": 860,
+      "bio": "このアカウントには、世界ニュースやベースネットワーク上のトークンなど、日常生活の共有が含まれています。🇯🇵🇮🇩",
+      "relevant": false,
+      "url": "https://x.com/Semangkaaa787",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "mangtabtab28",
+      "name": "Tabrani28",
+      "followers": 820,
+      "bio": "DON'T TRUST ANYONE",
+      "relevant": false,
+      "url": "https://x.com/mangtabtab28",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "gate_io",
+      "source_tweet_id": "1953406225778983132",
+      "source_tweet": "📢 Gate's X handle has officially moved! Follow us at @Gate — our new official account on X.\n\n🔷 New n",
+      "discovery_type": "retweet",
+      "handle": "MidnightChainy",
+      "name": "Midnight Vein",
+      "followers": 810,
+      "bio": "🌑 Built for late nights \nNFT holder into rare art, dark aesthetics & lowkey on-chain gems. DM for collabs.",
+      "relevant": true,
+      "url": "https://x.com/MidnightChainy",
+      "discovered_via": [
+        "gate_io"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Nubaal420",
+      "name": "⬡ Nubillions 🩵",
+      "followers": 771,
+      "bio": "Cat supper cycle",
+      "relevant": false,
+      "url": "https://x.com/Nubaal420",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Pueh_11",
+      "name": "Yaw_Adjei🫥💛🖤🥷🇬🇭🇺🇸🇨🇦💙",
+      "followers": 733,
+      "bio": "Jestem Adjei Emmanuel # Przysłów 17:22 Wesołe serce czyni dobrze jak lekarstwo: ale złamany duch wysusza kości. @Chelseafc💙 Zagorzały fan Chelsea 💙💙💙COYB",
+      "relevant": false,
+      "url": "https://x.com/Pueh_11",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "refik09212918",
+      "name": "0xGem.base.eth 🟦",
+      "followers": 713,
+      "bio": "Finding Gems like $DRB",
+      "relevant": false,
+      "url": "https://x.com/refik09212918",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "afkchris",
+      "name": "afkchris.base.eth",
+      "followers": 702,
+      "bio": "spreading joy and warm fuzzies to everyone around",
+      "relevant": false,
+      "url": "https://x.com/afkchris",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "rzkyunchhh",
+      "name": "mahesa",
+      "followers": 681,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/rzkyunchhh",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Tony880610",
+      "name": "tony",
+      "followers": 618,
+      "bio": "Business follower",
+      "relevant": false,
+      "url": "https://x.com/Tony880610",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "SolvitaMak33619",
+      "name": "Solvita Mak",
+      "followers": 591,
+      "bio": "Social media manager",
+      "relevant": false,
+      "url": "https://x.com/SolvitaMak33619",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "Gemini",
+      "source_tweet_id": "2036863936319066371",
+      "source_tweet": "JUST IN: 61% of Americans 18–34 hold negative views of AI, study finds",
+      "discovery_type": "retweet",
+      "handle": "oldsoulphil",
+      "name": "🎩🗿OldSoul #Hexican🗿🎩",
+      "followers": 571,
+      "bio": "https://t.co/Bw0KevcTu0\nhttps://t.co/Sb6hCk0j8D \nhttps://t.co/7tL7qq5Mxb\nhttps://t.co/C1UH2wZXQO\nCommunis = https://t.co/CMddnmGVtc",
+      "relevant": false,
+      "url": "https://x.com/oldsoulphil",
+      "discovered_via": [
+        "Gemini"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "SerdarDrmz",
+      "name": "Serdar Durmaz",
+      "followers": 508,
+      "bio": "Blockchain\n\n#ALGO 💎\n#NEAR 💎\n\nserdardrmz.near",
+      "relevant": true,
+      "url": "https://x.com/SerdarDrmz",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "BolaniLorena",
+      "name": "Analy palmer📉",
+      "followers": 480,
+      "bio": "Future trader, crypto expert, youtube, information, account manager and inventor. T.A telegram:check pinned i make medicine, married, certified trader.",
+      "relevant": true,
+      "url": "https://x.com/BolaniLorena",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "JDivineRay",
+      "name": "Ray",
+      "followers": 438,
+      "bio": "Crypto Gems Hunter and Promoter, Ray of Hope Sharer, Seeking to be a Blessing to everyone.",
+      "relevant": true,
+      "url": "https://x.com/JDivineRay",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Desoranking",
+      "name": "Desoranking👑🐐💡",
+      "followers": 417,
+      "bio": "No Sign Of Weakness\n\n#BELIEVER @smcdao",
+      "relevant": false,
+      "url": "https://x.com/Desoranking",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "Smurfbillion",
+      "name": "KHEOPS",
+      "followers": 391,
+      "bio": "$100,000 This Year!",
+      "relevant": false,
+      "url": "https://x.com/Smurfbillion",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "AftabShahz20576",
+      "name": "SARKAR G",
+      "followers": 386,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/AftabShahz20576",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "Fazlirahimkhan",
+      "name": "Rahim55.base.eth",
+      "followers": 302,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/Fazlirahimkhan",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "Abdulsalam65252",
+      "name": "Baller_G 🌚",
+      "followers": 298,
+      "bio": "Web3 Enthusiast #AI  Modeling and ML #Techcrushscholar\n.\n#Gamer",
+      "relevant": true,
+      "url": "https://x.com/Abdulsalam65252",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "abdossa2",
+      "name": "abdo",
+      "followers": 296,
+      "bio": "REFLECTED",
+      "relevant": false,
+      "url": "https://x.com/abdossa2",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "Web5Asia",
+      "name": "The Knight🪐",
+      "followers": 290,
+      "bio": "Building |  🌐3️⃣  | ✝️| @base 37th BTL",
+      "relevant": false,
+      "url": "https://x.com/Web5Asia",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "notgoumin",
+      "name": "Goumin🕸️",
+      "followers": 286,
+      "bio": "positioned accordingly",
+      "relevant": false,
+      "url": "https://x.com/notgoumin",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "Faizal059",
+      "name": "Faizal059 sparkchain AI",
+      "followers": 280,
+      "bio": "Spark chain AI",
+      "relevant": false,
+      "url": "https://x.com/Faizal059",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "OyebamijiTim",
+      "name": "Oyebamiji Timothy Ayomide 🐬TermMax",
+      "followers": 279,
+      "bio": "https://t.co/qTYRTIkPFX\n\nTelegram username: @timothyayomide67",
+      "relevant": false,
+      "url": "https://x.com/OyebamijiTim",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "TRIUMPH_WKC",
+      "name": "Sir Aaron Ti",
+      "followers": 273,
+      "bio": "I LOVE SMCDAO, WIKICATCOIN, OCICAT, CRYSTALSTONES, SIRMAPY",
+      "relevant": false,
+      "url": "https://x.com/TRIUMPH_WKC",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "AndrianTemaido",
+      "name": "andrian temaido(🍊,💊)",
+      "followers": 269,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/AndrianTemaido",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "lucky51814718",
+      "name": "winner",
+      "followers": 267,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/lucky51814718",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "NIANNIANBNB4",
+      "name": "MEME",
+      "followers": 263,
+      "bio": "MEME",
+      "relevant": false,
+      "url": "https://x.com/NIANNIANBNB4",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "FCKtokenonsol",
+      "name": "Asha Podcast",
+      "followers": 249,
+      "bio": "Sol addy: 5MJPKVyc8jpBZkMf5s19ZCSDvgXNgKSbiErqoSbRzdbj\n\nBnb addy: 0x070987308b58c9ee01dEd709f13DD63FcF4fb219",
+      "relevant": false,
+      "url": "https://x.com/FCKtokenonsol",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "0xpuneer",
+      "name": "puneer",
+      "followers": 235,
+      "bio": "x",
+      "relevant": false,
+      "url": "https://x.com/0xpuneer",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "xsasa010",
+      "name": "Moustafa 🔶",
+      "followers": 234,
+      "bio": "#Binance Angel 💛\n\n#BNB Holder \n\nBuilding community & memories with the Binance family 🌌😇",
+      "relevant": false,
+      "url": "https://x.com/xsasa010",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "AYablochnikov",
+      "name": "Alexandr Yablochnikov.base.eth",
+      "followers": 233,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/AYablochnikov",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "MZubairArain27",
+      "name": "Muhammad Zubair",
+      "followers": 231,
+      "bio": "Follow @Tiger0568888",
+      "relevant": false,
+      "url": "https://x.com/MZubairArain27",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "HeadTory",
+      "name": "Bim baby (❖,❖).grvt🍏",
+      "followers": 228,
+      "bio": "@InventMoneyapp ILITY @ility_xyz",
+      "relevant": false,
+      "url": "https://x.com/HeadTory",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "0Yami",
+      "name": "Ofye Cooks",
+      "followers": 226,
+      "bio": "Blockchain Enthusiast | No fiat | maxi ₿ degen | stacking till the moon's pixelated ✨",
+      "relevant": true,
+      "url": "https://x.com/0Yami",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "annis1555",
+      "name": "Annis🐱🌱🐕❤️",
+      "followers": 221,
+      "bio": "❤️🐱🐶🐾 🪔🪔 🔥\n🐱 \nஇதுவும் கடந்து போகும் $BTC $ARB $GRT   $BNB  ❤️❤️",
+      "relevant": false,
+      "url": "https://x.com/annis1555",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "razsha_01",
+      "name": "Razsha🔸",
+      "followers": 220,
+      "bio": "Innovation × Creativity 🤝 | Crypto by Night 🥷🏼| #BNB Builder 👷 | Building Narratives, not Hype | Impact over Net Worth | NFA • DYOR | Gen I",
+      "relevant": true,
+      "url": "https://x.com/razsha_01",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "GilibertoGili",
+      "name": "Gili",
+      "followers": 218,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/GilibertoGili",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "BenoCrypto",
+      "name": "₿eno Crypto ✪",
+      "followers": 210,
+      "bio": "IA • ₿lockchain 🔶 \n\nJe teste les nouveaux outils et je partage le meilleur ◾\n\nBuilder en public 💜",
+      "relevant": true,
+      "url": "https://x.com/BenoCrypto",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "ArthurC_Doyle",
+      "name": "Arthur Conan Doyle",
+      "followers": 210,
+      "bio": "Crypto + AI = CAI | Researcher • Builder • Analyst | Exploring the frontier of decentralized intelligence....#WEB3",
+      "relevant": true,
+      "url": "https://x.com/ArthurC_Doyle",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "neobtc1",
+      "name": "arbium.eth",
+      "followers": 208,
+      "bio": "#BTC  #CRO  #BNB  #XRP #BSC 🔶️",
+      "relevant": false,
+      "url": "https://x.com/neobtc1",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Shafinislam850",
+      "name": "Shafin Islam",
+      "followers": 201,
+      "bio": "airdrop worker all time crypto follow me follow back",
+      "relevant": true,
+      "url": "https://x.com/Shafinislam850",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "penggunacrypto",
+      "name": "pemburu janda",
+      "followers": 200,
+      "bio": "pemburu giveaway\nI will focus on RT LIKE & REPLY \n#GIVEAWAY",
+      "relevant": false,
+      "url": "https://x.com/penggunacrypto",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "qirui11111",
+      "name": "Zhang🔶BNB（纪律交易员）",
+      "followers": 198,
+      "bio": "大脑结构：情绪脑占95%。FOMO一单开启，理性瞬间关闭。真正能稳定盈利的人，都是用纪律绕开情绪。",
+      "relevant": false,
+      "url": "https://x.com/qirui11111",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "elle_black1",
+      "name": "Elle Black",
+      "followers": 174,
+      "bio": "$$$ & Crypto - Art + Memes + Info + News + More.\nNFA & DYOR.",
+      "relevant": true,
+      "url": "https://x.com/elle_black1",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "fenerliCherif",
+      "name": "Fenerli Cherif",
+      "followers": 171,
+      "bio": "Fenerbahçe’li olmayan takip etmesin!! AAG!!!! Şu anda kısıtlama var takibe dönüş yapamıyorum",
+      "relevant": false,
+      "url": "https://x.com/fenerliCherif",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "HashKeyExchange",
+      "source_tweet_id": "2037084766076625066",
+      "source_tweet": "🎉 ETH Staking Now Live on HashKey Exchange Earn Channel \n\nJoin our limited-time promotion and have t",
+      "discovery_type": "retweet",
+      "handle": "Zhangbeihai121",
+      "name": "Zhangbei Hai",
+      "followers": 170,
+      "bio": "Long-term believer in compliant Web3 | HashKey ecosystem enthusiast | $HSK | On-chain finance & RWAs",
+      "relevant": true,
+      "url": "https://x.com/Zhangbeihai121",
+      "discovered_via": [
+        "HashKeyExchange"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "Saifalipk1",
+      "name": "SAIF.base.eth",
+      "followers": 169,
+      "bio": "Saifali",
+      "relevant": false,
+      "url": "https://x.com/Saifalipk1",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "Zainabid555",
+      "name": "zainabid.base.eth",
+      "followers": 166,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/Zainabid555",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "BTCmacro365",
+      "name": "BTCmacro",
+      "followers": 162,
+      "bio": "Macro → BTC\n\nScenarios, support zones and risk framing.\nNo hype. No signals.\nEducational only.",
+      "relevant": false,
+      "url": "https://x.com/BTCmacro365",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Malireddy_MK691",
+      "name": "🇮🇳🦁мαℓιяє∂∂у мαℓℓιкнαяנυи (ℓєσ)🦁🇮🇳2026",
+      "followers": 161,
+      "bio": "I'm☝️Hindu,B.techGraduate,Indian|LovesTech👇,Gadgets;Cricket;Crypto;  #Stufflistingsarmy #Prasadtechintelugu  @tarak9999 @ImRo45 @NCBN @virendersehwag @RamMNK",
+      "relevant": true,
+      "url": "https://x.com/Malireddy_MK691",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "talkxig",
+      "name": "Navy (✱,✱)",
+      "followers": 158,
+      "bio": "⚗ ♡ consistently slim to the point of freezing in oceanic waters.",
+      "relevant": false,
+      "url": "https://x.com/talkxig",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "ShihabJoha013",
+      "name": "Shanto Hossen Shihab",
+      "followers": 156,
+      "bio": "Nothing",
+      "relevant": false,
+      "url": "https://x.com/ShihabJoha013",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "matamerah_mata",
+      "name": "mata merah",
+      "followers": 153,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/matamerah_mata",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "BlOckGoJoX",
+      "name": "BlOck GoJo X🔶BNB",
+      "followers": 151,
+      "bio": "Focused on crypto education, structured market analysis, and disciplined signals. Content creator committed to clarity.",
+      "relevant": true,
+      "url": "https://x.com/BlOckGoJoX",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "Abdulmaleekade",
+      "name": "Imam 🕌 👳",
+      "followers": 149,
+      "bio": "|| Alpha 🧵 || Airdrop ||  Tech 🧑‍💻 ||",
+      "relevant": false,
+      "url": "https://x.com/Abdulmaleekade",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "H3rhous3",
+      "name": "🇵🇷",
+      "followers": 134,
+      "bio": "I post random shit…… also #Bitcoin",
+      "relevant": true,
+      "url": "https://x.com/H3rhous3",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "jabrikpeyek",
+      "name": "Angri purwantono π² EmoFi🌶️🪞Zetarium $XAGE",
+      "followers": 134,
+      "bio": "REFLECTED",
+      "relevant": false,
+      "url": "https://x.com/jabrikpeyek",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "coinbase",
+      "source_tweet_id": "2036950069786951869",
+      "source_tweet": "Dear algorithm https://t.co/TyuqsteQa5",
+      "discovery_type": "retweet",
+      "handle": "zameermb77",
+      "name": "Zameer.base.eth",
+      "followers": 133,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/zameermb77",
+      "discovered_via": [
+        "coinbase"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "ademola_mu53802",
+      "name": "ademola mukaila",
+      "followers": 125,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/ademola_mu53802",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "emoz4444",
+      "name": "Eman CreepyPuppet",
+      "followers": 111,
+      "bio": "Peace - Calm ☮️♀️🖤\nI won't prefer negative vibes 🚫\nالله.",
+      "relevant": false,
+      "url": "https://x.com/emoz4444",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "binance",
+      "source_tweet_id": "2037068035266404408",
+      "source_tweet": "When you realize AI has finally replaced me at the only thing I’m good at… https://t.co/Mkn4G9YK7F",
+      "discovery_type": "retweet",
+      "handle": "gushyxx7",
+      "name": "Gushy（操死农民版）",
+      "followers": 109,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/gushyxx7",
+      "discovered_via": [
+        "binance"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "cacantik_12",
+      "name": "nerodante_ $XAGE",
+      "followers": 108,
+      "bio": "Nitrograph\n #CrunchieOG",
+      "relevant": false,
+      "url": "https://x.com/cacantik_12",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "gole391",
+      "name": "gole",
+      "followers": 102,
+      "bio": "",
+      "relevant": false,
+      "url": "https://x.com/gole391",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    },
+    {
+      "source_handle": "kucoincom",
+      "source_tweet_id": "2037092280054452314",
+      "source_tweet": "🚀 Celebrate $NOON listing on #KuCoin with an exciting giveaway!\n\n🎉 Win a share of 50,000 $NOON for 1",
+      "discovery_type": "retweet",
+      "handle": "widodo_jhon",
+      "name": "John W",
+      "followers": 100,
+      "bio": "Web3 explorer\n\nEarly user of new projects\n\nTestnet • Community • Alpha",
+      "relevant": true,
+      "url": "https://x.com/widodo_jhon",
+      "discovered_via": [
+        "kucoincom"
+      ]
+    }
+  ]
+}

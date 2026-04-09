@@ -1,0 +1,214 @@
+{
+  "@B2C2Group": {
+    "positioning": "英国机构级加密做市商与OTC服务商",
+    "audience": "对冲基金、加密机构交易台和资产管理公司"
+  },
+  "@BackedFi": {
+    "positioning": "瑞士合规代币化股票与ETF平台",
+    "audience": "寻求链上访问传统资产的DeFi用户和机构投资者"
+  },
+  "@BanxaOfficial": {
+    "positioning": "澳洲头部加密法币出入金通道服务商",
+    "audience": "需要法币充值的散户用户和加密交易所合作方"
+  },
+  "@BitGo": {
+    "positioning": "美国机构级加密托管龙头",
+    "audience": "机构投资者、交易所和企业财务管理团队"
+  },
+  "@BitPay": {
+    "positioning": "美国最大加密货币支付处理商",
+    "audience": "接受加密支付的商家和企业财务负责人"
+  },
+  "@BitdeerOfficial": {
+    "positioning": "新加坡上市加密矿业服务与算力平台",
+    "audience": "矿工、矿机采购方和加密矿业投资者"
+  },
+  "@Bitfarms_io": {
+    "positioning": "北美多国布局上市比特币矿企",
+    "audience": "矿业股投资者和加密矿业关注者"
+  },
+  "@Bitstamp": {
+    "positioning": "欧洲最早的合规加密货币交易所",
+    "audience": "欧洲散户投资者和寻求合规通道的机构"
+  },
+  "@ClearpoolFin": {
+    "positioning": "新加坡机构级无抵押链上信贷平台",
+    "audience": "机构借贷方、DeFi流动性提供者和加密信用投资者"
+  },
+  "@CoinLedger": {
+    "positioning": "美国头部个人加密税务报告软件",
+    "audience": "美国散户投资者和CPA税务顾问"
+  },
+  "@CoinSharesCo": {
+    "positioning": "欧洲最大数字资产投资与研究机构",
+    "audience": "欧洲机构投资者和加密ETP配置者"
+  },
+  "@CoinTracker": {
+    "positioning": "美国加密税务追踪与报税工具龙头",
+    "audience": "美国个人加密投资者和税务申报需求用户"
+  },
+  "@ComplyAdvantage": {
+    "positioning": "英国AI驱动的反金融犯罪合规平台",
+    "audience": "金融机构合规官员、反洗钱团队和监管科技采购者"
+  },
+  "@Core_Scientific": {
+    "positioning": "美国大型矿企转型AI数据中心运营商",
+    "audience": "矿业股投资者和关注AI算力基础设施的机构"
+  },
+  "@CrystalPlatform": {
+    "positioning": "Bitfury旗下区块链分析合规平台",
+    "audience": "交易所合规团队、执法机构和金融机构AML部门"
+  },
+  "@DeFi_JUST": {
+    "positioning": "TRON生态最大DeFi借贷协议",
+    "audience": "TRON链用户、DeFi流动性矿工和稳定币持有者"
+  },
+  "@Delphi_Digital": {
+    "positioning": "美国顶级加密研究与风险投资机构",
+    "audience": "加密基金经理、Web3创业者和链上研究爱好者"
+  },
+  "@Fidelity": {
+    "positioning": "传统金融巨头发行比特币ETF",
+    "audience": "美国传统机构投资者和寻求合规加密敞口的财富管理客户"
+  },
+  "@GSR_io": {
+    "positioning": "英国专业加密做市商与场外交易服务商",
+    "audience": "代币项目方、机构交易台和加密基金"
+  },
+  "@GenesisTrading": {
+    "positioning": "DCG旗下数字资产大宗经纪和借贷平台",
+    "audience": "机构交易商、矿工和加密资产借贷需求方"
+  },
+  "@Grayscale": {
+    "positioning": "全球最大加密资产信托管理公司",
+    "audience": "美国机构投资者和寻求合规加密敞口的退休账户持有者"
+  },
+  "@HIVEDigitalTech": {
+    "positioning": "加拿大绿色可再生能源比特币矿企",
+    "audience": "ESG导向的矿业股投资者和关注可持续采矿的机构"
+  },
+  "@HashKey_Capital": {
+    "positioning": "香港亚洲领先持牌加密资产管理机构",
+    "audience": "亚洲机构投资者、家族办公室和加密基金配置者"
+  },
+  "@Hex_Trust": {
+    "positioning": "香港亚洲持牌数字资产托管与金融服务商",
+    "audience": "亚洲机构投资者、银行和寻求合规托管的企业客户"
+  },
+  "@InfStones": {
+    "positioning": "美国企业级Web3节点基础设施服务商",
+    "audience": "区块链项目方、验证节点运营者和Web3开发者"
+  },
+  "@Kiln_finance": {
+    "positioning": "法国企业级Staking聚合服务平台",
+    "audience": "机构投资者、托管方和需要质押服务的加密基金"
+  },
+  "@METACO_SA": {
+    "positioning": "银行级数字资产托管基础设施",
+    "audience": "全球传统银行和金融机构数字资产业务团队"
+  },
+  "@MerkleScience": {
+    "positioning": "新加坡专业加密风险合规与分析平台",
+    "audience": "交易所合规团队、金融机构AML负责人和监管机构"
+  },
+  "@MidasRWA": {
+    "positioning": "瑞士合规代币化国债收益产品平台",
+    "audience": "寻求稳定链上收益的DeFi用户和机构投资者"
+  },
+  "@MountainUSDM": {
+    "positioning": "百慕大合规收益型稳定币USDM发行方",
+    "audience": "DeFi协议集成者和寻求国债收益的链上用户"
+  },
+  "@NOWPayments_io": {
+    "positioning": "荷兰多链加密货币支付网关服务商",
+    "audience": "接受加密支付的中小电商商家和自由职业者"
+  },
+  "@NYDIG": {
+    "positioning": "美国持纽约信托牌照的比特币金融服务机构",
+    "audience": "美国银行、保险公司和寻求比特币合规敞口的机构"
+  },
+  "@Nexo": {
+    "positioning": "瑞士头部加密借贷与OTC综合金融平台",
+    "audience": "持币散户、寻求抵押贷款的加密投资者和机构OTC客户"
+  },
+  "@OndoFinance": {
+    "positioning": "美国代币化国债RWA赛道龙头",
+    "audience": "机构投资者、DeFi协议和链上寻求美债收益的用户"
+  },
+  "@Onfido": {
+    "positioning": "英国AI驱动的身份验证与KYC合规服务商",
+    "audience": "金融科技公司合规团队、交易所和需要KYC接入的企业"
+  },
+  "@PolymeshNetwork": {
+    "positioning": "专为合规证券代币发行设计的区块链网络",
+    "audience": "证券代币发行方、传统金融机构和监管合规团队"
+  },
+  "@PortofinoTech": {
+    "positioning": "瑞士专业高频加密做市商",
+    "audience": "机构交易对手方、代币项目方和加密流动性需求机构"
+  },
+  "@RequestNetwork": {
+    "positioning": "法国去中心化加密支付请求与发票协议",
+    "audience": "Web3初创企业、加密原生财务团队和DAO财库管理者"
+  },
+  "@RiotPlatforms": {
+    "positioning": "美国第二大纳斯达克上市比特币矿企",
+    "audience": "比特币矿业股投资者和关注算力扩张的机构"
+  },
+  "@Ripple": {
+    "positioning": "美国跨境支付解决方案与XRP生态主导者",
+    "audience": "全球银行和支付机构的跨境结算业务团队"
+  },
+  "@Securitize": {
+    "positioning": "美国合规证券代币化龙头平台",
+    "audience": "资产发行机构、传统金融机构和寻求代币化服务的基金"
+  },
+  "@Sumsub": {
+    "positioning": "英国一站式KYC/AML身份验证合规平台",
+    "audience": "加密交易所合规团队、金融科技公司和全球AML负责人"
+  },
+  "@TaxBit": {
+    "positioning": "美国企业级加密税务合规与报告软件",
+    "audience": "加密交易所、企业财税团队和机构加密资产持有者"
+  },
+  "@The_DTCC": {
+    "positioning": "美国DTCC旗下数字证券清算基础设施",
+    "audience": "传统金融机构、券商和关注证券数字化的监管从业者"
+  },
+  "@WazirXIndia": {
+    "positioning": "印度最大合规加密货币交易所",
+    "audience": "印度散户加密投资者和寻求本地化服务的用户"
+  },
+  "@bitfinex": {
+    "positioning": "老牌头部加密衍生品与现货交易平台",
+    "audience": "专业交易员、加密对冲基金和大额OTC交易需求方"
+  },
+  "@blockchaincap": {
+    "positioning": "美国最早成立的顶级加密风险投资基金",
+    "audience": "Web3创业者、加密LP投资者和区块链行业关注者"
+  },
+  "@centrifuge": {
+    "positioning": "美国去中心化结构化信贷与RWA代币化协议",
+    "audience": "DeFi借贷协议、传统资产管理公司和链上信贷投资者"
+  },
+  "@coinbase": {
+    "positioning": "美国上市头部合规加密交易所",
+    "audience": "美国散户和机构投资者及加密行业政策关注者"
+  },
+  "@coincheckjp": {
+    "positioning": "日本Monex旗下合规加密货币交易所",
+    "audience": "日本本地散户加密投资者和NFT用户"
+  },
+  "@coinhako": {
+    "positioning": "新加坡MAS持牌合规加密货币交易所",
+    "audience": "东南亚散户投资者和新加坡本地加密用户"
+  },
+  "@galaxyhq": {
+    "positioning": "美国机构级加密OTC、做市和资产管理集团",
+    "audience": "机构投资者、矿企和寻求大宗加密交易的对冲基金"
+  },
+  "@hashdex": {
+    "positioning": "拉丁美洲最大加密资产管理与ETF发行商",
+    "audience": "巴西及拉美机构投资者和寻求合规加密ETP的散户"
+  }
+}

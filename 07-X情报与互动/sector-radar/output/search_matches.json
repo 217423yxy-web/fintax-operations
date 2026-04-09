@@ -1,0 +1,1112 @@
+[
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/CryptoTaxSucks/status/2035148112055136709",
+    "tweet_account": "@CryptoTaxSucks",
+    "tweet_text": "@heishimmy They do expect every trade on form 8949\n\nThe 1099 da from Coinbase will not have accurate cost basis data but your own records can be used to substantiate the cost basis and gains you reported.\n\nPretty much the process is:\n\n1)Set up a crypto tax software.\n\nfrom other comments sounds like you have a ton of wallets so Awaken I’ve seen handle this where others have limits on wallets and txs you can add\n\n2)review the txs to make sure they’re accurately categorized\n\n3)make sure your calculated balances are correct in the software vs. onchain.\n\nThis can get messed up on large accounts with lots of wallets.\n\nIf you don’t feel like doing all that services like ours can help.",
+    "tweet_likes": 24,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉Form 8949纠错"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/bintelsuhi/status/2033591152461611129",
+    "tweet_account": "@bintelsuhi",
+    "tweet_text": "IRS 1099-DA reports crypto sale proceeds, not capital gains. You still need to reconcile with your cost basis using Form 8949. Wallet transfers between your own accounts aren't taxable events. Keep good records proactively—it beats scrambling at tax time. https://t.co/e8xWw3Xr4y",
+    "tweet_likes": 0,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/summ_app/status/2029316494996250903",
+    "tweet_account": "@summ_app",
+    "tweet_text": "the corrected numbers would typically go on Form 8949.\n\nproceeds should generally match the 1099-DA, but the cost basis is something you can provide yourself. for significant amounts, it might be worth talking to a crypto-aware CPA about the best approach.",
+    "tweet_likes": 1,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/grok/status/2028348708920692929",
+    "tweet_account": "@grok",
+    "tweet_text": "@TXWebPerf @TheCryptoCPA For W2 employees, your wage income matching via employer W-2s is unchanged—this only affects crypto. Report all digital asset sales on Form 8949 so total proceeds match or exceed your 1099-DA gross proceeds from exchanges (IRS auto-flags underreporting).\n\nCost basis mismatches won't trigger 2025 notices, but track it accurately (FIFO/etc.) to cut taxable gains added to your W2 income.\n\nKey checks: Collect every 1099-DA, include non-broker transactions, watch for added AGI impact on brackets/credits. Use software. Not tax advice—talk to a CPA.",
+    "tweet_likes": 0,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/TheCryptoCPA/status/2026756889187594249",
+    "tweet_account": "@TheCryptoCPA",
+    "tweet_text": "Your 1099-DA shows \"unknown\" cost basis? That's normal. It happens when you transfer crypto from another platform and then sell. \n\nThe exchange doesn't know your original purchase price. \n\nAction: You can provide the correct cost basis on Form 8949. The exchange can't fix this for you because they genuinely don't have the data, you do.",
+    "tweet_likes": 21,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/theweb3wizard00/status/2026393306247147686",
+    "tweet_account": "@theweb3wizard00",
+    "tweet_text": "Crypto holders: Your 1099-DA arrived with blank/zero cost basis in Box 1g?\n\nIRS assumes $0 → your entire proceeds get taxed as gain. Thousands overpaying right now.\n\nDon't let it happen. Upload your PDF → AI pulls your real basis → clean Form 8949 in &lt;5 min.\n\nCheck out Bio!!",
+    "tweet_likes": 0,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "1099-DA Form 8949 crypto cost basis",
+    "tweet_url": "https://x.com/grok/status/2025138374495928410",
+    "tweet_account": "@grok",
+    "tweet_text": "@Wolftrades1 @TheReviken @coffeedev @ColeThereum Coinbase's 1099-DA reports your crypto sales/transactions to the IRS, but often without your original cost (what you paid). You calculate profit/loss yourself on Form 8949: list each trade, cost basis, sale price, and gain/loss. Attach to your tax return. Matches what Coinbase reports, but you fill in the blanks. Use software or accountant if lots of trades. IRS can audit mismatches.",
+    "tweet_likes": 2,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "crypto cost basis gas fees IRS",
+    "tweet_url": "https://x.com/richbycoin_news/status/2030669746161557785",
+    "tweet_account": "@richbycoin_news",
+    "tweet_text": "Coinbase says the IRS 1099-DA form could over-report minor crypto transactions like stablecoin trades and gas fees, with cost-basis reporting to come next year.\n\nhttps://t.co/rvXNsOMQRv",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "crypto cost basis gas fees IRS",
+    "tweet_url": "https://x.com/SKuzminskiy/status/2030405619027456043",
+    "tweet_account": "@SKuzminskiy",
+    "tweet_text": "IRS 1099-DA rules overkill: reporting stablecoin txns and penny gas fees drowns retail in forms &amp; shifts cost basis to traders. Coinbase’s right. https://t.co/9q3h3nx7FR #CryptoNews #Web3",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "crypto cost basis gas fees IRS",
+    "tweet_url": "https://x.com/MoonscapeHQ/status/1909305998969651644",
+    "tweet_account": "@MoonscapeHQ",
+    "tweet_text": "Cost Basis\n\nInclude fees (e.g., gas fees) in the cost basis. These fees reduce your gains—or increase your losses—when selling. Keep track to save money at tax time!\n\n#crypto #cryptotax #irs",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "crypto cost basis gas fees IRS",
+    "tweet_url": "https://x.com/MoonscapeHQ/status/1890128818838597900",
+    "tweet_account": "@MoonscapeHQ",
+    "tweet_text": "US Crypto Tax Daily Series – Everything you need to know\n\nCost Basis\n\nInclude fees (e.g., gas fees) in the cost basis. These fees reduce your gains—or increase your losses—when selling. Keep track to save money at tax time!\n\n#crypto #cryptotax #irs",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "crypto cost basis gas fees IRS",
+    "tweet_url": "https://x.com/futurenftmints/status/1481657332782096389",
+    "tweet_account": "@futurenftmints",
+    "tweet_text": "7/ Can I deduct my gas fees? (1 of 2)\n\nJust like stock commission fees, crypto gas fees are added to transaction cost (trade, swap, etc).\n\nNote: While IRS hasn’t explicitly said how crypto gas fees are taxed, we can assume they’ll be included in cost basis per Publication 551.",
+    "tweet_likes": 1,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/heranishi/status/2039096244006441054",
+    "tweet_account": "@heranishi",
+    "tweet_text": "If you stake ETH and earn $2,000 in rewards this year, the IRS treats that $2,000 as ordinary income at the fair market value when you received it. Then when you sell those staking rewards later, you'll owe capital gains tax on any appreciation from that original $2,000 basis.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/CryptofolioApp/status/2037525468262363279",
+    "tweet_account": "@CryptofolioApp",
+    "tweet_text": "Reason 4: Staking income is miscounted.\n\nYour tracker shows staking rewards as a capital gain. The IRS treats them as ordinary income at fair market value when received. \n\nDifferent classification, different tax rate. And each reward creates a new tax lot that affects your future P&L.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/CryptoTaxG/status/2036431137216647470",
+    "tweet_account": "@CryptoTaxG",
+    "tweet_text": "1/ 🇺🇸 The US taxes staking rewards as ordinary income the moment tokens hit your wallet — up to 37%.\n\nYou haven’t sold anything. You just validated a block. And you owe the IRS.\n\nSell later at a profit? Capital gains tax on top. It’s a double hit.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/ArbazCryptoTax/status/2036422388636917985",
+    "tweet_account": "@ArbazCryptoTax",
+    "tweet_text": "Staking rewards are one of the most litigated crypto tax issues right now. IRS position (Rev. Rul. 2023-14): Staking rewards = ORDINARY INCOME at fair market value when received. The Jarrett case tried to challenge this. The IRS refunded their taxes rather than litigate, which tells you everything. Real client scenario: Client earned $85K in ETH staking rewards over 2 years. Didn't report any of it. When ETH price dropped, they thought there was \"no gain.\" Wrong - they owed tax on the $85K at the time of receipt, regardless of what ETH did afterward. Date received = taxable event. No exceptions.\n#StakingRewards #CryptoTax #IRS #ETH #CryptoTaxInsider",
+    "tweet_likes": 1,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/Brooke38868346/status/2029696349332234414",
+    "tweet_account": "@Brooke38868346",
+    "tweet_text": "The IRS treats your $ATOM staking rewards as ordinary income the moment they hit your wallet, not when you sell. So that 12% APY becomes taxable at your marginal rate immediately. Most people stack rewards for months then get blindsided by a 5-figure tax bill they never planne...",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/grok/status/2021796127859712026",
+    "tweet_account": "@grok",
+    "tweet_text": "@ZcaToKoins In the US, crypto is treated as property by the IRS. Holding it isn't taxed, but selling, trading, or using it triggers capital gains tax (short-term: ordinary income rates; long-term: 0-20% if held >1 year). Staking/mining rewards are ordinary income. As of 2026, brokers report cost basis for better tracking. Always consult a tax pro—rules can change! 🐾",
+    "tweet_likes": 1,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/SoCalCryptoTax/status/2012512777118888446",
+    "tweet_account": "@SoCalCryptoTax",
+    "tweet_text": "Quick 2026 crypto tax reminder for California traders:\nStaking rewards are taxed as ordinary income the moment you receive them — NOT when you sell.\nMiss this and the IRS/FTB will hit you with surprise bills (plus penalties).\nDM “TAX” for my free California Crypto Tax Checklist — no pitch, just the must-knows.\n#CryptoTax #StakingTax #CaliforniaTax",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/RealDealCPA/status/1993828425803681814",
+    "tweet_account": "@RealDealCPA",
+    "tweet_text": "2/9 – Staking Rewards = Taxable. But WHEN?\nIRS says staking rewards are ordinary income the moment you control them.\nThat means:\n✅ You can sell or transfer\n❌ They’re not locked up\nIf you can touch it, you owe tax on it.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/grok/status/1992368253868593237",
+    "tweet_account": "@grok",
+    "tweet_text": "@Canes43oU @akshaye111 @MerlijnTrader Under IRS Rev. Proc. 2025-31, staking rewards from qualifying crypto ETPs (grantor trusts) are treated as flow-through ordinary income to holders, reported pro rata. Not classified as dividends, but taxed at ordinary rates. See IRS site for details; consult a tax pro.",
+    "tweet_likes": 2,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/grok/status/1988445454674391194",
+    "tweet_account": "@grok",
+    "tweet_text": "@EsquirePhoto @CryptoEmpressX @CryptosR_Us Yes, but it depends on the type of reward and what you do with it. Per IRS rules, crypto rewards like mining or staking are typically taxed as ordinary income at fair market value when received. If you later sell or exchange them, you pay capital gains tax on any appreciation (or loss) from that basis. Check https://t.co/0EWf0hyvH0 for details, and consult a tax pro for your situation. (As of 2025, no major changes to this framework.)",
+    "tweet_likes": 1,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/grok/status/1953263470243397648",
+    "tweet_account": "@grok",
+    "tweet_text": "@JulianoFinance Currently, IRS treats staking rewards as ordinary income upon receipt, taxed at your marginal rate. This differs from equity dividends, which can qualify for lower rates (0-20%) if held long-term. Proposals exist to defer staking tax until sale, but as of now, no such change is enacted.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/donemilioos/status/1946334859766776153",
+    "tweet_account": "@donemilioos",
+    "tweet_text": "Let's start with the Ordinary Income (0-37%):\n\nStaking = when rewards are received (from pool to wallet) the IRS requieres you to report the amount of $💸 in your Gross Income. This means that your Gross Income goes up affecting tax brackets. Only when you liquidate those rewards is when Capital Gains/Loss applies.\n\nLQ and Farming = same process applies.\n\nYou can stake tokens and NFT's (like babysneklets @BabySNEKtoken )",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/grok/status/1928257444767223852",
+    "tweet_account": "@grok",
+    "tweet_text": "@ISTUDIEDBRO @WatcherGuru The SEC's ruling that staking on proof-of-stake networks isn't a security doesn't change IRS tax rules. Staking rewards are still taxable as ordinary income when you gain control over them, per IRS guidance (Revenue Ruling 2023-14). You must report their fair market value on Form 1040 (Schedule 1). No evidence suggests the SEC's decision alters this. Tax laws could evolve, so consult a tax professional for clarity.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/MoonscapeHQ/status/1909305938840109267",
+    "tweet_account": "@MoonscapeHQ",
+    "tweet_text": "Two Main Tax Treatments\n\n• Ordinary Income: Rewards, wages, and payments in crypto (staking, mining, etc.)\n• Capital Gains: Selling or “disposing of” digital assets at a profitKnow which category your transactions fall into!\n\n#crypto #cryptotax #irs",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "staking rewards ordinary income IRS tax",
+    "tweet_url": "https://x.com/MrEeyoreEsq/status/1898129448815276290",
+    "tweet_account": "@MrEeyoreEsq",
+    "tweet_text": "@TheFlowHorse I don't know, but I'd be very happy if they could just rescind the IRS guidance on staking rewards subject to ordinary income tax.",
+    "tweet_likes": 0,
+    "matched_reply": "IRS Rev. Rul. 2023-14 settled it: staking rewards are ordinary income at FMV at receipt — not at sale. Airdrops and interest follow the same rule. The later sale is a separate capital gains event.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/TazCoLab/status/2036796616330338401",
+    "tweet_account": "@TazCoLab",
+    "tweet_text": "(2/8)\nNew reality in 2026:\nDAC8 and CARF reporting rules are now in full effect across the #EU and #UK.\nCrypto exchanges must collect and prepare to share detailed user data — transactions, holdings, and balances — with tax authorities.  First major information exchanges are scheduled for 2027, but data collection is already happening.",
+    "tweet_likes": 1,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/TazCoLab/status/2036416793858683177",
+    "tweet_account": "@TazCoLab",
+    "tweet_text": "(2/8)\nDAC8 + CARF transaction reporting is fully live since January 2026.\nExchanges are now required to collect and share every buy, sell, transfer, and balance with tax authorities across the EU, UK, and OECD.Your entire crypto activity is becoming transparent to governments.",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/Aurum_Law/status/2033602489858076875",
+    "tweet_account": "@Aurum_Law",
+    "tweet_text": "2/4 🗞 Edition #1 covers: nine legal trends shaping crypto in 2026, a landmark US court ruling on DeFi developer liability (Uniswap), crypto tax reporting now live under CARF and DAC8, MiCA full enforcement in July and key exemptions, AI agent compliance (Moltbook), and more.",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/cryptonewsbytes/status/2030724845307154509",
+    "tweet_account": "@cryptonewsbytes",
+    "tweet_text": "Crypto Tax Reporting 2026: CARF, DAC8, and IRS 1099-DA Guide -  https://t.co/Y4f0ziuy6q  #crypto #cryptonewsbytes #bitcoin #ethereum #eth #btc https://t.co/RttJIBEttv",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/cryptaxpt/status/2029542450898055277",
+    "tweet_account": "@cryptaxpt",
+    "tweet_text": "🚨Selling for Stablecoin might trigger a taxable event in the near future!🇵🇹 Understanding SEMP and what it means to your taxes!\n\nAs we hit Q1 2026, the EU's DAC8 (implementing the OECD's Crypto-Asset Reporting Framework - CARF) is fully live, requiring crypto platforms to collect and report user data on transactions. \n\nNot all digital assets are treated the same  \nEnter SEMP, Specified Electronic Money Product, a crucial carve-out that's changing how certain stablecoins and digital fiat representations are handled for tax reporting:  \n\nWhat qualifies as a SEMP?\nA digital product representing a single fiat currency (e.g., USD or EUR), issued against received funds, redeemable at any time and at par value (1:1) due to regulatory requirements on the issuer. Think regulated e-money tokens or certain fiat-backed stablecoins that behave like traditional electronic money (with strong redemption rights, no substantive barriers).  \n\nWhy it matters now:  \nTrue SEMPs are excluded from CARF scope (no mandatory crypto-specific transaction reporting under DAC8).  Instead, they fall under the amended CRS (Common Reporting Standard 2.0), treating them more like bank/e-money accounts for automatic exchange of information.  \n\nNon-SEMP crypto (Bitcoin, most utility tokens, algorithmic stablecoins, etc.) → full CARF reporting kicks in.  \n\nMid-year status changes? Recent OECD FAQs clarify: report under CARF until the product qualifies as SEMP, then switch to CRS (jurisdictions may allow full-year treatment for simplicity).\n\nFor investors in Portugal, this distinction is huge:  ✅Holding a qualifying SEMP could align better with traditional financial account treatment → potentially smoother compliance and lower evasion risks.  \n❌But misclassifying a stablecoin as SEMP when it doesn't meet strict redemption/regulatory criteria? That could trigger unexpected CARF obligations and audits.\n\nFor tax optimization (especially in favorable jurisdictions), early planning around SEMP vs. Relevant Crypto-Asset makes all the difference.\n\nMy view:\nStablecoins like USDC become less and less riskier from the depeggin point and therefore I see they become more and more of a fiat currency. I still think there is lots of stablecoins that do not fall under SEMP and therefore lots of opportunities to hold you capital gains in crypto. The income tax report (Modelo 3) in Portugal is already prepared for this reporting as it clearly differentiates between crypto assets which are considered securities and crypto assets which are not considered securities.\n\nIf you have any questions, drop them below⬇️",
+    "tweet_likes": 41,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/ThePaypers/status/2018157471718682728",
+    "tweet_account": "@ThePaypers",
+    "tweet_text": "@stripe @cryptocom @MorganStanley 3/ From January 2026, crypto platforms in the EU and UK must comply with CARF, automatically sharing user and transaction data with tax authorities. DAC8 makes this the default across all 27 EU states. \n\n🗨️ Read more: https://t.co/jUptE6UXcU https://t.co/cUirE9nmsr",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/quantfinance_ie/status/2017630342706860437",
+    "tweet_account": "@quantfinance_ie",
+    "tweet_text": "DAC8/CARF data collection is now active. What Irish crypto holders need to know about the new reporting regime: https://t.co/oEpxY4BXvx",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/cryptocoinatlas/status/2014972630214816221",
+    "tweet_account": "@cryptocoinatlas",
+    "tweet_text": "💰 EU DAC8 Crypto Reporting Takes Effect — 2026\n\nDAC8 crypto tax rules start now. What exchanges must report, how users are affected, and how DAC8 aligns with CARF and MiCA....\n\nRead more: https://t.co/UVZctxHP0w\n\n#CryptoCoinAtlas #Crypto #Blockchain #DeFi https://t.co/a8smM2DRC3",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/cryptocoinatlas/status/2013615054050951377",
+    "tweet_account": "@cryptocoinatlas",
+    "tweet_text": "💰 EU DAC8 Crypto Reporting Is Now Live (2026)\n\nDAC8 applies from Jan 1, 2026. What exchanges must report, how users are affected, and how DAC8 aligns with CARF and US 1099-DA....\n\nRead more: https://t.co/Z8Ag84gJQo\n\n#CryptoCoinAtlas #Crypto #Blockchain #DeFi https://t.co/wOStHxjVkO",
+    "tweet_likes": 1,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/bradarska1/status/2012925580275056940",
+    "tweet_account": "@bradarska1",
+    "tweet_text": "1. The entry into force in 2026 of the OECD's Crypto-Asset Reporting Framework (CARF) and the European DAC8 directive establishes major tax transparency, obligating crypto-asset service providers (CASPs) ...",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/bradarska1/status/2012865157962105267",
+    "tweet_account": "@bradarska1",
+    "tweet_text": "The entry into force of the OECD's Crypto-Asset Reporting Framework (CARF) and the European DAC8 directive on January 1, 2026, establishes an automatic obligation for the exchange of tax information on digital asset transactions, ... https://t.co/RPCPkAIzeZ",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/CryptoTaxFixer/status/2011082557165899800",
+    "tweet_account": "@CryptoTaxFixer",
+    "tweet_text": "2026 marks the implementation in Europe of the DAC8 regulations. \n\nThis is Europe’s implementation of the OECD’s CARF regulations. CARF stands for Crypto Asset Reporting Framework.\n\nThe United States was involved with the OECD in developing this framework, and CARF became the defining foundation for the U.S. 1099-DA rules. It’s essentially the same type of information being exchanged.\n\nThe key difference is this. The U.S. has not officially signed onto CARF yet. Europe already has.\n\nFor people trading on European exchanges, CARF already applies. In the U.S., the White House is currently considering whether America will formally participate. We’ll likely hear more about that within the next month or two.\n\nSo what does CARF actually do?\n\nCARF involves the sharing of crypto transaction information between countries. Let’s walk through a simple example.\n\nOnce the U.S. becomes a CARF participant, if you’re an American trading on a European exchange, that exchange is required to collect your KYC information. That includes where your tax home is and your tax identification number.\n\nAt the end of the year, the exchange reports your trading activity to its local tax authority. So, if the exchange operates out of Malta, it reports that information to the Maltese tax authorities.\n\nMalta then sends that data to the IRS.\n\nThink of it as a foreign version of a 1099-DA being transmitted directly to the IRS.\n\nRight now, the U.S. hasn’t signed onto CARF, but the Treasury Department has recommended it, and the decision is currently with the White House. We expect to see this approved soon.\n\nWhat does this mean in practical terms? If you trade on a foreign exchange, that activity can be reported to the IRS, even if you never receive a copy of that report yourself. Unless the exchange voluntarily provides it, the IRS may see information you don’t.\n\nThis is why people say the noose is tightening around crypto traders. It’s becoming harder to hide activity.\n\nThere’s another important wrinkle here.\n\nUnder DAC8, any exchange that is not based in Europe but does business with European residents is also expected to comply with DAC 8 reporting requirements. Failure to comply can result in significant fines and regulatory consequences.\n\nTake Binance International as an example. It’s often unclear where Binance is formally domiciled. But, if a European person trades on Binance, Binance is required to report that activity to the relevant European tax authority.\n\nOnce the U.S. joins CARF, the same logic applies. Exchanges like Binance would be expected to report activity for U.S.-identified users directly to the IRS.\n\nSo again, the noose gets tighter.\n\nThe IRS may not receive perfectly complete information, but they are receiving significant data about your transactions and sales. And, they expect all of that to be reported on your tax return.\n\nThis is not how things worked in the past. It’s becoming harder and harder to stay invisible.\n\nSome people say they’ll just do everything in DeFi. But eventually, you have to cash out. At some point, you need to produce funds, and you need to explain where the money came from and what your cost basis was.\n\nThat’s very difficult to hide long term.\n\nThis is why CARF is such a significant development. \n\nIt’s part of a global tightening around crypto reporting.\n\nThis year should be the year you focus on reporting your crypto completely and accurately, so you don’t end up dealing with an IRS audit later. Trust me!",
+    "tweet_likes": 11,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/cryptocoinatlas/status/2010685532989276203",
+    "tweet_account": "@cryptocoinatlas",
+    "tweet_text": "💰 EU’s DAC8 Crypto Reporting Takes Effect (2026)\n\nDAC8 now applies across the EU, requiring standardized crypto reporting by CASPs. Learn who must report, what’s in scope, and how it aligns with CARF....\n\nRead more: https://t.co/i3EVY3DCNt\n\n#CryptoCoinAtlas #Crypto #Blockchain #DeFi",
+    "tweet_likes": 2,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/ibetoncrypto/status/2009553983518466482",
+    "tweet_account": "@ibetoncrypto",
+    "tweet_text": "Crypto tax reporting is set to follow a “bank-style” approach in 2026 with DAC8 (EU) + CARF (OECD)\n\nRead it at https://t.co/qYBMbY47J8  \n\n#DAC8 #CARF #CryptoTax #CryptoTaxReporting #CryptoCompliance #DigitalNomad #RemoteWork #ExpatLife #CryptoForNomads #Bitcoin #Stablecoins https://t.co/jHVQwdLPEO",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/nextinweb3/status/2009170069960429997",
+    "tweet_account": "@nextinweb3",
+    "tweet_text": "*🚨NEXT IN 🚨*\n\nCrypto privacy 2026 faces its toughest test as CARF and DAC8 bring global tax reporting, cross-border data sharing, and real enforcement teeth to digital assets.\n\nRead the full thing here: https://t.co/zy19uegfgP",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/CryptaLeaks/status/2009169340403155155",
+    "tweet_account": "@CryptaLeaks",
+    "tweet_text": "New tax frameworks threaten crypto privacy. The CARF and DAC8 initiatives increase regulatory oversight, requiring extensive reporting and posing challenges for users reconciling complex transactions. Full context: https://t.co/dksQX5DvDC #Crypto",
+    "tweet_likes": 0,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/grok/status/2008869993874596202",
+    "tweet_account": "@grok",
+    "tweet_text": "@PraytoZihnnal @SkankworksAgile @themattyverse @blockchainchick DAC8 is an EU directive and doesn't apply to Switzerland, as it's not an EU member. However, Switzerland is adopting similar OECD CARF rules for crypto reporting, but implementation is delayed to 2027 (no data exchange for 2026).\n\nSwitzerland remains crypto-friendly: no capital gains tax for private investors, though wealth tax applies. Similar to Dubai (no taxes, regulated via VARA) and Hong Kong (favorable regs, low taxes if not business activity). All three are top destinations for crypto in 2026.",
+    "tweet_likes": 1,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "CARF DAC8 crypto reporting 2026",
+    "tweet_url": "https://x.com/Marsses_Crypto/status/2008866468050632842",
+    "tweet_account": "@Marsses_Crypto",
+    "tweet_text": "🧾 The EU Will Begin Tracking Crypto Transactions\n\n⚡️ Starting January 1, 2026, tax authorities across the European Union will begin implementing a new regime for monitoring cryptocurrency transactions under the DAC8 directive and the CARF (Crypto-Asset Reporting Framework). https://t.co/yWYyUQ3FP7",
+    "tweet_likes": 3,
+    "matched_reply": "CARF goes live in 2026. For crypto businesses: step 1 is identifying reportable transactions, step 2 is building the data pipeline to your local tax authority. Webinars help — the deadline doesn't move.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉CARF合规要求"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/RemiDAoust/status/2036795313084567702",
+    "tweet_account": "@RemiDAoust",
+    "tweet_text": "Just released March 2026 — the U.S. Treasury’s latest GENIUS Act report outlines how the new framework now requires every permitted stablecoin issuer to operate as a full “financial institution” under the Bank Secrecy Act, mandating AML/CFT programs, compliance officers, SAR filings, KYC, record-keeping, and technical controls to block, freeze, or reject illicit transfers. Compliant U.S.-domiciled tokenized payment instruments are now positioned as the regulated standard for institutional-grade on-chain finance. @USTreasury @Ripple\n\nReferences: GENIUS Act Illicit Finance Innovation Congressional Report, March 2026\nhttps://t.co/O7B7S2PK2k",
+    "tweet_likes": 2,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/RemiDAoust/status/2036644585611395449",
+    "tweet_account": "@RemiDAoust",
+    "tweet_text": "With the GENIUS Act requiring every permitted stablecoin issuer to operate as a full U.S.-based “financial institution” under the Bank Secrecy Act — complete with AML/CFT programs, compliance officers, SAR filings, KYC, record-keeping, and technical controls to block illicit flows \n\nLet's look at 2025 @Grayscale Top 20 list, showing offshore-issued tokens are non-eligible: USDe, DAI, USDS, FDUSD, USDX, USDf, USDO (Usual), USDD, USDG, M, GHO, USDO (OpenEden), and USDa. \n\nOnly U.S.-domiciled compliant stablecoins meet the regulatory standard. \n\n@Ripple 👑 $RLUSD\n$USDC $USD1 $FDUSD $PYUSD $USDG\nhttps://t.co/nuDM3W9ykk",
+    "tweet_likes": 2,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/grok/status/2036319807788679324",
+    "tweet_account": "@grok",
+    "tweet_text": "@CryptoCorner26 @Cointelegraph Yes, it's real. Delaware introduced Senate Bill 19 (the Delaware Payment Stablecoin Act) yesterday. It creates a state licensing framework for payment stablecoin issuers, requiring 1:1 reserves, monthly audits, AML/KYC compliance, and more—aligned with the federal GENIUS Act. Official bill: https://t.co/P0GUCyp68C Multiple news outlets and the state senate site confirm it.",
+    "tweet_likes": 0,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/beincrypto/status/2036201331027783750",
+    "tweet_account": "@beincrypto",
+    "tweet_text": "Delaware has introduced Senate Bill 19 to regulate stablecoin issuers.\n\nThe legislation requires 1:1 reserves, monthly audits, and AML/KYC compliance.\n\nIt also prohibits issuers from paying yield to holders, aligning state law with the federal GENIUS Act. https://t.co/tdnqIZnMlx",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/JeanClawd99/status/2034662725264003563",
+    "tweet_account": "@JeanClawd99",
+    "tweet_text": "the GENIUS Act mandates 1:1 reserves, audits, AML compliance for stablecoin issuers.\n\ngreat for stability. great for institutions.\n\nbut notice what this means: your \"decentralized\" payment layer now runs on top of entities that look and act like banks.\n\nthe trustless part is the settlement layer underneath. choose it carefully. $CSPR",
+    "tweet_likes": 4,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/ChainLabo/status/2032385124839334149",
+    "tweet_account": "@ChainLabo",
+    "tweet_text": "The OCC's GENIUS Act implementation rules set a hard bar for stablecoin issuers: 1:1 reserves, audits, AML/BSA compliance. Enterprise node infrastructure is now a regulatory requirement. https://t.co/B1RV1wvxem #GENIUSAct #Stablecoin",
+    "tweet_likes": 1,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/grok/status/2030320951691186576",
+    "tweet_account": "@grok",
+    "tweet_text": "@AmWizardKing @samuelarmes This bill sets up licensing, AML compliance, redemption rights for holders, and oversight for stablecoin issuers in FL—aligning with federal GENIUS Act standards.\n\nFor crypto holders, it means:\n- Safer stables (USDC/USDT etc.): Better backing reduces collapse risks.\n- Practical use: Pay state taxes, fees, licenses with approved ones.\n- Clarity: Not treated as securities under FL law.\n- Bigger ecosystem: FL as crypto hub boosts liquidity, adoption, and tools for everyone.\n\nWin for trust and utility!",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/TheLiquidi4uu0/status/2030289501268873556",
+    "tweet_account": "@TheLiquidi4uu0",
+    "tweet_text": "Florida just made history! 🚀  \n\nThe Senate unanimously passed SB 314 — America's first-ever state-level stablecoin regulatory framework.  \n\nIt brings clear rules, strong consumer safeguards, and AML compliance while syncing perfectly with federal laws like the GENIUS Act.  \n\nThis could supercharge innovation, especially for compliant issuers like those building on #XRPL (hello $RLUSD potential).  \n\nFlorida's positioning itself as THE crypto-friendly powerhouse. Governor DeSantis' signature incoming — game on for real-world adoption.  \n\nWho's ready for the next chapter in digital finance? Drop your thoughts below! 👇  \n\nFollow for daily crypto regs, #XRP insights & liquidity alpha. Let's build the future together. 💧 #Crypto #Stablecoins #FloridaCrypto #XRPArmy #XRPL",
+    "tweet_likes": 0,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/TFTC21/status/2030018600833274162",
+    "tweet_account": "@TFTC21",
+    "tweet_text": "Florida passes nation's first state-level stablecoin bill (SB 314/HB 175). \n\nCreates licensing, 1:1 reserve rules, AML compliance &amp; GENIUS Act harmony for payment stablecoin issuers. \n\nAwaits Gov. DeSantis' signature. https://t.co/zCBnvQJZ1Q",
+    "tweet_likes": 63,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/grok/status/2029869870687392095",
+    "tweet_account": "@grok",
+    "tweet_text": "@BobbyRight16171 Once fully implemented, GENIUS Act integrates banks as permitted stablecoin issuers via insured depository subs, with 1:1 USD/Treasury reserves, monthly disclosures, and AML compliance. This expands banking into digital payments/custody, boosts revenue from reserves/issuance fees, heightens competition from qualified nonbanks, and modernizes settlement efficiency while mitigating runs.\n\nCLARITY Act provides CFTC/SEC jurisdictional clarity for crypto markets, allowing safer bank/financial institution participation in trading, DeFi, and commodities.\n\nFederal Reserve gains prudential supervision over large (> $10B) stablecoin issuers but is barred from issuing retail CBDC or offering direct services to individuals, preserving private innovation and USD dominance via stablecoins.",
+    "tweet_likes": 1,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/grok/status/2029551319267078275",
+    "tweet_account": "@grok",
+    "tweet_text": "@FreeThinkerInc @BoatRocker13 Under GENIUS Act (enacted 2025), permitted payment stablecoin issuers are treated as financial institutions under the Bank Secrecy Act, requiring full AML programs, suspicious transaction monitoring/reporting, customer ID, and sanctions compliance via FinCEN/Treasury. Clarity Act excludes them from \"digital commodity\" status but adds digital commodity brokers/dealers/exchanges as BSA-covered entities (31 U.S.C. 5312) with tailored FinCEN rules. Both preserve Treasury's existing Section 311 special measures authority unchanged.",
+    "tweet_likes": 1,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/grok/status/2029315093448573322",
+    "tweet_account": "@grok",
+    "tweet_text": "@OptionsLabApp The GENIUS Act (signed July 2025) is the core stablecoin law: only permitted issuers (bank subsidiaries or OCC-licensed nonbanks) can issue payment stablecoins, with 1:1 high-quality reserves, on-demand redemption, AML compliance, and a ban on direct yield/interest to holders.\n\nCurrently advancing in Congress: S.3907 (introduced Feb 24, referred to Senate Banking) amends it to require annual audits for foreign issuers. Broader CLARITY Act (House-passed 2025, Senate-stalled) ties into market structure with stablecoin implications.\n\nFull rollout would legitimize crypto firms' stablecoin issuance, enable banking rail integration, boost adoption/institutional flows, and cut uncertainty—but adds capital/liquidity rules and compliance costs. OCC proposed implementing regs Feb 25 (comments ~May 1).",
+    "tweet_likes": 0,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/grok/status/2027013148327240165",
+    "tweet_account": "@grok",
+    "tweet_text": "@hezekiahwept @ChefGruel No, not really. \n\nGENIUS Act (enacted July '25) creates stablecoin rules—100% reserves, audits, AML—for permitted issuers including bank subsidiaries. Regionals can apply via FDIC; it's enabling innovation, not heavy compliance to squeeze them out.\n\nCLARITY Act (House-passed '25, Senate stalled Feb '26) draws SEC/CFTC lines for digital assets + blocks direct Fed CBDC to people—anti-centralization.\n\nThey speed private digital rails (stablecoins as alternative to CBDC), which could indirectly pressure non-adapting regionals via deposit shifts (per community bank concerns). But no match for broad reg burdens, scrutiny, or merger loosening to consolidate traditional banking power.",
+    "tweet_likes": 0,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/Adexmil/status/2026926276502507977",
+    "tweet_account": "@Adexmil",
+    "tweet_text": "@allscaleio @ac_btcpizza Based on insights from ETH Denver 2026, how are evolving regulatory frameworks like the GENIUS Act impacting AllScale's approach to compliance and AML in stablecoin payments for global microbusinesses?",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/nifty0x/status/2025677613541274033",
+    "tweet_account": "@nifty0x",
+    "tweet_text": "BitGo Bank to issue FYUSD for Asian institutions — GENIUS Act‑compliant 1:1 USD backing, strict AML/KYC. Adds Fypher for programmable AI-agent settlement. Stablecoin market cap at $295B. My take: solid compliance focus, but adoption and redemption risk will decide its fate.",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/onehundredmph/status/2024159352840413643",
+    "tweet_account": "@onehundredmph",
+    "tweet_text": "@mikee_degen @xMarketNews @ryancohen Why would Ryan Cohen create this liability for his company? It is not lawful via Clarity Act. There is also no stablecoin registration to be in compliance with the Genius Act. And is the coin AML, BSA, and KYC compliant? \n\nNope!",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/edgeandnode/status/2023802456556401131",
+    "tweet_account": "@edgeandnode",
+    "tweet_text": "GENIUS Act enforcement starts January 2027.\n\nStablecoin issuers will need audited reserve disclosures & AML compliance backed by provable data integrity.\nBuilding verification into your infra now avoids costly retrofitting under enforcement pressure.\n\nUse Amp for GENIUS Act compliance",
+    "tweet_likes": 19,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/edgeandnode/status/2021733884145328539",
+    "tweet_account": "@edgeandnode",
+    "tweet_text": "The GENIUS Act requires stablecoin issuers to publish monthly reserve disclosures, maintain full AML compliance programs, and provide audit trails that regulators can actually verify. MiCA has similar requirements in Europe. The UK just opened their stablecoin sandbox with the same expectations.\n\nThis is hundreds of billions of dollars in stablecoin activity that now needs to be tracked, queried, and reported on in ways that satisfy compliance teams and regulators. We're talking about institutions like DTCC, Citadel, and major banks entering stablecoin issuance under frameworks that demand the same level of data governance they apply to traditional financial instruments.\n\nMost blockchain data infrastructure was built for crypto-native teams who were fine querying third party APIs. That doesn't work when you need data sovereignty, deployment behind your own firewall, integration with existing BI tools like Snowflake and Power BI, and audit trails that hold up to regulatory scrutiny.\n\nThis is the gap Amp was built to fill. Stablecoin adoption isn't a blockchain problem anymore, it's a data infrastructure problem, and the institutions entering this space need infrastructure that matches how they already operate.",
+    "tweet_likes": 23,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/HyperXAware/status/2021624235387465855",
+    "tweet_account": "@HyperXAware",
+    "tweet_text": "Adoption:\nIn light of 2026's evolving U.S. landscape (e.g., CFTC oversight via the GENIUS Act and stablecoin provisions), EQB would launch with built-in compliance layers: KYC/AML hooks for high-value transactions, automatic tax reporting, and interoperability with CBDCs (central bank digital currencies) like a potential digital dollar. This positions it as a \"regulatory bridge,\" allowing seamless on-ramps from traditional finance without the Wild West feel that fuels instability. Profoundly, it could partner with governments for pilot programs, like using EQB for disaster relief funding or international aid, tying crypto to societal good and reducing its image as a speculative bubble.\nHow It Fixes the Market Overall:\nBy emphasizing utility over speculation, EQB would create a ripple effect:\nReduced Volatility Spillover: As adoption grows (targeting 10% of global cross-border payments within years, per realistic models), it pulls liquidity from volatile memecoins into stable, productive uses, damping market-wide swings.\nInstitutional Inflow Catalyst: With its RWA focus and AI stabilization, it'd appeal to risk-averse players like pension funds, countering the current ETF outflow slowdown and \"age of speculation\" end noted by experts.\nEcosystem-Wide Stability: Interoperability with major chains (Ethereum, Solana) via bridges would let EQB act as a \"reserve asset\" for DeFi, providing collateral that doesn't crash during bear markets. Over time, this could shift the entire crypto narrative from gambling to infrastructure, fostering sustainable growth.\nIn essence, EQB wouldn't \"fix\" crypto overnight—markets are complex—but by profoundly embedding real utility, AI intelligence, and regulatory harmony, it'd anchor the space to fundamentals, turning today's coldest winter into a foundation for long-term resilience. This isn't just another token; it's a systemic upgrade.",
+    "tweet_likes": 0,
+    "matched_reply": "GENIUS Act is live. Stablecoin issuers need: licensed status, 1:1 reserve backing, AML/CFT controls, and transaction reporting. Audit your current setup against these four requirements now — not after enforcement.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "GENIUS Act stablecoin compliance AML",
+    "tweet_url": "https://x.com/grok/status/2019382904325861571",
+    "tweet_account": "@grok",
+    "tweet_text": "@Markagain418 In 2025, the GENIUS Act was signed into law, establishing federal rules for stablecoins including reserves and AML compliance. The CLARITY Act passed the House but remains stalled in the Senate amid disputes between banks and crypto firms over stablecoin rewards. In Jan 2026, the Senate Ag Committee advanced a bill for CFTC oversight of digital commodities. Progress is ongoing but incomplete.",
+    "tweet_likes": 0,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈GENIUS法案合规"
+  },
+  {
+    "search_query": "FIT21 digital commodity classification tax",
+    "tweet_url": "https://x.com/pennycheck/status/1924497668623024633",
+    "tweet_account": "@pennycheck",
+    "tweet_text": "Watching for the Genius Act vote.\nHonestly can't think of any equity it is more bullish for than $GLXY\n\nAfter years of “regulation by enforcement” and uncertainty that pushed crypto innovation offshore, U.S. lawmakers are advancing comprehensive reforms for digital assets. Chief among them is the Guiding and Establishing National Innovation for U.S. Stablecoins (GENIUS) Act, a bipartisan congressional bill aiming to establish clear rules for crypto and encourage innovation onshore. The GENIUS Act focuses initially on stablecoins – the $243+ billion market of digital USD tokens that facilitate over $700 billion in monthly transactions globally – but it is part of a broader regulatory push addressing key pain points in crypto policy. For the first time, Congress appears poised to deliver a “clear, durable framework” for digital assets that protects consumers while fostering growth.\n\nWhat does the GENIUS Act propose? In short, a holistic overhaul of digital asset regulation. For example:\n\nStablecoin Oversight and Taxonomy: It creates a federal framework for stablecoin issuers, imposing strict reserve, auditing, and redemption standards under bank-like supervision. This not only clarifies that properly regulated payment stablecoins are not securities, but also enhances the dollar’s reach via blockchain by “bringing stablecoins into the regulatory purview of the world’s most advanced…capital market regime”. Issuers would be licensed (through the OCC or equivalent state regimes) and subject to high-quality collateral rules (akin to money market funds), making stablecoins safer and “bankruptcy remote” for holders. These measures “create pathways for innovation” in payments and fintech while safeguarding financial stability.\n\nAsset Classification Clarity: The legislation (alongside companion bills) tackles the long-standing confusion over what is a security vs. a commodity in crypto. Lawmakers seek to “deliver a clear definition of what is a commodity and what is a security”, ending overlapping SEC/CFTC turf wars. For instance, the proposed Securities Clarity Act explicitly states that a digital token sold as part of an investment contract does not make the token itself a security. Similarly, the House’s Financial Innovation and Technology for the 21st Century Act (FIT21) would delineate regulatory boundaries: most decentralized cryptocurrencies would default to digital commodities, under CFTC oversight, whereas tokens with security-like fundraises or centralized control would fall under the SEC. This categorization of digital assets into clear buckets is expected to “provide much-needed clarity” and end the era of ad hoc enforcement.\n\nModernized Market Structure: The reform package updates rules for exchanges and trading platforms to fit crypto’s unique market structure. Under FIT21, for example, trading venues for crypto (dubbed “digital asset trading systems”) would register with both the CFTC and SEC, segregate customer assets from company funds, maintain robust records, and even hold wind-down capital to protect users in case of failure. These measures – inspired in part by preventing another FTX-style collapse – strengthen transparency and consumer protection without stifling trading. The net effect is a more institutionally friendly market infrastructure, where big players can participate knowing exchanges are well-regulated and oversight responsibilities are settled.\n\nTax and Transaction Clarity: Recognizing that the tax code has discouraged everyday crypto use, lawmakers have introduced tax relief provisions. One bipartisan proposal, the Virtual Currency Tax Fairness Act, would exempt small personal crypto transactions (under $50) from capital gains taxes, removing a major friction for using crypto in daily life. “Our current tax code stands in the way,” said Sen. Pat Toomey when sponsoring the idea – treating minor buys like a cup of coffee as non-taxable would allow cryptocurrencies to “become an ordinary part of Americans’ everyday lives”. Such de minimis tax clarity, combined with IRS guidance on reporting, lowers compliance burdens and encourages broader adoption of digital payments.\n\nInnovation and Self-Custody Protections: Importantly, the legislative efforts seek to embrace innovation rather than drive it away. The GENIUS Act was described as an “innovation promoting, consumer protecting” win for both crypto and traditional finance. It balances reasonable pathways to compliance with strict penalties for bad actors. Meanwhile, to preserve the ethos of decentralization, Congress is moving to codify the right to self-custody digital assets. The House’s crypto framework explicitly protects consumers’ rights to hold their own crypto in private wallets rather than relying on third-party exchanges. By ensuring individuals can control their keys, the law provides an extra layer of security and maintains user empowerment, all while still encouraging the growth of regulated custodians and service providers. In sum, the U.S. is signaling that it wants responsible innovation to flourish onshore – “attracting talent back to the US” with a more predictable legal environment, rather than ceding fintech leadership to other jurisdictions.\n\nFor the crypto industry, these reforms bring the regulatory certainty and legitimacy it has long craved. And no player is better positioned to capitalize on this sea change than Galaxy Digital, a diversified digital asset and AI financial services firm. Here’s how each of Galaxy’s key business verticals stands to benefit from the coming wave of clarity and why Galaxy’s unique profile could translate regulatory reform into outsized growth.\n\nTrading & Market Making: Higher Volumes, Broader Markets\n\nGalaxy’s Global Markets division (which includes its OTC trading desk and liquidity services) is set to thrive under clearer rules. Stablecoin legalization and oversight alone will be a huge boost to trading activity. Today, dollar-pegged stablecoins are the lifeblood of crypto trading worldwide – enabling fast, always-on settlement – yet in the U.S. they’ve operated in a gray area that kept many institutions sidelined. The GENIUS Act changes that by institutionalizing stablecoins: issuers would be federally approved, fully reserved, and subject to audits, making these digital dollars as trusted as money market funds. As a result, U.S. financial firms and investors will feel comfortable using stablecoins on trading venues, knowing they are safe and regulated. This broader acceptance should swell trading volumes. Galaxy’s traders will have more flow to internalize and more demand for OTC block trades as hedge funds, banks, and asset managers enter the crypto markets en masse, armed with fiat-backed tokens that regulators endorse.\n\nMoreover, asset classification clarity will expand the universe of coins and tokens that Galaxy can confidently make markets in. Clear definitions of what constitutes a security vs. a commodity mean Galaxy can avoid regulatory landmines when listing assets or facilitating trades. In the past, uncertainty over a token’s status (security or not) made U.S. broker-dealers hesitant to deal in anything but Bitcoin or Ethereum. With new laws likely defining most decentralized tokens as commodities by default, Galaxy’s trading arm can support a wider array of cryptocurrencies without fearing an unexpected SEC enforcement action. Regulatory “bright lines” will let Galaxy broaden its trading pairs and products (including potentially crypto derivatives or tokenized securities) under proper licenses. The result is more revenue opportunities and the ability to serve clients with a full spectrum of digital assets.\n\nFinally, the improved market structure – exchanges registering and adhering to stricter safeguards – increases confidence for big investors to trade at scale. Galaxy, as a firm that already operates with a high compliance bar and trading controls, will likely face lower incremental costs than less compliant competitors when adapting to new rules. In fact, Galaxy’s regulatory-friendly approach is a competitive advantage: the company’s U.S. listing approval by the SEC “highlights…strong regulatory compliance and dedication to transparency,” which boosts credibility with institutions. As more venues implement surveillance and segregation of funds, counterparty risk diminishes and institutional trading activity (and thus Galaxy’s volumes) can swell. In short, a well-regulated market is a bigger market – and Galaxy’s trading desk is primed to be a key liquidity provider in this larger pond.\n\nAsset Management: Unlocking Institutional Capital\n\nGalaxy’s Asset Management division stands to reap the rewards of reduced regulatory uncertainty through accelerating inflows and new product offerings. One of the biggest bottlenecks for institutional investment in crypto has been the murkiness of rules – many asset managers feared that investing in or offering crypto products could invite regulatory trouble if assets were later deemed unregistered securities, or if custody and accounting rules were unclear. With the GENIUS Act and related bills, those fears are set to ease. Explicit asset classifications and oversight frameworks give institutional investors and their compliance departments the green light to allocate to digital assets. As clarity emerges (and as high-profile steps like the SEC permitting Galaxy’s U.S. stock listing confirm crypto’s growing acceptance), pent-up demand from pensions, endowments, family offices, and sovereign funds can flow into crypto funds. Galaxy, which offers crypto index funds, passive trusts, and active investment vehicles, will be an obvious beneficiary. Greater regulatory legitimacy makes it far easier for Galaxy’s sales team to pitch crypto investment products to institutional allocators who previously sat on the sidelines due to fiduciary concerns.\n\nThe reforms also enable product innovation in asset management. For example, with clear laws, the SEC is more likely to finally approve spot crypto ETFs (beyond just Bitcoin futures ETFs). Galaxy has been at the forefront of pursuing crypto ETFs and other regulated investment vehicles. A friendlier regulatory stance increases the odds that Galaxy can launch exchange-traded products, structured notes, or tokenized asset funds in the U.S., vastly scaling AUM. Likewise, tax clarity – like a de minimis exemption on small transactions – could encourage retail investors to use crypto and invest in funds without onerous tax complexity, indirectly boosting demand for Galaxy’s retail-facing funds or managed portfolios.\n\nAdditionally, by codifying self-custody rights and improving custody standards, the legislation addresses a key due diligence concern for institutional investors: the safety of assets. With laws explicitly permitting self-custody and encouraging robust custodian frameworks, institutions can be confident that any crypto held in Galaxy’s funds is secured in compliant, bankruptcy-remote ways (a principle extended from stablecoin reserves). This reassurance makes institutions more likely to trust crypto fund managers like Galaxy with larger allocations. In sum, a combination of clarity, new investable products, and improved security norms will spur AUM growth and performance fees for Galaxy’s asset management arm. The ability to participate in the crypto upside “without sacrificing consumer protections” will attract a wave of new investors that Galaxy is well placed to serve.\n\nInvestment Banking: A Boom in Deals and Advisory Opportunities\n\nGalaxy Digital’s Investment Banking unit (providing M&A advisory, capital raising, and consulting for crypto and blockchain ventures) could see a surge in activity once clear regulations are in place. Why? Regulatory clarity is the catalyst for the next phase of industry maturation – and that means more companies forming, expanding, merging, and going public, all of which drives banking deal flow. When the rules of the road are defined, venture capital and entrepreneurs will double down on U.S. crypto startups (rather than routing everything to offshore havens). We may witness an explosion of new fintech and blockchain businesses launching to leverage stablecoins, blockchain infrastructure, and tokenization in a legally compliant way. Galaxy’s bankers will be there to advise these firms on structuring token offerings in compliance with the SEC/CFTC guidelines, or obtaining licenses, or raising growth capital. In the absence of clear laws, many projects held back on issuing tokens or pursuing certain business models – that hesitation will fade, leading to more fundraising mandates for Galaxy (e.g. private placements for crypto startups, or helping established firms spin off compliant token subsidiaries).\n\nM&A activity is also poised to jump. As regulatory certainty draws in traditional financial institutions, we can expect strategic acquisitions: banks and payment companies might buy stablecoin issuers or crypto custodians to get a foothold, large exchanges might consolidate, and struggling players will be absorbed by stronger ones now that there’s a clear framework for licensed operations. Galaxy’s investment banking team, with its deep crypto expertise and Wall Street pedigree, is an obvious choice to advise on these complex deals. Indeed, as one of the few U.S.-regulated crypto-focused investment banks, Galaxy could corner the market on advisory roles for anything from a blockchain startup IPO to a cross-border acquisition of a crypto exchange. Regulatory green lights also mean public listings (via IPO or SPAC) become viable for more crypto companies – and Galaxy can underwrite or advise those offerings.\n\nIn addition, the GENIUS Act’s stablecoin provisions will create opportunities in traditional sectors: for instance, fintechs integrating stablecoins into payment networks, or e-commerce firms issuing branded stablecoins. Galaxy can position itself as a key advisor at that intersection of crypto and mainstream finance. It helps that the legislation explicitly aims to bridge crypto with the traditional system (enhancing the dollar’s “distribution and reserve status worldwide” through stablecoins) – this will encourage collaborations where Galaxy’s dual knowledge (crypto tech and banking) is invaluable. Overall, Galaxy’s deal pipeline should expand significantly, powered by a larger, more dynamic crypto industry that finally has clear rules to build within. Advisory fees, underwriting revenues, and strategic investments (Galaxy often invests alongside the clients it advises) all stand to increase, making this vertical a big winner from the regulatory sea change.\n\nLending & Yield: New Avenues for Credit and Financing\n\nGalaxy’s Lending business and its broader yield-generating activities (like structured lending, financing deals, and staking services) will gain from the regulatory reforms in multiple ways. First, formal recognition of digital assets and stablecoins opens the door for more traditional lenders and institutions to participate in crypto credit markets – but Galaxy has a head start. With clear laws, banks might begin to lend against crypto collateral or offer credit lines to crypto firms, but Galaxy is already an established crypto lender. As more borrowers enter the space (hedge funds seeking leverage on crypto trades, miners/data-center firms financing expansion, stablecoin issuers managing liquidity, etc.), Galaxy’s lending desk can expand its book. Clarity on asset status means Galaxy can more confidently accept various tokens as collateral (knowing how they’d be treated legally in case of default or bankruptcy). For example, if a token is firmly categorized as a commodity, using it as loan collateral becomes more straightforward and enforceable than if its status were dubious.\n\nThe GENIUS Act’s impact on stablecoins also directly boosts lending: stablecoins under a strict regulatory regime will be seen as low-risk cash equivalents. Galaxy could increase its activities in stablecoin-based lending and borrowing – e.g. offering dollar loans against crypto collateral where loans are disbursed in regulated stablecoins, or providing liquidity to stablecoin issuers. Because the bill requires stablecoin reserves to be largely held in cash or Treasuries, stablecoin issuers might not be doing fractional lending themselves, leaving an opening for third parties like Galaxy to facilitate credit in the crypto ecosystem (for instance, lending stablecoins to market makers or investors). Now that those stablecoins are trustworthy and redeemable, Galaxy can confidently intermediate, knowing the assets won’t suddenly evaporate in a regulatory crackdown.\n\nAnother aspect is derivatives and structured products. Clear regulatory assignments (SEC vs CFTC) could allow the growth of a regulated crypto derivatives market (swaps, futures on a wider range of tokens, etc.). With its lending and trading expertise, Galaxy can offer margin lending for crypto derivatives or structured yield products to clients (within the new compliance framework). For instance, Galaxy might structure a yield product where clients deposit stablecoins and earn interest from lending them to institutions – a business much more feasible once interest-bearing arrangements with stablecoins are explicitly lawful and perhaps not deemed securities themselves (depending on final rules).\n\nAdditionally, institutional adoption fueled by regulatory clarity increases demand for borrowing crypto assets (for shorting, hedging, or working capital). Galaxy, being well-capitalized and diversified, can serve as a trusted counterparty in these transactions when others cannot. The company’s credibility will be crucial in a post-regulation era: players will prefer to borrow from a reputable, compliant lender. Galaxy’s recent uplisting efforts and SEC approval underscore that credibility (the SEC’s nod “demonstrates the regulatory progress made in the cryptocurrency sector”). All told, by reducing legal risk and attracting more participants, the GENIUS Act will help scale up Galaxy’s lending revenues and allow innovative financing deals that were off-limits in the regulatory void.\n\nCustody Services: Demand for Secure, Compliant Storage Soars\n\nIn the digital asset space, custody is king once institutions get involved. Galaxy’s Custody arm – now bolstered by its acquisition of the secure custodian platform GK8 – is poised to flourish as regulatory clarity raises the bar (and the demand) for safe asset storage. Under the new laws, many investment advisers, banks, and companies will be required or strongly encouraged to use qualified custodians for crypto assets. By establishing standards for digital asset custody and explicitly permitting self-custody, regulators are essentially acknowledging crypto custody as a legitimate, essential part of the financial system. This is bullish for firms like Galaxy that have invested in top-tier custody tech. Galaxy’s GK8 platform enables institutions to securely store tokens (with features like offline cold vaults and multi-party computation) – exactly the kind of infrastructure that traditional fiduciaries will look for when entering crypto.\n\nAs institutional adoption accelerates, big investors will entrust more assets to custodians who meet rigorous security and compliance benchmarks. Galaxy can attract those clients by offering custody solutions on par with traditional custodians, but specialized for crypto. With U.S. regulatory blessing, holding crypto with a custodian like Galaxy becomes as ordinary as holding stocks at a bank. We can also foresee corporate treasuries and fintech firms needing custody: for example, if a payment company issues a stablecoin or holds crypto reserves, it will need a secure, compliant third-party to safeguard funds. Galaxy can fulfill that role, especially since the GENIUS Act’s framework will likely require stablecoin reserve custodians to be vetted entities. This translates into new business lines (safekeeping stablecoin reserves, managing custody for ETFs or funds, etc.).\n\nOn the retail side, the explicit defense of self-custody rights reassures crypto users that they can hold their own keys – a philosophical win – but many individuals and smaller institutions will still choose the convenience of professional custody if it’s trusted and regulated. By being a U.S.-based custodian with cutting-edge tech and regulatory approval, Galaxy can scoop up market share from less regulated competitors. Notably, some major exchanges and lenders lost trust due to mismanaging customer assets; new rules (like segregating customer funds and maintaining reserves) aim to prevent that. Galaxy has long championed best practices, and as a result, its custody services will appeal to institutions ensuring compliance with these new norms. In summary, the regulatory regime will greatly expand the addressable market for crypto custody – and Galaxy’s investment in GK8 and a forthcoming GalaxyOne prime brokerage platform integrating custody positions it perfectly to become a leading custodian in the United States crypto landscape.\n\nThere’s also a geopolitical angle: the GENIUS Act and related policies aim to “promote the U.S. dollar…and help America succeed…in the shifting global economy”. A strong domestic crypto and AI sector is part of that strategic vision. Galaxy, with its 800MW (and growing) high-performance computing campus on U.S. soil, fits into a narrative of American leadership in both finance and technology. As policymakers encourage onshore development, Galaxy’s U.S.-based AI infrastructure could see support or partnerships (for example, government or academia renting space for AI projects, knowing Galaxy is a compliant partner). In short, Galaxy’s AI business benefits from the broader tailwinds of an innovation-friendly U.S. stance: it gains from the company’s strengthened finances, from new client opportunities at the crypto-AI intersection, and from being a cornerstone of U.S. digital infrastructure at a time when that is politically valued.\n\nGalaxy Digital’s Unique Position: A Well-Regulated, Diversified Leader\n\nWhile many crypto firms will benefit from clearer laws, Galaxy Digital stands out as uniquely positioned to capitalize fully on this regulatory renaissance. Galaxy is diversified across trading, investment banking, asset management, lending, and now AI data centers, giving it multiple channels to monetize the coming growth. Few competitors boast this breadth. For example, exchanges like Coinbase may gain from regulatory clarity in trading but lack Galaxy’s exposure to M&A advisory or mining-to-AI infrastructure upside; crypto miners pivoting to AI lack financial services arms; traditional banks interested in crypto don’t have in-house digital asset expertise. Galaxy’s structure – often likened to a “Berkshire Hathaway of crypto and AI” – means it can reap revenues at every layer of the value chain: advisory fees from new deals, trading spreads from higher volumes, management fees from larger AUM, interest from lending, and rental income from data centers. This balanced model also insulates Galaxy from volatility in any single area, making it a safer bet for institutional investors looking to gain exposure to the crypto sector’s growth. Notably, Galaxy has been consistently profitable, growing its book value per share from ~$1 in 2018 to over $6 by May 2025 – a rarity among crypto companies – and even returning capital to shareholders via buybacks. This track record of prudent management could attract new investors as confidence in the sector improves.\n\nEqually important is Galaxy’s regulatory readiness and credibility. This is a company that has proactively embraced regulation: Galaxy Digital Partners LLC is a registered broker-dealer and FINRA member, and the firm underwent the rigorous process of obtaining SEC approval for a U.S. stock listing. That SEC endorsement “is a clear indication of…strong regulatory compliance and dedication to transparency”, boosting Galaxy’s standing in the eyes of regulators and institutions alike. In an environment where compliance will be a key differentiator, Galaxy has already set itself apart as a trusted, compliant institution. This means Galaxy can integrate new regulatory requirements quickly (since many are extensions of what serious firms like Galaxy already do), whereas lesser competitors might stumble or be weeded out. For instance, when exchanges are mandated to segregate funds and keep audit-ready books, Galaxy will likely have minimal adjustments, having long operated with Wall Street-level internal controls. Its leadership team – CEO Mike Novogratz (a former partner at Goldman Sachs) and President Chris Ferraro (formerly of HPS Investment Partners) – deeply understand how to run a regulated financial business.",
+    "tweet_likes": 58,
+    "matched_reply": "USDC vs USDT isn't just liquidity — it's compliance structure. USDC's reserve transparency shapes issuer reporting obligations under GENIUS Act. For tax purposes, reserve composition affects regulatory treatment.",
+    "reply_angle": "规则解读型",
+    "match_reason": "同谈质押奖励税务"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/BitAngels/status/2034730999528267820",
+    "tweet_account": "@BitAngels",
+    "tweet_text": "Space Question 3.\n4.First hearing about itere you aware that as of January 1, 2025, the IRS eliminated universal cost basis tracking (per Rev. Proc. 2024-28) and now requires wallet-by-wallet basis tracking?",
+    "tweet_likes": 4,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/summ_app/status/2031575669419688067",
+    "tweet_account": "@summ_app",
+    "tweet_text": "while everyone was focused on 1099-DAs and per-wallet tracking, the IRS quietly changed how crypto transaction fees work for 2025\n\nbefore: fees increased the cost basis of whatever you received. the tax benefit was deferred until you sold that asset later.\n\nnow: fees reduce the proceeds of what you're disposing of. the tax benefit hits immediately.\n\nit's one of the few changes this year that actually works in your favor. and most people have no idea it happened.\n\nsumm handles this automatically for 2025 transactions 🤝",
+    "tweet_likes": 9,
+    "matched_reply": "Per-wallet tracking is mandatory from Jan 1, 2025 — IRS eliminated universal cost basis. Same token across multiple wallets can no longer be pooled. Organize your records by wallet address today.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/summ_app/status/2029414200288677921",
+    "tweet_account": "@summ_app",
+    "tweet_text": "something a lot of people might have missed: as of January 1 2025 the IRS apparently requires per-wallet cost basis tracking\n\nthat could mean no more pooling crypto across all exchanges.\n\nif you sell on Kraken, you'd use the basis of what's actually on Kraken.\n\nreaching across to another exchange for a better number might not work anymore.\n\nmight be worth checking if your tax software is still set to universal tracking for 2025",
+    "tweet_likes": 4,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/summ_app/status/2026764686650163399",
+    "tweet_account": "@summ_app",
+    "tweet_text": "new change for 2025 that's flying under the radar\n\nthe IRS now requires per-wallet cost basis tracking.\n\nYou can't pool all your crypto together across exchanges and pick the most favorable cost basis from anywhere anymore\n\nsell on Exchange A? you use the cost basis from Exchange A. Not from Exchange B where you bought cheaper\n\nthis is a big change if you traded across multiple platforms last year.\n\nMake sure whatever tool you're using has caught up to this",
+    "tweet_likes": 8,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/TimBR_X/status/1954625969005744353",
+    "tweet_account": "@TimBR_X",
+    "tweet_text": "Here are relevant links based on the topic of IRS cost basis methods for cryptocurrency:\n\n- **IRS General Basis Rules**: [IRS Publication 551](https://t.co/utH0mWI25o) - Provides detailed guidance on basis of assets, including property like cryptocurrency.\n- **IRS Virtual Currency Guidance**: [IRS Notice 2014-21](https://t.co/9dTjnErGAa) - Initial IRS guidance treating virtual currency as property for tax purposes.\n- **IRS FAQs on Virtual Currency**: [IRS Virtual Currency Questions and Answers](https://t.co/qxmpWr80IJ) - Includes information on cost basis methods and record-keeping.\n- **Revenue Procedure 2024-28**: [IRS Revenue Procedure 2024-28](https://t.co/CFx3vUXYbU) - Details the transition to per-wallet basis tracking and safe harbor methods (note: check IRS site for the latest version as of 2025).\n- **Form 1099-DA Information**: [IRS Instructions for Form 1099-DA](https://t.co/Yvl3EcT7Ej) - Explains broker reporting requirements for digital assets starting in 2025.\n\nFor the latest updates or specific regulations, always refer to the official IRS website: [https://t.co/m3SQano4H5](https://t.co/Zs4eiF7lyl).",
+    "tweet_likes": 1,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/SaitoshiAgent/status/1938378692151152981",
+    "tweet_account": "@SaitoshiAgent",
+    "tweet_text": "A significant shift for crypto holders: Under IRS Rev. Proc. 2024-28, universal wallet accounting for digital assets is out. From January 1, 2025, per-wallet cost basis tracking is mandatory. Also expect Form 1099-DA from brokers. Stay informed and compliant.",
+    "tweet_likes": 1,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/AskPerplexity/status/1899259212632396121",
+    "tweet_account": "@AskPerplexity",
+    "tweet_text": "@ReachmeKrishnan @TheCryptoCPA The claim that there are no capital gains taxes on crypto is false. In the U.S., cryptocurrency is treated as property by the IRS, meaning capital gains taxes apply when you sell or exchange crypto for a profit, with rates depending on income and holding period.\n\nRecent updates to crypto tax rules for 2025 focus on tracking cost basis per wallet and enhanced reporting requirements, but they do not eliminate capital gains taxes.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/CryptoTaxAtty/status/1895263034437947679",
+    "tweet_account": "@CryptoTaxAtty",
+    "tweet_text": "2️⃣ Universal Basis → Per-Wallet Basis\n\nOne of the biggest IRS rule changes:\n\n🔹 Old method: Universal basis (averaging cost across wallets)\n🔹 New method (2025): Per-wallet basis (track gains/losses for each wallet separately)\n\nThis makes accurate tracking critical—especially for traders using multiple wallets & exchanges. Don’t get caught unprepared!",
+    "tweet_likes": 0,
+    "matched_reply": "Per-wallet tracking is mandatory from Jan 1, 2025 — IRS eliminated universal cost basis. Same token across multiple wallets can no longer be pooled. Organize your records by wallet address today.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论钱包维度追踪"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/180sparrow/status/1890125321980293424",
+    "tweet_account": "@180sparrow",
+    "tweet_text": "Yes, the IRS has introduced Rev. Proc. 2024-28, which mandates a switch to Per-Wallet cost basis tracking for crypto investors starting January 1, 2025.\nThis change affects tax reporting for the 2025 tax year onwards.\nNon-compliance with this new regulation could result in penalties.",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/khalidakbary/status/1876419812790022219",
+    "tweet_account": "@khalidakbary",
+    "tweet_text": "What do you need to do now?\n\nCheck to see if you’re using a universal or per-wallet tracking method:\n- If you’re using per-wallet tracking, there are no changes for you right now (give this post a like and stop reading 💙)\n- If you’re using universal tracking, keep reading 👇\n- If you’re not sure which method you’re using, let me know which crypto tax solution you’re using and I’ll help\n\nIf you’re using universal tracking:\n- You must migrate to per-wallet tracking, but DO NOT simply change your cost basis tracking method as that will change your previous tax years. You need to switch as of the end of 2024/beginning of 2025 only.\n- If you’re using CoinTracker, log into your account and set your Tax Lot Allocation Method in the settings page (you must be in the US and set to Universal Cost Basis Tracking to see this setting). You can do this any time, but technically should have done it before 2025 to quality for the IRS safe harbor protections. Don’t worry, still make the change to be compliant moving forward.\n- When you’re ready, reconcile your 2024 transactions. Add your missing wallets, resolve all errors, and make sure your balances match the asset balances shown in your exchanges/wallets.\n- Select the ‘Migrate Now’ button in the banner notification on your account (no rush - the deadline for this is before you file your 2025 taxes in 2026). This will fully migrate you to per-wallet starting Jan 1, 2025. You’re done now 🎉! You will receive some reports to keep for your records, but you don’t have to include those in your tax filing.",
+    "tweet_likes": 3,
+    "matched_reply": "Per-wallet tracking is mandatory from Jan 1, 2025 — IRS eliminated universal cost basis. Same token across multiple wallets can no longer be pooled. Organize your records by wallet address today.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/RyleyOh/status/1874607746789896300",
+    "tweet_account": "@RyleyOh",
+    "tweet_text": "@TokenTax will you be updating to handle the updated IRS guidance for 2025 to handle per-wallet cost basis tracking?",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/Coin_Tracking/status/1872659326541701613",
+    "tweet_account": "@Coin_Tracking",
+    "tweet_text": "IRS Crypto Tax Changes for 2025 – Are You Ready?\n\nThe IRS is shaking up the rules for US crypto investors, and if you’re not prepared, it could cost you. \n\nHere’s what you need to know:\n\n🔗 Per-Wallet Tracking: Every wallet now requires separate, detailed reporting. No more lumping everything together.\n📑 New 1099-DA Form: US-based exchanges will report your trades directly to the IRS. Transparency is at an all-time high.\n⏳ Cost Basis Changes: Starting Jan 1, 2025, universal cost allocation is out. You'll need to use specific unit identification or global allocation.\n\nKey Takeaways:\n- Know the taxable events (trading, earning, swapping, spending crypto).\n- Harvest your losses before year-end.\n- Use tax deductions, IRAs, and gifting strategies to save legally.\n\n✅ CoinTracking makes it easy: \nPer-wallet tracking, smart cost basis tools, and IRS-ready reports—all in one place.\n\nDon’t let these updates catch you off guard.\n\n👉 Full breakdown in the comments! 💬🚀",
+    "tweet_likes": 22,
+    "matched_reply": "Per-wallet tracking is mandatory from Jan 1, 2025 — IRS eliminated universal cost basis. Same token across multiple wallets can no longer be pooled. Organize your records by wallet address today.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/21DogeLoge42/status/1871287898815050077",
+    "tweet_account": "@21DogeLoge42",
+    "tweet_text": "@pinaleontas @punk6529 The 2025 tax laws regarding cryptocurrency introduce several key changes aimed at increasing compliance and reporting accuracy.\nHere are the basics:\n\nCost Basis Tracking:\n\nPer-Wallet Method: Starting January 1, 2025, U.S. taxpayers must track the cost basis of their cryptocurrencies on a wallet-by-wallet basis rather than using a universal method across all wallets and exchanges. This change means that gains and losses must be calculated separately for each wallet or account where the cryptocurrency is held.\n\nTransition Period: The IRS has provided \"safe harbor\" rules to assist taxpayers in transitioning their existing holdings to this new method. This includes options like Specific Unit Allocation or Global Allocation to assign cost basis effectively.\n\nTax Reporting:\nForm 1099-DA: Brokers will be required to report cryptocurrency transactions starting with those in 2025, with the first reports due in 2026. This form will detail gross proceeds from sales, and from 2027, it will also include cost basis information for certain digital asset sales.\nMandatory Reporting: This includes centralized and some decentralized exchanges, crypto payment processors, and certain online wallets, expanding the definition of who qualifies as a \"broker\" for tax purposes.\n\nTaxable Events and Rates:\nCapital Gains Tax: Cryptocurrency is treated as property, meaning selling, trading, or using crypto for purchases can incur capital gains tax. The rate depends on how long the asset was held (short-term vs. long-term gains).\nIncome Tax: Earning crypto through staking, mining, or as payment for services is generally subject to income tax based on the fair market value at the time of receipt.\n\nExemptions and Thresholds:\nStablecoins: There are specific provisions for stablecoins, with exemptions for individuals earning less than $10,000 annually from stablecoins. High-volume traders or those with more complex transactions will not qualify for these exemptions.\nNFTs: NFT transactions over $600 in earnings need to be reported, but this is on an aggregate basis rather than for individual transactions.\n\nPreparation and Compliance:\nSoftware Tools: Given the complexity, using crypto tax software is recommended to automate tracking and reporting, especially with the new per-wallet requirements.\n\nRecord Keeping: Accurate record-keeping of all transactions is crucial, particularly with the new IRS guidelines on cost basis allocation.\n\nThese changes signify a move towards more detailed and specific tracking of cryptocurrency transactions for tax purposes, aiming to close the tax gap by ensuring better compliance. If you're involved in cryptocurrency, it's advisable to prepare for these changes by reviewing your holdings, possibly consulting with a tax professional, and ensuring you're using tools that comply with the new IRS guidance.",
+    "tweet_likes": 3,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/Bitcoinapolis55/status/1871235342465896609",
+    "tweet_account": "@Bitcoinapolis55",
+    "tweet_text": "USA taxes are so ridiculously complicated. This is from CoinLedger to try and help us but not going to use anyone until I know manually what I need to do and it’s clear?  Is that too much to ask?\n\nNew IRS rules, Revenue Procedure 2024-28(Rev. Proc. 2024-28), makes it mandatory for US crypto investors to use a per-wallet cost basis tracking method when calculating gains and losses for tax purposes starting January 1, 2025. \nNote - these rules do not affect 2024 taxes, which are due April 2025. They only apply to tax year 2025, due April 2026.\nWhat is required of me to comply with these changes?\nThere are two things you should do to make sure you can comply with this required change:\n1Declare your cost basis allocation method (by saving this email)\n2Make sure your CoinLedger account is up to date on Dec 31, 2024\nWhat cost basis allocation method will CoinLedger use?\nCoinLedger needs to allocate the outstanding cost basis of your holdings to the specific accounts (wallets/exchanges) you hold crypto in. This will enable CoinLedger to calculate your gains/losses on a per-wallet basis in the future.\nTo facilitate users with this migration, CoinLedger will automatically allocate any outstanding cost basis using the Lowest-Cost, Highest-Wallet method (detailed explanation here).\nHow can I make sure my CoinLedger account is up to date on Dec 31, 2024?\nYou should fully import all of your 2024 and prior transactions, add all wallets and or exchanges, and make sure the tracked balances in your Portfolio are accurate.\nThis will enable the automatic allocation process happening at the end of the year to properly allocate your outstanding cost basis to each of your accounts/wallets.\nFor a detailed explanation of the mechanics behind this change as well as FAQ materials, please review our in-depth help center guide.",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "per-wallet cost basis IRS 2025 tracking",
+    "tweet_url": "https://x.com/HughHipsDontLie/status/1870930523985776756",
+    "tweet_account": "@HughHipsDontLie",
+    "tweet_text": "New IRS rules, Revenue Procedure 2024-28 (Rev. Proc. 2024-28), makes it mandatory for US crypto investors to use a per-wallet cost basis tracking method when calculating gains and losses for tax purposes starting January 1, 2025. \n\nNote - these rules do not affect 2024 taxes, which are due April 2025. They only apply to tax year 2025, due April 2026.\n\nSo hopefully @realDonaldTrump rolls these stupid, idiotic rules back. I’m ignoring them until I know for sure.",
+    "tweet_likes": 0,
+    "matched_reply": "Don't just track purchase price — gas fees and exchange fees add to cost basis too. Buy ETH at $3,000 + $15 gas? Basis is $3,015. Every missed fee is overpaid tax. Track them all from now.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同谈成本基础计算"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/tahoetax/status/2005697010670972974",
+    "tweet_account": "@tahoetax",
+    "tweet_text": "Take some loses this year in Bitcoin? As of 2025, the wash sale rule still does NOT apply. This means investors can sell BTC at a loss, claim the tax benefit, and immediately buy it back - something you can’t do with stocks. This “loophole” lets you harvest crypto tax losses",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同提无洗售规则优势"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/grok/status/2002775557746905139",
+    "tweet_account": "@grok",
+    "tweet_text": "@ChadSlimeBased @pulsewhalewana The wash sale rule applies to securities like stocks, preventing loss claims if you repurchase within 30 days. However, the IRS treats cryptocurrencies as property, not securities, so the rule doesn't apply to crypto as of 2025. You can sell and rebuy immediately to harvest tax losses without issue. Always consult a tax professional for your situation.",
+    "tweet_likes": 1,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同提无洗售规则优势"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/grok/status/2002375355034747044",
+    "tweet_account": "@grok",
+    "tweet_text": "@BitcoinHofmann @kefflar @GoldenGatsby @ChadSlimeBased In Spain, as of 2025, no wash sale rule applies to crypto. You can sell at a loss and repurchase immediately to harvest the loss, offsetting gains or carrying forward up to 4 years. Tax rates on gains are 19-28%. Consult a local tax advisor for your case.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同提无洗售规则优势"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/grok/status/2002203000840843752",
+    "tweet_account": "@grok",
+    "tweet_text": "@Itstrev @ChadSlimeBased Yes, in 2025, the IRS treats crypto as property, so the wash sale rule doesn't apply. You can sell at a loss and repurchase the same asset immediately—even within a day—to harvest the tax loss. Always consult a tax advisor to ensure it fits your situation.",
+    "tweet_likes": 1,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同提无洗售规则优势"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/Reducecryptotax/status/1992169121513918548",
+    "tweet_account": "@Reducecryptotax",
+    "tweet_text": "CRYPTO TAX BOMBSHELL NOV 2025 EDITION 🚨\n99% of you are about to get REKT by the IRS in 2026 unless you do these 4 things BEFORE Dec 31:\n1. Loss harvest EVERYTHING red\n→ Sell losers → rebuy 1 min later (wash sale rule DOES NOT apply to crypto)\n→ Instant $3k–$100k+ tax deduction for 2025\n2. Move all coins off exchanges to self-custody RIGHT NOW\n→ 1099-DA starts Jan 1 2026 = exchanges snitch EVERY trade to IRS\n→ Self-custody = no 1099-DA = IRS blind again\n3. use “specific ID” cost basis (not FIFO)\n→ Cherry-pick your highest basis coins when selling winners = pay 50–90% less tax legally\n4. If you’re sitting on 7-figure gains → start the Puerto Rico/Dubai clock in 2025\n→ Trump already talking 0% cap gains for long-term holders in 2026 anyway 👀\n\nThe IRS is coming harder than 2022 bear market.\nDo this now = pay $0–10% tax in April\nIgnore = bend over for 37% + penalties\nYou’re not “early” anymore. You’re taxable.\nAct like it or cry later.\nWho’s harvesting losses this month? 👇\n#Bitcoin #Crypto #TaxSzn  #btc",
+    "tweet_likes": 4,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "crypto wash sale rule loss harvest 2025",
+    "tweet_url": "https://x.com/grok/status/1975638995293118848",
+    "tweet_account": "@grok",
+    "tweet_text": "@iSpineDoc @JordanFreyMD Yes, you can tax loss harvest Bitcoin. The IRS treats crypto as property, so losses offset capital gains (and up to $3,000 of ordinary income per year). Unlike stocks, the wash-sale rule doesn't apply to crypto as of 2025, allowing immediate repurchase. Always consult a tax pro for your situation.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "1099-DA missing cost basis phantom gains",
+    "tweet_url": "https://x.com/countonsheep/status/1948137952003096908",
+    "tweet_account": "@countonsheep",
+    "tweet_text": "HUGE NEWS: Our CEO Nick Slettengren was featured on @BitcoinCom discussing the major risks with the new IRS Form 1099-DA\n\nNick warns that exchanges reporting missing cost basis data could create \"phantom gains\" and trigger unwanted audits for crypto users.\n\nHis key insight: \"Many exchanges do not have visibility into the full lifecycle of a user's assets,  especially when assets are moved between platforms\"\n\nThis could leave taxpayers vulnerable to overpaying taxes or facing audits simply due to exchange reporting limitations.",
+    "tweet_likes": 3,
+    "matched_reply": "1099-DA looks authoritative but it's informational only — attaching it to your return is wrong. Real numbers go on Form 8949. Cross-platform transfers mean 1099-DA basis is almost certainly incorrect.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/Empower_Capital/status/2034621374212260193",
+    "tweet_account": "@Empower_Capital",
+    "tweet_text": "5/ If you sold during this dip, you may have locked in a capital loss.\n\nGood news: that loss can OFFSET gains from earlier this year.\n\nTax-loss harvesting works for crypto. Most people don't know this.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/MarketInsigh360/status/2033796204400988235",
+    "tweet_account": "@MarketInsigh360",
+    "tweet_text": "That realised loss can be used to:\n\n• Offset other capital gains\n• Reduce your overall tax liability\n\nMost investors don’t use this strategy.\n\nSmart investors use loss harvesting to optimise taxes.\n\n#Crypto #Bitcoin #TaxPlanning #Investing #WealthBuilding",
+    "tweet_likes": 4,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/CryptactGlobal/status/2028930131155136767",
+    "tweet_account": "@CryptactGlobal",
+    "tweet_text": "💡 Tax tip Tuesday:\nDid you realize your crypto losses can offset your gains?\n\nCapital loss harvesting is 100% legal under CRA rules.\n\nCryptact shows you exactly where you stand — gains AND losses.\n\n#TaxTip #CryptoCanada",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2023805975069679766",
+    "tweet_account": "@grok",
+    "tweet_text": "@haseebbig @inspirdanalyst This refers to \"tax loss harvesting\" in crypto. If you buy Bitcoin at $126K and it drops to $68K, selling realizes a $58K capital loss, which can offset gains and reduce taxes (in places like the US, where wash sale rules don't apply to crypto). Buying back immediately lets you keep the Bitcoin. Always check local laws and consult a tax advisor.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2023201932446138638",
+    "tweet_account": "@grok",
+    "tweet_text": "@nelsonbarss @Yellenatme @Tekeee Yes, this tax-loss harvesting strategy works for crypto since US wash sale rules don't apply to it as of 2026. You can realize the $58k loss.\n\nLosses fully offset capital gains. Excess can offset ordinary income up to $3,000/year ($1,500 if married filing separately), with the rest carried forward indefinitely. Consult a tax pro for your situation.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2018788590113730809",
+    "tweet_account": "@grok",
+    "tweet_text": "@Bakule11 @Christophe23067 @saylordocs This is tax-loss harvesting for crypto. If you buy Bitcoin at $126K and it drops to $88K, selling it realizes a $38K capital loss, which can offset other gains and reduce your taxes. You can buy it back seconds later, ending up with the same BTC position. Unlike stocks, US wash-sale rules don't apply to crypto as of 2026, so the loss is deductible. Consult a tax pro for your situation.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/jestimp/status/2017497687864619319",
+    "tweet_account": "@jestimp",
+    "tweet_text": "Demystify crypto tax loss harvesting strategies 🧾—learn how to offset capital gains with crypto losses, comply with global tax laws, and maximize after-tax returns for your DeFi portfolio. @YOM_Official @TermMaxFi @billions_ntwk @Pact_Swap @Zetarium_",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/the_tax_intern/status/2015712540508971256",
+    "tweet_account": "@the_tax_intern",
+    "tweet_text": "@coinbureau his massive $4.5B in realized Bitcoin losses looks like classic tax loss harvesting wrapping up the 2025 tax year—investors locking in losses to offset gains and minimize their bill. In Germany, remember short-term crypto losses can offset other capital gains, but long-term holds (>1 year) are tax-free anyway. Always double-check with a pro!",
+    "tweet_likes": 1,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2009171432547172578",
+    "tweet_account": "@grok",
+    "tweet_text": "@chokelatasli @saylordocs The implied tax purpose is tax-loss harvesting: realizing a capital loss ($38k here) to offset gains on other investments, reducing your overall tax bill. Crypto isn't subject to wash-sale rules (per IRS as of Jan 2026), so you can sell and rebuy instantly without losing the deduction. It's a legal tactic, not cheating the system.",
+    "tweet_likes": 1,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/DEFIRUSH_/status/2008595528939172024",
+    "tweet_account": "@DEFIRUSH_",
+    "tweet_text": "CLAPP GLOSSARY: TAX-LOSS HARVESTING \n\n​ Turn market dips into tax wins. Tax-loss harvesting involves selling crypto at a loss to offset capital gains from other investments, lowering your total tax bill.\n​ With Bitcoin down significantly from its peak while stocks remain high, now is the time to realize losses before the December 31st deadline.\n\n​ A unique advantage? Unlike stocks, crypto currently has no wash sale rule. You can sell to lock in the tax benefit and repurchase immediately to keep your market position. \n\nThis year-end strategy often leads to thin liquidity and range bound trading as investors prioritize tax optimization over new moves. \n\nFor more info... Follow @ClappFinance",
+    "tweet_likes": 21,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2006155816194199686",
+    "tweet_account": "@grok",
+    "tweet_text": "@Tylerp270 @BMNRTracker Tax loss harvesting lets you sell assets at a loss to offset capital gains taxes. For stocks and securities (like ETFs), the wash sale rule applies: you can't claim the loss if you buy back the same or similar asset within 30 days before/after the sale.\n\nCrypto is treated as property, so wash sale rules don't apply—you can sell at a loss, claim it, and repurchase immediately. Always consult a tax pro for your situation.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2005905514442399887",
+    "tweet_account": "@grok",
+    "tweet_text": "@SiriusSunNyks @skumWgmi This describes tax loss harvesting for crypto. If you buy Bitcoin at $126K and it drops to $88K, selling then immediately repurchasing lets you claim a $38K capital loss on taxes (to offset gains), while still owning the same Bitcoin. US wash sale rules don't apply to crypto as of now—it's treated as property, not securities. Always check with a tax advisor for your situation.",
+    "tweet_likes": 1,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2005795116649230765",
+    "tweet_account": "@grok",
+    "tweet_text": "@yk_L2020 @BTCBruce1 The tax loss harvesting example is generally accurate under 2025 US tax rules: capital losses from crypto can offset gains, and wash-sale rules don't apply to crypto. The 40% tax rate assumes high earners (federal long-term max is 20% + 3.8% NIIT, plus state). I couldn't verify a Gemini report with 20-40B USD outflow, but sources show ~$8B in ETF outflows tied to this in 2025. Funds may return in 2026 if markets rebound, but it's uncertain.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/VJLvEekhout/status/2005196890707578919",
+    "tweet_account": "@VJLvEekhout",
+    "tweet_text": "🧵 Why is crypto dipping harder this year at year-end? \n\nIt’s not panic—it’s tax-loss harvesting after a pretty bad year in crypto.\n\nUS investors (whales included) are selling positions at a loss before Dec 31 to offset 2025 capital gains taxes. BTC down ~30% from its peak creates perfect unrealized losses to harvest.\n\nNo wash-sale rule in crypto means they can sell… and buy right back if they want.\n\nPositive spin: True believers & long-term holders aren’t selling, they’re often the ones scooping up these dips.\n\nCome early January, those whales reload into strong projects: $BTC, $ETH, $XRP, and gems like $UFD.\n\nDon’t stare at red candles this week. Zoom out. Focus on fundamentals, tech, community, and your conviction.\n\nThe real accumulation season starts soon. 🚀\n\n2026 is the year of the Unicorn 🦄✨💨\n\n#Crypto #Bitcoin #taxlossharvesting",
+    "tweet_likes": 23,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/3orovik/status/2004683515183628489",
+    "tweet_account": "@3orovik",
+    "tweet_text": "Sponsored by @iTrustCapital\n\nWith year-end volatility, crypto tax loss harvesting is worth understanding\n\n- Crypto is treated as property by the IRS\n- Losses can offset capital gains\n- Up to $3,000 per year can offset ordinary income\n- Unused losses carry forward\n- As of 2025, wash sale rules do not apply to crypto\n\nThis allows investors in taxable crypto accounts to sell at a loss, realize the tax benefit, and repurchase without a mandatory waiting period\n\nNote: This strategy applies to iTrustCapital Premium Custody Accounts only. IRA accounts are already tax-advantaged\n\n$100 bonus: https://t.co/i8riJHKbZG",
+    "tweet_likes": 22,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/schaeffers/status/2004588256772628844",
+    "tweet_account": "@schaeffers",
+    "tweet_text": "The basics of crypto tax-loss harvesting: Sell crypto at a loss to offset capital gains (&amp; up to $3K of income), then rebuy.\n\nKey twist is spot crypto has no wash-sale rule, so you can sell &amp; repurchase the same day!\n\nWhy now? $BTC down, stocks up.. creates a year-end incentive.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2002735307213377732",
+    "tweet_account": "@grok",
+    "tweet_text": "@aaryandhingra_ @ChadSlimeBased Tax loss harvesting involves selling assets at a loss to offset capital gains taxes. In the US for 2025, it applies to crypto like Bitcoin—sell at a loss, buy back right away (no wash sale rule for crypto), and deduct up to $3K from ordinary income, with excess carried forward. Consult a tax pro for your situation.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2002708020732538959",
+    "tweet_account": "@grok",
+    "tweet_text": "@_1Adex @ChadSlimeBased Yes, in the US, this is tax-loss harvesting for crypto. You realize a $37k capital loss by selling, which can offset gains or up to $3k of ordinary income (excess carries over). Wash-sale rules don't apply to crypto as of 2025, so repurchasing immediately is allowed. Consult a tax pro for your situation.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "crypto loss harvesting capital gains offset",
+    "tweet_url": "https://x.com/grok/status/2002655091057217966",
+    "tweet_account": "@grok",
+    "tweet_text": "@garvkapur @ChadSlimeBased In the US, there's no maximum capital loss you can realize through tax loss harvesting in crypto (wash sale rules don't apply as of 2025). You can offset unlimited capital gains, but only up to $3,000 of net losses against ordinary income per year ($1,500 if married filing separately). Excess carries forward. Consult a tax pro for your situation.",
+    "tweet_likes": 0,
+    "matched_reply": "Crypto losses offset W-2 income directly: up to $3k/year, unlimited carryforward. $20k unrealized loss? Harvest now — $3k offset this year, $17k forward. No wash-sale rule to block it. Act before year-end.",
+    "reply_angle": "场景落地型",
+    "match_reason": "同讨论亏损收割策略"
+  },
+  {
+    "search_query": "DeFi swap taxable event IRS 2025",
+    "tweet_url": "https://x.com/SamLedger67/status/2034709481666543732",
+    "tweet_account": "@SamLedger67",
+    "tweet_text": "Tax season reality check: every crypto swap in 2025 is a taxable event.\n\nDeFi trades, NFT flips, LP exits — the IRS counts them all.\n\n1099-DA is rolling out from brokers this year. Don't wait for the form. Your on-chain history IS the record.\n\nGet ahead of it now. #CryptoTax #1099DA #DeFi",
+    "tweet_likes": 0,
+    "matched_reply": "PEPE → BONK without touching USD still triggers capital gains — IRS treats every crypto swap as a disposal at FMV. DeFi traders with 500 swaps/week have 500 taxable events. The dollar never needs to appear.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "DeFi swap taxable event IRS 2025",
+    "tweet_url": "https://x.com/SamLedger67/status/2034498184110641315",
+    "tweet_account": "@SamLedger67",
+    "tweet_text": "IRS Form 1099-DA is here and most crypto holders aren't ready.\n\nEvery DEX swap, DeFi yield event, and NFT sale in 2025 is a taxable event — even if you never touched fiat.\n\nCost basis gaps = audit risk.\n\nGet your on-chain records organized before April 15.\n\n#CryptoTax #1099DA #TaxSeason #DeFi",
+    "tweet_likes": 1,
+    "matched_reply": "PEPE → BONK without touching USD still triggers capital gains — IRS treats every crypto swap as a disposal at FMV. DeFi traders with 500 swaps/week have 500 taxable events. The dollar never needs to appear.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "DeFi swap taxable event IRS 2025",
+    "tweet_url": "https://x.com/SamLedger67/status/2034135686824005788",
+    "tweet_account": "@SamLedger67",
+    "tweet_text": "DeFi traders: Form 1099-DA is coming, but most DEX swaps still won't be broker-reported in 2025.\n\nThat doesn't mean the IRS isn't watching.\n\nEvery swap, LP exit, and yield harvest is a taxable event — and cost basis gaps = audit risk.\n\nDon't wait until April 14 to reconcile thousands of onchain transactions.\n\nIf you traded DeFi this year, start now.\n\n#CryptoTax #1099DA #DeFi #TaxSeason",
+    "tweet_likes": 0,
+    "matched_reply": "PEPE → BONK without touching USD still triggers capital gains — IRS treats every crypto swap as a disposal at FMV. DeFi traders with 500 swaps/week have 500 taxable events. The dollar never needs to appear.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  },
+  {
+    "search_query": "DeFi swap taxable event IRS 2025",
+    "tweet_url": "https://x.com/SamLedger67/status/2033350558195564730",
+    "tweet_account": "@SamLedger67",
+    "tweet_text": "DeFi tax trap most traders miss:\n\nEvery DEX swap = taxable event in the IRS's eyes.\n\n1099-DA rolls out 2025. Brokers now report. The question is how big your liability is.\n\nTop 3 surprise tax bills in DeFi:\n- Token swaps (ETH to USDC = taxable)\n- Staking rewards (income at receipt)\n- LP entry/exit (gain/loss on both legs)\n\nAmended returns beat audits every time.\n\n#CryptoTax #DeFi #1099DA #TaxSeason",
+    "tweet_likes": 0,
+    "matched_reply": "PEPE → BONK without touching USD still triggers capital gains — IRS treats every crypto swap as a disposal at FMV. DeFi traders with 500 swaps/week have 500 taxable events. The dollar never needs to appear.",
+    "reply_angle": "反直觉观点型",
+    "match_reason": "同涉1099-DA申报问题"
+  }
+]
