@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTax — Crypto Accounting & Tax Suite</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","PingFang SC",sans-serif;
+      background:#07070e; color:#fff; overflow-x:hidden;
+    }
+
+    /* ══════════ NAV ══════════ */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      height:60px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 44px;
+      background:rgba(7,7,14,0.85);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(255,255,255,0.055);
+    }
+    .nav-logo{
+      font-size:17px;font-weight:800;letter-spacing:-0.04em;color:#fff;
+      display:flex;align-items:center;gap:9px;text-decoration:none;
+    }
+    .nav-logo-icon{
+      width:31px;height:31px;border-radius:9px;
+      background:linear-gradient(135deg,#6c4fe0,#3b9cff);
+      display:flex;align-items:center;justify-content:center;
+      font-size:15px;
+    }
+    .nav-logo em{font-style:normal;color:#8b6af0;}
+    .nav-links{
+      display:flex;align-items:center;gap:34px;
+      font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.55);
+      list-style:none;
+    }
+    .nav-links a{text-decoration:none;color:inherit;transition:color .2s;}
+    .nav-links a:hover{color:#fff;}
+    .nav-actions{display:flex;align-items:center;gap:10px;}
+    .btn-ghost{
+      font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.65);
+      background:none;border:none;cursor:pointer;padding:7px 15px;
+      border-radius:8px;transition:color .2s,background .2s;
+    }
+    .btn-ghost:hover{color:#fff;background:rgba(255,255,255,0.07);}
+    .btn-primary{
+      font-size:13.5px;font-weight:600;color:#fff;
+      background:linear-gradient(135deg,#6c4fe0,#3b9cff);
+      border:none;cursor:pointer;padding:8px 20px;
+      border-radius:9px;transition:opacity .2s,transform .15s;
+      box-shadow:0 0 28px rgba(108,79,224,0.45);
+    }
+    .btn-primary:hover{opacity:0.86;transform:translateY(-1px);}
+
+    /* ══════════ HERO ══════════ */
+    .hero{
+      min-height:100vh;
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:flex-start;
+      padding:136px 40px 100px;
+      position:relative;overflow:hidden;
+    }
+    /* ambient glow */
+    .hero::before{
+      content:'';position:absolute;top:-220px;left:50%;transform:translateX(-50%);
+      width:1000px;height:680px;
+      background:radial-gradient(ellipse at center,
+        rgba(108,79,224,0.20) 0%,rgba(59,156,255,0.10) 38%,transparent 68%);
+      pointer-events:none;
+    }
+    /* bottom fade */
+    .hero::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:200px;
+      background:linear-gradient(to bottom,transparent,#07070e);
+      pointer-events:none;z-index:3;
+    }
+
+    /* badge */
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(108,79,224,0.12);
+      border:1px solid rgba(108,79,224,0.28);
+      border-radius:100px;
+      padding:6px 14px 6px 8px;
+      font-size:12.5px;font-weight:500;color:rgba(255,255,255,0.82);
+      margin-bottom:30px;cursor:pointer;
+      transition:background .2s,border-color .2s;
+    }
+    .hero-badge:hover{background:rgba(108,79,224,0.20);border-color:rgba(108,79,224,0.45);}
+    .badge-chip{
+      display:flex;align-items:center;gap:4px;
+      background:linear-gradient(135deg,#6c4fe0,#3b9cff);
+      border-radius:20px;padding:3px 9px;
+      font-size:10.5px;font-weight:700;color:#fff;letter-spacing:0.04em;
+    }
+    .badge-text{color:rgba(255,255,255,0.75);}
+    .badge-arrow{color:rgba(255,255,255,0.35);font-size:11px;margin-left:2px;}
+
+    /* headline */
+    .hero-h1{
+      font-size:clamp(38px,5.2vw,74px);
+      font-weight:800;line-height:1.1;
+      letter-spacing:-0.04em;text-align:center;
+      max-width:900px;margin-bottom:20px;
+    }
+    .grad-white{
+      background:linear-gradient(180deg,#fff 60%,rgba(255,255,255,0.62));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .grad-purple{
+      background:linear-gradient(90deg,#a78bfa,#60a5fa);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+
+    /* subtitle */
+    .hero-sub{
+      font-size:clamp(15px,1.55vw,19px);
+      color:rgba(255,255,255,0.42);text-align:center;
+      max-width:510px;line-height:1.68;margin-bottom:36px;
+    }
+
+    /* CTAs */
+    .hero-ctas{
+      display:flex;align-items:center;gap:12px;margin-bottom:50px;
+    }
+    .cta-main{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:15px;font-weight:600;color:#fff;
+      background:linear-gradient(135deg,#6c4fe0,#3b9cff);
+      border:none;cursor:pointer;padding:13px 30px;border-radius:11px;
+      box-shadow:0 0 48px rgba(108,79,224,0.48),0 6px 20px rgba(0,0,0,0.35);
+      transition:opacity .2s,transform .15s;
+    }
+    .cta-main:hover{opacity:0.86;transform:translateY(-2px);}
+    .cta-secondary{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);
+      background:rgba(255,255,255,0.055);
+      border:1px solid rgba(255,255,255,0.11);
+      cursor:pointer;padding:13px 26px;border-radius:11px;
+      transition:background .2s,border-color .2s,color .2s;
+    }
+    .cta-secondary:hover{background:rgba(255,255,255,0.09);border-color:rgba(255,255,255,0.20);color:#fff;}
+
+    /* social proof */
+    .hero-proof{
+      display:flex;align-items:center;gap:16px;
+      font-size:12.5px;color:rgba(255,255,255,0.36);
+      margin-bottom:60px;
+    }
+    .proof-avatars{display:flex;}
+    .proof-avatar{
+      width:27px;height:27px;border-radius:50%;
+      border:2px solid #07070e;margin-left:-9px;
+      display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+    }
+    .proof-avatar:first-child{margin-left:0;}
+    .av1{background:linear-gradient(135deg,#f472b6,#fb923c);}
+    .av2{background:linear-gradient(135deg,#34d399,#0d9488);}
+    .av3{background:linear-gradient(135deg,#60a5fa,#6c4fe0);}
+    .av4{background:linear-gradient(135deg,#facc15,#f97316);}
+    .av5{background:linear-gradient(135deg,#a78bfa,#ec4899);}
+    .proof-sep{width:1px;height:14px;background:rgba(255,255,255,0.12);}
+    .proof-hl{color:rgba(255,255,255,0.72);font-weight:600;}
+
+    /* ══════════ PRODUCT MOCKUP WRAPPER ══════════ */
+    .mockup-wrap{
+      position:relative;width:min(1120px,92vw);z-index:2;
+    }
+
+    /* tab switcher */
+    .mockup-tabs{
+      display:flex;align-items:center;justify-content:center;
+      gap:6px;margin-bottom:20px;
+    }
+    .mtab{
+      display:flex;align-items:center;gap:7px;
+      padding:8px 18px;border-radius:10px;
+      font-size:13px;font-weight:500;
+      color:rgba(255,255,255,0.42);
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.07);
+      cursor:pointer;transition:all .22s;user-select:none;
+    }
+    .mtab:hover{color:rgba(255,255,255,0.72);background:rgba(255,255,255,0.07);}
+    .mtab.active{
+      color:#fff;
+      background:rgba(108,79,224,0.18);
+      border-color:rgba(108,79,224,0.40);
+      box-shadow:0 0 20px rgba(108,79,224,0.20);
+    }
+    .mtab-icon{font-size:15px;}
+
+    /* browser chrome */
+    .product-browser{
+      background:#0f0f1c;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;overflow:hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03),
+        0 50px 120px rgba(0,0,0,0.8),
+        0 0 100px rgba(108,79,224,0.14);
+    }
+    .browser-bar{
+      height:44px;background:#141421;
+      border-bottom:1px solid rgba(255,255,255,0.055);
+      display:flex;align-items:center;padding:0 18px;gap:12px;
+      flex-shrink:0;
+    }
+    .browser-dots{display:flex;gap:7px;}
+    .bd{width:12px;height:12px;border-radius:50%;}
+    .bd-r{background:#ff5f57;}.bd-y{background:#febc2e;}.bd-g{background:#28c840;}
+    .browser-url{
+      flex:1;max-width:300px;margin:0 auto;
+      background:rgba(255,255,255,0.045);border-radius:7px;
+      height:26px;display:flex;align-items:center;justify-content:center;
+      font-size:11.5px;color:rgba(255,255,255,0.28);
+    }
+
+    /* ══════ SHARED DASH SHELL ══════ */
+    .dash{display:flex;height:510px;overflow:hidden;}
+
+    /* sidebar */
+    .dash-sidebar{
+      width:196px;flex-shrink:0;
+      background:#0b0b17;
+      border-right:1px solid rgba(255,255,255,0.048);
+      padding:18px 12px 18px;
+      display:flex;flex-direction:column;gap:2px;
+    }
+    .dash-logo{
+      font-size:14px;font-weight:800;color:#fff;
+      padding:2px 10px 16px;letter-spacing:-0.03em;display:flex;align-items:center;gap:7px;
+    }
+    .dash-logo-icon{
+      width:24px;height:24px;border-radius:6px;flex-shrink:0;
+      background:linear-gradient(135deg,#6c4fe0,#3b9cff);
+      display:flex;align-items:center;justify-content:center;font-size:12px;
+    }
+    .dash-logo em{font-style:normal;color:#8b6af0;}
+    .dnav{
+      display:flex;align-items:center;gap:9px;
+      padding:8px 10px;border-radius:9px;
+      font-size:12.5px;font-weight:500;
+      color:rgba(255,255,255,0.42);cursor:pointer;
+    }
+    .dnav.active{background:rgba(108,79,224,0.18);color:#c4b5fd;}
+    .dnav-icon{
+      width:28px;height:28px;border-radius:7px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;font-size:14px;
+    }
+    /* per-item icon gradients */
+    .ic-dash  {background:linear-gradient(135deg,#6c4fe0,#3b9cff);}
+    .ic-acct  {background:linear-gradient(135deg,#0ea5e9,#06b6d4);}
+    .ic-calc  {background:linear-gradient(135deg,#10b981,#059669);}
+    .ic-consult{background:linear-gradient(135deg,#f59e0b,#ef4444);}
+    .ic-audit {background:linear-gradient(135deg,#8b5cf6,#ec4899);}
+    .ic-report{background:linear-gradient(135deg,#6366f1,#a855f7);}
+    .ic-set   {background:rgba(255,255,255,0.07);}
+    .dnav-spacer{flex:1;}
+
+    /* ══════ SCREEN PANELS ══════ */
+    .screen{
+      flex:1;overflow:hidden;
+      display:none;opacity:0;
+      transition:opacity .32s ease;
+    }
+    .screen.visible{display:flex;opacity:0;flex-direction:column;}
+    .screen.show{opacity:1;}
+
+    /* ──── SCREEN 1: Dashboard ──── */
+    #scr-dash{
+      background:#0f0f1c;padding:22px 24px;
+      display:flex;flex-direction:column;gap:16px;
+    }
+    .scr-topbar{
+      display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
+    }
+    .scr-title{font-size:16px;font-weight:700;color:#fff;}
+    .period-group{display:flex;gap:3px;background:rgba(255,255,255,0.05);border-radius:8px;padding:3px;}
+    .pbtn{font-size:11px;padding:4px 11px;border-radius:6px;color:rgba(255,255,255,0.38);cursor:pointer;font-weight:500;}
+    .pbtn.active{background:rgba(108,79,224,0.25);color:#c4b5fd;}
+
+    .kpi-row{display:flex;gap:10px;flex-shrink:0;}
+    .kcard{
+      flex:1;background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:14px 16px;
+    }
+    .kcard-label{font-size:10.5px;color:rgba(255,255,255,0.36);margin-bottom:8px;font-weight:500;}
+    .kcard-val{font-size:21px;font-weight:700;color:#fff;line-height:1;letter-spacing:-0.02em;}
+    .kbadge{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:10px;font-weight:600;
+      padding:2px 8px;border-radius:20px;margin-top:7px;
+    }
+    .kb-up{background:rgba(52,211,153,0.13);color:#34d399;}
+    .kb-dn{background:rgba(251,113,133,0.13);color:#fb7185;}
+    .kb-neu{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.45);}
+
+    .chart-row{display:flex;gap:10px;flex:1;min-height:0;}
+    .chart-main{
+      flex:1;background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:16px;
+      display:flex;flex-direction:column;gap:10px;overflow:hidden;
+    }
+    .chart-hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+    .chart-lbl{font-size:12px;font-weight:600;color:rgba(255,255,255,0.68);}
+    .chart-sub{font-size:10px;color:rgba(255,255,255,0.24);}
+    .chart-bars{
+      flex:1;display:flex;align-items:flex-end;gap:5px;
+      padding:0 4px 2px;
+    }
+    .bg{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+    .bbar{
+      width:100%;border-radius:4px 4px 0 0;
+      background:linear-gradient(to top,#6c4fe0,#5ba0ff);
+      transition:height .4s ease;
+    }
+    .bbar.dim{background:rgba(108,79,224,0.22);}
+    .blbl{font-size:8.5px;color:rgba(255,255,255,0.22);}
+
+    .chart-side{
+      width:188px;flex-shrink:0;
+      background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:14px 14px;
+      display:flex;flex-direction:column;gap:10px;overflow:hidden;
+    }
+    .cs-title{font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.58);}
+    .tx-row{
+      display:flex;align-items:center;gap:9px;
+      padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+    .tx-row:last-child{border:none;}
+    .tx-icon{
+      width:30px;height:30px;border-radius:8px;
+      display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;
+    }
+    .tx-info{flex:1;min-width:0;}
+    .tx-name{font-size:11px;font-weight:600;color:rgba(255,255,255,0.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .tx-date{font-size:9.5px;color:rgba(255,255,255,0.26);}
+    .tx-amt{font-size:11.5px;font-weight:700;white-space:nowrap;}
+    .tup{color:#34d399;}.tdn{color:#fb7185;}
+
+    /* ──── SCREEN 2: Accounting ──── */
+    #scr-acct{
+      background:#0f0f1c;padding:22px 24px;
+      flex-direction:column;gap:16px;
+    }
+    .ledger-hdr{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+    .ledger-title{font-size:16px;font-weight:700;color:#fff;}
+    .ledger-filter{
+      display:flex;gap:4px;
+    }
+    .lfbtn{
+      font-size:11px;padding:5px 12px;border-radius:7px;
+      background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);
+      color:rgba(255,255,255,0.4);cursor:pointer;font-weight:500;transition:all .2s;
+    }
+    .lfbtn.active{background:rgba(108,79,224,0.18);border-color:rgba(108,79,224,0.35);color:#c4b5fd;}
+
+    .ledger-summary{display:flex;gap:10px;flex-shrink:0;}
+    .lsum{
+      flex:1;background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:14px 16px;
+    }
+    .lsum-lbl{font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:6px;font-weight:500;}
+    .lsum-val{font-size:18px;font-weight:700;color:#fff;letter-spacing:-0.02em;}
+    .lsum-sub{font-size:10px;margin-top:5px;font-weight:600;}
+
+    .ledger-table{
+      flex:1;background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;overflow:hidden;display:flex;flex-direction:column;
+    }
+    .table-head{
+      display:grid;grid-template-columns:1.8fr 1.2fr 1fr 1fr 0.9fr;
+      padding:10px 16px;
+      border-bottom:1px solid rgba(255,255,255,0.055);
+      font-size:10.5px;font-weight:600;
+      color:rgba(255,255,255,0.32);letter-spacing:0.03em;
+    }
+    .table-body{flex:1;overflow-y:auto;}
+    .table-body::-webkit-scrollbar{width:0;}
+    .tr{
+      display:grid;grid-template-columns:1.8fr 1.2fr 1fr 1fr 0.9fr;
+      padding:10px 16px;align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.035);
+      font-size:12px;color:rgba(255,255,255,0.75);
+      transition:background .15s;
+    }
+    .tr:last-child{border:none;}
+    .tr:hover{background:rgba(108,79,224,0.06);}
+    .tr-asset{display:flex;align-items:center;gap:8px;}
+    .tr-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+    .tr-name{font-weight:600;color:#fff;}
+    .tr-sub{font-size:10px;color:rgba(255,255,255,0.3);}
+    .status-dot{
+      display:inline-flex;align-items:center;gap:5px;
+      font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:20px;
+    }
+    .st-ok{background:rgba(52,211,153,0.12);color:#34d399;}
+    .st-pend{background:rgba(251,191,36,0.12);color:#fbbf24;}
+    .st-rev{background:rgba(108,79,224,0.14);color:#a78bfa;}
+
+    /* ──── SCREEN 3: Tax Calc ──── */
+    #scr-calc{
+      background:#0f0f1c;padding:22px 24px;
+      flex-direction:column;gap:16px;
+    }
+    .calc-layout{display:flex;gap:14px;flex:1;min-height:0;}
+    .calc-form{
+      width:240px;flex-shrink:0;
+      background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:18px;
+      display:flex;flex-direction:column;gap:13px;overflow-y:auto;
+    }
+    .calc-form::-webkit-scrollbar{width:0;}
+    .form-title{font-size:13px;font-weight:700;color:#fff;}
+    .form-field{display:flex;flex-direction:column;gap:5px;}
+    .form-label{font-size:10.5px;font-weight:600;color:rgba(255,255,255,0.38);}
+    .form-input{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.09);
+      border-radius:8px;padding:9px 12px;
+      font-size:13px;color:#fff;width:100%;
+      transition:border-color .2s;
+    }
+    .form-input:focus{outline:none;border-color:rgba(108,79,224,0.55);}
+    .form-input.highlight{border-color:rgba(108,79,224,0.38);background:rgba(108,79,224,0.07);}
+    .form-select{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.09);
+      border-radius:8px;padding:9px 12px;
+      font-size:12.5px;color:rgba(255,255,255,0.75);width:100%;
+    }
+    .calc-btn{
+      background:linear-gradient(135deg,#6c4fe0,#3b9cff);
+      border:none;border-radius:9px;padding:11px;
+      font-size:13px;font-weight:700;color:#fff;cursor:pointer;
+      box-shadow:0 0 24px rgba(108,79,224,0.35);
+    }
+
+    .calc-results{
+      flex:1;display:flex;flex-direction:column;gap:12px;overflow:hidden;
+    }
+    .result-main{
+      background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:20px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:6px;text-align:center;
+    }
+    .result-label{font-size:11px;color:rgba(255,255,255,0.36);font-weight:500;}
+    .result-value{font-size:36px;font-weight:800;color:#fff;letter-spacing:-0.04em;}
+    .result-value span{font-size:16px;font-weight:600;color:rgba(255,255,255,0.4);}
+    .result-eff{font-size:12px;color:rgba(255,255,255,0.4);}
+    .result-eff strong{color:#a78bfa;}
+
+    .breakdown-row{display:flex;gap:12px;flex:1;min-height:0;}
+    .bk-card{
+      flex:1;background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;
+    }
+    .bk-title{font-size:11px;font-weight:600;color:rgba(255,255,255,0.45);}
+    .bk-item{display:flex;justify-content:space-between;align-items:center;}
+    .bk-name{font-size:11.5px;color:rgba(255,255,255,0.65);}
+    .bk-val{font-size:12px;font-weight:600;color:#fff;}
+    .bk-sep{height:1px;background:rgba(255,255,255,0.05);margin:2px 0;}
+
+    .tax-bar{
+      height:8px;border-radius:4px;
+      background:linear-gradient(90deg,#6c4fe0,#3b9cff);
+      margin-top:2px;
+    }
+
+    /* ──── SCREEN 4: Reports ──── */
+    #scr-report{
+      background:#0f0f1c;padding:22px 24px;
+      flex-direction:column;gap:16px;
+    }
+    .report-hdr{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+    .report-title{font-size:16px;font-weight:700;color:#fff;}
+    .gen-btn{
+      display:flex;align-items:center;gap:6px;
+      background:linear-gradient(135deg,#6c4fe0,#3b9cff);
+      border:none;border-radius:8px;padding:8px 16px;
+      font-size:12px;font-weight:600;color:#fff;cursor:pointer;
+      box-shadow:0 0 18px rgba(108,79,224,0.3);
+    }
+
+    .report-stats{display:flex;gap:10px;flex-shrink:0;}
+    .rs{
+      flex:1;background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;padding:14px 16px;
+      display:flex;align-items:center;gap:12px;
+    }
+    .rs-icon{
+      width:36px;height:36px;border-radius:9px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;font-size:18px;
+    }
+    .rs-info{}
+    .rs-val{font-size:19px;font-weight:700;color:#fff;letter-spacing:-0.02em;}
+    .rs-lbl{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px;}
+
+    .report-list{
+      flex:1;background:#161626;border:1px solid rgba(255,255,255,0.058);
+      border-radius:12px;overflow:hidden;display:flex;flex-direction:column;
+    }
+    .rl-head{
+      display:grid;grid-template-columns:2fr 1.2fr 1fr 0.9fr 0.9fr;
+      padding:10px 18px;border-bottom:1px solid rgba(255,255,255,0.055);
+      font-size:10.5px;font-weight:600;color:rgba(255,255,255,0.30);letter-spacing:0.03em;
+    }
+    .rl-body{flex:1;overflow-y:auto;}
+    .rl-body::-webkit-scrollbar{width:0;}
+    .rr{
+      display:grid;grid-template-columns:2fr 1.2fr 1fr 0.9fr 0.9fr;
+      padding:12px 18px;align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.032);
+      font-size:12px;color:rgba(255,255,255,0.7);
+      transition:background .15s;cursor:pointer;
+    }
+    .rr:hover{background:rgba(108,79,224,0.06);}
+    .rr:last-child{border:none;}
+    .rr-name{display:flex;align-items:center;gap:9px;}
+    .rr-file-icon{
+      width:28px;height:28px;border-radius:7px;
+      display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;
+    }
+    .rr-fname{font-weight:600;color:#fff;font-size:12px;}
+    .rr-ftype{font-size:10px;color:rgba(255,255,255,0.28);}
+    .dl-btn{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:10.5px;font-weight:600;
+      background:rgba(108,79,224,0.14);color:#a78bfa;
+      border:none;padding:4px 10px;border-radius:6px;cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">₿</div>
+    Fin<em>Tax</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Case Studies</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-ghost">Sign in</button>
+    <button class="btn-primary">Get started free</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-badge">
+    <div class="badge-chip">✦ NEW</div>
+    <span class="badge-text">FinTax Suite 3.0 — AI Tax Advisor now live</span>
+    <span class="badge-arrow">→</span>
+  </div>
+
+  <h1 class="hero-h1">
+    <span class="grad-white">Crypto accounting,</span><br>
+    <span class="grad-purple">tax calculator</span>
+    <span class="grad-white"> &amp; professional</span><br>
+    <span class="grad-white">tax consulting services.</span>
+  </h1>
+
+  <p class="hero-sub">
+    FinTax unifies compliance, calculation, and expert consulting
+    into one seamless platform — built for the speed of crypto finance.
+  </p>
+
+  <div class="hero-ctas">
+    <button class="cta-main">Get started free →</button>
+    <button class="cta-secondary">▶&nbsp; See how FinTax works</button>
+  </div>
+
+  <div class="hero-proof">
+    <div class="proof-avatars">
+      <div class="proof-avatar av1">A</div>
+      <div class="proof-avatar av2">J</div>
+      <div class="proof-avatar av3">M</div>
+      <div class="proof-avatar av4">K</div>
+      <div class="proof-avatar av5">L</div>
+    </div>
+    <span>Trusted by <span class="proof-hl">10,000+</span> companies</span>
+    <div class="proof-sep"></div>
+    <span>★★★★★&nbsp;<span class="proof-hl">4.9</span> on G2</span>
+    <div class="proof-sep"></div>
+    <span>No credit card required</span>
+  </div>
+
+  <!-- product mockup -->
+  <div class="mockup-wrap">
+
+    <!-- tab switcher -->
+    <div class="mockup-tabs">
+      <div class="mtab active" data-target="dash">
+        <span class="mtab-icon">📊</span> Dashboard
+      </div>
+      <div class="mtab" data-target="acct">
+        <span class="mtab-icon">🗂️</span> Accounting
+      </div>
+      <div class="mtab" data-target="calc">
+        <span class="mtab-icon">🧮</span> Tax Calculator
+      </div>
+      <div class="mtab" data-target="report">
+        <span class="mtab-icon">📁</span> Reports
+      </div>
+    </div>
+
+    <div class="product-browser">
+
+      <!-- browser chrome -->
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <div class="bd bd-r"></div><div class="bd bd-y"></div><div class="bd bd-g"></div>
+        </div>
+        <div class="browser-url" id="urlBar">app.fintax.tech / dashboard</div>
+      </div>
+
+      <!-- SHARED SIDEBAR + SCREENS -->
+      <div class="dash">
+
+        <!-- sidebar (always visible) -->
+        <div class="dash-sidebar">
+          <div class="dash-logo">
+            <div class="dash-logo-icon">₿</div>
+            Fin<em>Tax</em>
+          </div>
+          <div class="dnav active" id="snav-dash"><div class="dnav-icon ic-dash">📊</div>Dashboard</div>
+          <div class="dnav"         id="snav-acct"><div class="dnav-icon ic-acct">🗂️</div>Accounting</div>
+          <div class="dnav"         id="snav-calc"><div class="dnav-icon ic-calc">🧮</div>Tax Calc</div>
+          <div class="dnav"         id="snav-consult"><div class="dnav-icon ic-consult">💼</div>Consulting</div>
+          <div class="dnav"         id="snav-audit"><div class="dnav-icon ic-audit">🔍</div>Audit</div>
+          <div class="dnav"         id="snav-report"><div class="dnav-icon ic-report">📁</div>Reports</div>
+          <div class="dnav-spacer"></div>
+          <div class="dnav"><div class="dnav-icon ic-set">⚙️</div>Settings</div>
+        </div>
+
+        <!-- ═══ SCREEN 1: Dashboard ═══ -->
+        <div class="screen visible show" id="scr-dash" style="display:flex;">
+          <div class="scr-topbar">
+            <div class="scr-title">Tax Overview</div>
+            <div class="period-group">
+              <div class="pbtn">1M</div>
+              <div class="pbtn">3M</div>
+              <div class="pbtn active">YTD</div>
+              <div class="pbtn">1Y</div>
+            </div>
+          </div>
+
+          <div class="kpi-row">
+            <div class="kcard">
+              <div class="kcard-label">Total Tax Liability</div>
+              <div class="kcard-val">¥ 2,481,000</div>
+              <div class="kbadge kb-dn">↓ 12.4% vs last year</div>
+            </div>
+            <div class="kcard">
+              <div class="kcard-label">Crypto Gains (BTC/ETH)</div>
+              <div class="kcard-val">¥ 8,340,000</div>
+              <div class="kbadge kb-up">↑ 34.1%</div>
+            </div>
+            <div class="kcard">
+              <div class="kcard-label">Deductions Applied</div>
+              <div class="kcard-val">¥ 620,000</div>
+              <div class="kbadge kb-neu">8 items</div>
+            </div>
+            <div class="kcard">
+              <div class="kcard-label">Compliance Score</div>
+              <div class="kcard-val">98.6%</div>
+              <div class="kbadge kb-up">↑ Excellent</div>
+            </div>
+          </div>
+
+          <div class="chart-row">
+            <div class="chart-main">
+              <div class="chart-hdr">
+                <span class="chart-lbl">Monthly Tax Position</span>
+                <span class="chart-sub">Jan – Dec 2024</span>
+              </div>
+              <div class="chart-bars">
+                <div class="bg"><div class="bbar dim"  style="height:38%"></div><div class="blbl">Jan</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:52%"></div><div class="blbl">Feb</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:44%"></div><div class="blbl">Mar</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:62%"></div><div class="blbl">Apr</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:55%"></div><div class="blbl">May</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:70%"></div><div class="blbl">Jun</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:66%"></div><div class="blbl">Jul</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:79%"></div><div class="blbl">Aug</div></div>
+                <div class="bg"><div class="bbar dim"  style="height:72%"></div><div class="blbl">Sep</div></div>
+                <div class="bg"><div class="bbar"      style="height:88%"></div><div class="blbl">Oct</div></div>
+                <div class="bg"><div class="bbar"      style="height:96%"></div><div class="blbl">Nov</div></div>
+                <div class="bg"><div class="bbar"      style="height:82%"></div><div class="blbl">Dec</div></div>
+              </div>
+            </div>
+            <div class="chart-side">
+              <div class="cs-title">Recent Transactions</div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(251,191,36,0.15)">₿</div>
+                <div class="tx-info"><div class="tx-name">BTC Sale</div><div class="tx-date">Dec 28</div></div>
+                <div class="tx-amt tup">+¥42,000</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(100,116,139,0.15)">Ξ</div>
+                <div class="tx-info"><div class="tx-name">ETH Swap</div><div class="tx-date">Dec 27</div></div>
+                <div class="tx-amt tdn">−¥8,400</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(52,211,153,0.15)">💹</div>
+                <div class="tx-info"><div class="tx-name">Staking Reward</div><div class="tx-date">Dec 26</div></div>
+                <div class="tx-amt tup">+¥1,260</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(167,139,250,0.15)">🔍</div>
+                <div class="tx-info"><div class="tx-name">Audit Filed</div><div class="tx-date">Dec 24</div></div>
+                <div class="tx-amt" style="color:rgba(255,255,255,0.3)">—</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(249,115,22,0.15)">📄</div>
+                <div class="tx-info"><div class="tx-name">Q4 Report</div><div class="tx-date">Dec 23</div></div>
+                <div class="tx-amt tdn">−¥3,800</div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /#scr-dash -->
+
+        <!-- ═══ SCREEN 2: Accounting ═══ -->
+        <div class="screen" id="scr-acct" style="display:none;padding:22px 24px;gap:16px;background:#0f0f1c;flex-direction:column;">
+          <div class="ledger-hdr">
+            <div class="ledger-title">Crypto Ledger</div>
+            <div class="ledger-filter">
+              <div class="lfbtn active">All</div>
+              <div class="lfbtn">BTC</div>
+              <div class="lfbtn">ETH</div>
+              <div class="lfbtn">USDT</div>
+              <div class="lfbtn">Other</div>
+            </div>
+          </div>
+
+          <div class="ledger-summary">
+            <div class="lsum">
+              <div class="lsum-lbl">Total Portfolio Value</div>
+              <div class="lsum-val">¥ 18,742,000</div>
+              <div class="lsum-sub" style="color:#34d399">↑ +¥2,340,000 (14.3%) this year</div>
+            </div>
+            <div class="lsum">
+              <div class="lsum-lbl">Realized Gains</div>
+              <div class="lsum-val">¥ 8,340,000</div>
+              <div class="lsum-sub" style="color:#a78bfa">Taxable: ¥ 6,212,000</div>
+            </div>
+            <div class="lsum">
+              <div class="lsum-lbl">Unrealized Gains</div>
+              <div class="lsum-val">¥ 3,108,000</div>
+              <div class="lsum-sub" style="color:#fbbf24">9 positions open</div>
+            </div>
+          </div>
+
+          <div class="ledger-table">
+            <div class="table-head">
+              <span>ASSET</span><span>AMOUNT</span><span>COST BASIS</span><span>GAIN/LOSS</span><span>STATUS</span>
+            </div>
+            <div class="table-body">
+              <div class="tr">
+                <div class="tr-asset"><div class="tr-icon" style="background:rgba(251,191,36,0.15)">₿</div><div><div class="tr-name">Bitcoin</div><div class="tr-sub">BTC</div></div></div>
+                <span>2.4820 BTC</span><span>¥ 312,000</span><span style="color:#34d399">+¥ 980,000</span>
+                <span class="status-dot st-ok">● Matched</span>
+              </div>
+              <div class="tr">
+                <div class="tr-asset"><div class="tr-icon" style="background:rgba(100,116,139,0.15)">Ξ</div><div><div class="tr-name">Ethereum</div><div class="tr-sub">ETH</div></div></div>
+                <span>18.340 ETH</span><span>¥ 241,000</span><span style="color:#34d399">+¥ 442,000</span>
+                <span class="status-dot st-ok">● Matched</span>
+              </div>
+              <div class="tr">
+                <div class="tr-asset"><div class="tr-icon" style="background:rgba(52,211,153,0.15)">💵</div><div><div class="tr-name">Tether</div><div class="tr-sub">USDT</div></div></div>
+                <span>50,000 USDT</span><span>¥ 362,000</span><span style="color:rgba(255,255,255,0.4)">¥ 0</span>
+                <span class="status-dot st-ok">● Matched</span>
+              </div>
+              <div class="tr">
+                <div class="tr-asset"><div class="tr-icon" style="background:rgba(249,115,22,0.15)">🔶</div><div><div class="tr-name">Solana</div><div class="tr-sub">SOL</div></div></div>
+                <span>420 SOL</span><span>¥ 88,000</span><span style="color:#34d399">+¥ 136,000</span>
+                <span class="status-dot st-pend">● Pending</span>
+              </div>
+              <div class="tr">
+                <div class="tr-asset"><div class="tr-icon" style="background:rgba(167,139,250,0.15)">💜</div><div><div class="tr-name">Polygon</div><div class="tr-sub">MATIC</div></div></div>
+                <span>12,000 MATIC</span><span>¥ 54,000</span><span style="color:#fb7185">−¥ 18,000</span>
+                <span class="status-dot st-rev">● Review</span>
+              </div>
+              <div class="tr">
+                <div class="tr-asset"><div class="tr-icon" style="background:rgba(59,156,255,0.15)">🔵</div><div><div class="tr-name">Chainlink</div><div class="tr-sub">LINK</div></div></div>
+                <span>3,200 LINK</span><span>¥ 41,000</span><span style="color:#34d399">+¥ 64,000</span>
+                <span class="status-dot st-ok">● Matched</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- /#scr-acct -->
+
+        <!-- ═══ SCREEN 3: Tax Calculator ═══ -->
+        <div class="screen" id="scr-calc" style="display:none;padding:22px 24px;gap:16px;background:#0f0f1c;flex-direction:column;">
+          <div class="scr-topbar">
+            <div class="scr-title">Tax Calculator</div>
+            <div class="kbadge kb-up" style="font-size:11px;padding:4px 12px;">AI-Powered ✦</div>
+          </div>
+
+          <div class="calc-layout">
+            <div class="calc-form">
+              <div class="form-title">Input Parameters</div>
+              <div class="form-field">
+                <div class="form-label">TAX YEAR</div>
+                <select class="form-select"><option>2024</option><option>2023</option></select>
+              </div>
+              <div class="form-field">
+                <div class="form-label">TOTAL CRYPTO INCOME (¥)</div>
+                <input class="form-input highlight" type="text" value="8,340,000" />
+              </div>
+              <div class="form-field">
+                <div class="form-label">CAPITAL GAINS (¥)</div>
+                <input class="form-input" type="text" value="3,240,000" />
+              </div>
+              <div class="form-field">
+                <div class="form-label">STAKING REWARDS (¥)</div>
+                <input class="form-input" type="text" value="124,800" />
+              </div>
+              <div class="form-field">
+                <div class="form-label">DEDUCTIONS (¥)</div>
+                <input class="form-input" type="text" value="620,000" />
+              </div>
+              <div class="form-field">
+                <div class="form-label">ENTITY TYPE</div>
+                <select class="form-select"><option>Enterprise</option><option>Individual</option></select>
+              </div>
+              <button class="calc-btn">Calculate Tax →</button>
+            </div>
+
+            <div class="calc-results">
+              <div class="result-main">
+                <div class="result-label">ESTIMATED TAX LIABILITY</div>
+                <div class="result-value">¥ 2,481,000 <span>CNY</span></div>
+                <div class="result-eff">Effective rate: <strong>29.8%</strong> &nbsp;·&nbsp; Savings vs. standard: <strong style="color:#34d399">¥ 340,000</strong></div>
+              </div>
+
+              <div class="breakdown-row">
+                <div class="bk-card">
+                  <div class="bk-title">TAX BREAKDOWN</div>
+                  <div class="bk-item"><span class="bk-name">Income Tax</span><span class="bk-val">¥ 1,668,000</span></div>
+                  <div class="tax-bar" style="width:100%"></div>
+                  <div class="bk-sep"></div>
+                  <div class="bk-item"><span class="bk-name">Capital Gains Tax</span><span class="bk-val">¥ 648,000</span></div>
+                  <div class="tax-bar" style="width:39%"></div>
+                  <div class="bk-sep"></div>
+                  <div class="bk-item"><span class="bk-name">Staking Tax</span><span class="bk-val">¥ 165,000</span></div>
+                  <div class="tax-bar" style="width:10%"></div>
+                </div>
+                <div class="bk-card">
+                  <div class="bk-title">DEDUCTIONS APPLIED</div>
+                  <div class="bk-item"><span class="bk-name">Business Expenses</span><span class="bk-val" style="color:#34d399">−¥ 280,000</span></div>
+                  <div class="bk-item"><span class="bk-name">R&amp;D Credit</span><span class="bk-val" style="color:#34d399">−¥ 180,000</span></div>
+                  <div class="bk-item"><span class="bk-name">Loss Carryforward</span><span class="bk-val" style="color:#34d399">−¥ 160,000</span></div>
+                  <div class="bk-sep"></div>
+                  <div class="bk-item"><span class="bk-name" style="font-weight:700;color:#fff">Total Saved</span><span class="bk-val" style="color:#a78bfa">−¥ 620,000</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /#scr-calc -->
+
+        <!-- ═══ SCREEN 4: Reports ═══ -->
+        <div class="screen" id="scr-report" style="display:none;padding:22px 24px;gap:16px;background:#0f0f1c;flex-direction:column;">
+          <div class="report-hdr">
+            <div class="report-title">Tax Reports</div>
+            <button class="gen-btn">✦ Generate New Report</button>
+          </div>
+
+          <div class="report-stats">
+            <div class="rs">
+              <div class="rs-icon" style="background:rgba(108,79,224,0.15)">📄</div>
+              <div class="rs-info"><div class="rs-val">24</div><div class="rs-lbl">Reports Generated</div></div>
+            </div>
+            <div class="rs">
+              <div class="rs-icon" style="background:rgba(52,211,153,0.12)">✅</div>
+              <div class="rs-info"><div class="rs-val">18</div><div class="rs-lbl">Filed & Approved</div></div>
+            </div>
+            <div class="rs">
+              <div class="rs-icon" style="background:rgba(251,191,36,0.12)">⏳</div>
+              <div class="rs-info"><div class="rs-val">4</div><div class="rs-lbl">Pending Review</div></div>
+            </div>
+            <div class="rs">
+              <div class="rs-icon" style="background:rgba(59,156,255,0.12)">☁️</div>
+              <div class="rs-info"><div class="rs-val">2</div><div class="rs-lbl">Cloud Archived</div></div>
+            </div>
+          </div>
+
+          <div class="report-list">
+            <div class="rl-head">
+              <span>REPORT NAME</span><span>PERIOD</span><span>TYPE</span><span>STATUS</span><span>ACTION</span>
+            </div>
+            <div class="rl-body">
+              <div class="rr">
+                <div class="rr-name"><div class="rr-file-icon" style="background:rgba(108,79,224,0.15)">📊</div><div><div class="rr-fname">Annual Tax Return 2024</div><div class="rr-ftype">PDF · 2.4 MB</div></div></div>
+                <span>2024 Full Year</span><span>Tax Return</span>
+                <span class="status-dot st-pend">● Pending</span>
+                <button class="dl-btn">↓ Download</button>
+              </div>
+              <div class="rr">
+                <div class="rr-name"><div class="rr-file-icon" style="background:rgba(52,211,153,0.12)">📈</div><div><div class="rr-fname">Q3 Crypto Gains Report</div><div class="rr-ftype">PDF · 1.8 MB</div></div></div>
+                <span>Jul – Sep 2024</span><span>Capital Gains</span>
+                <span class="status-dot st-ok">● Approved</span>
+                <button class="dl-btn">↓ Download</button>
+              </div>
+              <div class="rr">
+                <div class="rr-name"><div class="rr-file-icon" style="background:rgba(251,191,36,0.12)">🔍</div><div><div class="rr-fname">Compliance Audit Q3</div><div class="rr-ftype">PDF · 3.1 MB</div></div></div>
+                <span>Jul – Sep 2024</span><span>Audit</span>
+                <span class="status-dot st-ok">● Approved</span>
+                <button class="dl-btn">↓ Download</button>
+              </div>
+              <div class="rr">
+                <div class="rr-name"><div class="rr-file-icon" style="background:rgba(249,115,22,0.12)">💰</div><div><div class="rr-fname">Staking Income Report</div><div class="rr-ftype">XLSX · 0.9 MB</div></div></div>
+                <span>Jan – Dec 2024</span><span>Income</span>
+                <span class="status-dot st-rev">● Review</span>
+                <button class="dl-btn">↓ Download</button>
+              </div>
+              <div class="rr">
+                <div class="rr-name"><div class="rr-file-icon" style="background:rgba(100,116,139,0.12)">📋</div><div><div class="rr-fname">Annual Tax Return 2023</div><div class="rr-ftype">PDF · 2.1 MB</div></div></div>
+                <span>2023 Full Year</span><span>Tax Return</span>
+                <span class="status-dot st-ok">● Approved</span>
+                <button class="dl-btn">↓ Download</button>
+              </div>
+            </div>
+          </div>
+        </div><!-- /#scr-report -->
+
+      </div><!-- /.dash -->
+    </div><!-- /.product-browser -->
+  </div><!-- /.mockup-wrap -->
+
+</section>
+
+<!-- How FinTax Works divider -->
+<div id="how-it-works" style="
+  text-align:center;padding:80px 40px 50px;
+  font-size:clamp(28px,3.5vw,48px);font-weight:800;letter-spacing:-0.03em;color:#fff;
+  border-top:1px solid rgba(255,255,255,0.055);
+">
+  How
+  <span style="background:linear-gradient(90deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent">
+    FinTax
+  </span>
+  works
+</div>
+
+<script>
+const SCREENS = {
+  dash:   { url:'app.fintax.tech / dashboard',    nav:'snav-dash' },
+  acct:   { url:'app.fintax.tech / accounting',   nav:'snav-acct' },
+  calc:   { url:'app.fintax.tech / tax-calc',     nav:'snav-calc' },
+  report: { url:'app.fintax.tech / reports',      nav:'snav-report' },
+};
+
+let current = 'dash';
+
+function switchTo(id) {
+  if (id === current) return;
+
+  // hide current
+  const old = document.getElementById('scr-' + current);
+  old.classList.remove('show');
+  setTimeout(() => {
+    old.classList.remove('visible');
+    old.style.display = 'none';
+  }, 200);
+
+  // show new
+  const next = document.getElementById('scr-' + id);
+  next.style.display = 'flex';
+  next.style.flexDirection = 'column';
+  next.classList.add('visible');
+  requestAnimationFrame(() => requestAnimationFrame(() => next.classList.add('show')));
+
+  // update tabs
+  document.querySelectorAll('.mtab').forEach(t =>
+    t.classList.toggle('active', t.dataset.target === id));
+
+  // update sidebar navs
+  Object.keys(SCREENS).forEach(k => {
+    const el = document.getElementById(SCREENS[k].nav);
+    if (el) el.classList.toggle('active', k === id);
+  });
+
+  // update url bar
+  document.getElementById('urlBar').textContent = SCREENS[id].url;
+
+  current = id;
+}
+
+document.querySelectorAll('.mtab').forEach(tab => {
+  tab.addEventListener('click', () => switchTo(tab.dataset.target));
+});
+
+// sidebar nav clicks
+Object.keys(SCREENS).forEach(k => {
+  const el = document.getElementById(SCREENS[k].nav);
+  if (el) el.addEventListener('click', () => switchTo(k));
+});
+</script>
+</body>
+</html>

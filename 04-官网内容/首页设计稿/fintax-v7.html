@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTax - 产品与活动</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+      background: #f0f4f8;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ══════════════ 三列布局 ══════════════ */
+    .page {
+      position: relative; z-index: 1;
+      display: flex;
+      align-items: stretch;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── 左栏：立柱体转轮 ── */
+    .drum-panel {
+      width: 230px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .drum-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #3b82f6;
+    }
+
+    .drum-outer {
+      position: relative;
+      width: 200px;
+      height: 370px;
+      overflow: hidden;
+    }
+
+    .drum-viewport {
+      position: absolute;
+      inset: 0;
+      perspective: 480px;
+      perspective-origin: 50% 50%;
+    }
+
+    .drum-mask {
+      position: absolute; left: 0; right: 0;
+      height: 90px; z-index: 20; pointer-events: none;
+    }
+    .drum-mask.top { top: 0;    background: linear-gradient(to bottom, #f0f4f8 30%, transparent); }
+    .drum-mask.bot { bottom: 0; background: linear-gradient(to top,   #f0f4f8 30%, transparent); }
+
+    .drum-stage {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      transform-style: preserve-3d;
+    }
+
+    .drum-item {
+      position: absolute;
+      width: 180px;
+      left: -90px;
+      height: 52px;
+      margin-top: -26px;
+      border-radius: 9px;
+      padding: 7px 10px 7px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      background: white;
+      border: 1px solid rgba(255,255,255,0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      will-change: transform, opacity;
+      cursor: default;
+      transform-origin: center center;
+    }
+
+    .drum-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 3px; border-radius: 0 2px 2px 0;
+    }
+
+    .drum-item-tag {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .drum-item-tag::before {
+      content: ''; display: inline-block;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: currentColor; opacity: 0.7;
+    }
+    .drum-item-title {
+      font-size: 11px; font-weight: 600; color: #1e293b;
+      line-height: 1.3;
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+    .drum-item-date { font-size: 10px; color: #94a3b8; }
+
+    .ev-conf   .drum-item::before { background: #2563eb; }
+    .ev-award  .drum-item::before { background: #7c3aed; }
+    .ev-media  .drum-item::before { background: #0891b2; }
+    .ev-coop   .drum-item::before { background: #059669; }
+    .ev-forum  .drum-item::before { background: #ea580c; }
+    .ev-cert   .drum-item::before { background: #4338ca; }
+    .ev-gov    .drum-item::before { background: #475569; }
+    .ev-launch .drum-item::before { background: #db2777; }
+
+    .ev-conf   .drum-item-tag { color: #2563eb; }
+    .ev-award  .drum-item-tag { color: #7c3aed; }
+    .ev-media  .drum-item-tag { color: #0891b2; }
+    .ev-coop   .drum-item-tag { color: #059669; }
+    .ev-forum  .drum-item-tag { color: #ea580c; }
+    .ev-cert   .drum-item-tag { color: #4338ca; }
+    .ev-gov    .drum-item-tag { color: #475569; }
+    .ev-launch .drum-item-tag { color: #db2777; }
+
+    /* ── 中栏：产品轮播 ── */
+    .product-panel {
+      flex: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 20px 0 10px;
+      min-width: 0;
+    }
+
+    .sec-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #3b82f6; margin-bottom: 5px;
+    }
+    .sec-title {
+      font-size: 24px; font-weight: 700; color: #0f172a;
+      margin-bottom: 3px; letter-spacing: -0.01em;
+    }
+    .sec-title em { font-style: normal; color: #3b82f6; }
+    .sec-sub { font-size: 12px; color: #64748b; margin-bottom: 16px; }
+
+    .carousel-wrap {
+      position: relative;
+      width: 100%; flex: 1; min-height: 0;
+      perspective: 1100px; perspective-origin: 50% 50%;
+    }
+    .carousel-track {
+      position: relative; width: 100%; height: 100%;
+      transform-style: preserve-3d;
+    }
+
+    /* ══ 竖版卡片：9:16 手机比例 ══ */
+    .card {
+      position: absolute;
+      width: min(215px, 17vw);
+      height: min(400px, 65vh);
+      left: 50%; top: 50%;
+      transform-origin: center center;
+      /* 24px 圆角模拟手机直屏感 */
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.55s cubic-bezier(0.4,0,0.2,1);
+      overflow: hidden;
+      box-shadow:
+        0 0 0 3px #fff,                        /* 白色相纸边框 */
+        0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .card-inner {
+      width: 100%; height: 100%;
+      padding: clamp(14px,2.2vh,24px) clamp(14px,1.4vw,20px);
+      display: flex; flex-direction: column;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.9);
+      transition: transform 0.15s ease;
+    }
+
+    /* 顶部装饰 pill：模拟手机状态栏 / 相纸效果 */
+    .card-inner::before {
+      content: '';
+      display: block;
+      width: 28px; height: 3px;
+      border-radius: 2px;
+      background: rgba(0,0,0,0.09);
+      margin: 0 auto clamp(10px,1.4vh,16px);
+      flex-shrink: 0;
+    }
+
+    .card[data-product="suite"]      .card-inner { background: linear-gradient(160deg,#fff 55%,#dbeafe); }
+    .card[data-product="calculator"] .card-inner { background: linear-gradient(160deg,#fff 55%,#dcfce7); }
+    .card[data-product="consulting"] .card-inner { background: linear-gradient(160deg,#fff 55%,#f3e8ff); }
+    .card[data-product="audit"]      .card-inner { background: linear-gradient(160deg,#fff 55%,#ffedd5); }
+
+    .card-icon {
+      font-size: clamp(22px,3.2vh,32px);
+      width: clamp(44px,5.5vh,58px); height: clamp(44px,5.5vh,58px);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: clamp(10px,1.8vh,18px); flex-shrink: 0;
+    }
+    .card[data-product="suite"]      .card-icon { background:#dbeafe; }
+    .card[data-product="calculator"] .card-icon { background:#dcfce7; }
+    .card[data-product="consulting"] .card-icon { background:#f3e8ff; }
+    .card[data-product="audit"]      .card-icon { background:#ffedd5; }
+
+    .card-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 20px; margin-bottom: 8px; width: fit-content;
+    }
+    .card[data-product="suite"]      .card-tag { background:#dbeafe; color:#1d4ed8; }
+    .card[data-product="calculator"] .card-tag { background:#dcfce7; color:#15803d; }
+    .card[data-product="consulting"] .card-tag { background:#f3e8ff; color:#7e22ce; }
+    .card[data-product="audit"]      .card-tag { background:#ffedd5; color:#c2410c; }
+
+    .card-name {
+      font-size: clamp(16px,2.1vh,20px); font-weight:700; color:#0f172a;
+      margin-bottom: 6px; line-height: 1.25;
+    }
+    .card-divider { width:28px; height:2px; border-radius:2px; margin:8px 0; flex-shrink:0; }
+    .card[data-product="suite"]      .card-divider { background:#3b82f6; }
+    .card[data-product="calculator"] .card-divider { background:#22c55e; }
+    .card[data-product="consulting"] .card-divider { background:#a855f7; }
+    .card[data-product="audit"]      .card-divider { background:#f97316; }
+
+    .card-desc {
+      font-size: clamp(11px,1.5vh,13px); color:#64748b;
+      line-height: 1.7; flex:1; overflow:hidden;
+    }
+    .card-cta {
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:12px; font-weight:600;
+      padding: 9px 16px; border-radius:10px;
+      border:none; cursor:pointer; text-decoration:none; width:fit-content;
+      margin-top:clamp(10px,1.6vh,16px); flex-shrink:0; transition:all 0.2s;
+    }
+    .card[data-product="suite"]      .card-cta { background:#3b82f6; color:#fff; }
+    .card[data-product="calculator"] .card-cta { background:#22c55e; color:#fff; }
+    .card[data-product="consulting"] .card-cta { background:#a855f7; color:#fff; }
+    .card[data-product="audit"]      .card-cta { background:#f97316; color:#fff; }
+    .card-cta:hover { filter:brightness(1.08); transform:translateY(-1px); }
+
+    /* ── 竖版卡片 coverflow 位置 ──
+       卡片变窄（215px → 半宽≈108px），相应缩小横向偏移 */
+    .card.pos-2 {
+      transform: translate(-50%,-50%) scale(1);
+      z-index:10;
+      box-shadow: 0 0 0 3px #fff, 0 24px 64px rgba(0,0,0,0.18);
+    }
+    .card.pos-1 {
+      transform: translate(calc(-50% - 165px),-50%) translateZ(-100px) scale(0.87) rotateY(14deg);
+      z-index:6; filter:brightness(0.8) blur(0.4px);
+    }
+    .card.pos-3 {
+      transform: translate(calc(-50% + 165px),-50%) translateZ(-100px) scale(0.87) rotateY(-14deg);
+      z-index:6; filter:brightness(0.8) blur(0.4px);
+    }
+    .card.pos-0 {
+      transform: translate(calc(-50% - 275px),-50%) translateZ(-230px) scale(0.70) rotateY(24deg);
+      z-index:2; filter:brightness(0.5) blur(1.5px); pointer-events:none; opacity:0.45;
+    }
+    .card.pos-4 {
+      transform: translate(calc(-50% + 275px),-50%) translateZ(-230px) scale(0.70) rotateY(-24deg);
+      z-index:2; filter:brightness(0.5) blur(1.5px); pointer-events:none; opacity:0.45;
+    }
+    .card.pos-1:hover,.card.pos-3:hover { filter:brightness(0.9) blur(0); z-index:8; }
+
+    .nav-area { display:flex; align-items:center; gap:18px; padding:10px 0 5px; }
+    .nav-btn {
+      width:34px; height:34px; border-radius:50%;
+      border:1.5px solid #cbd5e1; background:#fff;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+      color:#475569; font-size:14px; transition:all 0.2s;
+    }
+    .nav-btn:hover { border-color:#3b82f6; color:#3b82f6; }
+    .dots { display:flex; gap:5px; align-items:center; }
+    .dot { width:6px; height:6px; border-radius:50%; background:#cbd5e1; cursor:pointer; transition:all 0.3s; }
+    .dot.active { width:22px; border-radius:3px; background:#3b82f6; }
+    .product-labels { display:flex; gap:5px; padding-bottom:6px; }
+    .product-label {
+      padding:4px 12px; border-radius:20px;
+      font-size:11px; font-weight:500; color:#94a3b8;
+      cursor:pointer; transition:all 0.2s; border:1px solid transparent;
+    }
+    .product-label:hover { color:#3b82f6; }
+    .product-label.active { color:#3b82f6; background:#eff6ff; border-color:#bfdbfe; font-weight:600; }
+
+    /* ── 右栏：品牌数字 ── */
+    .right-panel {
+      width: 220px; flex-shrink: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 20px 16px; gap: 14px;
+    }
+    .right-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #3b82f6; margin-bottom: 4px;
+    }
+    .stat-item {
+      text-align: center; background: white;
+      border-radius: 14px; padding: 16px 20px; width: 160px;
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .stat-num { font-size: 28px; font-weight: 800; color: #0f172a; line-height:1; margin-bottom:4px; }
+    .stat-num span { font-size:15px; color:#3b82f6; }
+    .stat-desc { font-size: 11px; color: #64748b; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ① 左：立柱体转轮 -->
+  <aside class="drum-panel">
+    <div class="drum-label">历史活动</div>
+    <div class="drum-outer" id="drumOuter">
+      <div class="drum-viewport" id="drumViewport">
+        <div class="drum-stage" id="drumStage"></div>
+      </div>
+      <div class="drum-mask top"></div>
+      <div class="drum-mask bot"></div>
+    </div>
+  </aside>
+
+  <!-- ② 中：产品轮播 -->
+  <main class="product-panel">
+    <div class="sec-label">Products</div>
+    <h2 class="sec-title">4大<em>产品线</em></h2>
+    <p class="sec-sub">覆盖企业税务管理全场景，从计算到合规一站解决</p>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track">
+        <div class="card" data-product="suite" data-index="0">
+          <div class="card-inner">
+            <div class="card-icon">🗂️</div>
+            <div class="card-tag">● Suite</div>
+            <div class="card-name">FinTax Suite</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">一站式税务合规管理平台，整合申报、核算与风险预警，助力企业高效完成全流程税务管理。</div>
+            <a class="card-cta" href="#">了解详情 →</a>
+          </div>
+        </div>
+        <div class="card" data-product="calculator" data-index="1">
+          <div class="card-inner">
+            <div class="card-icon">🧮</div>
+            <div class="card-tag">● Calculator</div>
+            <div class="card-name">税务计算器</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">精准的税务测算引擎，支持多税种、多场景快速测算，实时呈现税负结果与优化建议。</div>
+            <a class="card-cta" href="#">立即测算 →</a>
+          </div>
+        </div>
+        <div class="card" data-product="consulting" data-index="2">
+          <div class="card-inner">
+            <div class="card-icon">💼</div>
+            <div class="card-tag">● Consulting</div>
+            <div class="card-name">税务咨询</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">专业税务顾问团队在线答疑，针对跨境、并购、重组等复杂场景提供定制化解决方案。</div>
+            <a class="card-cta" href="#">预约咨询 →</a>
+          </div>
+        </div>
+        <div class="card" data-product="audit" data-index="3">
+          <div class="card-inner">
+            <div class="card-icon">🔍</div>
+            <div class="card-tag">● Audit Tool</div>
+            <div class="card-name">审计工具</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">智能化税务审计辅助系统，自动识别涉税风险点，生成专业审计报告，降低合规成本。</div>
+            <a class="card-cta" href="#">开始审计 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-area">
+      <button class="nav-btn" id="prevBtn">&#8592;</button>
+      <div class="dots" id="dots"></div>
+      <button class="nav-btn" id="nextBtn">&#8594;</button>
+    </div>
+    <div class="product-labels" id="labels"></div>
+  </main>
+
+  <!-- ③ 右：数据统计 -->
+  <aside class="right-panel">
+    <div class="right-label">品牌数据</div>
+    <div class="stat-item">
+      <div class="stat-num">10,000<span>+</span></div>
+      <div class="stat-desc">企业用户</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-desc">客户满意度</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6<span>年</span></div>
+      <div class="stat-desc">深耕税务科技</div>
+    </div>
+  </aside>
+
+</div>
+<script>
+/* ═══════════════════════════════
+   产品轮播
+═══════════════════════════════ */
+const cards = Array.from(document.querySelectorAll('.card'));
+const total = cards.length;
+let cur = 0;
+const names = ['Suite','Calculator','Consulting','Audit Tool'];
+
+const dotsEl = document.getElementById('dots');
+names.forEach((_,i)=>{
+  const d=document.createElement('div');
+  d.className='dot'+(i===cur?' active':'');
+  d.onclick=()=>goTo(i); dotsEl.appendChild(d);
+});
+const labelsEl = document.getElementById('labels');
+names.forEach((n,i)=>{
+  const l=document.createElement('div');
+  l.className='product-label'+(i===cur?' active':'');
+  l.textContent=n; l.onclick=()=>goTo(i); labelsEl.appendChild(l);
+});
+function getPos(i){ let d=i-cur; if(d<-2)d+=total; if(d>2)d-=total; return d+2; }
+function render(){
+  cards.forEach((c,i)=>{ const p=getPos(i); c.className='card pos-'+p; c.dataset.pos=p; });
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  document.querySelectorAll('.product-label').forEach((l,i)=>l.classList.toggle('active',i===cur));
+}
+function goTo(i){ cur=((i%total)+total)%total; render(); }
+document.getElementById('prevBtn').onclick=()=>goTo(cur-1);
+document.getElementById('nextBtn').onclick=()=>goTo(cur+1);
+cards.forEach(c=>c.addEventListener('click',()=>{
+  const p=parseInt(c.dataset.pos);
+  if(p===1) goTo(cur-1); else if(p===3) goTo(cur+1);
+}));
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft') goTo(cur-1);
+  if(e.key==='ArrowRight') goTo(cur+1);
+});
+const cw=document.querySelector('.carousel-wrap');
+cw.addEventListener('mousemove',e=>{
+  const cc=document.querySelector('.card.pos-2 .card-inner'); if(!cc) return;
+  const r=cw.getBoundingClientRect();
+  const dx=(e.clientX-(r.left+r.width/2))/(r.width/2);
+  const dy=(e.clientY-(r.top+r.height/2))/(r.height/2);
+  cc.style.transform=`rotateX(${-dy*6}deg) rotateY(${dx*9}deg) translateZ(8px)`;
+});
+cw.addEventListener('mouseleave',()=>{
+  const cc=document.querySelector('.card.pos-2 .card-inner');
+  if(cc) cc.style.transform='';
+});
+render();
+
+/* ═══════════════════════════════
+   立柱体转轮 — CSS 3D Y轴旋转
+═══════════════════════════════ */
+const EVENTS = [
+  { type:'ev-conf',   tag:'行业峰会', title:'中国税务科技峰会',        date:'2024.11' },
+  { type:'ev-award',  tag:'荣誉奖项', title:'"最佳税务SaaS"年度大奖', date:'2024.09' },
+  { type:'ev-media',  tag:'媒体报道', title:'《财经》杂志封面专题',    date:'2024.07' },
+  { type:'ev-coop',   tag:'战略合作', title:'与四大事务所签署合作',    date:'2024.05' },
+  { type:'ev-forum',  tag:'论坛演讲', title:'博鳌亚洲论坛分论坛',     date:'2024.04' },
+  { type:'ev-cert',   tag:'资质认证', title:'国家高新技术企业认定',    date:'2023.12' },
+  { type:'ev-gov',    tag:'政府交流', title:'税务总局课题研究',        date:'2023.10' },
+  { type:'ev-launch', tag:'产品发布', title:'Audit Tool 2.0 发布',   date:'2023.08' },
+  { type:'ev-conf',   tag:'行业峰会', title:'跨境税务合规论坛',        date:'2023.06' },
+  { type:'ev-award',  tag:'荣誉奖项', title:'"年度最具影响力企业"',   date:'2023.03' },
+  { type:'ev-launch', tag:'里程碑',   title:'用户突破 10,000 家',     date:'2022.12' },
+  { type:'ev-coop',   tag:'战略合作', title:'与招商银行战略合作',      date:'2022.09' },
+];
+
+const N            = EVENTS.length;
+const ANGLE_STEP   = (2 * Math.PI) / N;
+const RADIUS       = 85;
+const ITEM_SPACING = 30;
+const SPEED        = 0.006;
+
+const fixedYs = EVENTS.map((_, i) => (i - (N - 1) / 2) * ITEM_SPACING);
+const stage = document.getElementById('drumStage');
+
+const drumEls = EVENTS.map((ev, i) => {
+  const el = document.createElement('div');
+  el.className = `drum-item ${ev.type}`;
+  el.innerHTML = `
+    <div class="drum-item-tag">${ev.tag}</div>
+    <div class="drum-item-title">${ev.title}</div>
+    <div class="drum-item-date">${ev.date}</div>
+  `;
+  stage.appendChild(el);
+  return el;
+});
+
+let paused = false;
+document.getElementById('drumOuter').addEventListener('mouseenter', () => paused = true);
+document.getElementById('drumOuter').addEventListener('mouseleave', () => paused = false);
+
+let rot = 0;
+
+function tick() {
+  if (!paused) rot += SPEED;
+  drumEls.forEach((el, i) => {
+    const angle    = rot + i * ANGLE_STEP;
+    const angleDeg = angle * (180 / Math.PI);
+    const cosA     = Math.cos(angle);
+    const fixedY   = fixedYs[i];
+    el.style.transform = `translateY(${fixedY}px) rotateY(${angleDeg}deg) translateZ(${RADIUS}px)`;
+    el.style.opacity = cosA > 0 ? String(Math.pow(cosA, 0.45)) : '0';
+    el.style.boxShadow = cosA > 0.92
+      ? '0 4px 20px rgba(59,130,246,0.25), inset 0 0 0 1px rgba(59,130,246,0.3)'
+      : '0 2px 8px rgba(0,0,0,0.07)';
+  });
+  requestAnimationFrame(tick);
+}
+
+tick();
+</script>
+</body>
+</html>

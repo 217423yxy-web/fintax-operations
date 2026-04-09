@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinTax 社媒数据看板 | 2026年3月20日</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --card-hover: #22263a;
+    --border: #2a2e3e;
+    --text: #e4e6ef;
+    --text-dim: #8b8fa3;
+    --accent: #6c5ce7;
+    --green: #00b894;
+    --red: #ff6b6b;
+    --orange: #fdcb6e;
+    --blue: #74b9ff;
+    --pink: #fd79a8;
+    --cyan: #81ecec;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); min-height:100vh; }
+
+  .header { padding: 28px 40px 20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); }
+  .header h1 { font-size:22px; font-weight:700; }
+  .header h1 span { color: var(--accent); }
+  .header .meta { font-size:13px; color:var(--text-dim); }
+  .update-badge { background: var(--accent); color:#fff; font-size:11px; padding:3px 10px; border-radius:20px; margin-left:12px; }
+
+  .container { max-width:1400px; margin:0 auto; padding:24px 40px 60px; }
+
+  .overview { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin-bottom:28px; }
+  .overview-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px 24px; transition: background .2s; }
+  .overview-card:hover { background:var(--card-hover); }
+  .overview-card .label { font-size:13px; color:var(--text-dim); margin-bottom:6px; }
+  .overview-card .value { font-size:28px; font-weight:700; }
+  .overview-card .change { font-size:12px; margin-top:4px; }
+  .change.up { color:var(--green); }
+  .change.down { color:var(--red); }
+
+  .section-title { font-size:16px; font-weight:600; margin:28px 0 16px; padding-left:12px; border-left:3px solid var(--accent); }
+
+  .platforms { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-bottom:28px; }
+  .platform-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; transition: transform .2s, background .2s; }
+  .platform-card:hover { background:var(--card-hover); transform:translateY(-2px); }
+  .platform-header { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .platform-icon { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; color:#fff; }
+  .platform-name { font-size:15px; font-weight:600; }
+  .platform-stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .stat-item .stat-label { font-size:11px; color:var(--text-dim); text-transform:uppercase; letter-spacing:.5px; }
+  .stat-item .stat-value { font-size:18px; font-weight:600; margin-top:2px; }
+  .stat-item .stat-change { font-size:11px; margin-top:1px; }
+
+  .charts-grid { display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:28px; }
+  .chart-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; }
+  .chart-card h3 { font-size:14px; font-weight:600; margin-bottom:16px; color:var(--text-dim); }
+  .chart-card.full { grid-column: 1 / -1; }
+
+  .table-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; overflow-x:auto; }
+  .table-card h3 { font-size:14px; font-weight:600; margin-bottom:16px; color:var(--text-dim); }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { text-align:left; padding:10px 12px; color:var(--text-dim); font-weight:500; border-bottom:1px solid var(--border); font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  td { padding:12px; border-bottom:1px solid var(--border); }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background: rgba(108,92,231,.06); }
+  .platform-tag { display:inline-block; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:500; }
+  .rank { width:28px; height:28px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; }
+  .rank-1 { background: linear-gradient(135deg,#f6d365,#fda085); color:#333; }
+  .rank-2 { background: linear-gradient(135deg,#a8edea,#fed6e3); color:#333; }
+  .rank-3 { background: linear-gradient(135deg,#d4fc79,#96e6a1); color:#333; }
+  .rank-other { background: var(--border); color: var(--text-dim); }
+
+  .footer { text-align:center; padding:24px; font-size:12px; color:var(--text-dim); }
+
+  .tab-bar { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+  .tab { padding:6px 16px; border-radius:8px; font-size:13px; cursor:pointer; background:var(--card); border:1px solid var(--border); color:var(--text-dim); transition: all .2s; }
+  .tab:hover { background:var(--card-hover); color:var(--text); }
+  .tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+  @media (max-width:1024px) {
+    .overview { grid-template-columns: repeat(2,1fr); }
+    .platforms { grid-template-columns: repeat(2,1fr); }
+    .charts-grid { grid-template-columns: 1fr; }
+    .container { padding:20px; }
+    .header { padding:20px; }
+  }
+  @media (max-width:640px) {
+    .overview { grid-template-columns: 1fr; }
+    .platforms { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1><span>FinTax</span> 社媒数据看板</h1>
+  </div>
+  <div class="meta">
+    数据更新于 <strong id="updateDate"></strong>
+    <span class="update-badge">实时数据</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="overview" id="overviewCards"></div>
+
+  <div class="section-title">各平台数据</div>
+  <div class="platforms" id="platformCards"></div>
+
+  <div class="section-title">数据趋势</div>
+  <div class="charts-grid">
+    <div class="chart-card full">
+      <h3>各平台内容发布量（近期）</h3>
+      <canvas id="contentChart" height="80"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>各平台互动分布</h3>
+      <canvas id="engagementChart" height="160"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>平台浏览量对比</h3>
+      <canvas id="viewsChart" height="160"></canvas>
+    </div>
+  </div>
+
+  <div class="section-title">热门内容 TOP 15</div>
+  <div class="tab-bar" id="contentTabs"></div>
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px">#</th>
+          <th>平台</th>
+          <th>内容标题</th>
+          <th style="text-align:right">浏览/阅读</th>
+          <th style="text-align:right">点赞</th>
+          <th style="text-align:right">评论</th>
+          <th style="text-align:right">分享</th>
+        </tr>
+      </thead>
+      <tbody id="contentTable"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">FinTax 社媒数据看板 · 基于真实数据 · 2026年3月20日</div>
+
+<script>
+// =====================================================================
+//  📊 真实数据 - 来自 2026年3月20日数据表格
+// =====================================================================
+
+const DATA = {
+  updateDate: "2026-03-20",
+
+  platforms: {
+    "X (Twitter)": {
+      color: "#1da1f2",
+      icon: "𝕏",
+      posts: 120,
+      views: 20000,
+      likes: 30,
+      comments: 11,
+      shares: 25,
+      engagementRate: 0.33
+    },
+    "微信公众号": {
+      color: "#07c160",
+      icon: "微",
+      posts: 74,
+      views: 11893,
+      likes: 38,
+      comments: 5,
+      shares: 1289,
+      engagementRate: 11.2
+    },
+    "LinkedIn": {
+      color: "#0077b5",
+      icon: "in",
+      posts: 41,
+      views: 1800,
+      likes: 25,
+      comments: 2,
+      shares: 4,
+      engagementRate: 1.72
+    },
+    "小宇宙": {
+      color: "#7b68ee",
+      icon: "播",
+      posts: 12,
+      views: 139,
+      likes: 1,
+      comments: 0,
+      shares: 12,
+      engagementRate: 9.35
+    }
+  },
+
+  topContent: [
+    { platform:"微信公众号", title:"补税700万上热搜！境外收入税务监管再升级", views:3454, likes:5, comments:1, shares:145 },
+    { platform:"微信公众号", title:"别再拿U卡当"匿名护身符"：一文看清U卡避税误区与风险", views:1208, likes:1, comments:0, shares:49 },
+    { platform:"微信公众号", title:"数百名币安用户遭遇税务调查的背后：印度加密资产税收与监管制度一览", views:1147, likes:0, comments:0, shares:54 },
+    { platform:"微信公众号", title:"香港与全球CARF加密货币涉税信息交换即将到来 你准备好了吗？", views:465, likes:2, comments:0, shares:38 },
+    { platform:"微信公众号", title:"加拿大取消燃料碳税，加密矿企迎来能源成本新博弈", views:428, likes:0, comments:1, shares:26 },
+    { platform:"微信公众号", title:"境外收入补税追溯至2017年？纳税人如何化解税务危机", views:404, likes:1, comments:0, shares:37 },
+    { platform:"微信公众号", title:"CRS2.0落地在即：2026年，你的"链上隐身衣"还在吗？", views:391, likes:1, comments:0, shares:40 },
+    { platform:"微信公众号", title:"海外加密资产或将受审查？一文带你了解CARF", views:376, likes:2, comments:0, shares:41 },
+    { platform:"微信公众号", title:"万字长文详解日本加密税收和监管制度", views:376, likes:4, comments:1, shares:72 },
+    { platform:"微信公众号", title:"周杰伦"江湖追杀令"的背后：加密资产代持行为的税务与法律隐忧", views:313, likes:2, comments:0, shares:28 },
+    { platform:"微信公众号", title:"土耳其加密资产制度转向的背后：税收与监管制度概览", views:314, likes:0, comments:0, shares:35 },
+    { platform:"微信公众号", title:"CARF，香港加密资产监管的下一步", views:300, likes:1, comments:0, shares:47 },
+    { platform:"微信公众号", title:"东南亚RWA新引擎：马来西亚的稳健创新与Web3新机遇", views:284, likes:0, comments:1, shares:40 },
+    { platform:"微信公众号", title:"Web3 收入，要在国内缴税吗？", views:263, likes:0, comments:0, shares:15 },
+    { platform:"微信公众号", title:"CARF全球实施时间表一览，中国大陆、香港地区承诺情况如何？", views:260, likes:0, comments:0, shares:29 }
+  ]
+};
+
+const fmt = (n) => {
+  if (n >= 10000) return (n/10000).toFixed(1) + '万';
+  if (n >= 1000) return (n/1000).toFixed(1) + 'K';
+  return n.toString();
+};
+
+document.getElementById('updateDate').textContent = DATA.updateDate;
+
+// Overview cards
+const pList = Object.values(DATA.platforms);
+const totalPosts = pList.reduce((s,p) => s + p.posts, 0);
+const totalViews = pList.reduce((s,p) => s + p.views, 0);
+const totalLikes = pList.reduce((s,p) => s + p.likes, 0);
+const totalShares = pList.reduce((s,p) => s + p.shares, 0);
+
+const overviewData = [
+  { label:"内容发布总量", value: totalPosts, change:"近期统计", up:true },
+  { label:"总浏览/阅读量", value: fmt(totalViews), change:"跨平台汇总", up:true },
+  { label:"总互动（赞+评+转）", value: fmt(totalLikes + pList.reduce((s,p)=>s+p.comments+p.shares,0)), change:"用户参与", up:true },
+  { label:"活跃平台数", value: Object.keys(DATA.platforms).length, change:"持续运营", up:true }
+];
+
+document.getElementById('overviewCards').innerHTML = overviewData.map(d => `
+  <div class="overview-card">
+    <div class="label">${d.label}</div>
+    <div class="value">${d.value}</div>
+    <div class="change ${d.up?'up':'down'}">${d.change}</div>
+  </div>
+`).join('');
+
+// Platform cards
+document.getElementById('platformCards').innerHTML = Object.entries(DATA.platforms).map(([name, d]) => `
+  <div class="platform-card">
+    <div class="platform-header">
+      <div class="platform-icon" style="background:${d.color}">${d.icon}</div>
+      <div class="platform-name">${name}</div>
+    </div>
+    <div class="platform-stats">
+      <div class="stat-item">
+        <div class="stat-label">发布量</div>
+        <div class="stat-value">${d.posts}</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">浏览/阅读</div>
+        <div class="stat-value">${fmt(d.views)}</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">点赞</div>
+        <div class="stat-value">${fmt(d.likes)}</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">评论</div>
+        <div class="stat-value">${fmt(d.comments)}</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">分享/转发</div>
+        <div class="stat-value">${fmt(d.shares)}</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">互动率</div>
+        <div class="stat-value" style="color:var(--green)">${d.engagementRate}%</div>
+      </div>
+    </div>
+  </div>
+`).join('');
+
+// Content chart
+const platformNames = Object.keys(DATA.platforms);
+const platformColors = Object.values(DATA.platforms).map(p => p.color);
+const postCounts = Object.values(DATA.platforms).map(p => p.posts);
+
+new Chart(document.getElementById('contentChart'), {
+  type: 'bar',
+  data: {
+    labels: platformNames,
+    datasets: [{
+      label: '发布量',
+      data: postCounts,
+      backgroundColor: platformColors.map(c => c + '99'),
+      borderColor: platformColors,
+      borderWidth: 2,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend:{display:false} },
+    scales: {
+      x: { ticks:{color:'#8b8fa3'}, grid:{display:false} },
+      y: { ticks:{color:'#8b8fa3'}, grid:{color:'#2a2e3e'} }
+    }
+  }
+});
+
+// Engagement chart
+const engagementData = Object.values(DATA.platforms).map(p => p.likes + p.comments + p.shares);
+new Chart(document.getElementById('engagementChart'), {
+  type: 'doughnut',
+  data: {
+    labels: platformNames,
+    datasets: [{
+      data: engagementData,
+      backgroundColor: platformColors.map(c => c + 'cc'),
+      borderColor: platformColors,
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { 
+      legend: { labels:{color:'#8b8fa3',font:{size:11}}, position:'bottom' }
+    }
+  }
+});
+
+// Views chart
+const viewsData = Object.values(DATA.platforms).map(p => p.views);
+new Chart(document.getElementById('viewsChart'), {
+  type: 'bar',
+  data: {
+    labels: platformNames,
+    datasets: [{
+      label: '浏览量',
+      data: viewsData,
+      backgroundColor: platformColors.map(c => c + '99'),
+      borderColor: platformColors,
+      borderWidth: 2,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend:{display:false} },
+    scales: {
+      x: { ticks:{color:'#8b8fa3'}, grid:{display:false} },
+      y: { ticks:{color:'#8b8fa3', callback: v => fmt(v)}, grid:{color:'#2a2e3e'} }
+    }
+  }
+});
+
+// Content ranking
+const allPlatforms = ["全部", ...new Set(DATA.topContent.map(c => c.platform))];
+let currentFilter = "全部";
+
+function renderTabs() {
+  document.getElementById('contentTabs').innerHTML = allPlatforms.map(p =>
+    `<div class="tab ${p===currentFilter?'active':''}" onclick="filterContent('${p}')">${p}</div>`
+  ).join('');
+}
+
+function filterContent(platform) {
+  currentFilter = platform;
+  renderTabs();
+  renderTable();
+}
+
+function renderTable() {
+  const filtered = currentFilter === "全部" ? DATA.topContent : DATA.topContent.filter(c => c.platform === currentFilter);
+  document.getElementById('contentTable').innerHTML = filtered.map((c, i) => {
+    const rankClass = i < 3 ? `rank-${i+1}` : 'rank-other';
+    const pColor = DATA.platforms[c.platform]?.color || '#6c5ce7';
+    return `<tr>
+      <td><span class="rank ${rankClass}">${i+1}</span></td>
+      <td><span class="platform-tag" style="background:${pColor}22;color:${pColor}">${c.platform}</span></td>
+      <td style="max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.title}</td>
+      <td style="text-align:right;font-weight:600">${fmt(c.views)}</td>
+      <td style="text-align:right">${fmt(c.likes)}</td>
+      <td style="text-align:right">${fmt(c.comments)}</td>
+      <td style="text-align:right">${fmt(c.shares)}</td>
+    </tr>`;
+  }).join('');
+}
+
+renderTabs();
+renderTable();
+</script>
+</body>
+</html>

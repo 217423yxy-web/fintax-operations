@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTax — 加密记账与税务服务</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","PingFang SC",sans-serif;
+      background:#09090f;color:#fff;overflow-x:hidden;
+    }
+
+    /* ━━━━━━━━━━ DESIGN TOKENS (fintax.tech palette) ━━━━━━━━━━
+       bg-base  : #09090f   page background
+       bg-panel : #0d0d18   sidebar / elevated surface
+       bg-card  : #131323   card surface
+       bg-card2 : #161632   slightly lighter card
+       border   : rgba(255,255,255,0.055)
+       accent   : #5b5ef6   primary indigo
+       accent2  : #818cf8   lighter indigo text
+       muted    : rgba(255,255,255,0.36)
+       up       : #34d399
+       down     : #fb7185
+       warn     : #fbbf24
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+    /* ══ NAV ══ */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      height:58px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 44px;
+      background:rgba(9,9,15,0.88);
+      backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    .nav-logo{
+      font-size:16.5px;font-weight:800;letter-spacing:-0.04em;color:#fff;
+      display:flex;align-items:center;gap:9px;text-decoration:none;
+    }
+    .nav-logo-badge{
+      width:30px;height:30px;border-radius:8px;
+      background:linear-gradient(135deg,#5b5ef6,#818cf8);
+      display:flex;align-items:center;justify-content:center;font-size:14px;
+    }
+    .nav-logo em{font-style:normal;color:#818cf8;}
+    .nav-links{
+      display:flex;align-items:center;gap:34px;
+      font-size:13px;font-weight:500;color:rgba(255,255,255,0.50);list-style:none;
+    }
+    .nav-links a{text-decoration:none;color:inherit;transition:color .2s;}
+    .nav-links a:hover{color:rgba(255,255,255,0.88);}
+    .nav-actions{display:flex;align-items:center;gap:8px;}
+    .btn-ghost{
+      font-size:13px;font-weight:500;color:rgba(255,255,255,0.60);
+      background:none;border:none;cursor:pointer;padding:7px 14px;
+      border-radius:8px;transition:color .2s,background .2s;
+    }
+    .btn-ghost:hover{color:#fff;background:rgba(255,255,255,0.06);}
+    .btn-primary{
+      font-size:13px;font-weight:600;color:#fff;
+      background:linear-gradient(135deg,#5b5ef6,#818cf8);
+      border:none;cursor:pointer;padding:8px 20px;
+      border-radius:9px;
+      box-shadow:0 0 24px rgba(91,94,246,0.42);
+      transition:opacity .2s,transform .15s;
+    }
+    .btn-primary:hover{opacity:0.84;transform:translateY(-1px);}
+
+    /* ══ HERO ══ */
+    .hero{
+      min-height:100vh;
+      display:flex;flex-direction:column;
+      align-items:center;padding:134px 40px 110px;
+      position:relative;overflow:hidden;
+    }
+    .hero-glow{
+      position:absolute;top:-160px;left:50%;transform:translateX(-50%);
+      width:1100px;height:700px;
+      background:radial-gradient(ellipse at 50% 30%,
+        rgba(91,94,246,0.16) 0%,
+        rgba(129,140,248,0.08) 38%,
+        transparent 65%);
+      pointer-events:none;
+    }
+    .hero-fade{
+      position:absolute;bottom:0;left:0;right:0;height:220px;
+      background:linear-gradient(to bottom,transparent,#09090f);
+      pointer-events:none;z-index:3;
+    }
+
+    /* badge */
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(91,94,246,0.10);
+      border:1px solid rgba(91,94,246,0.26);
+      border-radius:100px;padding:5px 14px 5px 7px;
+      font-size:12px;font-weight:500;color:rgba(255,255,255,0.80);
+      margin-bottom:32px;cursor:pointer;
+      transition:background .2s,border-color .2s;
+    }
+    .hero-badge:hover{background:rgba(91,94,246,0.18);}
+    .badge-pill{
+      background:linear-gradient(135deg,#5b5ef6,#818cf8);
+      border-radius:20px;padding:3px 9px;
+      font-size:10px;font-weight:700;color:#fff;letter-spacing:0.05em;
+    }
+    .badge-sep{color:rgba(255,255,255,0.22);margin:0 2px;}
+    .badge-link{color:rgba(255,255,255,0.55);font-size:11px;margin-left:3px;}
+
+    /* headline */
+    .hero-h1{
+      font-size:clamp(40px,5.4vw,76px);
+      font-weight:800;line-height:1.09;
+      letter-spacing:-0.04em;text-align:center;
+      max-width:920px;margin-bottom:22px;
+    }
+    .tw{
+      background:linear-gradient(180deg,#fff 55%,rgba(255,255,255,0.58));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .ti{
+      background:linear-gradient(90deg,#818cf8,#a5b4fc);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+
+    .hero-sub{
+      font-size:clamp(15px,1.55vw,19px);
+      color:rgba(255,255,255,0.40);text-align:center;
+      max-width:500px;line-height:1.70;margin-bottom:38px;
+    }
+
+    .hero-ctas{display:flex;align-items:center;gap:12px;margin-bottom:52px;}
+    .cta-fill{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:15px;font-weight:600;color:#fff;
+      background:linear-gradient(135deg,#5b5ef6,#818cf8);
+      border:none;cursor:pointer;padding:13px 30px;border-radius:11px;
+      box-shadow:0 0 50px rgba(91,94,246,0.50),0 6px 22px rgba(0,0,0,0.4);
+      transition:opacity .2s,transform .15s;
+    }
+    .cta-fill:hover{opacity:0.84;transform:translateY(-2px);}
+    .cta-outline{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:15px;font-weight:500;color:rgba(255,255,255,0.70);
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.10);
+      cursor:pointer;padding:13px 26px;border-radius:11px;
+      transition:background .2s,border-color .2s,color .2s;
+    }
+    .cta-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:#fff;}
+
+    /* social proof */
+    .proof{
+      display:flex;align-items:center;gap:16px;
+      font-size:12.5px;color:rgba(255,255,255,0.34);
+      margin-bottom:64px;
+    }
+    .proof-avatars{display:flex;}
+    .pav{
+      width:26px;height:26px;border-radius:50%;
+      border:2.5px solid #09090f;margin-left:-8px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:10.5px;font-weight:700;flex-shrink:0;
+    }
+    .pav:first-child{margin-left:0;}
+    .pa1{background:linear-gradient(135deg,#f472b6,#fb923c);}
+    .pa2{background:linear-gradient(135deg,#34d399,#0d9488);}
+    .pa3{background:linear-gradient(135deg,#818cf8,#5b5ef6);}
+    .pa4{background:linear-gradient(135deg,#fbbf24,#f97316);}
+    .pa5{background:linear-gradient(135deg,#a78bfa,#ec4899);}
+    .proof-sep{width:1px;height:14px;background:rgba(255,255,255,0.10);}
+    .proof-hl{color:rgba(255,255,255,0.70);font-weight:600;}
+
+    /* ══ MOCKUP WRAPPER ══ */
+    .mockup-wrap{position:relative;width:min(1120px,92vw);z-index:2;}
+
+    /* tabs */
+    .mtabs{
+      display:flex;align-items:center;justify-content:center;
+      gap:5px;margin-bottom:18px;
+    }
+    .mtab{
+      display:flex;align-items:center;gap:7px;
+      padding:8px 18px;border-radius:10px;
+      font-size:13px;font-weight:500;
+      color:rgba(255,255,255,0.40);
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.065);
+      cursor:pointer;transition:all .22s;user-select:none;
+    }
+    .mtab:hover{color:rgba(255,255,255,0.68);background:rgba(255,255,255,0.07);}
+    .mtab.active{
+      color:rgba(255,255,255,0.95);
+      background:rgba(91,94,246,0.16);
+      border-color:rgba(91,94,246,0.38);
+      box-shadow:0 0 18px rgba(91,94,246,0.18);
+    }
+    .mtab-icon{font-size:14px;}
+
+    /* browser */
+    .browser{
+      background:#0d0d18;
+      border:1px solid rgba(255,255,255,0.075);
+      border-radius:16px;overflow:hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.025),
+        0 50px 130px rgba(0,0,0,0.82),
+        0 0 90px rgba(91,94,246,0.11);
+    }
+    .browser-bar{
+      height:42px;background:#111120;
+      border-bottom:1px solid rgba(255,255,255,0.055);
+      display:flex;align-items:center;padding:0 16px;gap:12px;flex-shrink:0;
+    }
+    .b-dots{display:flex;gap:6px;}
+    .bd{width:11px;height:11px;border-radius:50%;}
+    .br{background:#ff5f57;}.by{background:#febc2e;}.bg{background:#28c840;}
+    .b-url{
+      flex:1;max-width:310px;margin:0 auto;
+      background:rgba(255,255,255,0.04);border-radius:6px;
+      height:25px;display:flex;align-items:center;justify-content:center;
+      font-size:11.5px;color:rgba(255,255,255,0.26);
+    }
+
+    /* ══ DASH SHELL ══ */
+    .dash{display:flex;height:508px;}
+
+    /* sidebar */
+    .sb{
+      width:190px;flex-shrink:0;
+      background:#0b0b14;
+      border-right:1px solid rgba(255,255,255,0.05);
+      padding:16px 10px;
+      display:flex;flex-direction:column;gap:2px;
+    }
+    .sb-logo{
+      font-size:14px;font-weight:800;color:#fff;
+      padding:2px 8px 15px;letter-spacing:-0.03em;
+      display:flex;align-items:center;gap:7px;
+    }
+    .sb-logo-icon{
+      width:24px;height:24px;border-radius:6px;flex-shrink:0;
+      background:linear-gradient(135deg,#5b5ef6,#818cf8);
+      display:flex;align-items:center;justify-content:center;font-size:12px;
+    }
+    .sb-logo em{font-style:normal;color:#818cf8;}
+    .sn{
+      display:flex;align-items:center;gap:8px;
+      padding:7px 9px;border-radius:8px;
+      font-size:12.5px;font-weight:500;
+      color:rgba(255,255,255,0.40);cursor:pointer;
+      transition:background .18s,color .18s;
+    }
+    .sn:hover{color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.04);}
+    .sn.active{background:rgba(99,102,241,0.15);color:#a5b4fc;}
+    .sn-ic{
+      width:27px;height:27px;border-radius:7px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;font-size:13px;
+    }
+    /* icon gradient colors */
+    .ic1{background:linear-gradient(135deg,#5b5ef6,#818cf8);}  /* dashboard - indigo */
+    .ic2{background:linear-gradient(135deg,#0ea5e9,#22d3ee);}  /* accounting - sky/cyan */
+    .ic3{background:linear-gradient(135deg,#10b981,#34d399);}  /* calc - emerald */
+    .ic4{background:linear-gradient(135deg,#f59e0b,#fb923c);}  /* consulting - amber/orange */
+    .ic5{background:linear-gradient(135deg,#8b5cf6,#d946ef);}  /* audit - violet/fuchsia */
+    .ic6{background:linear-gradient(135deg,#3b82f6,#6366f1);}  /* reports - blue/indigo */
+    .ic7{background:rgba(255,255,255,0.07);}                   /* settings */
+    .sn-spacer{flex:1;}
+
+    /* ══ SCREEN PANELS ══ */
+    .screen{flex:1;overflow:hidden;display:none;opacity:0;transition:opacity .28s ease;}
+    .screen.on{display:flex;flex-direction:column;}
+    .screen.show{opacity:1;}
+
+    /* shared layout helpers */
+    .sp{padding:20px 22px;flex:1;overflow:hidden;display:flex;flex-direction:column;gap:14px;background:#0d0d18;}
+    .s-top{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+    .s-title{font-size:15px;font-weight:700;color:#fff;}
+
+    /* period btns */
+    .pgroup{display:flex;gap:2px;background:rgba(255,255,255,0.04);border-radius:8px;padding:3px;}
+    .pb{font-size:11px;padding:4px 11px;border-radius:6px;color:rgba(255,255,255,0.36);cursor:pointer;font-weight:500;transition:all .18s;}
+    .pb.active{background:rgba(99,102,241,0.22);color:#a5b4fc;}
+
+    /* KPI cards */
+    .krow{display:flex;gap:9px;flex-shrink:0;}
+    .kc{
+      flex:1;background:#131323;
+      border:1px solid rgba(255,255,255,0.055);
+      border-radius:11px;padding:13px 15px;
+    }
+    .kc-lbl{font-size:10px;color:rgba(255,255,255,0.34);margin-bottom:7px;font-weight:500;letter-spacing:0.02em;}
+    .kc-val{font-size:20px;font-weight:700;color:#fff;line-height:1;letter-spacing:-0.025em;}
+    .kbadge{
+      display:inline-flex;align-items:center;gap:3px;
+      font-size:9.5px;font-weight:600;
+      padding:2px 7px;border-radius:20px;margin-top:6px;
+    }
+    .ku{background:rgba(52,211,153,0.12);color:#34d399;}
+    .kd{background:rgba(251,113,133,0.12);color:#fb7185;}
+    .kn{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.42);}
+
+    /* chart + transactions row */
+    .crow{display:flex;gap:9px;flex:1;min-height:0;}
+    .cmain{
+      flex:1;background:#131323;
+      border:1px solid rgba(255,255,255,0.055);
+      border-radius:11px;padding:14px;
+      display:flex;flex-direction:column;gap:8px;overflow:hidden;
+    }
+    .ch{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+    .cl{font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.65);}
+    .cs{font-size:10px;color:rgba(255,255,255,0.22);}
+    .cbars{flex:1;display:flex;align-items:flex-end;gap:5px;padding-bottom:2px;}
+    .cg{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
+    .cb{width:100%;border-radius:3px 3px 0 0;background:linear-gradient(to top,#5b5ef6,#818cf8);min-height:3px;}
+    .cb.d{background:rgba(99,102,241,0.20);}
+    .clb{font-size:8px;color:rgba(255,255,255,0.20);}
+
+    .cside{
+      width:182px;flex-shrink:0;
+      background:#131323;border:1px solid rgba(255,255,255,0.055);
+      border-radius:11px;padding:13px;
+      display:flex;flex-direction:column;gap:8px;overflow:hidden;
+    }
+    .ct{font-size:11px;font-weight:600;color:rgba(255,255,255,0.55);}
+    .txr{
+      display:flex;align-items:center;gap:8px;
+      padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.038);
+    }
+    .txr:last-child{border:none;}
+    .txi{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+    .txn{flex:1;min-width:0;}
+    .txn1{font-size:10.5px;font-weight:600;color:rgba(255,255,255,0.80);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .txn2{font-size:9px;color:rgba(255,255,255,0.25);}
+    .txa{font-size:11px;font-weight:700;white-space:nowrap;}
+    .up{color:#34d399;}.dn{color:#fb7185;}
+
+    /* ── Screen 2: Accounting ── */
+    .l-sum{display:flex;gap:9px;flex-shrink:0;}
+    .ls{flex:1;background:#131323;border:1px solid rgba(255,255,255,0.055);border-radius:11px;padding:13px 15px;}
+    .ls-l{font-size:10px;color:rgba(255,255,255,0.34);margin-bottom:5px;font-weight:500;}
+    .ls-v{font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.02em;}
+    .ls-s{font-size:10px;font-weight:600;margin-top:4px;}
+
+    .l-table{flex:1;background:#131323;border:1px solid rgba(255,255,255,0.055);border-radius:11px;overflow:hidden;display:flex;flex-direction:column;}
+    .th{
+      display:grid;grid-template-columns:1.8fr 1.1fr 1fr 1fr 0.95fr;
+      padding:9px 15px;
+      border-bottom:1px solid rgba(255,255,255,0.052);
+      font-size:10px;font-weight:600;color:rgba(255,255,255,0.28);letter-spacing:0.04em;
+    }
+    .tb{flex:1;overflow-y:auto;}
+    .tb::-webkit-scrollbar{width:0;}
+    .tr{
+      display:grid;grid-template-columns:1.8fr 1.1fr 1fr 1fr 0.95fr;
+      padding:9px 15px;align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.032);
+      font-size:11.5px;color:rgba(255,255,255,0.72);
+      transition:background .14s;
+    }
+    .tr:last-child{border:none;}
+    .tr:hover{background:rgba(99,102,241,0.05);}
+    .ta{display:flex;align-items:center;gap:8px;}
+    .ta-ic{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+    .ta-n{font-weight:600;color:#fff;font-size:11.5px;}
+    .ta-s{font-size:9.5px;color:rgba(255,255,255,0.28);}
+    .sd{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;}
+    .so{background:rgba(52,211,153,0.11);color:#34d399;}
+    .sp2{background:rgba(251,191,36,0.11);color:#fbbf24;}
+    .sr{background:rgba(99,102,241,0.13);color:#a5b4fc;}
+
+    /* ── Screen 3: Tax Calc ── */
+    .calc-lay{display:flex;gap:12px;flex:1;min-height:0;}
+    .cf{
+      width:232px;flex-shrink:0;
+      background:#131323;border:1px solid rgba(255,255,255,0.055);
+      border-radius:11px;padding:16px;
+      display:flex;flex-direction:column;gap:12px;overflow-y:auto;
+    }
+    .cf::-webkit-scrollbar{width:0;}
+    .cf-title{font-size:13px;font-weight:700;color:#fff;}
+    .ff{display:flex;flex-direction:column;gap:5px;}
+    .fl{font-size:10px;font-weight:600;color:rgba(255,255,255,0.34);letter-spacing:0.04em;}
+    .fi{
+      background:rgba(255,255,255,0.045);
+      border:1px solid rgba(255,255,255,0.085);
+      border-radius:8px;padding:8px 11px;
+      font-size:12.5px;color:#fff;width:100%;
+      transition:border-color .2s;
+    }
+    .fi:focus{outline:none;border-color:rgba(91,94,246,0.55);}
+    .fi.hi{border-color:rgba(91,94,246,0.40);background:rgba(91,94,246,0.07);}
+    .fsel{background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.085);border-radius:8px;padding:8px 11px;font-size:12px;color:rgba(255,255,255,0.72);width:100%;}
+    .cbtn{
+      background:linear-gradient(135deg,#5b5ef6,#818cf8);
+      border:none;border-radius:9px;padding:10px;
+      font-size:13px;font-weight:700;color:#fff;cursor:pointer;
+      box-shadow:0 0 22px rgba(91,94,246,0.35);
+    }
+
+    .cr{flex:1;display:flex;flex-direction:column;gap:10px;overflow:hidden;}
+    .cr-main{
+      background:#131323;border:1px solid rgba(255,255,255,0.055);
+      border-radius:11px;padding:18px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:5px;text-align:center;
+    }
+    .cr-lbl{font-size:11px;color:rgba(255,255,255,0.34);font-weight:500;letter-spacing:0.04em;}
+    .cr-val{font-size:34px;font-weight:800;color:#fff;letter-spacing:-0.04em;}
+    .cr-val small{font-size:14px;font-weight:500;color:rgba(255,255,255,0.36);}
+    .cr-eff{font-size:11.5px;color:rgba(255,255,255,0.38);}
+    .cr-eff strong{color:#a5b4fc;}
+
+    .bkrow{display:flex;gap:10px;flex:1;min-height:0;}
+    .bk{flex:1;background:#131323;border:1px solid rgba(255,255,255,0.055);border-radius:11px;padding:13px 15px;display:flex;flex-direction:column;gap:7px;}
+    .bk-t{font-size:10px;font-weight:600;color:rgba(255,255,255,0.38);letter-spacing:0.04em;}
+    .bk-r{display:flex;justify-content:space-between;align-items:center;}
+    .bk-n{font-size:11px;color:rgba(255,255,255,0.62);}
+    .bk-v{font-size:11.5px;font-weight:600;color:#fff;}
+    .bk-sep{height:1px;background:rgba(255,255,255,0.045);margin:1px 0;}
+    .tbar{height:7px;border-radius:3px;background:linear-gradient(90deg,#5b5ef6,#818cf8);margin-top:1px;}
+
+    /* ── Screen 4: Reports ── */
+    .r-stats{display:flex;gap:9px;flex-shrink:0;}
+    .rs{
+      flex:1;background:#131323;border:1px solid rgba(255,255,255,0.055);
+      border-radius:11px;padding:13px 15px;
+      display:flex;align-items:center;gap:11px;
+    }
+    .rs-ic{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+    .rs-v{font-size:18px;font-weight:700;color:#fff;line-height:1;}
+    .rs-l{font-size:9.5px;color:rgba(255,255,255,0.34);margin-top:3px;}
+
+    .r-list{flex:1;background:#131323;border:1px solid rgba(255,255,255,0.055);border-radius:11px;overflow:hidden;display:flex;flex-direction:column;}
+    .rl-h{
+      display:grid;grid-template-columns:2fr 1.1fr 1fr 0.95fr 0.9fr;
+      padding:9px 16px;border-bottom:1px solid rgba(255,255,255,0.05);
+      font-size:10px;font-weight:600;color:rgba(255,255,255,0.27);letter-spacing:0.04em;
+    }
+    .rl-b{flex:1;overflow-y:auto;}
+    .rl-b::-webkit-scrollbar{width:0;}
+    .rr{
+      display:grid;grid-template-columns:2fr 1.1fr 1fr 0.95fr 0.9fr;
+      padding:11px 16px;align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.030);
+      font-size:11.5px;color:rgba(255,255,255,0.68);
+      transition:background .14s;cursor:pointer;
+    }
+    .rr:last-child{border:none;}
+    .rr:hover{background:rgba(99,102,241,0.05);}
+    .rn{display:flex;align-items:center;gap:9px;}
+    .rn-ic{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+    .rn-t{font-weight:600;color:#fff;font-size:11.5px;}
+    .rn-s{font-size:9.5px;color:rgba(255,255,255,0.27);}
+    .dl{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:10px;font-weight:600;
+      background:rgba(99,102,241,0.13);color:#a5b4fc;
+      border:none;padding:4px 10px;border-radius:6px;cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-badge">₿</div>
+    Fin<em>Tax</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Case Studies</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-ghost">Sign in</button>
+    <button class="btn-primary">Get started free</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-fade"></div>
+
+  <div class="hero-badge">
+    <div class="badge-pill">✦ NEW</div>
+    <span class="badge-sep">|</span>
+    FinTax Suite 3.0 — AI Tax Advisor now live
+    <span class="badge-link">→</span>
+  </div>
+
+  <h1 class="hero-h1">
+    <span class="tw">Crypto accounting,</span><br>
+    <span class="ti">tax calculator</span>
+    <span class="tw"> &amp; professional</span><br>
+    <span class="tw">tax consulting services.</span>
+  </h1>
+
+  <p class="hero-sub">
+    FinTax unifies compliance, calculation, and expert consulting
+    into one seamless platform — built for the speed of crypto finance.
+  </p>
+
+  <div class="hero-ctas">
+    <button class="cta-fill">Get started free →</button>
+    <button class="cta-outline">▶&nbsp; See how FinTax works</button>
+  </div>
+
+  <div class="proof">
+    <div class="proof-avatars">
+      <div class="pav pa1">A</div>
+      <div class="pav pa2">J</div>
+      <div class="pav pa3">M</div>
+      <div class="pav pa4">K</div>
+      <div class="pav pa5">L</div>
+    </div>
+    <span>Trusted by <span class="proof-hl">10,000+</span> companies</span>
+    <div class="proof-sep"></div>
+    <span>★★★★★&nbsp;<span class="proof-hl">4.9</span> on G2</span>
+    <div class="proof-sep"></div>
+    <span>No credit card required</span>
+  </div>
+
+  <!-- mockup -->
+  <div class="mockup-wrap">
+
+    <!-- tab switcher -->
+    <div class="mtabs">
+      <div class="mtab active" data-s="dash"><span class="mtab-icon">📊</span>Dashboard</div>
+      <div class="mtab" data-s="acct"><span class="mtab-icon">🗂️</span>Accounting</div>
+      <div class="mtab" data-s="calc"><span class="mtab-icon">🧮</span>Tax Calculator</div>
+      <div class="mtab" data-s="rep"><span class="mtab-icon">📁</span>Reports</div>
+    </div>
+
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="b-dots"><div class="bd br"></div><div class="bd by"></div><div class="bd bg"></div></div>
+        <div class="b-url" id="urlBar">app.fintax.tech / dashboard</div>
+      </div>
+
+      <div class="dash">
+        <!-- sidebar -->
+        <div class="sb">
+          <div class="sb-logo"><div class="sb-logo-icon">₿</div>Fin<em>Tax</em></div>
+          <div class="sn active" id="sn-dash"><div class="sn-ic ic1">📊</div>Dashboard</div>
+          <div class="sn"        id="sn-acct"><div class="sn-ic ic2">🗂️</div>Accounting</div>
+          <div class="sn"        id="sn-calc"><div class="sn-ic ic3">🧮</div>Tax Calc</div>
+          <div class="sn"                    ><div class="sn-ic ic4">💼</div>Consulting</div>
+          <div class="sn"                    ><div class="sn-ic ic5">🔍</div>Audit</div>
+          <div class="sn"        id="sn-rep" ><div class="sn-ic ic6">📁</div>Reports</div>
+          <div class="sn-spacer"></div>
+          <div class="sn"><div class="sn-ic ic7">⚙️</div>Settings</div>
+        </div>
+
+        <!-- ══ SCREEN 1 · Dashboard ══ -->
+        <div class="screen on show" id="s-dash" style="display:flex;">
+          <div class="sp">
+            <div class="s-top">
+              <div class="s-title">Tax Overview</div>
+              <div class="pgroup">
+                <div class="pb">1M</div><div class="pb">3M</div>
+                <div class="pb active">YTD</div><div class="pb">1Y</div>
+              </div>
+            </div>
+
+            <div class="krow">
+              <div class="kc">
+                <div class="kc-lbl">TOTAL TAX LIABILITY</div>
+                <div class="kc-val">¥ 2,481,000</div>
+                <div class="kbadge kd">↓ 12.4% vs last year</div>
+              </div>
+              <div class="kc">
+                <div class="kc-lbl">CRYPTO GAINS (BTC/ETH)</div>
+                <div class="kc-val">¥ 8,340,000</div>
+                <div class="kbadge ku">↑ 34.1%</div>
+              </div>
+              <div class="kc">
+                <div class="kc-lbl">DEDUCTIONS APPLIED</div>
+                <div class="kc-val">¥ 620,000</div>
+                <div class="kbadge kn">8 items</div>
+              </div>
+              <div class="kc">
+                <div class="kc-lbl">COMPLIANCE SCORE</div>
+                <div class="kc-val">98.6%</div>
+                <div class="kbadge ku">↑ Excellent</div>
+              </div>
+            </div>
+
+            <div class="crow">
+              <div class="cmain">
+                <div class="ch">
+                  <span class="cl">Monthly Tax Position</span>
+                  <span class="cs">Jan – Dec 2024</span>
+                </div>
+                <div class="cbars">
+                  <div class="cg"><div class="cb d" style="height:36%"></div><div class="clb">Jan</div></div>
+                  <div class="cg"><div class="cb d" style="height:50%"></div><div class="clb">Feb</div></div>
+                  <div class="cg"><div class="cb d" style="height:43%"></div><div class="clb">Mar</div></div>
+                  <div class="cg"><div class="cb d" style="height:61%"></div><div class="clb">Apr</div></div>
+                  <div class="cg"><div class="cb d" style="height:54%"></div><div class="clb">May</div></div>
+                  <div class="cg"><div class="cb d" style="height:68%"></div><div class="clb">Jun</div></div>
+                  <div class="cg"><div class="cb d" style="height:64%"></div><div class="clb">Jul</div></div>
+                  <div class="cg"><div class="cb d" style="height:77%"></div><div class="clb">Aug</div></div>
+                  <div class="cg"><div class="cb d" style="height:71%"></div><div class="clb">Sep</div></div>
+                  <div class="cg"><div class="cb"   style="height:86%"></div><div class="clb">Oct</div></div>
+                  <div class="cg"><div class="cb"   style="height:94%"></div><div class="clb">Nov</div></div>
+                  <div class="cg"><div class="cb"   style="height:80%"></div><div class="clb">Dec</div></div>
+                </div>
+              </div>
+              <div class="cside">
+                <div class="ct">Recent Transactions</div>
+                <div class="txr"><div class="txi" style="background:rgba(251,191,36,.14)">₿</div><div class="txn"><div class="txn1">BTC Sale</div><div class="txn2">Dec 28</div></div><div class="txa up">+¥42,000</div></div>
+                <div class="txr"><div class="txi" style="background:rgba(100,116,139,.14)">Ξ</div><div class="txn"><div class="txn1">ETH Swap</div><div class="txn2">Dec 27</div></div><div class="txa dn">−¥8,400</div></div>
+                <div class="txr"><div class="txi" style="background:rgba(52,211,153,.13)">💹</div><div class="txn"><div class="txn1">Staking</div><div class="txn2">Dec 26</div></div><div class="txa up">+¥1,260</div></div>
+                <div class="txr"><div class="txi" style="background:rgba(167,139,250,.13)">🔍</div><div class="txn"><div class="txn1">Audit Filed</div><div class="txn2">Dec 24</div></div><div class="txa" style="color:rgba(255,255,255,.28)">—</div></div>
+                <div class="txr"><div class="txi" style="background:rgba(249,115,22,.13)">📄</div><div class="txn"><div class="txn1">Q4 Report</div><div class="txn2">Dec 23</div></div><div class="txa dn">−¥3,800</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 2 · Accounting ══ -->
+        <div class="screen" id="s-acct" style="display:none;">
+          <div class="sp">
+            <div class="s-top">
+              <div class="s-title">Crypto Ledger</div>
+              <div class="pgroup">
+                <div class="pb active">All</div>
+                <div class="pb">BTC</div><div class="pb">ETH</div>
+                <div class="pb">USDT</div><div class="pb">Other</div>
+              </div>
+            </div>
+            <div class="l-sum">
+              <div class="ls"><div class="ls-l">PORTFOLIO VALUE</div><div class="ls-v">¥ 18,742,000</div><div class="ls-s" style="color:#34d399">↑ +14.3% this year</div></div>
+              <div class="ls"><div class="ls-l">REALIZED GAINS</div><div class="ls-v">¥ 8,340,000</div><div class="ls-s" style="color:#a5b4fc">Taxable: ¥ 6,212,000</div></div>
+              <div class="ls"><div class="ls-l">UNREALIZED GAINS</div><div class="ls-v">¥ 3,108,000</div><div class="ls-s" style="color:#fbbf24">9 positions open</div></div>
+            </div>
+            <div class="l-table">
+              <div class="th"><span>ASSET</span><span>AMOUNT</span><span>COST BASIS</span><span>GAIN/LOSS</span><span>STATUS</span></div>
+              <div class="tb">
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:rgba(251,191,36,.14)">₿</div><div><div class="ta-n">Bitcoin</div><div class="ta-s">BTC</div></div></div><span>2.4820 BTC</span><span>¥ 312,000</span><span style="color:#34d399">+¥ 980,000</span><span class="sd so">● Matched</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:rgba(100,116,139,.14)">Ξ</div><div><div class="ta-n">Ethereum</div><div class="ta-s">ETH</div></div></div><span>18.340 ETH</span><span>¥ 241,000</span><span style="color:#34d399">+¥ 442,000</span><span class="sd so">● Matched</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:rgba(52,211,153,.13)">💵</div><div><div class="ta-n">Tether</div><div class="ta-s">USDT</div></div></div><span>50,000 USDT</span><span>¥ 362,000</span><span style="color:rgba(255,255,255,.36)">¥ 0</span><span class="sd so">● Matched</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:rgba(249,115,22,.13)">🔶</div><div><div class="ta-n">Solana</div><div class="ta-s">SOL</div></div></div><span>420 SOL</span><span>¥ 88,000</span><span style="color:#34d399">+¥ 136,000</span><span class="sd sp2">● Pending</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:rgba(167,139,250,.13)">💜</div><div><div class="ta-n">Polygon</div><div class="ta-s">MATIC</div></div></div><span>12,000 MATIC</span><span>¥ 54,000</span><span style="color:#fb7185">−¥ 18,000</span><span class="sd sr">● Review</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:rgba(59,130,246,.13)">🔵</div><div><div class="ta-n">Chainlink</div><div class="ta-s">LINK</div></div></div><span>3,200 LINK</span><span>¥ 41,000</span><span style="color:#34d399">+¥ 64,000</span><span class="sd so">● Matched</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 3 · Tax Calc ══ -->
+        <div class="screen" id="s-calc" style="display:none;">
+          <div class="sp">
+            <div class="s-top">
+              <div class="s-title">Tax Calculator</div>
+              <div class="kbadge ku" style="font-size:11px;padding:4px 12px;">AI-Powered ✦</div>
+            </div>
+            <div class="calc-lay">
+              <div class="cf">
+                <div class="cf-title">Parameters</div>
+                <div class="ff"><div class="fl">TAX YEAR</div><select class="fsel"><option>2024</option><option>2023</option></select></div>
+                <div class="ff"><div class="fl">TOTAL CRYPTO INCOME (¥)</div><input class="fi hi" type="text" value="8,340,000" /></div>
+                <div class="ff"><div class="fl">CAPITAL GAINS (¥)</div><input class="fi" type="text" value="3,240,000" /></div>
+                <div class="ff"><div class="fl">STAKING REWARDS (¥)</div><input class="fi" type="text" value="124,800" /></div>
+                <div class="ff"><div class="fl">DEDUCTIONS (¥)</div><input class="fi" type="text" value="620,000" /></div>
+                <div class="ff"><div class="fl">ENTITY TYPE</div><select class="fsel"><option>Enterprise</option><option>Individual</option></select></div>
+                <button class="cbtn">Calculate →</button>
+              </div>
+              <div class="cr">
+                <div class="cr-main">
+                  <div class="cr-lbl">ESTIMATED TAX LIABILITY</div>
+                  <div class="cr-val">¥ 2,481,000 <small>CNY</small></div>
+                  <div class="cr-eff">Effective rate: <strong>29.8%</strong> &nbsp;·&nbsp; Saved vs. standard: <strong style="color:#34d399">¥ 340,000</strong></div>
+                </div>
+                <div class="bkrow">
+                  <div class="bk">
+                    <div class="bk-t">TAX BREAKDOWN</div>
+                    <div class="bk-r"><span class="bk-n">Income Tax</span><span class="bk-v">¥ 1,668,000</span></div>
+                    <div class="tbar" style="width:100%"></div>
+                    <div class="bk-sep"></div>
+                    <div class="bk-r"><span class="bk-n">Capital Gains</span><span class="bk-v">¥ 648,000</span></div>
+                    <div class="tbar" style="width:39%"></div>
+                    <div class="bk-sep"></div>
+                    <div class="bk-r"><span class="bk-n">Staking Tax</span><span class="bk-v">¥ 165,000</span></div>
+                    <div class="tbar" style="width:10%"></div>
+                  </div>
+                  <div class="bk">
+                    <div class="bk-t">DEDUCTIONS</div>
+                    <div class="bk-r"><span class="bk-n">Business Costs</span><span class="bk-v" style="color:#34d399">−¥ 280,000</span></div>
+                    <div class="bk-r"><span class="bk-n">R&amp;D Credit</span><span class="bk-v" style="color:#34d399">−¥ 180,000</span></div>
+                    <div class="bk-r"><span class="bk-n">Loss Carry</span><span class="bk-v" style="color:#34d399">−¥ 160,000</span></div>
+                    <div class="bk-sep"></div>
+                    <div class="bk-r"><span class="bk-n" style="color:#fff;font-weight:700">Total Saved</span><span class="bk-v" style="color:#a5b4fc">−¥ 620,000</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 4 · Reports ══ -->
+        <div class="screen" id="s-rep" style="display:none;">
+          <div class="sp">
+            <div class="s-top">
+              <div class="s-title">Tax Reports</div>
+              <button style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#5b5ef6,#818cf8);border:none;border-radius:8px;padding:7px 15px;font-size:12px;font-weight:600;color:#fff;cursor:pointer;box-shadow:0 0 16px rgba(91,94,246,0.3);">✦ Generate Report</button>
+            </div>
+            <div class="r-stats">
+              <div class="rs"><div class="rs-ic" style="background:rgba(99,102,241,.14)">📄</div><div><div class="rs-v">24</div><div class="rs-l">Reports Generated</div></div></div>
+              <div class="rs"><div class="rs-ic" style="background:rgba(52,211,153,.12)">✅</div><div><div class="rs-v">18</div><div class="rs-l">Filed & Approved</div></div></div>
+              <div class="rs"><div class="rs-ic" style="background:rgba(251,191,36,.12)">⏳</div><div><div class="rs-v">4</div><div class="rs-l">Pending Review</div></div></div>
+              <div class="rs"><div class="rs-ic" style="background:rgba(59,156,255,.12)">☁️</div><div><div class="rs-v">2</div><div class="rs-l">Cloud Archived</div></div></div>
+            </div>
+            <div class="r-list">
+              <div class="rl-h"><span>REPORT NAME</span><span>PERIOD</span><span>TYPE</span><span>STATUS</span><span>ACTION</span></div>
+              <div class="rl-b">
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:rgba(99,102,241,.14)">📊</div><div><div class="rn-t">Annual Tax Return 2024</div><div class="rn-s">PDF · 2.4 MB</div></div></div><span>Full Year 2024</span><span>Tax Return</span><span class="sd sp2">● Pending</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:rgba(52,211,153,.12)">📈</div><div><div class="rn-t">Q3 Crypto Gains</div><div class="rn-s">PDF · 1.8 MB</div></div></div><span>Jul–Sep 2024</span><span>Capital Gains</span><span class="sd so">● Approved</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:rgba(251,191,36,.12)">🔍</div><div><div class="rn-t">Compliance Audit Q3</div><div class="rn-s">PDF · 3.1 MB</div></div></div><span>Jul–Sep 2024</span><span>Audit</span><span class="sd so">● Approved</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:rgba(249,115,22,.12)">💰</div><div><div class="rn-t">Staking Income Report</div><div class="rn-s">XLSX · 0.9 MB</div></div></div><span>Full Year 2024</span><span>Income</span><span class="sd sr">● Review</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:rgba(100,116,139,.12)">📋</div><div><div class="rn-t">Annual Tax Return 2023</div><div class="rn-s">PDF · 2.1 MB</div></div></div><span>Full Year 2023</span><span>Tax Return</span><span class="sd so">● Approved</span><button class="dl">↓ Download</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.dash -->
+    </div><!-- /.browser -->
+  </div><!-- /.mockup-wrap -->
+
+</section>
+
+<!-- How FinTax Works anchor -->
+<div id="how-it-works" style="text-align:center;padding:80px 40px 50px;font-size:clamp(28px,3.5vw,48px);font-weight:800;letter-spacing:-0.03em;color:#fff;border-top:1px solid rgba(255,255,255,0.05);">
+  How
+  <span style="background:linear-gradient(90deg,#818cf8,#a5b4fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">FinTax</span>
+  works
+</div>
+
+<script>
+const CFG = {
+  dash: { url:'app.fintax.tech / dashboard',  sn:'sn-dash' },
+  acct: { url:'app.fintax.tech / accounting', sn:'sn-acct' },
+  calc: { url:'app.fintax.tech / tax-calc',   sn:'sn-calc' },
+  rep:  { url:'app.fintax.tech / reports',    sn:'sn-rep'  },
+};
+let cur = 'dash';
+
+function go(id) {
+  if (id === cur) return;
+
+  // fade out old
+  const old = document.getElementById('s-' + cur);
+  old.classList.remove('show');
+  setTimeout(() => { old.classList.remove('on'); old.style.display = 'none'; }, 250);
+
+  // fade in new
+  const next = document.getElementById('s-' + id);
+  next.style.display = 'flex';
+  next.classList.add('on');
+  requestAnimationFrame(() => requestAnimationFrame(() => next.classList.add('show')));
+
+  // update tabs
+  document.querySelectorAll('.mtab').forEach(t =>
+    t.classList.toggle('active', t.dataset.s === id));
+
+  // update sidebar
+  Object.keys(CFG).forEach(k => {
+    const el = document.getElementById(CFG[k].sn);
+    if (el) el.classList.toggle('active', k === id);
+  });
+
+  // url bar
+  document.getElementById('urlBar').textContent = CFG[id]?.url ?? '';
+  cur = id;
+}
+
+document.querySelectorAll('.mtab').forEach(t =>
+  t.addEventListener('click', () => go(t.dataset.s)));
+
+Object.keys(CFG).forEach(k => {
+  const el = document.getElementById(CFG[k].sn);
+  if (el) el.addEventListener('click', () => go(k));
+});
+</script>
+</body>
+</html>

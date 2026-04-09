@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTax — Crypto Accounting & Tax Suite</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC",sans-serif;
+      background:#0b0b0f; color:#fff; overflow-x:hidden;
+    }
+
+    /* ══════════ NAV ══════════ */
+    nav{
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      height:60px;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 40px;
+      background:rgba(11,11,15,0.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo{
+      font-size:17px; font-weight:800; letter-spacing:-0.04em; color:#fff;
+      display:flex; align-items:center; gap:8px; text-decoration:none;
+    }
+    .nav-logo-icon{
+      width:30px; height:30px; border-radius:8px;
+      background:linear-gradient(135deg,#4f9cff,#7c5cff);
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px;
+    }
+    .nav-links{
+      display:flex; align-items:center; gap:32px;
+      font-size:13.5px; font-weight:500; color:rgba(255,255,255,0.62);
+      list-style:none;
+    }
+    .nav-links a{text-decoration:none; color:inherit; transition:color .2s;}
+    .nav-links a:hover{color:#fff;}
+    .nav-actions{display:flex; align-items:center; gap:10px;}
+    .btn-ghost{
+      font-size:13.5px; font-weight:500; color:rgba(255,255,255,0.7);
+      background:none; border:none; cursor:pointer; padding:7px 14px;
+      border-radius:8px; transition:color .2s, background .2s;
+    }
+    .btn-ghost:hover{color:#fff; background:rgba(255,255,255,0.07);}
+    .btn-primary{
+      font-size:13.5px; font-weight:600; color:#fff;
+      background:linear-gradient(135deg,#4f9cff,#7c5cff);
+      border:none; cursor:pointer; padding:8px 18px;
+      border-radius:9px; transition:opacity .2s, transform .15s;
+      box-shadow:0 0 24px rgba(124,92,255,0.35);
+    }
+    .btn-primary:hover{opacity:0.88; transform:translateY(-1px);}
+
+    /* ══════════ HERO SECTION ══════════ */
+    .hero{
+      min-height:100vh;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:flex-start;
+      padding:140px 40px 80px;
+      position:relative; overflow:hidden;
+    }
+    /* ambient glow bg */
+    .hero::before{
+      content:'';
+      position:absolute; top:-200px; left:50%; transform:translateX(-50%);
+      width:900px; height:600px;
+      background:radial-gradient(ellipse at center,
+        rgba(124,92,255,0.18) 0%,
+        rgba(79,156,255,0.10) 35%,
+        transparent 70%);
+      pointer-events:none;
+    }
+    .hero::after{
+      content:'';
+      position:absolute; bottom:0; left:0; right:0; height:180px;
+      background:linear-gradient(to bottom, transparent, #0b0b0f);
+      pointer-events:none; z-index:2;
+    }
+
+    /* badge */
+    .hero-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.11);
+      border-radius:100px;
+      padding:6px 14px 6px 8px;
+      font-size:12.5px; font-weight:500; color:rgba(255,255,255,0.8);
+      margin-bottom:32px; cursor:pointer;
+      transition:background .2s, border-color .2s;
+    }
+    .hero-badge:hover{background:rgba(255,255,255,0.09); border-color:rgba(255,255,255,0.2);}
+    .badge-dot{
+      width:20px; height:20px; border-radius:50%;
+      background:linear-gradient(135deg,#4f9cff,#7c5cff);
+      display:flex; align-items:center; justify-content:center;
+      font-size:10px;
+    }
+    .badge-new{
+      font-size:10px; font-weight:700; letter-spacing:0.06em;
+      background:linear-gradient(90deg,#4f9cff,#a78bfa);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      margin-right:2px;
+    }
+    .badge-arrow{color:rgba(255,255,255,0.4); font-size:11px; margin-left:4px;}
+
+    /* headline */
+    .hero-h1{
+      font-size:clamp(38px,5.5vw,76px);
+      font-weight:800; line-height:1.1;
+      letter-spacing:-0.04em;
+      text-align:center;
+      max-width:880px;
+      margin-bottom:22px;
+    }
+    .hero-h1 .grad{
+      background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,0.7) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .hero-h1 .accent{
+      background:linear-gradient(90deg,#60a5fa,#a78bfa);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+
+    /* subtitle */
+    .hero-sub{
+      font-size:clamp(15px,1.6vw,19px);
+      color:rgba(255,255,255,0.48);
+      text-align:center;
+      max-width:520px;
+      line-height:1.65;
+      margin-bottom:36px;
+      font-weight:400;
+    }
+
+    /* CTA row */
+    .hero-ctas{
+      display:flex; align-items:center; gap:12px;
+      margin-bottom:52px;
+    }
+    .cta-main{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:15px; font-weight:600; color:#fff;
+      background:linear-gradient(135deg,#4f9cff,#7c5cff);
+      border:none; cursor:pointer;
+      padding:13px 28px; border-radius:11px;
+      box-shadow:0 0 40px rgba(124,92,255,0.40), 0 4px 16px rgba(0,0,0,0.3);
+      transition:opacity .2s, transform .15s;
+    }
+    .cta-main:hover{opacity:0.88; transform:translateY(-2px);}
+    .cta-secondary{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:15px; font-weight:500; color:rgba(255,255,255,0.75);
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      cursor:pointer; padding:13px 24px; border-radius:11px;
+      transition:background .2s, border-color .2s, color .2s;
+    }
+    .cta-secondary:hover{
+      background:rgba(255,255,255,0.10);
+      border-color:rgba(255,255,255,0.22); color:#fff;
+    }
+
+    /* social proof */
+    .hero-proof{
+      display:flex; align-items:center; gap:14px;
+      font-size:12.5px; color:rgba(255,255,255,0.38);
+      margin-bottom:64px;
+    }
+    .proof-avatars{display:flex;}
+    .proof-avatar{
+      width:26px; height:26px; border-radius:50%;
+      border:2px solid #0b0b0f; margin-left:-8px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:11px;
+    }
+    .proof-avatar:first-child{margin-left:0;}
+    .av1{background:linear-gradient(135deg,#f472b6,#fb923c);}
+    .av2{background:linear-gradient(135deg,#34d399,#059669);}
+    .av3{background:linear-gradient(135deg,#60a5fa,#7c5cff);}
+    .av4{background:linear-gradient(135deg,#facc15,#f97316);}
+    .proof-divider{width:1px; height:14px; background:rgba(255,255,255,0.14);}
+
+    /* ── product mockup ── */
+    .product-frame{
+      position:relative; width:min(1100px,90vw);
+      z-index:1;
+    }
+    .product-browser{
+      background:#161620;
+      border:1px solid rgba(255,255,255,0.09);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 40px 100px rgba(0,0,0,0.7),
+        0 0 80px rgba(124,92,255,0.12);
+    }
+    /* browser chrome */
+    .browser-bar{
+      height:42px; background:#1e1e2a;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      display:flex; align-items:center; padding:0 16px; gap:10px;
+    }
+    .browser-dots{display:flex; gap:6px;}
+    .bd{width:11px;height:11px;border-radius:50%;}
+    .bd-r{background:#ff5f56;} .bd-y{background:#febc2e;} .bd-g{background:#27c840;}
+    .browser-url{
+      flex:1; max-width:320px; margin:0 auto;
+      background:rgba(255,255,255,0.05); border-radius:6px;
+      height:24px; display:flex; align-items:center; justify-content:center;
+      font-size:11px; color:rgba(255,255,255,0.3);
+    }
+
+    /* dashboard layout inside browser */
+    .dash{
+      display:flex; height:520px;
+    }
+    .dash-sidebar{
+      width:200px; flex-shrink:0;
+      background:#13131c;
+      border-right:1px solid rgba(255,255,255,0.05);
+      padding:20px 14px; display:flex; flex-direction:column; gap:4px;
+    }
+    .dash-logo{
+      font-size:14px; font-weight:800; color:#fff;
+      padding:0 8px 16px; letter-spacing:-0.03em;
+    }
+    .dash-logo span{color:#7c5cff;}
+    .dash-nav-item{
+      display:flex; align-items:center; gap:10px;
+      padding:8px 10px; border-radius:8px;
+      font-size:12.5px; font-weight:500; color:rgba(255,255,255,0.45);
+      cursor:pointer;
+    }
+    .dash-nav-item.active{
+      background:rgba(124,92,255,0.15); color:#a78bfa;
+    }
+    .dash-nav-icon{font-size:14px; width:18px; text-align:center;}
+    .dash-main{
+      flex:1; background:#0f0f1a; padding:22px 24px;
+      display:flex; flex-direction:column; gap:18px; overflow:hidden;
+    }
+    .dash-topbar{
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .dash-title{font-size:16px; font-weight:700; color:#fff;}
+    .dash-period{
+      display:flex; gap:4px;
+    }
+    .period-btn{
+      font-size:11px; padding:4px 10px; border-radius:6px;
+      color:rgba(255,255,255,0.4); cursor:pointer;
+    }
+    .period-btn.active{background:rgba(124,92,255,0.2); color:#a78bfa;}
+
+    /* KPI cards */
+    .kpi-row{display:flex; gap:12px;}
+    .kpi-card{
+      flex:1; background:#1a1a28; border:1px solid rgba(255,255,255,0.06);
+      border-radius:12px; padding:14px 16px;
+    }
+    .kpi-label{font-size:10.5px; color:rgba(255,255,255,0.38); margin-bottom:8px; font-weight:500;}
+    .kpi-value{font-size:22px; font-weight:700; color:#fff; line-height:1;}
+    .kpi-badge{
+      display:inline-block; font-size:10px; font-weight:600;
+      padding:2px 7px; border-radius:20px; margin-top:6px;
+    }
+    .kpi-up{background:rgba(52,211,153,0.15); color:#34d399;}
+    .kpi-down{background:rgba(251,113,133,0.15); color:#fb7185;}
+
+    /* chart area */
+    .chart-row{display:flex; gap:12px; flex:1; min-height:0;}
+    .chart-main{
+      flex:1; background:#1a1a28; border:1px solid rgba(255,255,255,0.06);
+      border-radius:12px; padding:16px; overflow:hidden;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .chart-header{display:flex; justify-content:space-between; align-items:center;}
+    .chart-label{font-size:12px; font-weight:600; color:rgba(255,255,255,0.7);}
+    /* SVG bar chart */
+    .chart-bars{flex:1; display:flex; align-items:flex-end; gap:6px; padding-top:4px;}
+    .bar-group{flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;}
+    .bar{
+      width:100%; border-radius:4px 4px 0 0;
+      background:linear-gradient(to top,#7c5cff,#4f9cff);
+      min-height:4px;
+    }
+    .bar-dim{background:rgba(255,255,255,0.07) !important;}
+    .bar-lbl{font-size:9px; color:rgba(255,255,255,0.25); white-space:nowrap;}
+
+    .chart-side{
+      width:180px; flex-shrink:0;
+      background:#1a1a28; border:1px solid rgba(255,255,255,0.06);
+      border-radius:12px; padding:14px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .tx-label{font-size:11px; font-weight:600; color:rgba(255,255,255,0.6);}
+    .tx-row{
+      display:flex; align-items:center; gap:8px;
+      padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+    .tx-row:last-child{border:none;}
+    .tx-icon{
+      width:28px; height:28px; border-radius:7px;
+      display:flex; align-items:center; justify-content:center; font-size:13px;
+      flex-shrink:0;
+    }
+    .tx-info{flex:1; min-width:0;}
+    .tx-name{font-size:10.5px; font-weight:600; color:rgba(255,255,255,0.8); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .tx-date{font-size:9px; color:rgba(255,255,255,0.28);}
+    .tx-amt{font-size:11px; font-weight:700; white-space:nowrap;}
+    .tx-pos{color:#34d399;} .tx-neg{color:#fb7185;}
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">₿</div>
+    Fin<span style="color:#a78bfa">Tax</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Case Studies</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-ghost">Sign in</button>
+    <button class="btn-primary">Get started free</button>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+
+  <!-- badge -->
+  <div class="hero-badge">
+    <div class="badge-dot">✦</div>
+    <span class="badge-new">NEW</span>
+    Introducing FinTax Suite 3.0 — now with AI tax advisor
+    <span class="badge-arrow">→</span>
+  </div>
+
+  <!-- headline -->
+  <h1 class="hero-h1">
+    <span class="grad">Crypto accounting,</span><br>
+    <span class="accent">tax calculator</span>
+    <span class="grad"> &amp; professional</span><br>
+    <span class="grad">tax consulting services.</span>
+  </h1>
+
+  <!-- subtitle -->
+  <p class="hero-sub">
+    FinTax unifies compliance, calculation, and expert consulting
+    into one seamless platform — built for the speed of crypto finance.
+  </p>
+
+  <!-- CTAs -->
+  <div class="hero-ctas">
+    <button class="cta-main">Get started free →</button>
+    <button class="cta-secondary">▶&nbsp; See how FinTax works</button>
+  </div>
+
+  <!-- social proof -->
+  <div class="hero-proof">
+    <div class="proof-avatars">
+      <div class="proof-avatar av1">A</div>
+      <div class="proof-avatar av2">B</div>
+      <div class="proof-avatar av3">C</div>
+      <div class="proof-avatar av4">D</div>
+    </div>
+    <span>Trusted by <strong style="color:rgba(255,255,255,0.75)">10,000+</strong> companies</span>
+    <div class="proof-divider"></div>
+    <span>★★★★★&nbsp; 4.9 on G2</span>
+    <div class="proof-divider"></div>
+    <span>No credit card required</span>
+  </div>
+
+  <!-- product browser mockup -->
+  <div class="product-frame">
+    <div class="product-browser">
+
+      <!-- browser chrome bar -->
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <div class="bd bd-r"></div>
+          <div class="bd bd-y"></div>
+          <div class="bd bd-g"></div>
+        </div>
+        <div class="browser-url">app.fintax.tech / dashboard</div>
+      </div>
+
+      <!-- dashboard body -->
+      <div class="dash">
+
+        <!-- sidebar -->
+        <div class="dash-sidebar">
+          <div class="dash-logo">Fin<span>Tax</span></div>
+          <div class="dash-nav-item active"><span class="dash-nav-icon">📊</span> Dashboard</div>
+          <div class="dash-nav-item"><span class="dash-nav-icon">🗂️</span> Accounting</div>
+          <div class="dash-nav-item"><span class="dash-nav-icon">🧮</span> Tax Calc</div>
+          <div class="dash-nav-item"><span class="dash-nav-icon">💼</span> Consulting</div>
+          <div class="dash-nav-item"><span class="dash-nav-icon">🔍</span> Audit</div>
+          <div class="dash-nav-item"><span class="dash-nav-icon">📁</span> Reports</div>
+          <div class="dash-nav-item" style="margin-top:auto"><span class="dash-nav-icon">⚙️</span> Settings</div>
+        </div>
+
+        <!-- main area -->
+        <div class="dash-main">
+          <div class="dash-topbar">
+            <div class="dash-title">Tax Overview</div>
+            <div class="dash-period">
+              <div class="period-btn">1M</div>
+              <div class="period-btn">3M</div>
+              <div class="period-btn active">YTD</div>
+              <div class="period-btn">1Y</div>
+            </div>
+          </div>
+
+          <!-- KPI cards -->
+          <div class="kpi-row">
+            <div class="kpi-card">
+              <div class="kpi-label">Total Tax Liability</div>
+              <div class="kpi-value">¥ 2,481,000</div>
+              <div class="kpi-badge kpi-down">↓ 12.4% vs last year</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Crypto Gains (BTC/ETH)</div>
+              <div class="kpi-value">¥ 8,340,000</div>
+              <div class="kpi-badge kpi-up">↑ 34.1%</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Deductions Applied</div>
+              <div class="kpi-value">¥ 620,000</div>
+              <div class="kpi-badge kpi-up">↑ 8 items</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Compliance Score</div>
+              <div class="kpi-value">98.6<span style="font-size:14px;color:rgba(255,255,255,0.4)">%</span></div>
+              <div class="kpi-badge kpi-up">↑ Excellent</div>
+            </div>
+          </div>
+
+          <!-- chart + transactions -->
+          <div class="chart-row">
+            <div class="chart-main">
+              <div class="chart-header">
+                <span class="chart-label">Monthly Tax Position</span>
+                <span style="font-size:10px;color:rgba(255,255,255,0.28)">Jan – Dec 2024</span>
+              </div>
+              <div class="chart-bars">
+                <div class="bar-group"><div class="bar bar-dim" style="height:38%"></div><div class="bar-lbl">Jan</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:52%"></div><div class="bar-lbl">Feb</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:44%"></div><div class="bar-lbl">Mar</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:61%"></div><div class="bar-lbl">Apr</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:55%"></div><div class="bar-lbl">May</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:70%"></div><div class="bar-lbl">Jun</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:65%"></div><div class="bar-lbl">Jul</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:78%"></div><div class="bar-lbl">Aug</div></div>
+                <div class="bar-group"><div class="bar bar-dim" style="height:72%"></div><div class="bar-lbl">Sep</div></div>
+                <div class="bar-group"><div class="bar" style="height:88%"></div><div class="bar-lbl">Oct</div></div>
+                <div class="bar-group"><div class="bar" style="height:95%"></div><div class="bar-lbl">Nov</div></div>
+                <div class="bar-group"><div class="bar" style="height:82%"></div><div class="bar-lbl">Dec</div></div>
+              </div>
+            </div>
+
+            <div class="chart-side">
+              <div class="tx-label">Recent Transactions</div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(251,191,36,0.15)">₿</div>
+                <div class="tx-info"><div class="tx-name">BTC Sale</div><div class="tx-date">Dec 28</div></div>
+                <div class="tx-amt tx-pos">+¥42,000</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(100,116,139,0.15)">Ξ</div>
+                <div class="tx-info"><div class="tx-name">ETH Swap</div><div class="tx-date">Dec 27</div></div>
+                <div class="tx-amt tx-neg">−¥8,400</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(52,211,153,0.15)">💹</div>
+                <div class="tx-info"><div class="tx-name">Staking Reward</div><div class="tx-date">Dec 26</div></div>
+                <div class="tx-amt tx-pos">+¥1,260</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(167,139,250,0.15)">🔍</div>
+                <div class="tx-info"><div class="tx-name">Audit Filed</div><div class="tx-date">Dec 24</div></div>
+                <div class="tx-amt" style="color:rgba(255,255,255,0.35)">—</div>
+              </div>
+              <div class="tx-row">
+                <div class="tx-icon" style="background:rgba(249,115,22,0.15)">📄</div>
+                <div class="tx-info"><div class="tx-name">Q4 Report</div><div class="tx-date">Dec 23</div></div>
+                <div class="tx-amt tx-neg">−¥3,800</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /.dash -->
+
+    </div><!-- /.product-browser -->
+  </div><!-- /.product-frame -->
+
+</section><!-- /.hero -->
+
+<!-- ══════════ HOW FINTAX WORKS (section divider) ══════════ -->
+<div id="how-it-works" style="
+  text-align:center; padding:80px 40px 50px;
+  font-size:clamp(28px,3.5vw,48px); font-weight:800;
+  letter-spacing:-0.03em; color:#fff;
+  border-top:1px solid rgba(255,255,255,0.06);
+">
+  How <span style="background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent">FinTax</span> works
+</div>
+
+</body>
+</html>

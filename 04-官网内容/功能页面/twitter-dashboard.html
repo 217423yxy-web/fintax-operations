@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>FinTax Twitter Analytics</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .stat-trend-up { color: #2fb344; }
+    .stat-trend-down { color: #d63939; }
+    .tweet-text { max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .page-header { background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%); }
+    .page-header .page-title, .page-header .breadcrumb-item, .page-header .breadcrumb-item.active { color: white !important; }
+    .page-header .text-muted { color: rgba(255,255,255,0.8) !important; }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-md navbar-dark" style="background: #1DA1F2;">
+      <div class="container-xl">
+        <a href="." class="navbar-brand navbar-brand-autodark">
+          <span class="text-white fw-bold fs-3">🐦 FinTax Twitter Analytics</span>
+        </a>
+        <div class="navbar-nav flex-row order-md-last ms-auto">
+          <span class="nav-link text-white opacity-75" id="lastUpdated"></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-wrapper">
+      <div class="page-header d-print-none" style="background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%); padding: 2rem 0;">
+        <div class="container-xl">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <h2 class="page-title text-white">数据分析看板</h2>
+              <div class="text-white opacity-75">2025年10月1日 — 2026年3月17日 · 共 <strong id="totalCount">0</strong> 条推文</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-body">
+        <div class="container-xl">
+
+          <!-- KPI Cards -->
+          <div class="row row-deck row-cards mb-4 mt-3">
+            <div class="col-sm-6 col-lg-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="subheader">总浏览量</div>
+                  </div>
+                  <div class="h1 mb-3" id="kpiViews">—</div>
+                  <div class="d-flex mb-2">
+                    <div>👁️ 所有推文累计浏览</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="subheader">总点赞数</div>
+                  <div class="h1 mb-3" id="kpiLikes">—</div>
+                  <div>❤️ 所有推文累计点赞</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="subheader">总转发数</div>
+                  <div class="h1 mb-3" id="kpiRetweets">—</div>
+                  <div>🔄 所有推文累计转发</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="subheader">互动率</div>
+                  <div class="h1 mb-3" id="kpiEngagement">—</div>
+                  <div>📊 (点赞+转发+回复) / 浏览量</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row 1 -->
+          <div class="row row-deck row-cards mb-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">📅 每月浏览量趋势</h3>
+                </div>
+                <div class="card-body">
+                  <div id="monthlyViewsChart" style="height:280px;"><canvas id="monthlyViewsCanvas"></canvas></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row 2 -->
+          <div class="row row-deck row-cards mb-4">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🕐 发推时间分布</h3>
+                </div>
+                <div class="card-body">
+                  <div style="height:260px;"><canvas id="hourlyCanvas"></canvas></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">💡 互动类型分布</h3>
+                </div>
+                <div class="card-body">
+                  <div style="height:260px;"><canvas id="engagementCanvas"></canvas></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row 3 -->
+          <div class="row row-deck row-cards mb-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🏆 Top 10 高浏览量推文</h3>
+                </div>
+                <div class="card-body">
+                  <div style="height:300px;"><canvas id="topTweetsCanvas"></canvas></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Charts Row NEW: 单帖浏览量 + 每周浏览量 -->
+          <div class="row row-deck row-cards mb-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">📊 每周浏览量趋势</h3>
+                </div>
+                <div class="card-body">
+                  <div style="height:280px;"><canvas id="weeklyCanvas"></canvas></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-deck row-cards mb-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🔵 单帖浏览量分布（每条推文）</h3>
+                  <div class="card-options">
+                    <small class="text-muted">气泡大小代表互动数（点赞+转发+回复）</small>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div style="height:320px;"><canvas id="singleTweetCanvas"></canvas></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Table -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">📋 推文详细数据</h3>
+              <div class="card-options">
+                <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="搜索推文内容..." style="width:200px;">
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-vcenter card-table table-striped">
+                <thead>
+                  <tr>
+                    <th>发布日期</th>
+                    <th>时间</th>
+                    <th>类型</th>
+                    <th>推文内容</th>
+                    <th>浏览量</th>
+                    <th>点赞</th>
+                    <th>转发</th>
+                    <th>回复</th>
+                  </tr>
+                </thead>
+                <tbody id="tweetsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="footer footer-transparent d-print-none">
+        <div class="container-xl">
+          <div class="row text-center align-items-center flex-row-reverse">
+            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item">FinTax Twitter Analytics Dashboard · 数据截至 2026-03-17</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+  <script>
+    const tweetsData = [{"推文ID": 2033854808579318112, "发布日期": "2026-03-17", "发布时间": "10:35:48", "类型": "原创", "推文内容": "", "浏览量": 35, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2033441898980094126, "发布日期": "2026-03-16", "发布时间": "07:15:02", "类型": "原创", "推文内容": "", "浏览量": 40, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2033144313991852146, "发布日期": "2026-03-15", "发布时间": "11:32:33", "类型": "原创", "推文内容": "", "浏览量": 50, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2033141499047932389, "发布日期": "2026-03-15", "发布时间": "11:21:21", "类型": "原创", "推文内容": "On March 20 (13:00–16:00), @CDDJAP Demo Day will be held in Hong Kong. FinTax will deliver a feat...", "浏览量": 67, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2033133239372480785, "发布日期": "2026-03-15", "发布时间": "10:48:32", "类型": "原创", "推文内容": "", "浏览量": 42, "回复数": 1, "转发数": 0, "点赞数": 1}, {"推文ID": 2027359812858552532, "发布日期": "2026-02-27", "发布时间": "12:27:00", "类型": "原创", "推文内容": "", "浏览量": 66, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2023334939169849369, "发布日期": "2026-02-16", "发布时间": "09:53:35", "类型": "原创", "推文内容": "", "浏览量": 97, "回复数": 0, "转发数": 0, "点赞数": 1}, {"推文ID": 2021913353778868297, "发布日期": "2026-02-12", "发布时间": "11:44:43", "类型": "原创", "推文内容": "\"Thanks to the hosts @CDDJAP , @DraperDragon , and @draper_u for a wonderful collision of ideas!...", "浏览量": 338, "回复数": 0, "转发数": 1, "点赞数": 5}, {"推文ID": 2021555913124159730, "发布日期": "2026-02-11", "发布时间": "12:04:23", "类型": "原创", "推文内容": "Excited to announce that FinTax will be at \"The Web3 & AI Consensus Summit & CDDJAP 2026 Spring Coho...", "浏览量": 104, "回复数": 0, "转发数": 0, "点赞数": 1}, {"推文ID": 2021514566438654360, "发布日期": "2026-02-11", "发布时间": "09:20:05", "类型": "原创", "推文内容": "", "浏览量": 62, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2021388219280130234, "发布日期": "2026-02-11", "发布时间": "00:58:01", "类型": "转帖", "推文内容": "NEW: Details from the White House stablecoin yield meeting, per banking and crypto sources in the ro...", "浏览量": 420000, "回复数": 396, "转发数": 0, "点赞数": 3905}, {"推文ID": 2018295926335717395, "发布日期": "2026-02-02", "发布时间": "12:10:21", "类型": "原创", "推文内容": "CARF in Europe | Live Q&A Session Europe is launching the largest crypto data-sharing experiment to...", "浏览量": 127, "回复数": 1, "转发数": 0, "点赞数": 1}, {"推文ID": 2018147429254848787, "发布日期": "2026-02-02", "发布时间": "02:20:17", "类型": "原创", "推文内容": "CARF in Europe: The Biggest Data-Sharing Experiment Yet?", "浏览量": 84, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2016697437516407182, "发布日期": "2026-01-29", "发布时间": "02:18:32", "类型": "原创", "推文内容": "Learn more:", "浏览量": 87, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2016696490580947096, "发布日期": "2026-01-29", "发布时间": "02:14:46", "类型": "原创", "推文内容": "", "浏览量": 120, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 2016103339680006224, "发布日期": "2026-01-27", "发布时间": "10:57:48", "类型": "原创", "推文内容": "EU CARF: Quick FAQ #EU #CARD #DAC8 #CRYPTO", "浏览量": 321, "回复数": 0, "转发数": 0, "点赞数": 1}, {"推文ID": 2014848680462057826, "发布日期": "2026-01-23", "发布时间": "23:52:14", "类型": "原创", "推文内容": "High-Frequency CARF FAQs Explained in One Graphic", "浏览量": 206, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2014351922124427579, "发布日期": "2026-01-22", "发布时间": "14:58:17", "类型": "原创", "推文内容": "FinTax Crypto Compliance Highlights: Jan 2026, Issue 1 This article summarizes key tax and regulato...", "浏览量": 83, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2014308891304382842, "发布日期": "2026-01-22", "发布时间": "12:07:18", "类型": "原创", "推文内容": "CARF Quick FAQs — explained in one image （II）", "浏览量": 76, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2013924798758576133, "发布日期": "2026-01-21", "发布时间": "10:41:03", "类型": "原创", "推文内容": "CARF Quick FAQs — explained in one image", "浏览量": 79, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2013920528919351571, "发布日期": "2026-01-21", "发布时间": "10:24:05", "类型": "原创", "推文内容": "CARF / CRS — What’s really going on? Is crypto entering the era of tax scrutiny? FinTax × @wubloc...", "浏览量": 79, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2013637917206552587, "发布日期": "2026-01-20", "发布时间": "15:41:05", "类型": "原创", "推文内容": "Overseas Income Tax Crackdown Reaches Back to 2017? How Taxpayers Can Resolve a Tax Crisis On Janua...", "浏览量": 49, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2012194525800992783, "发布日期": "2026-01-16", "发布时间": "16:05:34", "类型": "原创", "推文内容": "Liberty vs. Clarity: A Deep Dive into Poland’s Crypto Tax and Regulatory Framework By the end of 20...", "浏览量": 61, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2012116939598872782, "发布日期": "2026-01-16", "发布时间": "10:57:16", "类型": "原创", "推文内容": "Thanks @AgoraGBC for bringing the right people together.", "浏览量": 57, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2011467651126899016, "发布日期": "2026-01-14", "发布时间": "15:57:13", "类型": "原创", "推文内容": "CRS 2.0 Is Coming: Will Your “On-Chain Invisibility Cloak” Still Work in 2026? In 2026, global tax ...", "浏览量": 58, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2011370273489227917, "发布日期": "2026-01-14", "发布时间": "09:30:17", "类型": "原创", "推文内容": "CARF “Committed Implementation” Jurisdictions & Timeline — NotesWhat’s important to clarify is: CA...", "浏览量": 239, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 2011273491220472219, "发布日期": "2026-01-14", "发布时间": "03:05:42", "类型": "原创", "推文内容": "Rather than framing CARF / DAC8 as a “privacy” issue, it’s more productive to focus on practical pre...", "浏览量": 58, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2009650363960557889, "发布日期": "2026-01-09", "发布时间": "15:35:58", "类型": "原创", "推文内容": "Toward a Clearer Future: Foundational Research on Germany’s Crypto Tax Regime and Regulatory Framewo...", "浏览量": 50, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2009207677616886102, "发布日期": "2026-01-08", "发布时间": "10:16:54", "类型": "原创", "推文内容": "Pakistan: Exploring a Sovereign Asset Tokenization Pilot of up to US$2 Billion Recently, @Finance...", "浏览量": 53, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2008879032780353634, "发布日期": "2026-01-07", "发布时间": "12:30:59", "类型": "转帖", "推文内容": "RIP CRYPTO PRIVACY IN EUROPE As of Jan 1st, DAC8 is officially live across the EU, and it’s a tot...", "浏览量": 190000, "回复数": 265, "转发数": 0, "点赞数": 1421}, {"推文ID": 2008481367815057752, "发布日期": "2026-01-06", "发布时间": "10:10:48", "类型": "原创", "推文内容": "As digital assets are clearly treated as property you can own and sell, the responsibilities around ...", "浏览量": 49, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2008208069700817386, "发布日期": "2026-01-05", "发布时间": "16:04:49", "类型": "原创", "推文内容": "FinTax Crypto Compliance Highlights: Dec 2025, Issue 2 This article summarizes key tax and regulato...", "浏览量": 46, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2007830801422127145, "发布日期": "2026-01-04", "发布时间": "15:05:41", "类型": "原创", "推文内容": "Thank you to @Cryptopolitan for the interview and coverage. FinTax also shared our observations an...", "浏览量": 57, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2007480372112593330, "发布日期": "2026-01-03", "发布时间": "15:53:12", "类型": "原创", "推文内容": "UK’s \"Third Category of Property\" is Here: What’s Changing for Crypto Taxes? On December 2, 2025, t...", "浏览量": 52, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2007325136198742296, "发布日期": "2026-01-03", "发布时间": "05:36:21", "类型": "原创", "推文内容": "Justin Sun’s “firefighting” intervention is not merely a personal-hero narrative — it is an importan...", "浏览量": 75, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2006727406065954884, "发布日期": "2026-01-01", "发布时间": "14:01:11", "类型": "原创", "推文内容": "The TUSD $456 Million Reserve Misappropriation: How Can We Trust Crypto Trusts? The high-profile TU...", "浏览量": 48, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2006610301865828480, "发布日期": "2026-01-01", "发布时间": "06:15:51", "类型": "原创", "推文内容": "FinTax extends New Year’s greetings to every pioneer and fellow traveler As a builder of the indus...", "浏览量": 34, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2006029953100640625, "发布日期": "2025-12-30", "发布时间": "15:49:45", "类型": "原创", "推文内容": "The \"Final Puzzle Piece\" of U.S. Crypto Tax Regulation Seen Through the White House Power Expansion ...", "浏览量": 43, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2005592865658007699, "发布日期": "2025-12-29", "发布时间": "10:52:55", "类型": "原创", "推文内容": "The U.S. is not a “safe haven” from CARF In earlier discussions, many assumed the U.S. would stay...", "浏览量": 54, "回复数": 1, "转发数": 0, "点赞数": 1}, {"推文ID": 2004578128371576995, "发布日期": "2025-12-26", "发布时间": "15:40:43", "类型": "原创", "推文内容": "Australia’s Getting New Crypto Rules: A Sneak Peek at the \"Digital Asset Framework Bill\" In Novembe...", "浏览量": 50, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2004508305373430251, "发布日期": "2025-12-26", "发布时间": "11:03:16", "类型": "原创", "推文内容": "Totally agree. But the real key to “triple-entry accounting” is the semantic layer. On-chain records...", "浏览量": 53, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2004217331908829232, "发布日期": "2025-12-25", "发布时间": "15:47:03", "类型": "原创", "推文内容": "Potential Impacts on the EU Market Increased compliance and capital thresholds, leading to greater i...", "浏览量": 36, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2004217328536568316, "发布日期": "2025-12-25", "发布时间": "15:47:02", "类型": "原创", "推文内容": "Implementation Timeline Across EU Member States October 24, 2023: DAC8 published. By December 31, 20...", "浏览量": 52, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 2004217324329640133, "发布日期": "2025-12-25", "发布时间": "15:47:01", "类型": "原创", "推文内容": "Crypto Tax Information Exchange Countdown: A Quick Overview of EU DAC8 1. Relationship Between DAC8 ...", "浏览量": 62, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 2003806111166857524, "发布日期": "2025-12-24", "发布时间": "12:33:00", "类型": "原创", "推文内容": "Merry Christmas As the old year draws to a close and the dawn of a new one beckons, FinTax extends...", "浏览量": 38, "回复数": 0, "转发数": 0, "点赞数": 1}, {"推文ID": 2003083659197472872, "发布日期": "2025-12-22", "发布时间": "12:42:14", "类型": "原创", "推文内容": "US lawmakers are pushing to resolve the double taxation of staking rewards before 2026. The core ...", "浏览量": 41, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 2002003297184702480, "发布日期": "2025-12-19", "发布时间": "13:09:16", "类型": "原创", "推文内容": "The importance of the De Minimis tax exemption lies in the following: In the United States, Bitcoin...", "浏览量": 53, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2001693062112653605, "发布日期": "2025-12-18", "发布时间": "16:36:30", "类型": "原创", "推文内容": "FinTax Biweekly Highlights for Crypto: December 2025, Issue 1 This report summarizes the key global...", "浏览量": 36, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2001339410328297497, "发布日期": "2025-12-17", "发布时间": "17:11:13", "类型": "原创", "推文内容": "CARF has a positive impact on Hong Kong’s Web3 competitiveness. Compliance is an inevitable step f...", "浏览量": 45, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2001304620128510394, "发布日期": "2025-12-17", "发布时间": "14:52:58", "类型": "原创", "推文内容": "On November 3, 2025, coinciding with the grand opening of the \"Hong Kong FinTech Week,\" the Securiti...", "浏览量": 44, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 2000208366111519169, "发布日期": "2025-12-14", "发布时间": "14:16:51", "类型": "原创", "推文内容": "CARF: The Next Step in Hong Kong's Crypto-Asset Regulation On December 9, 2025, the Government of t...", "浏览量": 69, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 1999760152313102697, "发布日期": "2025-12-13", "发布时间": "08:35:48", "类型": "原创", "推文内容": "FinTax was delighted to have an insightful conversation with @BitcoinCom @CEO Corbin and @COO J...", "浏览量": 51, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1998726645377798436, "发布日期": "2025-12-10", "发布时间": "12:09:01", "类型": "原创", "推文内容": "The United States is accelerating its exploration of tokenized assets Over the past 48 hours, both...", "浏览量": 45, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1998424917268639911, "发布日期": "2025-12-09", "发布时间": "16:10:03", "类型": "原创", "推文内容": "Is Tax Planning the Key to Relieving Profit Pressure for Crypto Mining Companies? Mining profits co...", "浏览量": 44, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1998422134029451453, "发布日期": "2025-12-09", "发布时间": "15:59:00", "类型": "原创", "推文内容": "The UK has introduced a new property category for digital assets — “data objects”, which means: D...", "浏览量": 48, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1996241318453088438, "发布日期": "2025-12-03", "发布时间": "15:33:13", "类型": "原创", "推文内容": "FinTax Crypto Compliance Highlights: November 2025, Issue 2 This report summarizes the key global d...", "浏览量": 48, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1996180609085964514, "发布日期": "2025-12-03", "发布时间": "11:31:59", "类型": "原创", "推文内容": "The SEC’s crypto “Innovation Exemption” framework now covers tokenized securities, DeFi protocols, a...", "浏览量": 65, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1995830943710663104, "发布日期": "2025-12-02", "发布时间": "12:22:32", "类型": "原创", "推文内容": "On one side, the US/EU are demanding more user data from CEXs; on the other, privacy protocols are...", "浏览量": 74, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1995522427976384918, "发布日期": "2025-12-01", "发布时间": "15:56:36", "类型": "原创", "推文内容": "Will US Citizens' Overseas Crypto Assets Be Under Scrutiny? A Quick Guide to CARF The official webs...", "浏览量": 58, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1995425508939669707, "发布日期": "2025-12-01", "发布时间": "09:31:29", "类型": "原创", "推文内容": "Let’s Talk Mining IPOs, Sustainable Innovation & Compliance Essentials As compliance becomes a glo...", "浏览量": 55, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1995097565310923147, "发布日期": "2025-11-30", "发布时间": "11:48:21", "类型": "原创", "推文内容": "China has risen to third place in global hash rate even based solely on underground mining activity....", "浏览量": 104, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1995097289325695229, "发布日期": "2025-11-30", "发布时间": "11:47:15", "类型": "原创", "推文内容": "Unlike Japan, Spain plans to raise taxes on crypto-asset gains that are not considered financial in...", "浏览量": 56, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1995089494148895228, "发布日期": "2025-11-30", "发布时间": "11:16:17", "类型": "原创", "推文内容": "The UK government has proposed applying a “no gain, no loss” tax treatment to crypto asset lending ...", "浏览量": 81, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1995076398667686369, "发布日期": "2025-11-30", "发布时间": "10:24:14", "类型": "原创", "推文内容": "For the first time, the recent joint meeting of thirteen ministries formally defined stablecoins as:...", "浏览量": 78, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1994065406798258572, "发布日期": "2025-11-27", "发布时间": "15:26:55", "类型": "原创", "推文内容": "The Era of Encrypted AI Agents is Here: How x402 is Rewriting Finance and Taxation Logic In May, Co...", "浏览量": 55, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1993383579317948808, "发布日期": "2025-11-25", "发布时间": "18:17:35", "类型": "原创", "推文内容": "China has risen to the world’s third-largest Bitcoin mining hub purely through underground activity....", "浏览量": 144, "回复数": 0, "转发数": 0, "点赞数": 1}, {"推文ID": 1993365380455076093, "发布日期": "2025-11-25", "发布时间": "17:05:16", "类型": "原创", "推文内容": "The U.S. bill proposes allowing federal taxes to be paid with Bitcoin, and establishing a strategi...", "浏览量": 46, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1993342384277798921, "发布日期": "2025-11-25", "发布时间": "15:33:53", "类型": "原创", "推文内容": "Thank you to @wublockchain12 for supporting this AMA.", "浏览量": 28, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1993341634872787291, "发布日期": "2025-11-25", "发布时间": "15:30:54", "类型": "原创", "推文内容": "Do you need to pay taxes in China on your Web3 income? China is entering its second wave of offsho...", "浏览量": 51, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 1992998109501440124, "发布日期": "2025-11-24", "发布时间": "16:45:52", "类型": "原创", "推文内容": "The \"overseas privacy\" of the past has ended. Global tax transparency is advancing rapidly, and cry...", "浏览量": 33, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1992998106690912694, "发布日期": "2025-11-24", "发布时间": "16:45:51", "类型": "原创", "推文内容": "For individuals, the core keyword of this era is just one: Comply Ahead of Regulation. This means: ...", "浏览量": 42, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 1992998101418713218, "发布日期": "2025-11-24", "发布时间": "16:45:50", "类型": "原创", "推文内容": "Regulatory Capabilities Have Undergone a Qualitative Change. In the broader context of Golden Tax P...", "浏览量": 17, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 1992998098625339564, "发布日期": "2025-11-24", "发布时间": "16:45:49", "类型": "原创", "推文内容": "Why Does \"Overseas Privacy\" No Longer Exist? The fundamental driver is the full implementation of C...", "浏览量": 27, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 1992998094326071348, "发布日期": "2025-11-24", "发布时间": "16:45:48", "类型": "原创", "推文内容": "Back Taxes Wave Strikes Again: Cross-Border Income Audits May Become Routine On 11/11, tax authorit...", "浏览量": 49, "回复数": 1, "转发数": 0, "点赞数": 0}, {"推文ID": 1992935323974922551, "发布日期": "2025-11-24", "发布时间": "12:36:22", "类型": "原创", "推文内容": "Japan’s Financial Services Agency has decided to treat crypto-assets as “financial instruments.” ...", "浏览量": 104, "回复数": 0, "转发数": 1, "点赞数": 0}, {"推文ID": 1991172104495251757, "发布日期": "2025-11-19", "发布时间": "15:49:58", "类型": "原创", "推文内容": "FinTax Crypto Compliance Highlights: November 2025, Issue 1 This report summarizes the key global d...", "浏览量": 51, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1990804784782455108, "发布日期": "2025-11-18", "发布时间": "15:30:22", "类型": "原创", "推文内容": "Southeast Asia's New RWA Engine: Malaysia's Steady Innovation and New Web3 Opportunities On October...", "浏览量": 89, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1989002430194077940, "发布日期": "2025-11-13", "发布时间": "16:08:27", "类型": "原创", "推文内容": "Everything You Need to Know About Chile's Crypto Tax and Regulatory System With the rapid expansion...", "浏览量": 44, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1987921395272347758, "发布日期": "2025-11-10", "发布时间": "16:32:49", "类型": "原创", "推文内容": "Canada Abolishes Fuel Carbon Tax, Crypto Miners Face a New Game on Energy Costs On April 1, 2025, t...", "浏览量": 51, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 1987193299640414709, "发布日期": "2025-11-08", "发布时间": "16:19:37", "类型": "原创", "推文内容": "HMRC Sends Tens of Thousands of Warning Letters: A Full Breakdown of the UK’s Crypto Asset Tax-Regul...", "浏览量": 52, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1986452456965087520, "发布日期": "2025-11-06", "发布时间": "15:15:46", "类型": "原创", "推文内容": "Jay Chou’s “Public Takedown”: The Hidden Tax and Legal Risks of Crypto Nominee Holdings The nominee...", "浏览量": 74, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1985370021888217523, "发布日期": "2025-11-03", "发布时间": "15:34:34", "类型": "原创", "推文内容": "FinTax Crypto Compliance Highlights: Oct 2025, Issue 2 This article summarizes key tax and regulato...", "浏览量": 81, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1983945926613070335, "发布日期": "2025-10-30", "发布时间": "17:15:43", "类型": "原创", "推文内容": "Behind the Tax Investigation of Hundreds of Binance Users: An Overview of India's Crypto Asset Taxat...", "浏览量": 124, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 1983199321588986176, "发布日期": "2025-10-28", "发布时间": "15:48:58", "类型": "原创", "推文内容": "Are High Bitcoin Taxes a Headache? A New Tax Planning Idea Using Miner Depreciation While the conti...", "浏览量": 92, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 1982478982504432043, "发布日期": "2025-10-26", "发布时间": "16:06:36", "类型": "原创", "推文内容": "From Fragmented Rules to a Coherent System: Understanding the EU’s MiCAR Framework The background f...", "浏览量": 57, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 1981388789189922862, "发布日期": "2025-10-23", "发布时间": "15:54:34", "类型": "原创", "推文内容": "Behind Turkey's Crypto Asset System Shift: An Overview of Taxation and Regulatory Systems This arti...", "浏览量": 57, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 1980291505148547535, "发布日期": "2025-10-20", "发布时间": "15:14:21", "类型": "原创", "推文内容": "FinTax Crypto Compliance Highlights: October 2025, Issue 1 This report summarizes the key tax and r...", "浏览量": 50, "回复数": 0, "转发数": 1, "点赞数": 1}, {"推文ID": 1978882024346943950, "发布日期": "2025-10-16", "发布时间": "17:53:35", "类型": "原创", "推文内容": "Crypto Meets Offshore Finance: Jersey's Crypto Asset Tax and Regulatory Setup Jersey has its own ta...", "浏览量": 77, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1976293298034896943, "发布日期": "2025-10-09", "发布时间": "14:26:54", "类型": "原创", "推文内容": "More Good News for Crypto Taxes in the US? A Quick Overview of the Senate Crypto Tax Hearing On Oct...", "浏览量": 82, "回复数": 2, "转发数": 0, "点赞数": 1}, {"推文ID": 1975214462496907338, "发布日期": "2025-10-06", "发布时间": "15:00:00", "类型": "原创", "推文内容": "Dear friends, On the Mid-Autumn night, as we celebrate reunion and reflection, FinTax extends our g...", "浏览量": 69, "回复数": 0, "转发数": 0, "点赞数": 1}, {"推文ID": 1975200003384877549, "发布日期": "2025-10-06", "发布时间": "14:02:32", "类型": "原创", "推文内容": "10,000-Word Detailed Guide to Japan's Crypto Tax and Regulatory System With the opening of WebX 202...", "浏览量": 57, "回复数": 0, "转发数": 0, "点赞数": 0}, {"推文ID": 1974116212260131131, "发布日期": "2025-10-03", "发布时间": "14:15:56", "类型": "原创", "推文内容": "FinTax Crypto Compliance Highlights: Step 2025, Issue 2 This report summarizes the key developments...", "浏览量": 73, "回复数": 0, "转发数": 1, "点赞数": 0}, {"推文ID": 1973396293184790963, "发布日期": "2025-10-01", "发布时间": "14:35:14", "类型": "原创", "推文内容": "Uncovering Hong Kong's Tax Exemption “Hidden Rules”: Why Your Offshore Profits Exemption Keeps Getti...", "浏览量": 64, "回复数": 0, "转发数": 0, "点赞数": 1}];
+
+    // KPI
+    const totalViews = tweetsData.reduce((s,t) => s + (t['浏览量']||0), 0);
+    const totalLikes = tweetsData.reduce((s,t) => s + (t['点赞数']||0), 0);
+    const totalRetweets = tweetsData.reduce((s,t) => s + (t['转发数']||0), 0);
+    const totalReplies = tweetsData.reduce((s,t) => s + (t['回复数']||0), 0);
+    const engRate = ((totalLikes+totalRetweets+totalReplies)/totalViews*100).toFixed(2);
+
+    document.getElementById('totalCount').textContent = tweetsData.length;
+    document.getElementById('kpiViews').textContent = totalViews.toLocaleString();
+    document.getElementById('kpiLikes').textContent = totalLikes.toLocaleString();
+    document.getElementById('kpiRetweets').textContent = totalRetweets.toLocaleString();
+    document.getElementById('kpiEngagement').textContent = engRate + '%';
+    document.getElementById('lastUpdated').textContent = '数据截至 2026-03-17';
+
+    // 按月分组
+    const byMonth = {};
+    tweetsData.forEach(t => {
+      const m = t['发布日期'].substring(0,7);
+      if (!byMonth[m]) byMonth[m] = {views:0, count:0, likes:0, retweets:0};
+      byMonth[m].views += t['浏览量']||0;
+      byMonth[m].count++;
+      byMonth[m].likes += t['点赞数']||0;
+      byMonth[m].retweets += t['转发数']||0;
+    });
+    const months = Object.keys(byMonth).sort();
+
+    // 月度浏览量趋势
+    new Chart(document.getElementById('monthlyViewsCanvas'), {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [
+          {
+            label: '浏览量',
+            data: months.map(m => byMonth[m].views),
+            backgroundColor: 'rgba(29,161,242,0.7)',
+            borderColor: '#1DA1F2',
+            borderWidth: 1,
+            yAxisID: 'y'
+          },
+          {
+            label: '推文数',
+            data: months.map(m => byMonth[m].count),
+            type: 'line',
+            borderColor: '#f76707',
+            backgroundColor: 'rgba(247,103,7,0.1)',
+            tension: 0.4,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          y: { position: 'left', title: { display: true, text: '浏览量' } },
+          y1: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: '推文数' } }
+        }
+      }
+    });
+
+    // 发推时间分布
+    const byHour = Array(24).fill(0);
+    tweetsData.forEach(t => {
+      const h = parseInt((t['发布时间']||'0').split(':')[0]);
+      byHour[h]++;
+    });
+    new Chart(document.getElementById('hourlyCanvas'), {
+      type: 'bar',
+      data: {
+        labels: Array.from({length:24}, (_,i) => i+':00'),
+        datasets: [{ label: '推文数量', data: byHour, backgroundColor: 'rgba(29,161,242,0.7)' }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+
+    // 互动类型分布
+    new Chart(document.getElementById('engagementCanvas'), {
+      type: 'doughnut',
+      data: {
+        labels: ['点赞', '转发', '回复'],
+        datasets: [{ data: [totalLikes, totalRetweets, totalReplies], backgroundColor: ['#E0245E','#17BF63','#1DA1F2'] }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
+    });
+
+    // Top 10 高浏览量
+    const top10 = [...tweetsData].sort((a,b) => (b['浏览量']||0)-(a['浏览量']||0)).slice(0,10);
+    new Chart(document.getElementById('topTweetsCanvas'), {
+      type: 'bar',
+      data: {
+        labels: top10.map(t => t['发布日期']),
+        datasets: [{ label: '浏览量', data: top10.map(t => t['浏览量']||0), backgroundColor: 'rgba(29,161,242,0.7)' }]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: { label: (ctx) => ' 浏览量: ' + ctx.raw.toLocaleString() } } }
+      }
+    });
+
+
+    // 每周浏览量
+    function getWeekKey(dateStr) {
+      const d = new Date(dateStr);
+      const day = d.getDay() || 7;
+      d.setDate(d.getDate() + 4 - day);
+      const yearStart = new Date(d.getFullYear(), 0, 1);
+      const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+      return d.getFullYear() + '-W' + String(weekNo).padStart(2,'0');
+    }
+    const byWeek = {};
+    tweetsData.forEach(t => {
+      const wk = getWeekKey(t['发布日期']);
+      if (!byWeek[wk]) byWeek[wk] = {views:0, count:0};
+      byWeek[wk].views += t['浏览量']||0;
+      byWeek[wk].count++;
+    });
+    const weeks = Object.keys(byWeek).sort();
+    new Chart(document.getElementById('weeklyCanvas'), {
+      type: 'line',
+      data: {
+        labels: weeks,
+        datasets: [
+          {
+            label: '周浏览量',
+            data: weeks.map(w => byWeek[w].views),
+            borderColor: '#1DA1F2',
+            backgroundColor: 'rgba(29,161,242,0.1)',
+            tension: 0.4,
+            fill: true,
+            yAxisID: 'y'
+          },
+          {
+            label: '周推文数',
+            data: weeks.map(w => byWeek[w].count),
+            borderColor: '#f76707',
+            backgroundColor: 'rgba(247,103,7,0.1)',
+            tension: 0.4,
+            type: 'line',
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          y: { position: 'left', title: { display: true, text: '浏览量' } },
+          y1: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: '推文数' } }
+        }
+      }
+    });
+
+    // 单帖浏览量散点图
+    const scatterData = tweetsData.map((t, i) => ({
+      x: i + 1,
+      y: t['浏览量'] || 0,
+      r: Math.max(4, Math.min(20, ((t['点赞数']||0) + (t['转发数']||0) + (t['回复数']||0)) * 2 + 4)),
+      label: t['发布日期'],
+      content: t['推文内容'] || '(无内容)'
+    }));
+    new Chart(document.getElementById('singleTweetCanvas'), {
+      type: 'bubble',
+      data: {
+        datasets: [{
+          label: '单帖浏览量',
+          data: scatterData,
+          backgroundColor: scatterData.map(d => d.y > 10000 ? 'rgba(224,36,94,0.7)' : 'rgba(29,161,242,0.6)'),
+          borderColor: scatterData.map(d => d.y > 10000 ? '#E0245E' : '#1DA1F2'),
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const d = ctx.raw;
+                return [`日期: ${d.label}`, `浏览量: ${d.y.toLocaleString()}`, `内容: ${d.content.substring(0,50)}...`];
+              }
+            }
+          }
+        },
+        scales: {
+          x: { title: { display: true, text: '推文序号（按时间排序）' } },
+          y: { title: { display: true, text: '浏览量' } }
+        }
+      }
+    });
+
+    // 表格渲染
+    function renderTable(data) {
+      const tbody = document.getElementById('tweetsTableBody');
+      tbody.innerHTML = data.map(t => `
+        <tr>
+          <td><span class="text-muted">${t['发布日期']}</span></td>
+          <td>${t['发布时间']}</td>
+          <td><span class="badge ${t['类型']==='转帖'?'bg-orange':'bg-blue'} text-white">${t['类型']}</span></td>
+          <td class="tweet-text" title="${t['推文内容']}">${t['推文内容']||'<span class="text-muted">—</span>'}</td>
+          <td><strong>${(t['浏览量']||0).toLocaleString()}</strong></td>
+          <td>${t['点赞数']||0}</td>
+          <td>${t['转发数']||0}</td>
+          <td>${t['回复数']||0}</td>
+        </tr>
+      `).join('');
+    }
+    renderTable(tweetsData);
+
+    // 搜索
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      renderTable(q ? tweetsData.filter(t => (t['推文内容']||'').toLowerCase().includes(q)) : tweetsData);
+    });
+  </script>
+</body>
+</html>

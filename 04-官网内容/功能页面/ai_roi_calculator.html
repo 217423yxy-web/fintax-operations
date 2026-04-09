@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 使用 ROI 计算表</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #f0f4f8; color: #2d3748; padding: 24px 16px;
+  font-size: 14px;
+}
+
+.page { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+
+/* 横向主布局 */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 800px) { .main-grid { grid-template-columns: 1fr; } }
+
+h1 { font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 4px; }
+.subtitle { text-align: center; color: #718096; font-size: 12px; margin-bottom: 8px; }
+
+/* 卡片 */
+.card { background: #fff; border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+.card-title {
+  font-size: 13px; font-weight: 700; color: #4a5568; margin-bottom: 14px;
+  padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;
+  display: flex; align-items: center; gap: 6px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.dot-red { background: #e53e3e; }
+.dot-blue { background: #4299e1; }
+.dot-green { background: #38a169; }
+.dot-purple { background: #805ad5; }
+
+/* 表单行 */
+.row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.row:last-child { margin-bottom: 0; }
+.row label { width: 160px; flex-shrink: 0; color: #4a5568; font-size: 13px; }
+.row input, .row select {
+  flex: 1; padding: 6px 10px; border: 1px solid #e2e8f0;
+  border-radius: 8px; font-size: 13px; background: #fafbfc; color: #2d3748;
+}
+.row input:focus, .row select:focus { outline: none; border-color: #4299e1; background: #fff; }
+.row .unit { color: #718096; font-size: 12px; white-space: nowrap; }
+.row .result-val { flex: 1; font-weight: 700; color: #38a169; font-size: 14px; }
+
+/* 双列输入 */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 500px) { .grid2 { grid-template-columns: 1fr; } }
+
+/* 分组标签 */
+.group-label {
+  font-size: 11px; font-weight: 600; color: #a0aec0; text-transform: uppercase;
+  letter-spacing: .5px; margin-bottom: 8px; margin-top: 14px;
+}
+.group-label:first-of-type { margin-top: 0; }
+
+/* 小输入组 */
+.input-group { background: #f7fafc; border-radius: 8px; padding: 12px 14px; }
+.input-group .row { margin-bottom: 8px; }
+.input-group .row:last-child { margin-bottom: 0; }
+
+/* 结果块 */
+.results { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+@media (max-width: 500px) { .results { grid-template-columns: 1fr; } }
+.result-block { background: #f7fafc; border-radius: 8px; padding: 12px 14px; }
+.result-block .label { font-size: 11px; color: #718096; margin-bottom: 4px; }
+.result-block .val { font-size: 22px; font-weight: 800; }
+.result-block .sub { font-size: 11px; color: #718096; margin-top: 2px; }
+.val-green { color: #38a169; }
+.val-blue { color: #4299e1; }
+.val-red { color: #e53e3e; }
+
+/* ROI 横幅 */
+.roi-banner {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 12px; padding: 20px 24px; color: white;
+}
+.roi-banner h2 { font-size: 14px; font-weight: 700; margin-bottom: 16px; opacity: .85; }
+.roi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+@media (max-width: 500px) { .roi-grid { grid-template-columns: 1fr 1fr; } }
+.roi-item { text-align: center; }
+.roi-item .label { font-size: 11px; opacity: .75; margin-bottom: 5px; }
+.roi-item .val { font-size: 24px; font-weight: 800; }
+.roi-item .sub { font-size: 10px; opacity: .65; margin-top: 2px; }
+.roi-divider { border: none; border-top: 1px solid rgba(255,255,255,.2); margin: 14px 0; grid-column: 1/-1; }
+
+.footer { text-align: center; color: #a0aec0; font-size: 11px; }
+
+/* 不可量化提示块 */
+.unquantified { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.uq-item {
+  background: #fffbeb; border: 1px solid #fbd38d; border-radius: 8px;
+  padding: 9px 12px; font-size: 12px; color: #744210; line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div>
+    <h1>🤖 AI 使用 ROI 计算表</h1>
+    <p class="subtitle">填入数据，自动计算投入产出比</p>
+  </div>
+
+  <!-- 主横向布局 -->
+  <div class="main-grid">
+
+    <!-- 左列 -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- ══ 1. AI 支出 ══ -->
+      <div class="card">
+        <div class="card-title"><div class="dot dot-red"></div>AI 月度支出</div>
+
+        <div class="group-label">月费项目</div>
+        <div class="row">
+          <label>AI 订阅（国内）</label>
+          <input type="number" id="cost1" value="200" min="0" step="1" oninput="calc()">
+          <select id="cur1" oninput="calc()"><option value="CNY" selected>CNY</option><option value="USD">USD</option></select>
+        </div>
+        <div class="row">
+          <label>AI 订阅（海外）</label>
+          <input type="number" id="cost2" value="100" min="0" step="1" oninput="calc()">
+          <select id="cur2" oninput="calc()"><option value="USD" selected>USD</option><option value="CNY">CNY</option></select>
+        </div>
+        <div class="row">
+          <label>API 费用</label>
+          <input type="number" id="cost3" value="10" min="0" step="1" oninput="calc()">
+          <select id="cur3" oninput="calc()"><option value="USD" selected>USD</option><option value="CNY">CNY</option></select>
+        </div>
+        <div class="row">
+          <label>其他</label>
+          <input type="number" id="cost4" value="0" min="0" step="1" oninput="calc()">
+          <select id="cur4" oninput="calc()"><option value="USD" selected>USD</option><option value="CNY">CNY</option></select>
+        </div>
+
+        <div class="group-label">一次性支出（不计入月度 ROI）</div>
+        <div class="row">
+          <label>前期试错成本</label>
+          <input type="number" id="costOnce" value="160" min="0" step="1" oninput="calc()">
+          <select id="curOnce" oninput="calc()"><option value="USD" selected>USD</option><option value="CNY">CNY</option></select>
+        </div>
+
+        <div class="group-label">汇率</div>
+        <div class="row">
+          <label>1 USD =</label>
+          <input type="number" id="rate" value="7.2" min="1" step="0.01" oninput="calc()">
+          <span class="unit">CNY</span>
+        </div>
+
+        <div class="results">
+          <div class="result-block">
+            <div class="label">月度 AI 支出合计</div>
+            <div class="val val-red" id="totalMonthly">—</div>
+            <div class="sub">USD / 月</div>
+          </div>
+          <div class="result-block">
+            <div class="label">一次性支出</div>
+            <div class="val" id="totalOnce">—</div>
+            <div class="sub">USD（不计入 ROI）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ 2. 人力成本 ══ -->
+      <div class="card">
+        <div class="card-title"><div class="dot dot-blue"></div>人力成本参数</div>
+
+        <div class="row">
+          <label>月薪</label>
+          <input type="number" id="salary" value="9000" min="0" step="100" oninput="calc()">
+          <select id="salaryCur" oninput="calc()"><option value="CNY" selected>CNY</option><option value="USD">USD</option></select>
+        </div>
+        <div class="row">
+          <label>每月工作天数</label>
+          <input type="number" id="workDays" value="22" min="1" max="31" step="1" oninput="calc()">
+          <span class="unit">天</span>
+        </div>
+        <div class="row">
+          <label>每天工作小时</label>
+          <input type="number" id="workHours" value="8" min="1" max="24" step="0.5" oninput="calc()">
+          <span class="unit">小时</span>
+        </div>
+
+        <div class="results">
+          <div class="result-block">
+            <div class="label">换算时薪</div>
+            <div class="val val-blue" id="hourlyUSD">—</div>
+            <div class="sub" id="hourlyCNY">USD / 小时</div>
+          </div>
+          <div class="result-block">
+            <div class="label">月度总工时</div>
+            <div class="val" id="totalHrs">—</div>
+            <div class="sub">小时 / 月</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /左列 -->
+
+    <!-- 右列 -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- ══ 3. 阶段一 生产力提升 ══ -->
+      <div class="card">
+        <div class="card-title"><div class="dot dot-blue"></div>阶段一 — 单位时间产出提升</div>
+
+        <div class="group-label">社媒短内容</div>
+        <div class="grid2">
+          <div class="row"><label>AI 前（分钟/篇）</label><input type="number" id="p1a_before" value="35" min="0" oninput="calc()"></div>
+          <div class="row"><label>AI 后（分钟/篇）</label><input type="number" id="p1a_after" value="10" min="0" oninput="calc()"></div>
+          <div class="row"><label>每月篇数</label><input type="number" id="p1a_count" value="22" min="0" oninput="calc()"></div>
+          <div class="result-block" style="align-self:center;">
+            <div class="label">节省时间</div>
+            <div class="val val-green" id="p1a_saved">—</div>
+            <div class="sub">小时 / 月</div>
+          </div>
+        </div>
+
+        <div class="group-label">长文发布（多平台）</div>
+        <div class="grid2">
+          <div class="row"><label>AI 前（分钟/篇）</label><input type="number" id="p1b_before" value="120" min="0" oninput="calc()"></div>
+          <div class="row"><label>AI 后（分钟/篇）</label><input type="number" id="p1b_after" value="45" min="0" oninput="calc()"></div>
+          <div class="row"><label>每月篇数</label><input type="number" id="p1b_count" value="13" min="0" oninput="calc()"></div>
+          <div class="result-block" style="align-self:center;">
+            <div class="label">节省时间</div>
+            <div class="val val-green" id="p1b_saved">—</div>
+            <div class="sub">小时 / 月</div>
+          </div>
+        </div>
+
+        <div class="group-label">复杂任务（效果显著，暂无法量化）</div>
+        <div class="unquantified">
+          <div class="uq-item">🌐 <strong>网页制作</strong> — AI 辅助可大幅缩短开发时间，但产出差异较大，暂不纳入计算</div>
+          <div class="uq-item">🎬 <strong>视频制作</strong> — AI 加速脚本、字幕、剪辑流程，效率提升明显，难以统一估值</div>
+          <div class="uq-item">📊 <strong>PPT 制作</strong> — AI 辅助结构设计与配图，节省时间因需求复杂度而异，暂不纳入计算</div>
+        </div>
+
+        <div class="results">
+          <div class="result-block">
+            <div class="label">月度总节省时间</div>
+            <div class="val val-green" id="p1TotalHrs">—</div>
+            <div class="sub">小时 / 月</div>
+          </div>
+          <div class="result-block">
+            <div class="label">阶段一月度价值</div>
+            <div class="val val-green" id="p1Value">—</div>
+            <div class="sub" id="p1ValueSub">USD</div>
+          </div>
+          <div class="result-block">
+            <div class="label">效率倍数（短内容）</div>
+            <div class="val val-blue" id="p1Multiplier">—</div>
+            <div class="sub">AI 前 vs AI 后</div>
+          </div>
+          <div class="result-block">
+            <div class="label">相当于外包节省</div>
+            <div class="val val-green" id="p1Outsource">—</div>
+            <div class="sub">按时薪折算 USD</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ 4. 阶段二 社媒曝光 ══ -->
+      <div class="card">
+        <div class="card-title"><div class="dot dot-green"></div>阶段二 — 社媒曝光提升</div>
+
+        <div class="group-label">Twitter / X</div>
+        <div class="grid2">
+          <div class="row"><label>AI 前（周阅读量）</label><input type="number" id="p2_before" value="150" min="0" oninput="calc()"></div>
+          <div class="row"><label>AI 后增长倍率</label>
+            <select id="p2_mult" oninput="calc()">
+              <option value="2">2x</option>
+              <option value="3">3x</option>
+              <option value="4" selected>4x</option>
+              <option value="5">5x</option>
+              <option value="6">6x</option>
+              <option value="8">8x</option>
+              <option value="10">10x</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="results">
+          <div class="result-block">
+            <div class="label">AI 前月度曝光</div>
+            <div class="val" id="p2Before">—</div>
+            <div class="sub">次 / 月</div>
+          </div>
+          <div class="result-block">
+            <div class="label">AI 后月度曝光</div>
+            <div class="val val-green" id="p2After">—</div>
+            <div class="sub">次 / 月</div>
+          </div>
+          <div class="result-block">
+            <div class="label">月度曝光增量</div>
+            <div class="val val-green" id="p2Delta">—</div>
+            <div class="sub">次 / 月</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /右列 -->
+
+  </div><!-- /main-grid -->
+
+  <!-- ══ 5. 阶段三 成单量 ══ -->
+  <div class="card">
+    <div class="card-title"><div class="dot dot-purple"></div>阶段三 — 成单量提升</div>
+    <div class="unquantified" style="margin-top:0;">
+      <div class="uq-item" style="background:#faf5ff; border-color:#d6bcfa; color:#553c9a; font-size:13px; padding:14px 16px;">
+        📋 <strong>暂无数据，待后续补充</strong><br>
+        <span style="font-weight:400; margin-top:4px; display:block; line-height:1.7;">
+          阶段三将追踪 AI 辅助社媒运营带来的实际成单量变化，包括：线索获取数量、转化率提升、新增签约客户数等指标。
+          目前 AI 应用时间尚短，相关数据积累不足，待运营数据稳定后再行补充计算。
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ROI 汇总 ══ -->
+  <div class="roi-banner">
+    <h2>📊 ROI 汇总</h2>
+    <div class="roi-grid">
+      <div class="roi-item">
+        <div class="label">月度 AI 支出</div>
+        <div class="val" id="roiCost">—</div>
+        <div class="sub">USD / 月</div>
+      </div>
+      <div class="roi-item">
+        <div class="label">阶段一价值</div>
+        <div class="val" id="roiP1">—</div>
+        <div class="sub">生产力节省 USD</div>
+      </div>
+
+      <div class="roi-item">
+        <div class="label">综合 ROI</div>
+        <div class="val" id="roiTotal">—</div>
+        <div class="sub" id="roiStatus">—</div>
+      </div>
+      <hr class="roi-divider">
+      <div class="roi-item">
+        <div class="label">净收益</div>
+        <div class="val" id="netReturn">—</div>
+        <div class="sub">USD / 月</div>
+      </div>
+      <div class="roi-item">
+        <div class="label">回报倍数</div>
+        <div class="val" id="multiple">—</div>
+        <div class="sub">每 $1 投入产出</div>
+      </div>
+      <div class="roi-item">
+        <div class="label">阶段一覆盖率</div>
+        <div class="val" id="coverageP1">—</div>
+        <div class="sub">仅靠阶段一覆盖成本</div>
+      </div>
+      <div class="roi-item">
+        <div class="label">一次性试错</div>
+        <div class="val" id="onceDisplay">—</div>
+        <div class="sub">USD（已排除）</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer">所有计算仅在本地进行 · ROI 仅反映阶段一可量化部分，阶段三数据补充后将进一步提升</p>
+
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const fmt  = (n, p='$') => p + Math.round(n).toLocaleString();
+const fmt2 = (n, p='$') => p + n.toFixed(2);
+const fmtK = n => n >= 10000 ? (n/10000).toFixed(1)+'万' : Math.round(n).toLocaleString();
+
+function getRate() { return parseFloat($('rate').value) || 7.2; }
+function toUSD(amt, cur) { return cur === 'CNY' ? amt / getRate() : amt; }
+
+function calc() {
+  const rate = getRate();
+
+  // 成本
+  const monthly =
+    toUSD(parseFloat($('cost1').value)||0, $('cur1').value) +
+    toUSD(parseFloat($('cost2').value)||0, $('cur2').value) +
+    toUSD(parseFloat($('cost3').value)||0, $('cur3').value) +
+    toUSD(parseFloat($('cost4').value)||0, $('cur4').value);
+  const once = toUSD(parseFloat($('costOnce').value)||0, $('curOnce').value);
+  $('totalMonthly').textContent = fmt2(monthly);
+  $('totalOnce').textContent = fmt2(once);
+
+  // 时薪
+  const salaryUSD = toUSD(parseFloat($('salary').value)||0, $('salaryCur').value);
+  const days = parseFloat($('workDays').value)||22;
+  const hrs  = parseFloat($('workHours').value)||8;
+  const totalHrsMonth = days * hrs;
+  const hourly = totalHrsMonth > 0 ? salaryUSD / totalHrsMonth : 0;
+  $('hourlyUSD').textContent = fmt2(hourly);
+  $('hourlyCNY').textContent = `USD / 小时（≈ ¥${(hourly*rate).toFixed(1)} CNY）`;
+  $('totalHrs').textContent = totalHrsMonth;
+
+  // Phase 1
+  const p1a_b = parseFloat($('p1a_before').value)||0;
+  const p1a_a = parseFloat($('p1a_after').value)||0;
+  const p1a_n = parseFloat($('p1a_count').value)||0;
+  const p1a_saved = Math.max(0, p1a_b - p1a_a) * p1a_n / 60;
+  $('p1a_saved').textContent = p1a_saved.toFixed(1);
+
+  const p1b_b = parseFloat($('p1b_before').value)||0;
+  const p1b_a = parseFloat($('p1b_after').value)||0;
+  const p1b_n = parseFloat($('p1b_count').value)||0;
+  const p1b_saved = Math.max(0, p1b_b - p1b_a) * p1b_n / 60;
+  $('p1b_saved').textContent = p1b_saved.toFixed(1);
+
+  const p1Total = p1a_saved + p1b_saved;
+  const p1Value = p1Total * hourly;
+  $('p1TotalHrs').textContent = p1Total.toFixed(1);
+  $('p1Value').textContent = fmt(p1Value);
+  $('p1ValueSub').textContent = `USD（≈ ¥${fmt(p1Value*rate,'')} CNY）`;
+  $('p1Multiplier').textContent = p1a_a > 0 ? (p1a_b/p1a_a).toFixed(1)+'x' : '—';
+  $('p1Outsource').textContent = fmt(p1Value);
+
+  // Phase 2
+  const p2bWeek  = parseFloat($('p2_before').value)||0;
+  const p2mult   = parseFloat($('p2_mult').value)||4;
+  const p2aWeek  = p2bWeek * p2mult;
+  const p2bMonth = p2bWeek * 4.3;
+  const p2aMonth = p2aWeek * 4.3;
+  const p2delta  = p2aMonth - p2bMonth;
+
+  $('p2Before').textContent   = fmtK(p2bMonth);
+  $('p2After').textContent    = fmtK(p2aMonth);
+  $('p2Delta').textContent    = '+' + fmtK(p2delta);
+
+  // ROI
+  const totalVal = p1Value;
+  const net      = totalVal - monthly;
+  const roi      = monthly > 0 ? net/monthly*100 : null;
+  const mult     = monthly > 0 ? totalVal/monthly : null;
+  const p1cov    = monthly > 0 ? p1Value/monthly*100 : null;
+
+  $('roiCost').textContent  = fmt2(monthly);
+  $('roiP1').textContent    = fmt(p1Value);
+  $('onceDisplay').textContent = fmt2(once);
+
+  if (roi !== null) {
+    $('roiTotal').textContent   = (roi>=0?'+':'')+roi.toFixed(0)+'%';
+    $('netReturn').textContent  = (net>=0?'+':'')+fmt(Math.abs(net));
+    $('multiple').textContent   = mult.toFixed(2)+'x';
+    $('coverageP1').textContent = p1cov.toFixed(0)+'%';
+    $('roiStatus').textContent  = roi>=100 ? '✅ 投资已完全回本' : roi>=0 ? '⚠️ 正收益' : '📊 等待 P3 数据';
+  }
+}
+
+calc();
+</script>
+</body>
+</html>

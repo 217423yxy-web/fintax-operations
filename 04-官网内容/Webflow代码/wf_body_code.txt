@@ -1,0 +1,423 @@
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">₿</div>
+    Fin<em>Tax</em>
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="#">About Us</a>
+    <a class="nav-link" href="#">Blog</a>
+    <button class="nav-cta">Contact Us</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+
+  <div class="hero-badge">
+    <div class="badge-pill">✦ NEW</div>
+    FinTax Suite 3.0 — AI Tax Advisor now live
+    <span class="badge-arrow">→</span>
+  </div>
+
+  <h1 class="hero-h1">
+    <span class="h1-blue">Crypto accounting,</span><br>
+    tax calculator &amp; professional<br>
+    tax consulting services.
+  </h1>
+
+  <div class="hero-ctas">
+    <button class="cta-fill">Book a demo →</button>
+    <button class="cta-ghost">▶&nbsp; See how it works</button>
+  </div>
+
+  <!-- mockup -->
+  <div class="mockup-wrap">
+    <div class="mtabs">
+      <div class="mtab active" data-s="dash"><span class="mtab-icon">📊</span>Dashboard</div>
+      <div class="mtab" data-s="acct"><span class="mtab-icon">🗂️</span>Accounting</div>
+      <div class="mtab" data-s="calc"><span class="mtab-icon">🧮</span>Tax Calculator</div>
+      <div class="mtab" data-s="rep"><span class="mtab-icon">📁</span>Reports</div>
+    </div>
+
+    <div class="browser">
+      <div class="bbar">
+        <div class="b-dots"><div class="bd br"></div><div class="bd by"></div><div class="bd bg2"></div></div>
+        <div class="b-url" id="urlBar">app.fintax.tech / dashboard</div>
+      </div>
+
+      <div class="dash">
+        <!-- sidebar -->
+        <div class="sb">
+          <div class="sb-logo"><div class="sb-logo-icon">₿</div>Fin<em>Tax</em></div>
+          <div class="sn active" id="sn-dash"><div class="sn-ic ic1">📊</div>Dashboard</div>
+          <div class="sn"        id="sn-acct"><div class="sn-ic ic2">🗂️</div>Accounting</div>
+          <div class="sn"        id="sn-calc"><div class="sn-ic ic3">🧮</div>Tax Calc</div>
+          <div class="sn"                    ><div class="sn-ic ic4">💼</div>Consulting</div>
+          <div class="sn"                    ><div class="sn-ic ic5">🔍</div>Audit</div>
+          <div class="sn"        id="sn-rep" ><div class="sn-ic ic6">📁</div>Reports</div>
+          <div class="sn-spacer"></div>
+          <div class="sn"><div class="sn-ic ic7">⚙️</div>Settings</div>
+        </div>
+
+        <!-- ══ SCREEN 1 · Dashboard ══ -->
+        <div class="screen on show" id="s-dash" style="display:flex;">
+          <div class="sp">
+            <div class="s-top">
+              <div class="s-title">Tax Overview</div>
+              <div class="pgroup">
+                <div class="pb">1M</div><div class="pb">3M</div>
+                <div class="pb active">YTD</div><div class="pb">1Y</div>
+              </div>
+            </div>
+            <div class="krow">
+              <div class="kc"><div class="kc-lbl">TOTAL TAX LIABILITY</div><div class="kc-val">¥ 2,481,000</div><div class="kbadge kd">↓ 12.4% vs last year</div></div>
+              <div class="kc"><div class="kc-lbl">CRYPTO GAINS (BTC/ETH)</div><div class="kc-val">¥ 8,340,000</div><div class="kbadge ku">↑ 34.1%</div></div>
+              <div class="kc"><div class="kc-lbl">DEDUCTIONS APPLIED</div><div class="kc-val">¥ 620,000</div><div class="kbadge kn">8 items</div></div>
+              <div class="kc"><div class="kc-lbl">COMPLIANCE SCORE</div><div class="kc-val">98.6%</div><div class="kbadge ku">↑ Excellent</div></div>
+            </div>
+            <div class="crow">
+              <div class="cmain">
+                <div class="ch"><span class="cl">Monthly Tax Position</span><span class="cs">Jan – Dec 2024</span></div>
+                <div class="cbars">
+                  <div class="cg"><div class="cb d" style="height:36%"></div><div class="clb">Jan</div></div>
+                  <div class="cg"><div class="cb d" style="height:50%"></div><div class="clb">Feb</div></div>
+                  <div class="cg"><div class="cb d" style="height:43%"></div><div class="clb">Mar</div></div>
+                  <div class="cg"><div class="cb d" style="height:62%"></div><div class="clb">Apr</div></div>
+                  <div class="cg"><div class="cb d" style="height:55%"></div><div class="clb">May</div></div>
+                  <div class="cg"><div class="cb d" style="height:68%"></div><div class="clb">Jun</div></div>
+                  <div class="cg"><div class="cb d" style="height:64%"></div><div class="clb">Jul</div></div>
+                  <div class="cg"><div class="cb d" style="height:77%"></div><div class="clb">Aug</div></div>
+                  <div class="cg"><div class="cb d" style="height:71%"></div><div class="clb">Sep</div></div>
+                  <div class="cg"><div class="cb"   style="height:87%"></div><div class="clb">Oct</div></div>
+                  <div class="cg"><div class="cb"   style="height:95%"></div><div class="clb">Nov</div></div>
+                  <div class="cg"><div class="cb"   style="height:80%"></div><div class="clb">Dec</div></div>
+                </div>
+              </div>
+              <div class="cside">
+                <div class="ct">Recent Transactions</div>
+                <div class="txr"><div class="txi" style="background:#fef3c7">₿</div><div class="txn"><div class="txn1">BTC Sale</div><div class="txn2">Dec 28</div></div><div class="txa up">+¥42,000</div></div>
+                <div class="txr"><div class="txi" style="background:#f1f5f9">Ξ</div><div class="txn"><div class="txn1">ETH Swap</div><div class="txn2">Dec 27</div></div><div class="txa dn">−¥8,400</div></div>
+                <div class="txr"><div class="txi" style="background:#d1fae5">💹</div><div class="txn"><div class="txn1">Staking</div><div class="txn2">Dec 26</div></div><div class="txa up">+¥1,260</div></div>
+                <div class="txr"><div class="txi" style="background:#ede9fe">🔍</div><div class="txn"><div class="txn1">Audit Filed</div><div class="txn2">Dec 24</div></div><div class="txa" style="color:#9ca3af">—</div></div>
+                <div class="txr"><div class="txi" style="background:#ffedd5">📄</div><div class="txn"><div class="txn1">Q4 Report</div><div class="txn2">Dec 23</div></div><div class="txa dn">−¥3,800</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 2 · Accounting ══ -->
+        <div class="screen" id="s-acct" style="display:none;">
+          <div class="sp">
+            <div class="s-top">
+              <div class="s-title">Crypto Ledger</div>
+              <div class="pgroup"><div class="pb active">All</div><div class="pb">BTC</div><div class="pb">ETH</div><div class="pb">USDT</div></div>
+            </div>
+            <div class="l-sum">
+              <div class="ls"><div class="ls-l">PORTFOLIO VALUE</div><div class="ls-v">¥ 18,742,000</div><div class="ls-s" style="color:#059669">↑ +14.3% this year</div></div>
+              <div class="ls"><div class="ls-l">REALIZED GAINS</div><div class="ls-v">¥ 8,340,000</div><div class="ls-s" style="color:#3d62e8">Taxable: ¥ 6,212,000</div></div>
+              <div class="ls"><div class="ls-l">UNREALIZED GAINS</div><div class="ls-v">¥ 3,108,000</div><div class="ls-s" style="color:#d97706">9 positions open</div></div>
+            </div>
+            <div class="l-table">
+              <div class="thd"><span>ASSET</span><span>AMOUNT</span><span>COST BASIS</span><span>GAIN/LOSS</span><span>STATUS</span></div>
+              <div class="tb">
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:#fef3c7">₿</div><div><div class="ta-n">Bitcoin</div><div class="ta-s">BTC</div></div></div><span>2.4820 BTC</span><span>¥ 312,000</span><span style="color:#059669">+¥ 980,000</span><span class="sd so">● Matched</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:#f1f5f9">Ξ</div><div><div class="ta-n">Ethereum</div><div class="ta-s">ETH</div></div></div><span>18.340 ETH</span><span>¥ 241,000</span><span style="color:#059669">+¥ 442,000</span><span class="sd so">● Matched</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:#d1fae5">💵</div><div><div class="ta-n">Tether</div><div class="ta-s">USDT</div></div></div><span>50,000 USDT</span><span>¥ 362,000</span><span style="color:#9ca3af">¥ 0</span><span class="sd so">● Matched</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:#ffedd5">🔶</div><div><div class="ta-n">Solana</div><div class="ta-s">SOL</div></div></div><span>420 SOL</span><span>¥ 88,000</span><span style="color:#059669">+¥ 136,000</span><span class="sd sp2">● Pending</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:#ede9fe">💜</div><div><div class="ta-n">Polygon</div><div class="ta-s">MATIC</div></div></div><span>12,000 MATIC</span><span>¥ 54,000</span><span style="color:#dc2626">−¥ 18,000</span><span class="sd sr">● Review</span></div>
+                <div class="tr"><div class="ta"><div class="ta-ic" style="background:#dbeafe">🔵</div><div><div class="ta-n">Chainlink</div><div class="ta-s">LINK</div></div></div><span>3,200 LINK</span><span>¥ 41,000</span><span style="color:#059669">+¥ 64,000</span><span class="sd so">● Matched</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 3 · Tax Calc ══ -->
+        <div class="screen" id="s-calc" style="display:none;">
+          <div class="sp">
+            <div class="s-top"><div class="s-title">Tax Calculator</div><div class="kbadge ku" style="font-size:11px;padding:4px 12px;">AI-Powered ✦</div></div>
+            <div class="calc-lay">
+              <div class="cf">
+                <div class="cf-title">Parameters</div>
+                <div class="ff"><div class="fl">TAX YEAR</div><select class="fsel"><option>2024</option><option>2023</option></select></div>
+                <div class="ff"><div class="fl">TOTAL CRYPTO INCOME (¥)</div><input class="fi hi" type="text" value="8,340,000" /></div>
+                <div class="ff"><div class="fl">CAPITAL GAINS (¥)</div><input class="fi" type="text" value="3,240,000" /></div>
+                <div class="ff"><div class="fl">STAKING REWARDS (¥)</div><input class="fi" type="text" value="124,800" /></div>
+                <div class="ff"><div class="fl">DEDUCTIONS (¥)</div><input class="fi" type="text" value="620,000" /></div>
+                <div class="ff"><div class="fl">ENTITY TYPE</div><select class="fsel"><option>Enterprise</option><option>Individual</option></select></div>
+                <button class="cbtn">Calculate →</button>
+              </div>
+              <div class="cr2">
+                <div class="cr-main">
+                  <div class="cr-lbl">ESTIMATED TAX LIABILITY</div>
+                  <div class="cr-val">¥ 2,481,000 <small>CNY</small></div>
+                  <div class="cr-eff">Effective rate: <strong>29.8%</strong> &nbsp;·&nbsp; Saved: <strong style="color:#059669">¥ 340,000</strong></div>
+                </div>
+                <div class="bkrow">
+                  <div class="bk">
+                    <div class="bk-t">TAX BREAKDOWN</div>
+                    <div class="bk-r"><span class="bk-n">Income Tax</span><span class="bk-v">¥ 1,668,000</span></div>
+                    <div class="tbar" style="width:100%"></div>
+                    <div class="bk-sep"></div>
+                    <div class="bk-r"><span class="bk-n">Capital Gains</span><span class="bk-v">¥ 648,000</span></div>
+                    <div class="tbar" style="width:39%"></div>
+                    <div class="bk-sep"></div>
+                    <div class="bk-r"><span class="bk-n">Staking Tax</span><span class="bk-v">¥ 165,000</span></div>
+                    <div class="tbar" style="width:10%"></div>
+                  </div>
+                  <div class="bk">
+                    <div class="bk-t">DEDUCTIONS</div>
+                    <div class="bk-r"><span class="bk-n">Business Costs</span><span class="bk-v" style="color:#059669">−¥ 280,000</span></div>
+                    <div class="bk-r"><span class="bk-n">R&amp;D Credit</span><span class="bk-v" style="color:#059669">−¥ 180,000</span></div>
+                    <div class="bk-r"><span class="bk-n">Loss Carry</span><span class="bk-v" style="color:#059669">−¥ 160,000</span></div>
+                    <div class="bk-sep"></div>
+                    <div class="bk-r"><span class="bk-n" style="font-weight:700;color:#0f172a">Total Saved</span><span class="bk-v" style="color:#3d62e8">−¥ 620,000</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 4 · Reports ══ -->
+        <div class="screen" id="s-rep" style="display:none;">
+          <div class="sp">
+            <div class="s-top">
+              <div class="s-title">Tax Reports</div>
+              <button style="display:flex;align-items:center;gap:6px;background:#3d62e8;border:none;border-radius:8px;padding:7px 15px;font-size:12px;font-weight:600;color:#fff;cursor:pointer;box-shadow:0 4px 12px rgba(61,98,232,0.28);">✦ Generate Report</button>
+            </div>
+            <div class="r-stats">
+              <div class="rs"><div class="rs-ic" style="background:#eef2ff">📄</div><div><div class="rs-v">24</div><div class="rs-l">Reports Generated</div></div></div>
+              <div class="rs"><div class="rs-ic" style="background:#d1fae5">✅</div><div><div class="rs-v">18</div><div class="rs-l">Filed & Approved</div></div></div>
+              <div class="rs"><div class="rs-ic" style="background:#fef3c7">⏳</div><div><div class="rs-v">4</div><div class="rs-l">Pending Review</div></div></div>
+              <div class="rs"><div class="rs-ic" style="background:#dbeafe">☁️</div><div><div class="rs-v">2</div><div class="rs-l">Cloud Archived</div></div></div>
+            </div>
+            <div class="r-list">
+              <div class="rl-h"><span>REPORT NAME</span><span>PERIOD</span><span>TYPE</span><span>STATUS</span><span>ACTION</span></div>
+              <div class="rl-b">
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:#eef2ff">📊</div><div><div class="rn-t">Annual Tax Return 2024</div><div class="rn-s">PDF · 2.4 MB</div></div></div><span>Full Year 2024</span><span>Tax Return</span><span class="sd sp2">● Pending</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:#d1fae5">📈</div><div><div class="rn-t">Q3 Crypto Gains</div><div class="rn-s">PDF · 1.8 MB</div></div></div><span>Jul–Sep 2024</span><span>Capital Gains</span><span class="sd so">● Approved</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:#fef3c7">🔍</div><div><div class="rn-t">Compliance Audit Q3</div><div class="rn-s">PDF · 3.1 MB</div></div></div><span>Jul–Sep 2024</span><span>Audit</span><span class="sd so">● Approved</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:#ffedd5">💰</div><div><div class="rn-t">Staking Income Report</div><div class="rn-s">XLSX · 0.9 MB</div></div></div><span>Full Year 2024</span><span>Income</span><span class="sd sr">● Review</span><button class="dl">↓ Download</button></div>
+                <div class="rr"><div class="rn"><div class="rn-ic" style="background:#f3f4f6">📋</div><div><div class="rn-t">Annual Tax Return 2023</div><div class="rn-s">PDF · 2.1 MB</div></div></div><span>Full Year 2023</span><span>Tax Return</span><span class="sd so">● Approved</span><button class="dl">↓ Download</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.dash -->
+    </div><!-- /.browser -->
+  </div><!-- /.mockup-wrap -->
+</section>
+
+<!-- ══════════ 合作伙伴 Logo 滚动栏 ══════════ -->
+<div class="partners-bar">
+  <style>
+    .partners-bar{
+      background:#fff;
+      border-top:1px solid rgba(30,40,80,0.07);
+      border-bottom:1px solid rgba(30,40,80,0.07);
+      padding:28px 0;
+      overflow:hidden;
+    }
+    .partners-label{
+      text-align:center;
+      font-size:11.5px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;
+      color:#9ca3af;margin-bottom:22px;
+    }
+    .partners-track-wrap{
+      overflow:hidden;
+      -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 10%,#000 90%,transparent 100%);
+      mask-image:linear-gradient(to right,transparent 0%,#000 10%,#000 90%,transparent 100%);
+    }
+    .partners-track-wrap:hover .partners-track{animation-play-state:paused;}
+    .partners-track{
+      display:flex;align-items:center;gap:0;
+      width:max-content;
+      animation:partners-scroll 36s linear infinite;
+    }
+    @keyframes partners-scroll{
+      0%  {transform:translateX(0);}
+      100%{transform:translateX(-50%);}
+    }
+    .p-logo{
+      flex-shrink:0;
+      display:flex;align-items:center;gap:10px;
+      padding:0 42px;
+      border-right:1px solid rgba(30,40,80,0.08);
+      height:48px;
+      font-size:15px;font-weight:700;
+      color:#9ca3af;letter-spacing:-0.02em;
+      white-space:nowrap;transition:color .2s;cursor:default;
+    }
+    .p-logo:hover{color:#374151;}
+    .p-logo-icon{
+      width:30px;height:30px;border-radius:7px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:15px;
+    }
+  </style>
+
+  <div class="partners-label">Trusted by leading organizations</div>
+
+  <div class="partners-track-wrap">
+    <div class="partners-track" id="partnersTrack"></div>
+  </div>
+
+  
+</div>
+
+<!-- ══════════ 历史活动 · 滚动画廊 ══════════ -->
+<section class="milestones-section">
+  <style>
+    .milestones-section{
+      background:#f5f7fb;
+      padding:80px 0 90px;
+      overflow:hidden;
+      border-top:1px solid rgba(30,40,80,0.07);
+    }
+    .ms-header{
+      display:flex;align-items:center;justify-content:center;
+      gap:10px;margin-bottom:48px;padding:0 40px;
+    }
+    .ms-title{
+      font-size:13px;font-weight:600;
+      color:#3d62e8;letter-spacing:0.04em;
+      text-decoration:none;
+      display:flex;align-items:center;gap:8px;
+    }
+    .ms-title::after{content:'→';font-size:14px;}
+    .ms-title:hover{opacity:0.75;}
+    .ms-headline{
+      font-size:clamp(24px,3vw,40px);
+      font-weight:800;color:#0f172a;
+      letter-spacing:-0.03em;text-align:center;
+      margin-bottom:0;
+    }
+    .ms-sub{
+      font-size:15px;color:#6b7280;text-align:center;
+      margin-top:10px;
+    }
+
+    /* marquee rows */
+    .marquee-rows{display:flex;flex-direction:column;gap:14px;}
+
+    .marquee-row{
+      overflow:hidden;
+      /* fade edges */
+      -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+      mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+    }
+    .marquee-row:hover .marquee-track{animation-play-state:paused;}
+
+    .marquee-track{
+      display:flex;gap:14px;
+      width:max-content;
+      will-change:transform;
+    }
+    .marquee-track.left { animation:ms-left 38s linear infinite; }
+    .marquee-track.right{ animation:ms-right 44s linear infinite; }
+    .marquee-track.left2{ animation:ms-left 52s linear infinite; }
+
+    @keyframes ms-left {
+      0%   { transform:translateX(0); }
+      100% { transform:translateX(-50%); }
+    }
+    @keyframes ms-right {
+      0%   { transform:translateX(-50%); }
+      100% { transform:translateX(0); }
+    }
+
+    /* ── event card ── */
+    .ev-card{
+      flex-shrink:0;
+      border-radius:14px;overflow:hidden;
+      position:relative;cursor:pointer;
+      transition:transform .2s,box-shadow .2s;
+      box-shadow:0 4px 14px rgba(15,23,42,0.10);
+    }
+    .ev-card:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 12px 32px rgba(15,23,42,0.18);}
+
+    /* size variants */
+    .ev-card.lg{width:290px;height:178px;}
+    .ev-card.md{width:242px;height:152px;}
+    .ev-card.sm{width:200px;height:132px;}
+
+    .ev-inner{
+      width:100%;height:100%;
+      padding:18px 20px;
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+
+    /* card background themes */
+    .t-navy   .ev-inner{background:#0f172a;color:#fff;}
+    .t-black  .ev-inner{background:#09090f;color:#fff;}
+    .t-blue   .ev-inner{background:#3d62e8;color:#fff;}
+    .t-indigo .ev-inner{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;}
+    .t-purple .ev-inner{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;}
+    .t-green  .ev-inner{background:linear-gradient(135deg,#059669,#10b981);color:#fff;}
+    .t-teal   .ev-inner{background:linear-gradient(135deg,#0891b2,#0ea5e9);color:#fff;}
+    .t-orange .ev-inner{background:linear-gradient(135deg,#d97706,#f97316);color:#fff;}
+    .t-rose   .ev-inner{background:linear-gradient(135deg,#be123c,#e11d48);color:#fff;}
+    .t-white  .ev-inner{background:#fff;color:#0f172a;border:1px solid rgba(30,40,80,0.09);}
+    .t-light  .ev-inner{background:#eef2ff;color:#1e1b4b;border:1px solid rgba(61,98,232,0.14);}
+    .t-sand   .ev-inner{background:#fefce8;color:#713f12;border:1px solid rgba(234,179,8,0.2);}
+    .t-slate  .ev-inner{background:#1e293b;color:#fff;}
+    .t-cyan   .ev-inner{background:linear-gradient(135deg,#164e63,#0ea5e9);color:#fff;}
+
+    /* card parts */
+    .ev-top{display:flex;align-items:flex-start;justify-content:space-between;}
+    .ev-tag{
+      font-size:9.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
+      padding:3px 8px;border-radius:20px;
+      background:rgba(255,255,255,0.18);color:inherit;
+    }
+    .t-white .ev-tag,.t-light .ev-tag,.t-sand .ev-tag{background:rgba(0,0,0,0.07);}
+    .ev-date{font-size:10px;font-weight:500;opacity:0.50;}
+    .ev-emoji{font-size:22px;line-height:1;}
+
+    .ev-bottom{}
+    .ev-name{
+      font-size:14.5px;font-weight:800;line-height:1.25;
+      letter-spacing:-0.02em;
+    }
+    .ev-card.sm .ev-name{font-size:13px;}
+    .ev-card.lg .ev-name{font-size:16px;}
+    .ev-org{font-size:10px;font-weight:500;opacity:0.48;margin-top:4px;}
+
+    /* watermark number */
+    .ev-num{
+      position:absolute;bottom:10px;right:14px;
+      font-size:52px;font-weight:900;
+      line-height:1;letter-spacing:-0.05em;
+      opacity:0.06;pointer-events:none;
+      color:inherit;
+    }
+    .ev-card.sm .ev-num{font-size:38px;}
+  </style>
+
+  <div class="ms-header" style="flex-direction:column;">
+    <a class="ms-title" href="#">浏览我们的发展历程</a>
+    <div class="ms-headline">历史活动 · 里程碑</div>
+    <p class="ms-sub">6 年深耕税务科技，每一步都留有印记</p>
+  </div>
+
+  <div class="marquee-rows">
+
+    <!-- ROW 1 · left · lg cards -->
+    <div class="marquee-row">
+      <div class="marquee-track left" id="row1"></div>
+    </div>
+
+    <!-- ROW 2 · right · md cards -->
+    <div class="marquee-row">
+      <div class="marquee-track right" id="row2"></div>
+    </div>
+
+    <!-- ROW 3 · left slower · sm cards -->
+    <div class="marquee-row">
+      <div class="marquee-track left2" id="row3"></div>
+    </div>
+
+  </div>
+</section>
